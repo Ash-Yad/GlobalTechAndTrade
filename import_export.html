@@ -1,0 +1,690 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION - Enhanced
+══════════════════════════════════ -->
+<section class="relative bg-gradient-to-br from-white via-light to-white py-28 overflow-hidden">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="absolute top-20 right-20 w-32 h-32 bg-primary/5 rounded-full blur-2xl animate-float"></div>
+    <div class="absolute bottom-20 left-20 w-40 h-40 bg-secondary/5 rounded-full blur-2xl animate-float" style="animation-delay: 1s"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Left Content -->
+            <div data-aos="fade-right">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-8 border border-primary/20 animate-slide-up">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    INDIA-AFRICA TRADE CORRIDOR
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] mb-8 animate-slide-up" style="animation-delay: 0.1s">
+                    India-Africa Trade.
+                    <span class="relative">
+                        <span class="relative z-10 gradient-text">Seamless Flow.</span>
+                        <span class="absolute bottom-4 left-0 w-full h-4 bg-primary/20 -z-0 rounded-full"></span>
+                    </span>
+                </h1>
+
+                <!-- Description -->
+                <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl animate-slide-up" style="animation-delay: 0.2s">
+                    Specializing exclusively in the <span class="font-bold text-primary">India-Africa trade corridor</span>. We combine deep customs expertise with AI-driven route optimization to move your cargo faster, safer, and cheaper between these two dynamic regions.
+                </p>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-3 gap-6 mb-10 pt-10 border-t border-slate-200 animate-slide-up" style="animation-delay: 0.3s">
+                    <div class="group">
+                        <div class="text-3xl font-black text-primary group-hover:scale-110 transition-transform">40+</div>
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">African Ports</div>
+                    </div>
+                    <div class="group">
+                        <div class="text-3xl font-black text-secondary group-hover:scale-110 transition-transform">12+</div>
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Indian Ports</div>
+                    </div>
+                    <div class="group">
+                        <div class="text-3xl font-black text-primary group-hover:scale-110 transition-transform">24h</div>
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Rapid Clearing</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-5 animate-slide-up" style="animation-delay: 0.4s">
+                    <a href="/contact" class="group relative px-10 py-5 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-2xl shadow-2xl shadow-primary/30 hover:shadow-3xl hover:-translate-y-1 transition-all overflow-hidden">
+                        <span class="relative z-10 flex items-center gap-2">
+                            <i class="fas fa-file-invoice"></i>
+                            Request Freight Quote
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </a>
+                    <a href="#routes" class="px-10 py-5 bg-primary/10 text-primary font-bold rounded-2xl hover:bg-primary/20 hover:-translate-y-1 transition-all border-2 border-primary/20 flex items-center gap-2">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Live Trade Routes
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Content - Enhanced Tracker Card -->
+            <div class="relative" data-aos="fade-left">
+                <!-- Decorative Elements -->
+                <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-[3rem] opacity-20 blur-2xl"></div>
+                <div class="absolute -top-6 -right-6 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
+                <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-secondary/20 rounded-full blur-xl"></div>
+
+                <!-- Main Card -->
+                <div class="bg-slate-900 rounded-[3rem] p-2 shadow-2xl overflow-hidden group hover:shadow-3xl transition-all">
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-[2.8rem] p-8 border border-white/10 relative overflow-hidden">
+
+                        <!-- Background Pattern -->
+                        <div class="absolute inset-0 opacity-5">
+                            <svg width="100%" height="100%">
+                                <pattern id="pattern-trade" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <circle cx="10" cy="10" r="2" fill="white"/>
+                                </pattern>
+                                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-trade)" />
+                            </svg>
+                        </div>
+
+                        <div class="relative z-10">
+                            <!-- Card Header -->
+                            <div class="flex justify-between items-center mb-10">
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="text-primary font-mono text-xs uppercase tracking-tighter bg-primary/10 px-3 py-1 rounded-full border border-primary/30">
+                                            <i class="fas fa-satellite-dish mr-1"></i>Vessel_Tracker_v4.2
+                                        </span>
+                                    </div>
+                                    <div class="text-white text-2xl font-bold italic flex items-center gap-2">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+                                        INDIA-AFRICA CORRIDOR
+                                    </div>
+                                </div>
+                                <div class="px-4 py-2 bg-primary/20 rounded-xl border border-primary/30 text-primary text-sm font-mono flex items-center gap-2">
+                                    <i class="fas fa-location-dot"></i>
+                                    GPS_LOCK
+                                </div>
+                            </div>
+
+                            <!-- Route Visualization -->
+                            <div class="space-y-8">
+                                <!-- Route Line -->
+                                <div class="flex items-center gap-4">
+                                    <div class="text-right flex-1">
+                                        <div class="text-white font-bold text-lg">Mumbai, IN</div>
+                                        <div class="text-slate-400 text-xs flex items-center justify-end gap-1">
+                                            <i class="fas fa-anchor"></i>
+                                            Origin Port
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1 relative">
+                                        <div class="h-1 bg-slate-700 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full animate-pulse-slow" style="width: 60%"></div>
+                                        </div>
+                                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <div class="relative">
+                                                <div class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center border-2 border-primary">
+                                                    <i class="fas fa-ship text-primary text-lg animate-bounce-slow"></i>
+                                                </div>
+                                                <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[8px] text-primary whitespace-nowrap">
+                                                    62% Complete
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1">
+                                        <div class="text-white font-bold text-lg">Dar es Salaam, TZ</div>
+                                        <div class="text-slate-400 text-xs flex items-center gap-1">
+                                            <i class="fas fa-flag-checkered"></i>
+                                            Destination Port
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Live Stats Grid -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="p-5 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm group-hover:border-primary/50 transition-all">
+                                        <div class="flex items-center gap-3 mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                                                <i class="fas fa-file-contract text-primary text-sm"></i>
+                                            </div>
+                                            <span class="text-[10px] text-slate-400 uppercase font-black">Customs Status</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="text-primary text-lg font-mono font-bold">PRE-CLEARED</div>
+                                            <span class="text-[8px] bg-green-500/20 text-green-400 px-2 py-1 rounded-full">AUTOMATED</span>
+                                        </div>
+                                        <div class="mt-2 text-[8px] text-slate-500">HS Code: 8471.30 • Duty: 0%</div>
+                                    </div>
+
+                                    <div class="p-5 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm group-hover:border-secondary/50 transition-all">
+                                        <div class="flex items-center gap-3 mb-2">
+                                            <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center">
+                                                <i class="fas fa-shield-alt text-secondary text-sm"></i>
+                                            </div>
+                                            <span class="text-[10px] text-slate-400 uppercase font-black">Risk Index</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="text-secondary text-lg font-mono font-bold">LOW</div>
+                                            <span class="text-[8px] bg-secondary/20 text-secondary px-2 py-1 rounded-full">AI SCORE</span>
+                                        </div>
+                                        <div class="mt-2 flex items-center gap-1">
+                                            <div class="flex-1 h-1 bg-slate-700 rounded-full overflow-hidden">
+                                                <div class="h-full bg-secondary w-[2%]"></div>
+                                            </div>
+                                            <span class="text-[8px] text-slate-500">0.02</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Tracking Info -->
+                                <div class="grid grid-cols-3 gap-3 pt-4 border-t border-white/10">
+                                    <div>
+                                        <div class="text-[8px] text-slate-400 uppercase">ETA</div>
+                                        <div class="text-sm font-bold text-white">3d 4h</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-[8px] text-slate-400 uppercase">Container</div>
+                                        <div class="text-sm font-bold text-white">MSKU 987654</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-[8px] text-slate-400 uppercase">Temperature</div>
+                                        <div class="text-sm font-bold text-white">4°C</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Blur -->
+                        <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 blur-[80px] group-hover:scale-150 transition-transform"></div>
+                        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary/10 blur-[80px] group-hover:scale-150 transition-transform"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CORE SERVICES - Enhanced
+══════════════════════════════════ -->
+<section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-16" data-aos="fade-right">
+            <span class="text-primary text-xs font-black uppercase tracking-[0.3em] bg-primary/5 px-4 py-2 rounded-full">Our Capabilities</span>
+            <h2 class="text-4xl font-black text-slate-900 mt-6 mb-4">Core Logistics Infrastructure</h2>
+            <p class="text-lg text-slate-600">End-to-end supply chain management powered by smart technology and local regional expertise across the India-Africa corridor.</p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Customs Engineering -->
+            <div class="group bg-white p-8 rounded-[2.5rem] border-2 border-slate-200 hover:border-primary hover:shadow-2xl hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
+                        <i class="fas fa-file-invoice-dollar text-2xl text-primary group-hover:text-white"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-black text-slate-900 mb-3">Customs Engineering</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">HS Code classification, duty optimization, and automated customs documentation processing for India-Africa trade with zero delays.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-full">AI-Powered</span>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Real-time</span>
+                </div>
+            </div>
+
+            <!-- Direct Sourcing -->
+            <div class="group bg-white p-8 rounded-[2.5rem] border-2 border-slate-200 hover:border-secondary hover:shadow-2xl hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:scale-110 transition-all">
+                        <i class="fas fa-search-dollar text-2xl text-secondary group-hover:text-white"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-black text-slate-900 mb-3">Direct Sourcing</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">Eliminate middlemen. We connect you directly with verified Tier-1 manufacturers in India for bulk procurement destined for African markets.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] bg-secondary/10 text-secondary px-2 py-1 rounded-full">Verified Partners</span>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Bulk Pricing</span>
+                </div>
+            </div>
+
+            <!-- Multimodal Freight -->
+            <div class="group bg-white p-8 rounded-[2.5rem] border-2 border-slate-200 hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all">
+                        <i class="fas fa-container-storage text-2xl text-accent group-hover:text-white"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-black text-slate-900 mb-3">Multimodal Freight</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">Integrated Sea, Air, and Road transport across the Indian Ocean. Real-time GPS tracking and container solutions for India-Africa routes.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] bg-accent/10 text-accent px-2 py-1 rounded-full">GPS Tracking</span>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded-full">Temperature Control</span>
+                </div>
+            </div>
+
+            <!-- Smart Warehousing -->
+            <div class="group bg-white p-8 rounded-[2.5rem] border-2 border-slate-200 hover:border-primary hover:shadow-2xl hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="400">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
+                        <i class="fas fa-boxes text-2xl text-primary group-hover:text-white"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-black text-slate-900 mb-3">Smart Warehousing</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">Bonded warehousing in strategic transit hubs in India and Africa. Digital inventory management with 24/7 security and live stock levels.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-full">Bonded</span>
+                    <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded-full">24/7 Security</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     TRADE ROUTES - Enhanced (China Removed)
+══════════════════════════════════ -->
+<section id="routes" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+            <span class="text-primary text-xs font-black uppercase tracking-[0.3em] bg-primary/5 px-4 py-2 rounded-full">Network Intelligence</span>
+            <h2 class="text-4xl font-black text-slate-900 mt-6 mb-4">India-Africa Trade Corridors</h2>
+            <p class="text-slate-500">How we bridge the gap between India and Africa with optimized lead times.</p>
+        </div>
+
+        <!-- Routes Grid - Now with 2 routes instead of 3 -->
+        <div class="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Route 1: India → Africa -->
+            <div class="group bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2.5rem] p-8 relative overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="100">
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 opacity-5">
+                    <svg width="100%" height="100%">
+                        <pattern id="pattern-route1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <circle cx="10" cy="10" r="2" fill="white"/>
+                        </pattern>
+                        <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-route1)" />
+                    </svg>
+                </div>
+
+                <div class="relative z-10">
+                    <!-- Header -->
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-primary font-mono text-xs bg-primary/10 px-3 py-1 rounded-full border border-primary/30">
+                            <i class="fas fa-route mr-1"></i>ROUTE_01
+                        </span>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 rounded-full bg-orange-500/20 text-orange-500 text-[10px] font-bold flex items-center gap-1">
+                                <span class="w-1 h-1 bg-orange-500 rounded-full"></span>
+                                IN
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold flex items-center gap-1">
+                                <span class="w-1 h-1 bg-primary rounded-full"></span>
+                                AF
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h4 class="text-2xl font-black text-white mb-3 flex items-center gap-2">
+                        India → Africa Corridor
+                        <i class="fas fa-arrow-right text-primary text-sm"></i>
+                    </h4>
+
+                    <!-- Description -->
+                    <p class="text-slate-400 text-sm mb-6">Primary flow for Pharmaceuticals, Industrial Machinery, Textiles, and Agri-tech from India to African markets.</p>
+
+                    <!-- Stats -->
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-widest">
+                            <span class="text-slate-500">Efficiency</span>
+                            <span class="text-primary">96%</span>
+                        </div>
+                        <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full animate-pulse-slow" style="width: 96%"></div>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div>
+                                <div class="text-[8px] text-slate-500 uppercase">Transit Time</div>
+                                <div class="text-sm font-bold text-white">18-22 Days</div>
+                            </div>
+                            <div>
+                                <div class="text-[8px] text-slate-500 uppercase">Active Ships</div>
+                                <div class="text-sm font-bold text-white">12</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Status -->
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-[10px] text-slate-500">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+                        Route Active • Next Departure: 2h
+                    </div>
+                </div>
+            </div>
+
+            <!-- Route 2: Africa → India -->
+            <div class="group bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2.5rem] p-8 relative overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all" data-aos="fade-up" data-aos-delay="200">
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 opacity-5">
+                    <svg width="100%" height="100%">
+                        <pattern id="pattern-route2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <circle cx="10" cy="10" r="2" fill="white"/>
+                        </pattern>
+                        <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-route2)" />
+                    </svg>
+                </div>
+
+                <div class="relative z-10">
+                    <!-- Header -->
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-secondary font-mono text-xs bg-secondary/10 px-3 py-1 rounded-full border border-secondary/30">
+                            <i class="fas fa-route mr-1"></i>ROUTE_02
+                        </span>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold flex items-center gap-1">
+                                <span class="w-1 h-1 bg-primary rounded-full"></span>
+                                AF
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-orange-500/20 text-orange-500 text-[10px] font-bold flex items-center gap-1">
+                                <span class="w-1 h-1 bg-orange-500 rounded-full"></span>
+                                IN
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
+                    <h4 class="text-2xl font-black text-white mb-3 flex items-center gap-2">
+                        Africa → India Corridor
+                        <i class="fas fa-arrow-right text-secondary text-sm"></i>
+                    </h4>
+
+                    <!-- Description -->
+                    <p class="text-slate-400 text-sm mb-6">Strategic export of raw minerals, precious metals, agricultural products, and gemstones from Africa to India.</p>
+
+                    <!-- Stats -->
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-widest">
+                            <span class="text-slate-500">Efficiency</span>
+                            <span class="text-secondary">94%</span>
+                        </div>
+                        <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full animate-pulse-slow" style="width: 94%"></div>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div>
+                                <div class="text-[8px] text-slate-500 uppercase">Transit Time</div>
+                                <div class="text-sm font-bold text-white">20-24 Days</div>
+                            </div>
+                            <div>
+                                <div class="text-[8px] text-slate-500 uppercase">Active Ships</div>
+                                <div class="text-sm font-bold text-white">10</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Status -->
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-[10px] text-slate-500">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+                        Route Active • Next Departure: 6h
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Route Map Preview - China Removed -->
+        <div class="mt-12 p-8 bg-slate-50 rounded-3xl border-2 border-slate-200" data-aos="fade-up">
+            <div class="flex items-center justify-between mb-6">
+                <h4 class="text-lg font-bold text-slate-900">Live Route Intelligence</h4>
+                <span class="text-xs text-primary bg-primary/10 px-3 py-1 rounded-full">Updated in real-time</span>
+            </div>
+            <div class="relative h-32 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl overflow-hidden border-2 border-slate-200">
+                <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="flex items-center gap-8 md:gap-16 lg:gap-24">
+                        <div class="text-center group">
+                            <div class="w-14 h-14 rounded-2xl bg-white shadow-xl flex items-center justify-center text-3xl border-2 border-primary/20 group-hover:border-primary group-hover:scale-110 transition-all">
+                                🇮🇳
+                            </div>
+                            <span class="text-xs font-bold mt-2 block text-slate-700">India</span>
+                            <span class="text-[8px] text-slate-400">Mumbai • Chennai • Mundra</span>
+                        </div>
+
+                        <div class="relative">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-arrow-right text-primary text-2xl animate-pulse"></i>
+                                <i class="fas fa-arrow-right text-secondary text-2xl animate-pulse" style="animation-delay: 0.2s"></i>
+                            </div>
+                            <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-[8px] text-primary whitespace-nowrap bg-primary/10 px-3 py-1 rounded-full">
+                                Indian Ocean Route
+                            </div>
+                        </div>
+
+                        <div class="text-center group">
+                            <div class="w-14 h-14 rounded-2xl bg-white shadow-xl flex items-center justify-center text-3xl border-2 border-secondary/20 group-hover:border-secondary group-hover:scale-110 transition-all">
+                                🌍
+                            </div>
+                            <span class="text-xs font-bold mt-2 block text-slate-700">Africa</span>
+                            <span class="text-[8px] text-slate-400">Dar es Salaam • Mombasa • Durban</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Ship Indicator -->
+                <div class="absolute top-1/2 left-1/3 -translate-y-1/2">
+                    <div class="relative">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm animate-bounce-slow shadow-lg">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[8px] bg-primary text-white px-2 py-0.5 rounded-full whitespace-nowrap">
+                            Live: MV Mumbai Express
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Route Stats -->
+            <div class="grid grid-cols-2 gap-4 mt-6">
+                <div class="bg-white p-4 rounded-xl border border-slate-200">
+                    <div class="text-xs text-slate-500">Weekly Sailings</div>
+                    <div class="text-2xl font-black text-primary">8</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200">
+                    <div class="text-xs text-slate-500">Average Transit</div>
+                    <div class="text-2xl font-black text-secondary">21 Days</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     ADDITIONAL SERVICES - New Section
+══════════════════════════════════ -->
+<section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="text-primary text-xs font-black uppercase tracking-[0.3em] bg-primary/5 px-4 py-2 rounded-full">Value Added</span>
+            <h2 class="text-4xl font-black text-slate-900 mt-6 mb-4">Beyond Logistics</h2>
+            <p class="text-lg text-slate-600">Comprehensive trade solutions to support your India-Africa business growth</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Trade Finance -->
+            <div class="bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-primary hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
+                    <i class="fas fa-coins text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Trade Finance</h3>
+                <p class="text-slate-600 text-sm">Letters of credit, invoice factoring, and supply chain financing solutions for India-Africa trade.</p>
+            </div>
+
+            <!-- Insurance -->
+            <div class="bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-secondary hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:scale-110 transition-all">
+                    <i class="fas fa-shield-alt text-2xl text-secondary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Cargo Insurance</h3>
+                <p class="text-slate-600 text-sm">Comprehensive coverage for all types of cargo during transit across the Indian Ocean.</p>
+            </div>
+
+            <!-- Consulting -->
+            <div class="bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-accent hover:shadow-xl transition-all group" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all">
+                    <i class="fas fa-chart-line text-2xl text-accent group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Trade Consulting</h3>
+                <p class="text-slate-600 text-sm">Market entry strategy for Indian and African markets, compliance, and trade optimization advisory.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA BANNER - Enhanced
+══════════════════════════════════ -->
+<section class="py-28 relative overflow-hidden">
+    <!-- Background with gradient -->
+    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary"></div>
+
+    <!-- Animated elements -->
+    <div class="absolute inset-0 opacity-10">
+        <svg width="100%" height="100%">
+            <pattern id="pattern-cta-trade" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                <circle cx="25" cy="25" r="5" fill="white"/>
+            </pattern>
+            <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-cta-trade)" />
+        </svg>
+    </div>
+
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2 animate-pulse-slow"></div>
+
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+        <!-- Icon -->
+        <div class="w-20 h-20 bg-white/20 rounded-3xl flex items-center justify-center mx-auto mb-8 backdrop-blur-sm">
+            <i class="fas fa-rocket text-4xl text-white"></i>
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+            Ready to Start Your India-Africa Trade Journey?
+        </h2>
+
+        <p class="text-white/90 text-xl mb-10 max-w-2xl mx-auto">
+            Contact our trade specialists for a free customs audit or a competitive freight quote for your India-Africa shipments today.
+        </p>
+
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="/contact" class="group px-12 py-5 bg-slate-900 text-white font-black rounded-2xl shadow-2xl hover:bg-slate-800 hover:-translate-y-1 transition-all">
+                <span class="flex items-center gap-2">
+                    <i class="fas fa-file-signature"></i>
+                    Start Trading Now
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </span>
+            </a>
+            <a href="mailto:trade@globaltechtrade.com" class="group px-12 py-5 bg-white text-primary font-black rounded-2xl hover:bg-slate-50 hover:-translate-y-1 transition-all shadow-2xl">
+                <span class="flex items-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    Email Trade Desk
+                </span>
+            </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="flex flex-wrap justify-center gap-8 mt-12">
+            <div class="flex items-center gap-2 text-white/80">
+                <i class="fas fa-check-circle"></i>
+                <span class="text-sm">India-Africa Trade Specialists</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/80">
+                <i class="fas fa-check-circle"></i>
+                <span class="text-sm">Licensed Customs Broker</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/80">
+                <i class="fas fa-check-circle"></i>
+                <span class="text-sm">ISO 28000 Certified</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom Animations -->
+<style>
+    @keyframes ship {
+        0% { left: 0%; transform: translateX(-100%) scaleX(1); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { left: 100%; transform: translateX(0%) scaleX(1); opacity: 0; }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes pulse-slow {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.6; }
+    }
+    .animate-pulse-slow {
+        animation: pulse-slow 4s ease-in-out infinite;
+    }
+
+    @keyframes slide-up {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-slide-up {
+        animation: slide-up 0.8s ease-out;
+    }
+
+    @keyframes bounce-slow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+    .animate-bounce-slow {
+        animation: bounce-slow 2s ease-in-out infinite;
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, #0ea5e9, #0284c7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .bg-grid-pattern {
+        background-image:
+            linear-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(2, 132, 199, 0.1) 1px, transparent 1px);
+        background-size: 30px 30px;
+    }
+</style>
+
+{% endblock %}
