@@ -694,20 +694,29 @@ if __name__ == '__main__':
     if not os.path.exists('logs'):
         os.makedirs('logs')
 
-    # Auto-open browser in debug mode
-    if app.debug and os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
+    # Determine if running in production (Render) or local
+    # Render sets the PORT environment variable. If it exists, we are in prod.
+    is_production = os.environ.get('PORT') is not None
+
+    # Auto-open browser only for local debug mode
+    if not is_production and os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
         threading.Thread(target=open_browser, daemon=True).start()
         print("🌐 Opening browser automatically...")
+
+    # Get port from environment variable (Render) or default to 5000 (Local)
+    port = int(os.environ.get('PORT', 5000))
 
     print("=" * 60)
     print("🚀 GlobalTech&Trade Server Starting...")
     print(f"📅 {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
-    print("📍 Local URL: http://localhost:5000")
-    print("📍 Network URL: http://0.0.0.0:5000")
+    print(f"📍 Running on port: {port}")
     print("=" * 60)
     print("📝 Press CTRL+C to stop the server")
     print("=" * 60)
 
     # Run the app
-    app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
+    # Note: On Render, Gunicorn runs this file as a module, so this block
+    # is effectively skipped. The dynamic port logic above helps if you
+    # ever run this file directly in a container or locally.
+    app.run(debug=not is_production, host='0.0.0.0', port=port, threaded=True)
