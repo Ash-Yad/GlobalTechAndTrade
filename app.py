@@ -9,20 +9,23 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 # 1. CONFIGURATION & PATH SETUP
 # ==========================================
 
-# Initialize Flask app immediately
-app = Flask(__name__)
+# CRITICAL FIX: Ensure templates AND static are found regardless of where Gunicorn starts
+current_directory = os.path.dirname(os.path.abspath(__file__))
+template_folder_path = os.path.join(current_directory, 'templates')
+static_folder_path = os.path.join(current_directory, 'static')
+
+# Initialize Flask app with explicit static and template folder paths
+app = Flask(__name__,
+            template_folder=template_folder_path,
+            static_folder=static_folder_path)
 
 # FIX 1: Secret key now reads from environment variable (does NOT change on restart)
 # Go to Render Dashboard → Environment → Add: SECRET_KEY = any-random-long-string
 app.secret_key = os.environ.get('SECRET_KEY', 'fallback-only-for-local-dev-do-not-use-in-production')
 
-# CRITICAL FIX: Ensure templates are found regardless of where Gunicorn starts
-current_directory = os.path.dirname(os.path.abspath(__file__))
-template_folder_path = os.path.join(current_directory, 'templates')
-app.template_folder = template_folder_path
-
 # Log the path immediately
 print(f"INFO:app:GlobalTech&Trade startup. Template path set to: {template_folder_path}")
+print(f"INFO:app:GlobalTech&Trade startup. Static path set to: {static_folder_path}")
 
 # FIX 2: SESSION_COOKIE_SECURE set to True because Render uses HTTPS
 app.config.update(
