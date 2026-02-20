@@ -1,0 +1,719 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION - Background video (like home.html)
+══════════════════════════════════ -->
+<section class="relative min-h-[90vh] flex items-center overflow-hidden py-16 lg:py-24">
+    <!-- Background video -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+        <video id="about-hero-video" autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover">
+            <source src="/static/videos/about.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-slate-900/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900/80"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+        <div class="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-black uppercase tracking-[0.3em] px-4 py-2 rounded-full mb-8 border border-white/20">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            INDIA · ZAMBIA · GLOBAL
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-tight">
+            Our Journey of
+            <span class="gradient-text-light">Global Expansion</span>
+        </h1>
+
+        <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            From the tech-driven corridors of <strong class="text-primary">India</strong>, to the fast-growing markets of <strong class="text-secondary">Zambia</strong>, GlobalTech&Trade is more than a company—it's a connection between continents.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="flex flex-wrap justify-center gap-8 mt-12">
+            <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                    <i class="fas fa-calendar-alt text-white text-sm"></i>
+                </div>
+                <span class="text-sm font-bold text-white">Est. 2021</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center">
+                    <i class="fas fa-users text-white text-sm"></i>
+                </div>
+                <span class="text-sm font-bold text-white">40+ Team Members</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
+                    <i class="fas fa-globe text-white text-sm"></i>
+                </div>
+                <span class="text-sm font-bold text-white">2 Continents</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     OUR VISION - New Section
+══════════════════════════════════ -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-[1.4fr_1fr] gap-12 items-center">
+            <!-- Vision Text -->
+            <div>
+                <span class="text-primary text-xs font-black uppercase tracking-[0.3em] bg-primary/5 px-4 py-2 rounded-full">
+                    Our Vision
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mt-6 mb-6 leading-tight">
+                    To be the bridge
+                    <span class="block gradient-text">between digital innovation and global trade.</span>
+                </h2>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    GlobalTech&Trade was created with a simple belief: businesses in emerging markets deserve technology
+                    and trade infrastructure that is as powerful as their ambition. Our vision is to become the most
+                    trusted partner for companies moving between <span class="font-semibold text-primary">India</span>,
+                    <span class="font-semibold text-secondary">Zambia</span>, and the rest of the world.
+                </p>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                    By combining world‑class IT solutions with reliable import/export operations, we want to remove
+                    friction from every step of your journey—whether you are launching a new digital product or moving
+                    containers across borders.
+                </p>
+
+                <div class="grid sm:grid-cols-3 gap-4">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="text-xs font-semibold text-slate-500 uppercase tracking-[0.18em] mb-1">For Our Clients</div>
+                        <p class="text-sm text-slate-700">
+                            A partner that understands both your <span class="font-semibold">software roadmap</span> and
+                            your <span class="font-semibold">supply chain</span>.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="text-xs font-semibold text-slate-500 uppercase tracking-[0.18em] mb-1">For Our People</div>
+                        <p class="text-sm text-slate-700">
+                            A platform where Indian and Zambian talent grow together on <span class="font-semibold">global projects</span>.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                        <div class="text-xs font-semibold text-slate-500 uppercase tracking-[0.18em] mb-1">For The Future</div>
+                        <p class="text-sm text-slate-700">
+                            A smarter corridor where <span class="font-semibold">AI‑driven IT</span> and
+                            <span class="font-semibold">sustainable trade</span> support long‑term growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision Illustration -->
+            <div class="relative">
+                <div class="absolute -inset-4 bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 rounded-[2.5rem] blur-2xl"></div>
+                <div class="relative bg-slate-900 rounded-[2.5rem] p-8 text-white overflow-hidden shadow-2xl">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <div class="text-xs font-black text-primary uppercase tracking-[0.25em] mb-1">
+                                2030 Outlook
+                            </div>
+                            <h3 class="text-xl font-black">Where We Are Heading</h3>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                            <i class="fas fa-eye text-white"></i>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-200">
+                        <li class="flex gap-2">
+                            <span class="mt-1 text-primary"><i class="fas fa-check-circle"></i></span>
+                            <span>Recognised as a leading Indo‑African partner for <strong>IT products</strong> and <strong>cross‑border trade</strong>.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="mt-1 text-secondary"><i class="fas fa-check-circle"></i></span>
+                            <span>Operating seamless <strong>India–Zambia–Global trade routes</strong> supported by real‑time data and automation.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="mt-1 text-accent"><i class="fas fa-check-circle"></i></span>
+                            <span>Empowering <strong>SMEs and enterprises</strong> to scale without worrying about technology or logistics limits.</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+                        <span>Guided by innovation, integrity, and impact.</span>
+                        <span class="font-semibold text-primary">Vision · GlobalTech&Trade</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     DUAL DIVISIONS GROWTH - New Section
+══════════════════════════════════ -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-primary text-xs font-black uppercase tracking-[0.3em] bg-primary/5 px-4 py-2 rounded-full">Our Growth Story</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mt-6 mb-6">
+                Two Divisions,
+                <span class="gradient-text">One Success Story</span>
+            </h2>
+            <p class="text-lg text-slate-600">Tracking our journey in IT innovation and global trade expansion</p>
+        </div>
+
+        <!-- Visual Storytelling Row -->
+        <div class="grid md:grid-cols-3 gap-4 mb-16">
+            <div class="rounded-3xl overflow-hidden h-40 md:h-48 shadow-lg">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+                     alt="Developers building enterprise software"
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="rounded-3xl overflow-hidden h-40 md:h-48 shadow-lg">
+                <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+                     alt="Secure IT infrastructure and data centers"
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="rounded-3xl overflow-hidden h-40 md:h-48 shadow-lg">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+                     alt="Global logistics and containers in transit"
+                     class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Growth Stats Cards -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <!-- IT Division Growth -->
+            <div class="group relative bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 border-2 border-slate-100 hover:border-primary/30 transition-all hover:shadow-2xl">
+                <div class="absolute top-6 right-6 text-primary/5 text-8xl">💻</div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                        <i class="fas fa-microchip text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-slate-900">IT Solutions Division</h3>
+                        <p class="text-sm text-slate-500">Custom Software · Cloud · Support</p>
+                    </div>
+                </div>
+
+                <!-- Growth Metrics -->
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-600">Projects Delivered</span>
+                            <span class="text-primary">500+</span>
+                        </div>
+                        <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full animate-grow-width" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-600">Client Satisfaction (CSAT)</span>
+                            <span class="text-primary">98%</span>
+                        </div>
+                        <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full animate-grow-width" style="width: 98%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-600">Specialist Team</span>
+                            <span class="text-primary">25+</span>
+                        </div>
+                        <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full animate-grow-width" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Achievements -->
+                <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-slate-200">
+                    <div class="text-center">
+                        <div class="text-2xl font-black text-primary">2021</div>
+                        <div class="text-xs text-slate-500">Launched in India & Zambia</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-black text-primary">2023</div>
+                        <div class="text-xs text-slate-500">AI‑ready product stack</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-black text-primary">2024</div>
+                        <div class="text-xs text-slate-500">Serving multi‑country clients</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Import/Export Division Growth -->
+            <div class="group relative bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 border-2 border-slate-100 hover:border-secondary/30 transition-all hover:shadow-2xl">
+                <div class="absolute top-6 right-6 text-secondary/5 text-8xl">🚢</div>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary to-primary flex items-center justify-center">
+                        <i class="fas fa-ship text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-slate-900">Import/Export Division</h3>
+                        <p class="text-sm text-slate-500">India ↔ Zambia · Global Trade</p>
+                    </div>
+                </div>
+
+                <!-- Growth Metrics -->
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-600">Annual Trade Volume</span>
+                            <span class="text-secondary">$200M+</span>
+                        </div>
+                        <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full animate-grow-width" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-600">Countries Connected</span>
+                            <span class="text-secondary">40+</span>
+                        </div>
+                        <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full animate-grow-width" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-bold mb-2">
+                            <span class="text-slate-600">Active Trade Routes</span>
+                            <span class="text-secondary">15+</span>
+                        </div>
+                        <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full animate-grow-width" style="width: 82%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Achievements -->
+                <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-slate-200">
+                    <div class="text-center">
+                        <div class="text-2xl font-black text-secondary">2018</div>
+                        <div class="text-xs text-slate-500">Entered African corridor</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-black text-secondary">2023</div>
+                        <div class="text-xs text-slate-500">Digital customs workflows</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-black text-secondary">2024</div>
+                        <div class="text-xs text-slate-500">Trade across 10+ countries</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combined Impact -->
+        <div class="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-3xl p-8 text-center">
+            <h4 class="text-lg font-bold text-slate-700 mb-4">Combined Global Impact</h4>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div>
+                    <div class="text-3xl font-black text-primary">40+</div>
+                    <div class="text-xs text-slate-500">IT Experts</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black text-secondary">15+</div>
+                    <div class="text-xs text-slate-500">Trade Specialists</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black text-primary">10+</div>
+                    <div class="text-xs text-slate-500">Years Avg. Experience</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black text-secondary">24/7</div>
+                    <div class="text-xs text-slate-500">Support Coverage</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black text-primary">10+</div>
+                    <div class="text-xs text-slate-500">Countries</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black text-secondary">100+</div>
+                    <div class="text-xs text-slate-500">Projects</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black text-primary">$5M+</div>
+                    <div class="text-xs text-slate-500">Trade Value</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black text-secondary">98%</div>
+                    <div class="text-xs text-slate-500">Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     DUAL-CONTINENTAL DNA - Enhanced
+══════════════════════════════════ -->
+<section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+            <!-- Image with Stats -->
+            <div class="relative group">
+                <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-[3rem] opacity-20 blur-2xl group-hover:opacity-30 transition-all"></div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Global Team"
+                         class="relative rounded-[2.5rem] shadow-2xl w-full object-cover h-[500px] group-hover:scale-[1.02] transition-transform duration-700">
+
+                    <!-- Floating Stats Cards -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 animate-float">
+                        <div class="text-3xl font-black text-primary italic">100%</div>
+                        <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Commitment</div>
+                    </div>
+
+                    <div class="absolute -top-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 animate-float" style="animation-delay: 1s">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                                <i class="fas fa-trophy text-primary text-sm"></i>
+                            </div>
+                            <span class="text-sm font-bold">ISO Certified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="animate-slide-up">
+                <span class="text-primary text-xs font-black uppercase tracking-[0.3em] bg-primary/5 px-4 py-2 rounded-full">Our DNA</span>
+                <h2 class="text-4xl font-black text-slate-900 mt-6 mb-6">A Dual-Continental Identity</h2>
+
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                    We recognized a gap: the world needed a partner that understood the <span class="font-bold text-primary">high-speed software innovation of India</span> and the <span class="font-bold text-secondary">dynamic logistics landscape of Zambia.</span>
+                </p>
+
+                <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+                    Today, we operate as a unified force. Our Indian teams engineer the future with cutting-edge IT solutions, while our Zambian operations ensure that physical commerce moves without friction across the African continent.
+                </p>
+
+                <!-- Division Badges -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border-2 border-slate-200 shadow-sm group hover:border-primary hover:shadow-xl transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                            <i class="fas fa-microchip text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold text-slate-900 block">Tech Innovation</span>
+                            <span class="text-xs text-slate-500">IT Solutions Hub</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border-2 border-slate-200 shadow-sm group hover:border-secondary hover:shadow-xl transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+                            <i class="fas fa-shuttle-van text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold text-slate-900 block">Trade Logistics</span>
+                            <span class="text-xs text-slate-500">Import/Export Hub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline - Enhanced (removed content per request, keeping spacing subtle) -->
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CURRENCY & TRADE INSIGHTS - New Section
+══════════════════════════════════ -->
+<section class="py-24 bg-slate-900 relative overflow-hidden">
+    <!-- Background Accent -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+        <svg width="100%" height="100%">
+            <defs>
+                <linearGradient id="currency-grid-gradient" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0ea5e9"/>
+                    <stop offset="100%" stop-color="#22c55e"/>
+                </linearGradient>
+            </defs>
+            <pattern id="currency-grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="url(#currency-grid-gradient)" stroke-width="1" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#currency-grid)"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Content Side -->
+            <div>
+                <span class="inline-flex items-center gap-2 text-primary text-xs font-black uppercase tracking-[0.3em] bg-primary/10 px-4 py-2 rounded-full">
+                    <i class="fas fa-coins"></i>
+                    Currency Scenario
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mt-6 mb-6 leading-tight">
+                    Smart Currency Insights
+                    <span class="block text-primary">for India ↔ Zambia Trade</span>
+                </h2>
+                <p class="text-slate-200 text-lg mb-6 leading-relaxed">
+                    Every shipment and every IT contract touches currency. We help businesses move confidently between
+                    <span class="font-semibold text-primary">INR</span>,
+                    <span class="font-semibold text-secondary">ZMW</span> and
+                    <span class="font-semibold text-accent">USD</span> with clear visibility into rates and scenarios.
+                </p>
+                <p class="text-slate-300 text-sm mb-8 leading-relaxed">
+                    Use our live converter for a quick reference while you discuss deals with our team. For large trade
+                    volumes, our specialists provide hedging strategies, payment terms, and documentation support tailored
+                    for India–Africa corridors.
+                </p>
+
+                <!-- Currency Highlights -->
+                <div class="grid sm:grid-cols-3 gap-4 mb-10">
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                        <div class="text-xs text-slate-400 uppercase tracking-widest mb-2">Currencies</div>
+                        <div class="font-black text-white text-lg">INR · ZMW · USD</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                        <div class="text-xs text-slate-400 uppercase tracking-widest mb-2">Use Cases</div>
+                        <div class="font-black text-white text-lg">IT · Hardware · FMCG</div>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                        <div class="text-xs text-slate-400 uppercase tracking-widest mb-2">Visibility</div>
+                        <div class="font-black text-white text-lg">Real-time Snapshot</div>
+                    </div>
+                </div>
+
+                <!-- Image Row -->
+                <div class="flex flex-wrap gap-4 items-center">
+                    <div class="flex -space-x-3">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                             alt="Financial data" class="w-14 h-14 rounded-full border-2 border-slate-900 object-cover">
+                        <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                             alt="IT team collaboration" class="w-14 h-14 rounded-full border-2 border-slate-900 object-cover">
+                        <img src="https://images.unsplash.com/photo-1561414927-6d86591d0c4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                             alt="Global trade logistics" class="w-14 h-14 rounded-full border-2 border-slate-900 object-cover">
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-white">Used daily by our trade desk</div>
+                        <div class="text-xs text-slate-400">For quotations, invoices, and cross-border planning</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Converter Card -->
+            <div class="bg-slate-950/70 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-6 sm:p-8 shadow-2xl">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <div class="text-xs font-black text-primary uppercase tracking-[0.25em] mb-1">
+                            Live Snapshot
+                        </div>
+                        <h3 class="text-xl font-black text-white">INR · ZMW · USD Converter</h3>
+                    </div>
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                </div>
+
+                <form id="currency-form" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-end">
+                        <div>
+                            <label for="currency-amount" class="block text-xs font-semibold text-slate-300 mb-1">Amount</label>
+                            <input id="currency-amount" type="number" min="0" step="0.01"
+                                   class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                                   placeholder="1000" value="1000">
+                        </div>
+                        <div>
+                            <label for="currency-from" class="block text-xs font-semibold text-slate-300 mb-1">From</label>
+                            <select id="currency-from"
+                                    class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option value="INR">INR · India</option>
+                                <option value="ZMW">ZMW · Zambia</option>
+                                <option value="USD">USD · US Dollar</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="currency-to" class="block text-xs font-semibold text-slate-300 mb-1">To</label>
+                            <select id="currency-to"
+                                    class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <option value="USD">USD · US Dollar</option>
+                                <option value="INR">INR · India</option>
+                                <option value="ZMW">ZMW · Zambia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                            class="w-full mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-gradient-to-r from-primary to-secondary text-sm font-black text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                        <span>Convert with Live Rate</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <!-- Result Area -->
+                <div class="mt-6 p-4 rounded-2xl bg-slate-900/70 border border-slate-700">
+                    <div id="currency-loading" class="hidden text-xs text-slate-400 mb-2 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse-slow"></span>
+                        Fetching latest rate...
+                    </div>
+                    <div id="currency-result" class="text-lg font-black text-white mb-1">
+                        1000 INR ≈ —
+                    </div>
+                    <div id="currency-meta" class="text-[11px] text-slate-400 uppercase tracking-[0.18em]">
+                        Select currencies and click convert
+                    </div>
+                </div>
+
+                <!-- Disclaimers -->
+                <p class="mt-4 text-[11px] text-slate-500 leading-relaxed">
+                    Indicative rates only. Final billing, bank charges, and customs assessments may vary. For actual trade
+                    deals and IT contracts, our team will share an official pro-forma invoice with confirmed rates.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom Animations -->
+<style>
+    @keyframes bounce-slow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+    .animate-bounce-slow {
+        animation: bounce-slow 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes pulse-slow {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.6; }
+    }
+    .animate-pulse-slow {
+        animation: pulse-slow 4s ease-in-out infinite;
+    }
+
+    @keyframes slide-up {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-slide-up {
+        animation: slide-up 0.8s ease-out;
+    }
+
+    @keyframes grow-width {
+        0% { width: 0%; }
+        100% { width: var(--target-width); }
+    }
+    .animate-grow-width {
+        animation: grow-width 1.5s ease-out;
+    }
+
+    /* gradient-text from header_menu; gradient-text-light for hero on dark bg (like home) */
+    .gradient-text-light {
+        background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+</style>
+
+<!-- Currency Converter Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('currency-form');
+        if (!form) return;
+
+        const amountInput = document.getElementById('currency-amount');
+        const fromSelect = document.getElementById('currency-from');
+        const toSelect = document.getElementById('currency-to');
+        const resultEl = document.getElementById('currency-result');
+        const metaEl = document.getElementById('currency-meta');
+        const loadingEl = document.getElementById('currency-loading');
+
+        const fallbackRates = {
+            INR: { USD: 0.012, ZMW: 0.25 },
+            USD: { INR: 83, ZMW: 20 },
+            ZMW: { INR: 4, USD: 0.05 }
+        };
+
+        async function convertCurrency(event) {
+            event.preventDefault();
+
+            const amount = parseFloat(amountInput.value || '0');
+            const from = fromSelect.value;
+            const to = toSelect.value;
+
+            if (!amount || amount <= 0) {
+                resultEl.textContent = 'Please enter a valid amount.';
+                metaEl.textContent = 'Amount must be greater than zero.';
+                return;
+            }
+
+            if (from === to) {
+                resultEl.textContent = amount.toFixed(2) + ' ' + from + ' ≈ ' + amount.toFixed(2) + ' ' + to;
+                metaEl.textContent = 'Same-currency conversion.';
+                return;
+            }
+
+            loadingEl.classList.remove('hidden');
+            resultEl.textContent = 'Calculating...';
+            metaEl.textContent = 'Requesting latest market snapshot.';
+
+            const apiUrl = 'https://api.exchangerate.host/convert?from=' + encodeURIComponent(from) +
+                '&to=' + encodeURIComponent(to) +
+                '&amount=' + encodeURIComponent(amount);
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                let converted = data && typeof data.result === 'number' ? data.result : null;
+
+                if (converted == null) {
+                    const rate = fallbackRates[from] && fallbackRates[from][to];
+                    if (rate) {
+                        converted = amount * rate;
+                    }
+                }
+
+                if (converted == null) {
+                    resultEl.textContent = 'Unable to retrieve rate right now.';
+                    metaEl.textContent = 'Please try again later or contact our trade desk for an official quote.';
+                } else {
+                    resultEl.textContent = amount.toFixed(2) + ' ' + from + ' ≈ ' + converted.toFixed(2) + ' ' + to;
+                    const ts = data && data.date ? data.date : 'Indicative snapshot only';
+                    metaEl.textContent = 'Live or fallback rate • ' + ts;
+                }
+            } catch (error) {
+                const rate = fallbackRates[from] && fallbackRates[from][to];
+                if (rate) {
+                    const converted = amount * rate;
+                    resultEl.textContent = amount.toFixed(2) + ' ' + from + ' ≈ ' + converted.toFixed(2) + ' ' + to;
+                    metaEl.textContent = 'Fallback offline rate used. Contact us for exact trade values.';
+                } else {
+                    resultEl.textContent = 'Unable to retrieve rate right now.';
+                    metaEl.textContent = 'Please try again later or contact our trade desk for an official quote.';
+                }
+            } finally {
+                loadingEl.classList.add('hidden');
+            }
+        }
+
+        form.addEventListener('submit', convertCurrency);
+    });
+</script>
+
+<script>
+(function() {
+    var aboutVideo = document.getElementById('about-hero-video');
+    if (aboutVideo) aboutVideo.play().catch(function() {});
+    document.addEventListener('visibilitychange', function() {
+        if (aboutVideo) {
+            if (document.hidden) aboutVideo.pause();
+            else aboutVideo.play().catch(function() {});
+        }
+    });
+})();
+</script>
+
+{% endblock %}
