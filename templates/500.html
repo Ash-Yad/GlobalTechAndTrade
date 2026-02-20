@@ -1,0 +1,11 @@
+{% extends 'header_menu.html' %}
+{% block content %}
+<section style="min-height:70vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:60px 20px;">
+    <div>
+        <h1 style="font-size:8rem; font-weight:900; color:#e74c3c; margin:0;">500</h1>
+        <h2 style="font-size:2rem; margin-bottom:20px;">Internal Server Error</h2>
+        <p style="font-size:1.1rem; color:#666; margin-bottom:40px;">Something went wrong on our end. We are working to fix it.</p>
+        <a href="{{ url_for('index') }}" style="background:#007bff; color:#fff; padding:14px 36px; border-radius:8px; text-decoration:none; font-size:1.1rem;">Go Back Home</a>
+    </div>
+</section>
+{% endblock %}
