@@ -525,13 +525,13 @@ def send_demo_confirmation():
         <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f7fa;">
             <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
                 <div style="background: linear-gradient(135deg, #0052CC 0%, #003D99 100%); padding: 30px; text-align: center;">
-                    <h1 style="color: #ffffff; margin: 0; font-size: 24px;">GlobalTech&Trade</h1>
+                    <h1 style="color: #ffffff; margin: 0; font-size: 24px;">GlobalTechAndTrade</h1>
                     <p style="color: #93c5fd; margin: 10px 0 0 0; font-size: 14px;">IT Solutions & Import/Export Services</p>
                 </div>
                 <div style="padding: 30px;">
                     <h2 style="color: #1e3a5f; margin-top: 0;">Demo Request Confirmed!</h2>
                     <p style="color: #4a5568; font-size: 16px;">Dear <strong>{visitor_name}</strong>,</p>
-                    <p style="color: #4a5568; font-size: 16px;">Thank you for booking a demo with GlobalTech&Trade! Your request has been received.</p>
+                    <p style="color: #4a5568; font-size: 16px;">Thank you for booking a demo with GlobalTechAndTrade! Your request has been received.</p>
                     <div style="background-color: #f0f9ff; border-left: 4px solid #0052CC; padding: 20px; margin: 20px 0;">
                         <h3 style="color: #0052CC; margin-top: 0;">Your Booking Details</h3>
                         <p style="margin: 5px 0;"><strong>Name:</strong> {visitor_name}</p>
@@ -547,7 +547,7 @@ def send_demo_confirmation():
                     <p style="color: #4a5568;"><strong>Contact Us:</strong><br>India: +91 9027125341<br>Zambia: +260 977 588 581<br>Email: info@globaltechandtrade.com</p>
                 </div>
                 <div style="background-color: #1e3a5f; padding: 20px; text-align: center;">
-                    <p style="color: #93c5fd; margin: 0;">Thank you for choosing GlobalTech&Trade!</p>
+                    <p style="color: #93c5fd; margin: 0;">Thank you for choosing GlobalTechAndTrade!</p>
                 </div>
             </div>
         </body>
@@ -586,7 +586,7 @@ def send_demo_confirmation():
             json={
                 'from': 'GlobalTechAndTrade <noreply@globaltechandtrade.com>',
                 'to': [visitor_email],
-                'subject': 'Demo Request Confirmed - GlobalTech&Trade',
+                'subject': 'Demo Request Confirmed - GlobalTechAndTrade',
                 'html': visitor_html
             },
             timeout=30
