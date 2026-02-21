@@ -315,9 +315,12 @@
 
                 <!-- Logo -->
                 <a href="/" class="flex items-center gap-2 flex-shrink-0">
-                    <img src="{{ url_for('static', filename='images/logo-icon.png') }}" alt="GlobalTechAndTrade" class="h-10 w-10 object-contain">
-                    <span class="text-lg md:text-xl font-black tracking-tight text-slate-900">
+                    <img src="{{ url_for('static', filename='images/logo-icon.png') }}" alt="GlobalTechAndTrade" class="h-9 w-9 sm:h-10 sm:w-10 object-contain">
+                    <span class="hidden sm:inline text-lg md:text-xl font-black tracking-tight text-slate-900">
                         GLOBAL<span class="text-primary italic">TECH</span><span class="text-slate-700">ANDTRADE</span>
+                    </span>
+                    <span class="sm:hidden text-sm font-black tracking-tight text-slate-900">
+                        G<span class="text-primary italic">T</span><span class="text-slate-700">T</span>
                     </span>
                 </a>
 
