@@ -584,7 +584,7 @@ def send_demo_confirmation():
             'https://api.resend.com/emails',
             headers=headers,
             json={
-                'from': 'GlobalTech&Trade <onboarding@resend.dev>',
+                'from': 'GlobalTech&Trade <noreply@globaltechandtrade.com>',
                 'to': [visitor_email],
                 'subject': 'Demo Request Confirmed - GlobalTech&Trade',
                 'html': visitor_html
@@ -599,7 +599,7 @@ def send_demo_confirmation():
             'https://api.resend.com/emails',
             headers=headers,
             json={
-                'from': 'GTT Chatbot <onboarding@resend.dev>',
+                'from': 'GTT Chatbot <noreply@globaltechandtrade.com>',
                 'to': ['info@globaltechandtrade.com'],
                 'subject': f'New Demo Request - {visitor_name} ({service})',
                 'html': company_html
