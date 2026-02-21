@@ -630,13 +630,50 @@ Thank you for choosing GlobalTech&Trade!
         msg.attach(MIMEText(text_content, 'plain'))
         msg.attach(MIMEText(html_content, 'html'))
         
-        # Send email
+        # Send email to visitor
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
             server.starttls()
             server.login(SMTP_EMAIL, SMTP_PASSWORD)
             server.send_message(msg)
         
         app.logger.info(f'Demo confirmation email sent to: {visitor_email}')
+        
+        # Also send notification to company
+        try:
+            company_msg = MIMEMultipart('alternative')
+            company_msg['Subject'] = f'🔔 New Demo Request - {visitor_name} ({service})'
+            company_msg['From'] = f'GTT Chatbot <{SMTP_EMAIL}>'
+            company_msg['To'] = SMTP_EMAIL  # Send to company email
+            
+            company_html = f"""
+            <html>
+            <body style="font-family: Arial, sans-serif; padding: 20px;">
+                <h2 style="color: #0052CC;">🔔 New Demo Request from Chatbot</h2>
+                <table style="border-collapse: collapse; width: 100%; max-width: 500px;">
+                    <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f5f5f5;"><strong>Name</strong></td><td style="padding: 10px; border: 1px solid #ddd;">{visitor_name}</td></tr>
+                    <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f5f5f5;"><strong>Email</strong></td><td style="padding: 10px; border: 1px solid #ddd;">{visitor_email}</td></tr>
+                    <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f5f5f5;"><strong>Phone</strong></td><td style="padding: 10px; border: 1px solid #ddd;">{phone}</td></tr>
+                    <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f5f5f5;"><strong>Company</strong></td><td style="padding: 10px; border: 1px solid #ddd;">{company}</td></tr>
+                    <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f5f5f5;"><strong>Service</strong></td><td style="padding: 10px; border: 1px solid #ddd;">{service}</td></tr>
+                    <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f5f5f5;"><strong>Message</strong></td><td style="padding: 10px; border: 1px solid #ddd;">{message}</td></tr>
+                    <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f5f5f5;"><strong>Source</strong></td><td style="padding: 10px; border: 1px solid #ddd;">💬 Website Chatbot</td></tr>
+                    <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f5f5f5;"><strong>Time</strong></td><td style="padding: 10px; border: 1px solid #ddd;">{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</td></tr>
+                </table>
+                <p style="margin-top: 20px; color: #666;">Please contact this lead within 24 hours.</p>
+            </body>
+            </html>
+            """
+            company_msg.attach(MIMEText(company_html, 'html'))
+            
+            with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+                server.starttls()
+                server.login(SMTP_EMAIL, SMTP_PASSWORD)
+                server.send_message(company_msg)
+            
+            app.logger.info(f'Company notification sent for: {visitor_name}')
+        except Exception as e:
+            app.logger.error(f'Company email failed: {e}')
+        
         return jsonify({'success': True, 'message': 'Email sent successfully'}), 200
         
     except smtplib.SMTPAuthenticationError as e:

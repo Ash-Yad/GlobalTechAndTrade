@@ -1465,54 +1465,27 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
             demoBooking.step = 0;
             demoBooking.data = { name: '', email: '', phone: '', company: '', service: '', message: '' };
 
-            // Send to company via Web3Forms
-            fetch('https://api.web3forms.com/submit', {
+            // Send via backend API (handles both company notification and visitor email)
+            fetch('/api/send-demo-confirmation', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    access_key: '3273e916-5d84-4a2a-bfe8-e2b549e18f90',
-                    subject: 'New Demo Request - ' + savedData.name + ' (' + savedData.service + ')',
-                    from_name: 'GTT Chatbot',
                     name: savedData.name,
                     email: savedData.email,
                     phone: savedData.phone,
                     company: savedData.company,
                     service: savedData.service,
-                    message: savedData.message || 'None',
-                    source: 'Website Chatbot',
-                    submitted_at: new Date().toLocaleString()
+                    message: savedData.message || 'None'
                 })
             })
             .then(function(response) { 
                 return response.json(); 
             })
             .then(function(data) {
-                if (data.success) {
-                    // Send confirmation email to visitor via backend API
-                    fetch('/api/send-demo-confirmation', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            name: savedData.name,
-                            email: savedData.email,
-                            phone: savedData.phone,
-                            company: savedData.company,
-                            service: savedData.service,
-                            message: savedData.message || 'None'
-                        })
-                    }).then(function(r) { return r.json(); })
-                      .then(function(emailResult) { console.log('Visitor email:', emailResult); })
-                      .catch(function(e) { console.log('Visitor email skipped:', e); });
-
-                    setTimeout(function() {
-                        addMessage("✅ **Demo Booked Successfully!**\n\n📋 **Your Details:**\n• Name: " + savedData.name + "\n• Email: " + savedData.email + "\n• Phone: " + savedData.phone + "\n• Company: " + savedData.company + "\n• Service: " + savedData.service + "\n\n📧 A confirmation email has been sent to **" + savedData.email + "**!\n\n🕐 Our team will contact you within **24 hours** to schedule your demo.\n\n📞 Or call us directly:\n• India: +91 9027125341\n• Zambia: +260 977 588 581\n\nThank you for choosing GlobalTechAndTrade! 🙏", 'bot');
-                    }, 1000);
-                } else {
-                    throw new Error(data.message || 'Submission failed');
-                }
+                console.log('API response:', data);
+                setTimeout(function() {
+                    addMessage("✅ **Demo Booked Successfully!**\n\n📋 **Your Details:**\n• Name: " + savedData.name + "\n• Email: " + savedData.email + "\n• Phone: " + savedData.phone + "\n• Company: " + savedData.company + "\n• Service: " + savedData.service + "\n\n📧 A confirmation email has been sent to **" + savedData.email + "**!\n\n🕐 Our team will contact you within **24 hours** to schedule your demo.\n\n📞 Or call us directly:\n• India: +91 9027125341\n• Zambia: +260 977 588 581\n\nThank you for choosing GlobalTechAndTrade! 🙏", 'bot');
+                }, 1000);
             })
             .catch(function(error) {
                 console.error('Demo submission error:', error);
