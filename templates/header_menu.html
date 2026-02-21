@@ -25,6 +25,10 @@
     <meta name="twitter:title" content="GlobalTechAndTrade | IT Solutions & Import Export Services">
     <meta name="twitter:description" content="Professional IT solutions and global trade services. Mobile apps, web development, and import/export across India, Africa & Middle East.">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXVT183KZE"></script>
     <script>
@@ -47,6 +51,27 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+        /* Chat scrollbar styling - always visible */
+        #chat-messages {
+            overflow-y: scroll !important;
+        }
+        #chat-messages::-webkit-scrollbar {
+            width: 8px;
+            display: block !important;
+        }
+        #chat-messages::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 4px;
+        }
+        #chat-messages::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+            border-radius: 4px;
+            min-height: 40px;
+        }
+        #chat-messages::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #2563eb, #1e40af);
+        }
+        
         /* Modern Professional Theme */
         .gradient-text {
             background: linear-gradient(135deg, #0052CC 0%, #003D99 50%, #0052CC 100%);
@@ -717,7 +742,11 @@
                         <h5 class="text-white font-bold text-lg mb-2">Stay Updated</h5>
                         <p class="text-slate-400 text-sm">Get the latest news on IT innovations and trade opportunities</p>
                     </div>
-                    <form action="/subscribe" method="POST" class="flex gap-3">
+                    <form action="https://formsubmit.co/info@globaltechandtrade.com" method="POST" class="flex gap-3" id="newsletter-form">
+                        <input type="hidden" name="_subject" value="Newsletter Subscription">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" id="newsletter-next" value="">
+                        <input type="hidden" name="_autoresponse" value="Thank you for subscribing to GlobalTechAndTrade newsletter! You'll receive updates on IT innovations and trade opportunities. — GlobalTechAndTrade">
                         <input type="email" name="email" placeholder="Your email address"
                                class="flex-1 px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                required>
@@ -744,9 +773,9 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 gradient-bg text-white rounded-2xl shadow-xl opacity-0 invisible transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl z-50">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Back to Top Button - positioned to left of chat button -->
+    <button id="back-to-top" class="fixed bottom-4 right-20 sm:bottom-6 sm:right-24 w-10 h-10 sm:w-12 sm:h-12 gradient-bg text-white rounded-xl shadow-xl opacity-0 invisible transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl z-40">
+        <i class="fas fa-arrow-up text-sm"></i>
     </button>
 
     <!-- Scripts -->
@@ -892,9 +921,714 @@
                 setTimeout(function() { if (wrap.parentNode) { wrap.remove(); } }, 8000);
             })();
         }
+
+        // Newsletter form: set redirect URL
+        var newsletterForm = document.getElementById('newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function() {
+                var nextHidden = document.getElementById('newsletter-next');
+                if (nextHidden) nextHidden.value = window.location.origin + '/?subscribed=true';
+            });
+        }
+
+        // Show thank-you message for newsletter subscription
+        if (window.location.search.indexOf('subscribed=true') !== -1) {
+            (function() {
+                var wrap = document.createElement('div');
+                wrap.className = 'fixed top-24 right-4 z-[70] max-w-sm';
+                wrap.innerHTML = '<div class="bg-white border-l-4 border-green-500 rounded-lg shadow-2xl p-4 animate-slide-up flex items-start gap-3">' +
+                    '<i class="fas fa-envelope-open-text text-green-500 text-xl mt-0.5"></i>' +
+                    '<div><p class="font-bold text-slate-800">Subscribed!</p><p class="text-sm text-slate-600 mt-1">You\'ll receive our latest updates.</p></div>' +
+                    '<button type="button" class="ml-auto text-slate-400 hover:text-slate-600" aria-label="Close">×</button></div>';
+                wrap.querySelector('button').onclick = function() { wrap.remove(); history.replaceState({}, '', window.location.pathname); };
+                document.body.appendChild(wrap);
+                history.replaceState({}, '', window.location.pathname);
+                setTimeout(function() { if (wrap.parentNode) { wrap.remove(); } }, 8000);
+            })();
+        }
     </script>
 
     <!-- Extra Scripts Block -->
     {% block extra_scripts %}{% endblock %}
+
+    <!-- ═══════════════════════════════════════════════════════════
+         AI CHATBOT - Auto replies based on website content
+    ═══════════════════════════════════════════════════════════ -->
+    <style>
+        /* Chatbot Styles - Solid Background */
+        #chat-window {
+            background: #ffffff !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 3px #64748b !important;
+            border-radius: 16px !important;
+        }
+        #chat-window > div {
+            position: relative;
+            z-index: 1;
+        }
+        .chat-section {
+            background: #ffffff !important;
+        }
+        .chat-messages-area {
+            background: #f1f5f9 !important;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            #chat-window {
+                width: calc(100vw - 32px) !important;
+                max-width: 320px !important;
+                right: 16px !important;
+                bottom: 80px !important;
+            }
+        }
+        @media (min-width: 641px) and (max-width: 1024px) {
+            #chat-window {
+                width: 350px !important;
+                right: 24px !important;
+                bottom: 96px !important;
+            }
+        }
+        @media (min-width: 1025px) {
+            #chat-window {
+                width: 380px !important;
+                right: 24px !important;
+                bottom: 96px !important;
+            }
+        }
+    </style>
+
+    <!-- Chat Backdrop Overlay (dims background when chat is open) -->
+    <div id="chat-backdrop" class="fixed inset-0 z-[9997] hidden" style="background: rgba(0,0,0,0.3); backdrop-filter: blur(2px);"></div>
+
+    <!-- Chat Toggle Button -->
+    <button id="chat-toggle" class="fixed z-[9999] w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 bottom-4 right-4 sm:bottom-6 sm:right-6">
+        <i class="fas fa-comments text-white text-xl sm:text-2xl" id="chat-icon-open"></i>
+        <i class="fas fa-times text-white text-xl sm:text-2xl hidden" id="chat-icon-close"></i>
+        <span class="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-red-500 rounded-full border-2 border-white animate-pulse" id="chat-notification"></span>
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chat-window" class="fixed z-[9998] rounded-2xl overflow-hidden origin-bottom-right transition-transform duration-300" style="transform: scale(0); display: none;">
+        <!-- Solid White Background Layer -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #ffffff; border-radius: 16px; z-index: 0;"></div>
+        
+        <!-- Chat Header -->
+        <div class="chat-section p-4" style="background: linear-gradient(135deg, #0052CC 0%, #003D99 100%); position: relative; z-index: 1;">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.2);">
+                    <i class="fas fa-robot text-xl text-white"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white">GTT Assistant</h4>
+                    <p class="text-xs flex items-center gap-1" style="color: rgba(255,255,255,0.8);">
+                        <span class="w-2 h-2 bg-green-400 rounded-full"></span> AI Powered
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chat-messages" class="chat-messages-area h-44 sm:h-52 overflow-y-auto p-3 sm:p-4 space-y-3" style="scrollbar-width: thin; scrollbar-color: #3b82f6 #e2e8f0; background-color: #f1f5f9; position: relative; z-index: 2;">
+            <div class="flex gap-2">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #dbeafe;">
+                    <i class="fas fa-robot text-primary text-sm"></i>
+                </div>
+                <div class="rounded-2xl rounded-tl-none p-3 shadow-sm max-w-[85%]" style="background: #ffffff;">
+                    <p class="text-sm text-slate-700">Hi! 👋 I'm GTT Assistant. Ask me anything about our IT Solutions or Import/Export services!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Replies -->
+        <div id="quick-replies" class="chat-section p-3 border-t border-slate-200" style="background-color: #ffffff; position: relative; z-index: 2;">
+            <p class="text-xs text-slate-500 mb-2">Quick questions:</p>
+            <div class="flex flex-wrap gap-2">
+                <button onclick="sendQuickReply('Book a demo')" class="px-3 py-1.5 text-white text-xs font-medium rounded-full transition-colors" style="background: linear-gradient(135deg, #f97316, #ef4444);">📅 Book Demo</button>
+                <button onclick="sendQuickReply('What services do you offer?')" class="px-3 py-1.5 text-slate-600 text-xs font-medium rounded-full transition-colors hover:bg-primary hover:text-white" style="background: #e2e8f0;">Services</button>
+                <button onclick="sendQuickReply('Tell me about mobile app development')" class="px-3 py-1.5 text-slate-600 text-xs font-medium rounded-full transition-colors hover:bg-primary hover:text-white" style="background: #e2e8f0;">Mobile Apps</button>
+                <button onclick="sendQuickReply('How to contact you?')" class="px-3 py-1.5 text-slate-600 text-xs font-medium rounded-full transition-colors hover:bg-primary hover:text-white" style="background: #e2e8f0;">Contact</button>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-section p-3 border-t border-slate-200" style="background-color: #ffffff; position: relative; z-index: 2;">
+            <form id="chat-form" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="Type your question..." 
+                       class="flex-1 px-4 py-2 rounded-full text-sm outline-none focus:ring-2 focus:ring-primary/30 transition-all border border-slate-200" style="background: #f8fafc;">
+                <button type="submit" class="w-10 h-10 bg-primary hover:bg-blue-600 text-white rounded-full flex items-center justify-center transition-colors flex-shrink-0">
+                    <i class="fas fa-paper-plane text-sm"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Book Demo Link -->
+        <div class="chat-section p-2 border-t border-slate-200 text-center" style="background-color: #f1f5f9; position: relative; z-index: 2;">
+            <a href="#" class="book-free-demo-trigger text-xs text-primary hover:text-blue-700 font-semibold transition-colors">
+                <i class="fas fa-calendar-check mr-1"></i> Book a Free Consultation
+            </a>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var chatToggle = document.getElementById('chat-toggle');
+        var chatWindow = document.getElementById('chat-window');
+        var chatBackdrop = document.getElementById('chat-backdrop');
+        var chatForm = document.getElementById('chat-form');
+        var chatInput = document.getElementById('chat-input');
+        var chatMessages = document.getElementById('chat-messages');
+        var iconOpen = document.getElementById('chat-icon-open');
+        var iconClose = document.getElementById('chat-icon-close');
+        var notification = document.getElementById('chat-notification');
+        var isOpen = false;
+        
+        // Demo Booking State
+        var demoBooking = {
+            active: false,
+            step: 0,
+            data: {
+                name: '',
+                email: '',
+                phone: '',
+                company: '',
+                service: '',
+                message: ''
+            }
+        };
+        
+        var demoSteps = [
+            { field: 'name', question: "Great! Let's book your free demo. 📅\n\nWhat's your **full name**?" },
+            { field: 'email', question: "Nice to meet you, {name}! 👋\n\nWhat's your **email address**?" },
+            { field: 'phone', question: "Got it! 📧\n\nWhat's your **phone number** (with country code)?" },
+            { field: 'company', question: "Perfect! 📱\n\nWhat's your **company name**? (or type 'Individual' if personal)" },
+            { field: 'service', question: "Great! 🏢\n\nWhich **service** are you interested in?\n\n• Mobile App Development\n• Web Development\n• Custom Software/ERP\n• E-Commerce\n• Import/Export\n• IT Consulting\n• Other" },
+            { field: 'message', question: "Excellent choice! ✨\n\nAny **specific requirements** or questions you'd like to discuss? (or type 'None')" }
+        ];
+
+        // Gemini AI Configuration
+        var GEMINI_API_KEY = 'AIzaSyA_6Tln-e_ULzDub_xRw12KraDFKnwCx50';
+        var GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+        
+        // Company context for Gemini AI
+        var companyContext = `You are GTT Assistant, a helpful AI chatbot for GlobalTechAndTrade company website. 
+        
+About GlobalTechAndTrade:
+- A dual-expertise company offering IT Solutions and Import/Export services
+- Founded in 2021, completed 50+ projects, serving 12+ countries
+- 98% client satisfaction rate
+
+IT Services offered:
+- Mobile App Development (iOS, Android, React Native, Flutter) - Timeline: 6-12 weeks, Starting: $5,000+
+- Web Application Development (React, Vue.js, Node.js, Python) - Timeline: 2-8 weeks
+- Custom Software & ERP/CRM solutions
+- E-Commerce Platforms
+- IT Consulting
+
+Trade Services offered:
+- Import/Export services
+- Customs Clearance
+- Freight Forwarding
+- Supply Chain Management
+- Regions: India, Africa, Middle East
+- Products: Electronics, Machinery, Textiles, Food Products
+
+Office Locations:
+1. India HQ (Asia): Sector 63, Noida, UP 201301 | Phone: +91 9027125341 | Mon-Sat: 9AM-6PM IST
+2. Zambia HQ (Africa): Plot #10424/4, Cassanova Court, Chainama, Lusaka | Phone: +260 977 588 581 | Mon-Fri: 8AM-5PM CAT
+
+Contact: info@globaltechandtrade.com
+
+Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked about something unrelated to the company, politely redirect to company services or answer briefly then mention GlobalTechAndTrade services.`;
+
+        // Fallback responses based on GlobalTechAndTrade website content
+        var responses = {
+            // Services
+            'services': '🚀 GlobalTechAndTrade offers:\n\n**IT Solutions:**\n• Mobile App Development (iOS & Android)\n• Web Application Development\n• Custom Software & ERP/CRM\n• E-Commerce Platforms\n• IT Consulting\n\n**Trade Services:**\n• Import/Export\n• Customs Clearance\n• Freight Forwarding\n• Supply Chain Management\n\nWhich service interests you?',
+            
+            // Mobile Apps
+            'mobile': '📱 **Mobile App Development**\n\nWe build native & cross-platform apps:\n• iOS & Android Apps\n• React Native & Flutter\n• E-commerce Apps\n• Business Apps\n• Custom Solutions\n\n**Timeline:** 6-12 weeks\n**Starting:** $5,000+\n\nWant to discuss your app idea?',
+            
+            // Web Development
+            'web': '🌐 **Web Development**\n\nWe create modern websites:\n• Business Websites\n• E-Commerce Stores\n• Web Applications\n• Landing Pages\n• Custom Portals\n\n**Timeline:** 2-8 weeks\n**Technologies:** React, Node.js, Python\n\nTell me about your project!',
+            
+            // Import Export
+            'import': '🚢 **Import/Export Services**\n\nWe handle global trade:\n• Product Sourcing\n• Customs Clearance\n• Freight Forwarding\n• Documentation\n• Door-to-Door Delivery\n\n**Regions:** India, Africa, Middle East\n**Products:** Electronics, Machinery, Textiles, Food Products\n\nWhat do you want to trade?',
+            
+            // Pricing
+            'price': '💰 **Pricing Information**\n\nOur pricing is project-based:\n\n• **Simple Website:** $1,000 - $3,000\n• **Web Application:** $5,000 - $15,000\n• **Mobile App:** $5,000 - $25,000\n• **E-Commerce:** $3,000 - $10,000\n• **Custom Software:** Custom quote\n\nFor trade services, pricing depends on volume and destination.\n\nBook a FREE consultation for an exact quote!',
+            
+            // Contact
+            'contact': '📞 **Contact Us**\n\n**Email:** info@globaltechandtrade.com\n\n**India Office:**\n📍 Sector 63, Noida, UP\n📞 +91 9027125341\n\n**Zambia Office:**\n📍 Chainama, Lusaka\n📞 +260 977 588 581\n\nOr book a free demo using the link below!',
+            
+            // Location
+            'location': '🌍 **Our Offices**\n\n**India HQ (Asia):**\n📍 Sector 63, Noida, Uttar Pradesh 201301\n🕐 Mon-Sat: 9AM - 6PM IST\n\n**Zambia HQ (Africa):**\n📍 Plot #10424/4, Cassanova Court, Chainama, Lusaka\n🕐 Mon-Fri: 8AM - 5PM CAT\n\nWe serve India, Africa & Middle East!',
+            
+            // About
+            'about': '🏢 **About GlobalTechAndTrade**\n\nWe are a dual-expertise company offering:\n• IT Solutions & Software Development\n• International Trade & Logistics\n\n**Founded:** 2021\n**Projects:** 50+\n**Countries:** 12+\n**Satisfaction:** 98%\n\nWe bridge technology and trade across continents!',
+            
+            // Timeline
+            'timeline': '⏱️ **Project Timelines**\n\n• **Landing Page:** 1-2 weeks\n• **Business Website:** 2-4 weeks\n• **E-Commerce:** 4-8 weeks\n• **Mobile App:** 6-12 weeks\n• **Custom Software:** 3-6 months\n• **Import/Export:** Varies by shipment\n\nTimelines depend on project complexity.',
+            
+            // Technologies
+            'tech': '💻 **Technologies We Use**\n\n**Frontend:** React, Vue.js, Angular\n**Backend:** Node.js, Python, PHP\n**Mobile:** React Native, Flutter, Swift, Kotlin\n**Database:** MongoDB, PostgreSQL, MySQL\n**Cloud:** AWS, Google Cloud, Azure\n\nWe choose the best tech for your needs!',
+            
+            // Support
+            'support': '🛠️ **Support & Maintenance**\n\n• **Free Support:** 3 months after delivery\n• **AMC Plans:** Annual maintenance contracts\n• **24/7 Support:** For critical issues\n• **Updates:** Regular security & feature updates\n\nWe never abandon our clients!',
+            
+            // Greetings
+            'hello': 'Hello! 👋 Welcome to GlobalTechAndTrade! I\'m your AI assistant. How can I help you today?\n\nYou can ask about:\n• IT Services\n• Import/Export\n• Pricing\n• Contact Info',
+            'hi': 'Hi there! 👋 Great to see you! I\'m GTT Assistant.\n\nAsk me anything about our services, pricing, or how we can help your business grow!',
+            'hey': 'Hey! 👋 Welcome! What would you like to know about GlobalTechAndTrade?',
+            
+            // Thanks
+            'thank': 'You\'re welcome! 😊 Is there anything else I can help you with?\n\nFeel free to book a FREE consultation for detailed discussion!',
+            
+            // Bye
+            'bye': 'Goodbye! 👋 Thank you for visiting GlobalTechAndTrade.\n\nRemember, you can reach us at:\n📧 info@globaltechandtrade.com\n📞 +91 9027125341\n\nHave a great day!',
+            
+            // Demo/Consultation
+            'demo': '📅 **Book Free Consultation**\n\nGet a FREE 30-minute consultation:\n• Discuss your requirements\n• Get expert advice\n• Receive a custom quote\n• No commitment required\n\nClick "Book a Free Consultation" below or call us at +91 9027125341!',
+            
+            // Default
+            'default': 'I\'m not sure I fully understand, but I\'m here to help! 🤔\n\nYou can ask me about:\n• **Services** - IT solutions & trade\n• **Pricing** - Project costs\n• **Contact** - How to reach us\n• **Timeline** - Project duration\n\nOr book a free consultation to speak with our team!'
+        };
+
+        function openChat() {
+            chatBackdrop.classList.remove('hidden');
+            chatWindow.style.display = 'block';
+            setTimeout(function() { chatWindow.style.transform = 'scale(1)'; }, 10);
+            iconOpen.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+            notification.classList.add('hidden');
+            isOpen = true;
+        }
+
+        chatToggle.addEventListener('click', function() {
+            if (isOpen) { closeChat(); } else { openChat(); }
+        });
+
+        chatForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var message = chatInput.value.trim();
+            if (!message) return;
+            addMessage(message, 'user');
+            chatInput.value = '';
+            processMessage(message);
+        });
+
+        window.sendQuickReply = function(message) {
+            addMessage(message, 'user');
+            processMessage(message);
+        };
+
+        function processMessage(message) {
+            // Show typing indicator
+            var typingDiv = document.createElement('div');
+            typingDiv.id = 'typing-indicator';
+            typingDiv.className = 'flex gap-2';
+            typingDiv.innerHTML = '<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-robot text-primary text-sm"></i></div><div class="bg-white rounded-2xl rounded-tl-none p-3 shadow-sm"><p class="text-sm text-slate-400"><i class="fas fa-circle text-xs animate-pulse"></i> Thinking...</p></div>';
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Check if demo booking is active
+            if (demoBooking.active) {
+                setTimeout(function() {
+                    var typing = document.getElementById('typing-indicator');
+                    if (typing) typing.remove();
+                    handleDemoBookingStep(message);
+                }, 600);
+                return;
+            }
+            
+            // Check if user wants to book demo
+            var msgLower = message.toLowerCase();
+            if (msgLower.includes('book') || msgLower.includes('demo') || msgLower.includes('consultation') || 
+                msgLower.includes('schedule') || msgLower.includes('appointment') || msgLower.includes('meeting')) {
+                setTimeout(function() {
+                    var typing = document.getElementById('typing-indicator');
+                    if (typing) typing.remove();
+                    startDemoBooking();
+                }, 600);
+                return;
+            }
+
+            // Try local response first for common questions
+            var localResponse = getResponse(message);
+
+            // If we have a local response, use it (faster)
+            if (localResponse) {
+                setTimeout(function() {
+                    var typing = document.getElementById('typing-indicator');
+                    if (typing) typing.remove();
+                    addMessage(localResponse, 'bot');
+                }, 800);
+            } else {
+                // Use Gemini AI for other questions
+                callGeminiAI(message);
+            }
+        }
+        
+        function startDemoBooking() {
+            demoBooking.active = true;
+            demoBooking.step = 0;
+            demoBooking.data = { name: '', email: '', phone: '', company: '', service: '', message: '' };
+            addMessage(demoSteps[0].question, 'bot');
+        }
+        
+        function handleDemoBookingStep(userInput) {
+            // Check if user wants to cancel
+            if (userInput.toLowerCase() === 'cancel' || userInput.toLowerCase() === 'stop') {
+                demoBooking.active = false;
+                demoBooking.step = 0;
+                addMessage("No problem! Demo booking cancelled. 👍\n\nHow else can I help you?", 'bot');
+                return;
+            }
+            
+            // Validate and save current step
+            var currentStep = demoSteps[demoBooking.step];
+            var isValid = validateInput(currentStep.field, userInput);
+            
+            if (!isValid.valid) {
+                addMessage(isValid.message, 'bot');
+                return;
+            }
+            
+            // Save the input
+            demoBooking.data[currentStep.field] = userInput;
+            demoBooking.step++;
+            
+            // Check if all steps completed
+            if (demoBooking.step >= demoSteps.length) {
+                submitDemoBooking();
+                return;
+            }
+            
+            // Ask next question
+            var nextQuestion = demoSteps[demoBooking.step].question;
+            nextQuestion = nextQuestion.replace('{name}', demoBooking.data.name.split(' ')[0]);
+            addMessage(nextQuestion, 'bot');
+        }
+        
+        function validateInput(field, value) {
+            value = value.trim();
+            if (!value) {
+                return { valid: false, message: "Please provide a valid response. 🙏" };
+            }
+            
+            if (field === 'email') {
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    return { valid: false, message: "Please enter a valid email address (e.g., name@example.com) 📧" };
+                }
+            }
+            
+            if (field === 'phone') {
+                var phoneRegex = /^[\+]?[\d\s\-\(\)]{8,}$/;
+                if (!phoneRegex.test(value)) {
+                    return { valid: false, message: "Please enter a valid phone number with country code (e.g., +91 9876543210) 📱" };
+                }
+            }
+            
+            if (field === 'name' && value.length < 2) {
+                return { valid: false, message: "Please enter your full name. 👤" };
+            }
+            
+            return { valid: true };
+        }
+        
+        function submitDemoBooking() {
+            demoBooking.active = false;
+            
+            // Save data before async call
+            var savedData = {
+                name: demoBooking.data.name,
+                email: demoBooking.data.email,
+                phone: demoBooking.data.phone,
+                company: demoBooking.data.company,
+                service: demoBooking.data.service,
+                message: demoBooking.data.message
+            };
+
+            // Show confirmation message
+            addMessage("🎉 **Perfect!** Let me submit your demo request...", 'bot');
+
+            // Prepare form data for FormSubmit (to company)
+            var formData = new FormData();
+            formData.append('_subject', '🔔 New Demo Request - ' + savedData.name + ' (' + savedData.service + ')');
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+            formData.append('_replyto', savedData.email);
+            formData.append('Source', '💬 Website Chatbot');
+            formData.append('Customer_Name', savedData.name);
+            formData.append('Customer_Email', savedData.email);
+            formData.append('Customer_Phone', savedData.phone);
+            formData.append('Company_Name', savedData.company);
+            formData.append('Service_Interested', savedData.service);
+            formData.append('Customer_Message', savedData.message || 'None');
+            formData.append('Submitted_At', new Date().toLocaleString());
+
+            // Reset booking data now (before async)
+            demoBooking.step = 0;
+            demoBooking.data = { name: '', email: '', phone: '', company: '', service: '', message: '' };
+
+            // Submit to FormSubmit (to company)
+            fetch('https://formsubmit.co/ajax/info@globaltechandtrade.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(function(response) { return response.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    // Send beautiful HTML confirmation to user's email
+                    var userFormData = new FormData();
+                    userFormData.append('_subject', '✅ Demo Request Confirmed - GlobalTechAndTrade');
+                    userFormData.append('_template', 'table');
+                    userFormData.append('_captcha', 'false');
+                    userFormData.append('_honey', '');
+                    userFormData.append('Greeting', '🎉 Thank you for booking a demo with GlobalTechAndTrade!');
+                    userFormData.append('Status', '✅ Your request has been received');
+                    userFormData.append('Name', savedData.name);
+                    userFormData.append('Email', savedData.email);
+                    userFormData.append('Phone', savedData.phone);
+                    userFormData.append('Company', savedData.company);
+                    userFormData.append('Service_Interested', savedData.service);
+                    userFormData.append('Your_Message', savedData.message || 'None');
+                    userFormData.append('Next_Steps', '📞 Our team will contact you within 24 hours');
+                    userFormData.append('India_Office', '+91 9027125341');
+                    userFormData.append('Zambia_Office', '+260 977 588 581');
+                    userFormData.append('Website', 'www.globaltechandtrade.com');
+                    userFormData.append('Thank_You', '💙 GlobalTechAndTrade Team');
+
+                    fetch('https://formsubmit.co/ajax/' + savedData.email, {
+                        method: 'POST',
+                        body: userFormData
+                    }).catch(function(e) { console.log('User email error:', e); });
+                    
+                    setTimeout(function() {
+                        addMessage("✅ **Demo Booked Successfully!**\n\n📋 **Your Details:**\n• Name: " + savedData.name + "\n• Email: " + savedData.email + "\n• Phone: " + savedData.phone + "\n• Company: " + savedData.company + "\n• Service: " + savedData.service + "\n\n📧 A confirmation email has been sent to **" + savedData.email + "**!\n\n🕐 Our team will contact you within **24 hours** to schedule your demo.\n\nThank you for choosing GlobalTechAndTrade! 🙏", 'bot');
+                    }, 1000);
+                } else {
+                    throw new Error('Submission failed');
+                }
+            })
+            .catch(function(error) {
+                console.error('Demo submission error:', error);
+                setTimeout(function() {
+                    addMessage("⚠️ There was an issue submitting your request. But don't worry!\n\n📧 Please email us directly at **info@globaltechandtrade.com** with your details, or call:\n📞 India: +91 9027125341\n📞 Zambia: +260 977 588 581\n\nWe apologize for the inconvenience!", 'bot');
+                }, 1000);
+            });
+        }
+
+        async function callGeminiAI(message) {
+            var typing = document.getElementById('typing-indicator');
+            
+            try {
+                var response = await fetch(GEMINI_API_URL + '?key=' + GEMINI_API_KEY, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: companyContext + '\n\nUser question: ' + message + '\n\nProvide a helpful, concise response (max 100 words):'
+                            }]
+                        }],
+                        generationConfig: {
+                            temperature: 0.7,
+                            maxOutputTokens: 150,
+                            topP: 0.8,
+                            topK: 40
+                        },
+                        safetySettings: [
+                            { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
+                            { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
+                            { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
+                            { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
+                        ]
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('API response not ok: ' + response.status);
+                }
+
+                var data = await response.json();
+                if (typing) typing.remove();
+
+                if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+                    var aiResponse = data.candidates[0].content.parts[0].text;
+                    addMessage(aiResponse, 'bot');
+                } else if (data.error) {
+                    console.error('Gemini API error:', data.error);
+                    addMessage(getSmartFallback(message), 'bot');
+                } else {
+                    addMessage(getSmartFallback(message), 'bot');
+                }
+            } catch (error) {
+                console.error('Gemini API error:', error);
+                if (typing) typing.remove();
+                addMessage(getSmartFallback(message), 'bot');
+            }
+        }
+        
+        function getSmartFallback(message) {
+            var msg = message.toLowerCase();
+            if (msg.includes('how are') || msg.includes('how r u') || msg.includes("how's it")) {
+                return "I'm doing great, thank you for asking! 😊 I'm here to help you learn about GlobalTechAndTrade's services. What would you like to know?";
+            }
+            if (msg.includes('your name') || msg.includes('who are you')) {
+                return "I'm GTT Assistant, the AI helper for GlobalTechAndTrade! 🤖 I can tell you about our IT solutions, import/export services, pricing, and more!";
+            }
+            if (msg.includes('joke') || msg.includes('funny')) {
+                return "Why did the developer go broke? Because he used up all his cache! 😄 Now, how can I help you with our services?";
+            }
+            if (msg.includes('weather')) {
+                return "I don't have weather data, but I can tell you it's always a great day to start a new project! ☀️ Want to know about our IT solutions?";
+            }
+            if (msg.includes('love') || msg.includes('like you')) {
+                return "Aww, thank you! 😊 I'm here to help! Would you like to know about our services or book a free consultation?";
+            }
+            return "That's an interesting question! While I specialize in GlobalTechAndTrade info, I'm happy to chat. 😊\n\nCan I help you with:\n• **Services** we offer\n• **Pricing** information\n• **Contact** details\n• **Book** a free demo";
+        }
+
+        function addMessage(text, type) {
+            var div = document.createElement('div');
+            div.className = 'flex gap-2 ' + (type === 'user' ? 'justify-end' : '');
+            if (type === 'bot') {
+                var formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+                div.innerHTML = '<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><i class="fas fa-robot text-primary text-sm"></i></div><div class="bg-white rounded-2xl rounded-tl-none p-3 shadow-sm max-w-[80%]"><p class="text-sm text-slate-700">' + formattedText + '</p></div>';
+            } else {
+                div.innerHTML = '<div class="bg-primary text-white rounded-2xl rounded-tr-none p-3 shadow-sm max-w-[80%]"><p class="text-sm">' + text + '</p></div>';
+            }
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getResponse(message) {
+            var msg = message.toLowerCase();
+            
+            // Services
+            if (msg.includes('service') || msg.includes('offer') || msg.includes('what do you do') || msg.includes('help me')) return responses.services;
+            
+            // Mobile
+            if (msg.includes('mobile') || msg.includes('app') || msg.includes('ios') || msg.includes('android') || msg.includes('flutter') || msg.includes('react native')) return responses.mobile;
+            
+            // Web
+            if (msg.includes('web') || msg.includes('website') || msg.includes('site') || msg.includes('portal') || msg.includes('ecommerce') || msg.includes('e-commerce')) return responses.web;
+            
+            // Import/Export
+            if (msg.includes('import') || msg.includes('export') || msg.includes('trade') || msg.includes('shipping') || msg.includes('freight') || msg.includes('customs') || msg.includes('logistics')) return responses.import;
+            
+            // Pricing
+            if (msg.includes('price') || msg.includes('cost') || msg.includes('charge') || msg.includes('fee') || msg.includes('budget') || msg.includes('quote') || msg.includes('how much')) return responses.price;
+            
+            // Contact
+            if (msg.includes('contact') || msg.includes('email') || msg.includes('phone') || msg.includes('call') || msg.includes('reach') || msg.includes('whatsapp')) return responses.contact;
+            
+            // Location
+            if (msg.includes('location') || msg.includes('where') || msg.includes('office') || msg.includes('address') || msg.includes('india') || msg.includes('zambia') || msg.includes('africa')) return responses.location;
+            
+            // About
+            if (msg.includes('about') || msg.includes('company') || msg.includes('who are') || msg.includes('tell me about')) return responses.about;
+            
+            // Timeline
+            if (msg.includes('time') || msg.includes('long') || msg.includes('duration') || msg.includes('deadline') || msg.includes('when') || msg.includes('deliver')) return responses.timeline;
+            
+            // Technologies
+            if (msg.includes('technology') || msg.includes('tech') || msg.includes('stack') || msg.includes('programming') || msg.includes('language')) return responses.tech;
+            
+            // Support
+            if (msg.includes('support') || msg.includes('maintenance') || msg.includes('help') || msg.includes('after')) return responses.support;
+            
+            // Demo
+            if (msg.includes('demo') || msg.includes('consult') || msg.includes('meeting') || msg.includes('book') || msg.includes('schedule') || msg.includes('talk')) return responses.demo;
+            
+            // Greetings
+            if (msg.includes('hello')) return responses.hello;
+            if (msg.includes('hey')) return responses.hey;
+            if (msg === 'hi' || msg.includes('hi ') || msg.startsWith('hi')) return responses.hi;
+
+            // Thanks
+            if (msg.includes('thank') || msg.includes('thanks') || msg.includes('great') || msg.includes('awesome')) return responses.thank;
+
+            // Bye
+            if (msg.includes('bye') || msg.includes('goodbye') || msg.includes('see you')) return responses.bye;
+
+            // For everything else, return null to trigger Gemini AI
+            return null;
+        }
+
+        // Auto-open after 10 seconds on every page load
+        // But if user manually closed it, don't auto-open again until next session
+        var userClosedChat = sessionStorage.getItem('userClosedChat');
+        
+        if (!userClosedChat) {
+            setTimeout(function() {
+                if (!isOpen) {
+                    openChat();
+                }
+            }, 5000);
+        }
+
+        // Track when user manually closes the chat
+        function closeChat() {
+            chatWindow.style.transform = 'scale(0)';
+            chatBackdrop.classList.add('hidden');
+            setTimeout(function() { chatWindow.style.display = 'none'; }, 300);
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+            isOpen = false;
+            sessionStorage.setItem('userClosedChat', 'true');
+        }
+        
+        // Close chat when clicking on backdrop
+        chatBackdrop.addEventListener('click', function() {
+            closeChat();
+        });
+    })();
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         COOKIE CONSENT BANNER
+    ═══════════════════════════════════════════════════════════ -->
+    <div id="cookie-consent" class="fixed bottom-0 left-0 right-0 z-[55] bg-slate-900 text-white p-4 transform translate-y-full transition-transform duration-500" style="display: none;">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-cookie-bite text-2xl text-amber-400"></i>
+                <p class="text-sm">
+                    We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+                    <a href="#" class="text-primary hover:underline ml-1">Learn more</a>
+                </p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="acceptCookies()" class="px-6 py-2 bg-primary hover:bg-blue-600 text-white text-sm font-bold rounded-lg transition-colors">
+                    Accept
+                </button>
+                <button onclick="declineCookies()" class="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white text-sm font-bold rounded-lg transition-colors">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-consent').style.transform = 'translateY(100%)';
+            setTimeout(() => document.getElementById('cookie-consent').style.display = 'none', 500);
+        }
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookie-consent').style.transform = 'translateY(100%)';
+            setTimeout(() => document.getElementById('cookie-consent').style.display = 'none', 500);
+        }
+        // Show cookie banner if not already answered
+        if (!localStorage.getItem('cookieConsent')) {
+            setTimeout(() => {
+                const banner = document.getElementById('cookie-consent');
+                banner.style.display = 'block';
+                setTimeout(() => banner.style.transform = 'translateY(0)', 100);
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
