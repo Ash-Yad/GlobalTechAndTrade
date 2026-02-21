@@ -178,28 +178,80 @@
     </div>
 </section>
 
-<!-- TRUSTED BY / SERVING BUSINESSES -->
-<section class="py-8 bg-white border-b border-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-            <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">Serving businesses across</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                <div class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
-                    <img src="https://flagcdn.com/w40/in.png" alt="India" class="w-6 h-4 object-cover rounded">
-                    <span class="font-semibold">India</span>
-                </div>
-                <div class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
-                    <i class="fas fa-globe-africa text-lg text-accent"></i>
-                    <span class="font-semibold">Africa</span>
-                </div>
-                <div class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
-                    <i class="fas fa-mosque text-lg text-secondary"></i>
-                    <span class="font-semibold">Middle East</span>
-                </div>
-            </div>
+<!-- RUNNING MARQUEE STRIP -->
+<section class="bg-gradient-to-r from-primary via-secondary to-primary py-3 overflow-hidden">
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <!-- First Set -->
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> INDIA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> UAE</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> ZAMBIA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> TANZANIA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> KENYA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> NIGERIA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> GHANA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> MOBILE APPS</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> WEB APPS</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> GRAPHIC DESIGN</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> CUSTOMS CLEARANCE</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> FREIGHT FORWARDING</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> SUPPLY CHAIN</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> IT CONSULTING</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> E-COMMERCE</span>
+            <!-- Duplicate Set for Seamless Loop -->
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> INDIA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> UAE</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> ZAMBIA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> TANZANIA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> KENYA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> NIGERIA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> GHANA</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> MOBILE APPS</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> WEB APPS</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> GRAPHIC DESIGN</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> CUSTOMS CLEARANCE</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> FREIGHT FORWARDING</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> SUPPLY CHAIN</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> IT CONSULTING</span>
+            <span class="marquee-item"><i class="fas fa-star text-accent"></i> E-COMMERCE</span>
         </div>
     </div>
 </section>
+
+<style>
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+}
+.marquee-content {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+}
+.marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 2rem;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+</style>
 
 <!-- DUAL EXPERTISE SECTION -->
 <section class="py-24 bg-gradient-to-b from-white to-slate-50">
