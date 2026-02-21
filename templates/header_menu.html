@@ -314,14 +314,12 @@
             <div class="flex items-center justify-between h-20">
 
                 <!-- Logo -->
-                <div class="flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-2xl gradient-bg flex items-center justify-center shadow-xl">
-                        <i class="fas fa-globe text-white text-lg"></i>
-                    </div>
-                    <a href="/" class="text-xl font-black tracking-tighter text-slate-900">
-                        GLOBAL<span class="text-primary italic">TECH</span><span class="text-secondary">ANDTRADE</span>
-                    </a>
-                </div>
+                <a href="/" class="flex items-center gap-2 flex-shrink-0">
+                    <img src="{{ url_for('static', filename='images/logo-icon.png') }}" alt="GlobalTechAndTrade" class="h-10 w-10 object-contain">
+                    <span class="text-lg md:text-xl font-black tracking-tight text-slate-900">
+                        GLOBAL<span class="text-primary italic">TECH</span><span class="text-slate-700">ANDTRADE</span>
+                    </span>
+                </a>
 
                 <!-- Desktop Menu - Clean navigation with no duplicate buttons -->
                 <div class="hidden md:flex items-center gap-1">
@@ -596,10 +594,7 @@
                 <!-- Company Info -->
                 <div class="lg:col-span-4">
                     <div class="flex items-center gap-3 mb-8">
-                        <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center">
-                            <i class="fas fa-globe text-white text-xl"></i>
-                        </div>
-                        <span class="text-2xl font-black text-white tracking-tighter">GlobalTechAndTrade</span>
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GlobalTechAndTrade" class="h-12 w-auto brightness-0 invert">
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-sm">
                         Bridging continents through technology and trade. Your trusted partner for IT innovation and global commerce since 2021.
