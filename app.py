@@ -592,7 +592,7 @@ def send_demo_confirmation():
             timeout=30
         )
         
-        app.logger.info(f'Visitor email response: {visitor_response.status_code}')
+        app.logger.info(f'Visitor email response: {visitor_response.status_code} - {visitor_response.text}')
         
         # Send to company
         company_response = http_requests.post(
@@ -607,7 +607,13 @@ def send_demo_confirmation():
             timeout=30
         )
         
-        app.logger.info(f'Company email response: {company_response.status_code}')
+        app.logger.info(f'Company email response: {company_response.status_code} - {company_response.text}')
+        
+        # Check if emails were sent successfully
+        if visitor_response.status_code != 200:
+            app.logger.error(f'Visitor email failed: {visitor_response.text}')
+        if company_response.status_code != 200:
+            app.logger.error(f'Company email failed: {company_response.text}')
         
         return jsonify({'success': True, 'message': 'Emails sent successfully'}), 200
         
