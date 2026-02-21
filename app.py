@@ -630,13 +630,33 @@ Thank you for choosing GlobalTech&Trade!
         msg.attach(MIMEText(text_content, 'plain'))
         msg.attach(MIMEText(html_content, 'html'))
         
-        # Send email to visitor
-        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
-            server.starttls()
-            server.login(SMTP_EMAIL, SMTP_PASSWORD)
-            server.send_message(msg)
+        # Send email to visitor - try TLS first, then SSL
+        email_sent = False
+        try:
+            # Try TLS (port 587)
+            with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=30) as server:
+                server.starttls()
+                server.login(SMTP_EMAIL, SMTP_PASSWORD)
+                server.send_message(msg)
+                email_sent = True
+                app.logger.info(f'Email sent via TLS to: {visitor_email}')
+        except Exception as tls_error:
+            app.logger.warning(f'TLS failed: {tls_error}, trying SSL...')
+            try:
+                # Try SSL (port 465)
+                import ssl
+                context = ssl.create_default_context()
+                with smtplib.SMTP_SSL(SMTP_SERVER, 465, context=context, timeout=30) as server:
+                    server.login(SMTP_EMAIL, SMTP_PASSWORD)
+                    server.send_message(msg)
+                    email_sent = True
+                    app.logger.info(f'Email sent via SSL to: {visitor_email}')
+            except Exception as ssl_error:
+                app.logger.error(f'SSL also failed: {ssl_error}')
+                raise ssl_error
         
-        app.logger.info(f'Demo confirmation email sent to: {visitor_email}')
+        if not email_sent:
+            raise Exception('Failed to send email via both TLS and SSL')
         
         # Also send notification to company
         try:
@@ -665,10 +685,17 @@ Thank you for choosing GlobalTech&Trade!
             """
             company_msg.attach(MIMEText(company_html, 'html'))
             
-            with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
-                server.starttls()
-                server.login(SMTP_EMAIL, SMTP_PASSWORD)
-                server.send_message(company_msg)
+            try:
+                with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=30) as server:
+                    server.starttls()
+                    server.login(SMTP_EMAIL, SMTP_PASSWORD)
+                    server.send_message(company_msg)
+            except:
+                import ssl
+                context = ssl.create_default_context()
+                with smtplib.SMTP_SSL(SMTP_SERVER, 465, context=context, timeout=30) as server:
+                    server.login(SMTP_EMAIL, SMTP_PASSWORD)
+                    server.send_message(company_msg)
             
             app.logger.info(f'Company notification sent for: {visitor_name}')
         except Exception as e:
