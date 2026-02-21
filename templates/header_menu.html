@@ -1383,6 +1383,7 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
             demoBooking.data = { name: '', email: '', phone: '', company: '', service: '', message: '' };
             addMessage(demoSteps[0].question, 'bot');
         }
+        window.startDemoBooking = startDemoBooking;
         
         function handleDemoBookingStep(userInput) {
             // Check if user wants to cancel
