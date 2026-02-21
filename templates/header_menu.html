@@ -1438,8 +1438,16 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
                 }
             }
             
-            if (field === 'name' && value.length < 2) {
-                return { valid: false, message: "Please enter your full name. 👤" };
+            if (field === 'name') {
+                if (value.length < 2) {
+                    return { valid: false, message: "Please enter your full name. 👤" };
+                }
+                // Prevent demo-related keywords from being used as name
+                var nameLower = value.toLowerCase();
+                if (nameLower.includes('book') || nameLower.includes('demo') || nameLower.includes('same') || 
+                    nameLower === 'hi' || nameLower === 'hello' || nameLower === 'hey') {
+                    return { valid: false, message: "Please enter your actual name (first and last name). 👤" };
+                }
             }
             
             return { valid: true };
@@ -1703,3 +1711,4 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
     </script>
 </body>
 </html>
+
