@@ -1,0 +1,25 @@
+{
+  "name": "globaltechandtrade",
+  "version": "1.0.0",
+  "description": "GlobalTechAndTrade Website",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./static/css/styles.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./static/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  },
+  "main": "tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ash-Yad/GlobalTechAndTrade.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ash-Yad/GlobalTechAndTrade/issues"
+  },
+  "homepage": "https://github.com/Ash-Yad/GlobalTechAndTrade#readme"
+}
