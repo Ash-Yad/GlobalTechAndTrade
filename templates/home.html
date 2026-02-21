@@ -2,576 +2,886 @@
 {% block content %}
 
 <!-- ============================================
-     HERO SECTION - Two videos: Technology (left) + Import/Export (right)
+     HERO SECTION - Premium Modern Design
 ============================================ -->
-<section class="relative min-h-[90vh] flex items-center overflow-hidden py-16 lg:py-24">
-    <!-- Left half: Technology video -->
-    <div class="absolute inset-0 lg:inset-y-0 lg:left-0 lg:w-1/2 z-0 overflow-hidden">
-        <video id="hero-video-tech" autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover" poster="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&q=80">
+<section class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Dual Video Background - IT Solutions & Trade -->
+    <div class="absolute inset-0 z-0">
+        <!-- Video 1: Technology/IT Solutions -->
+        <video id="hero-video-tech" autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
             <source src="/static/videos/hero-bg.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-slate-900/70"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-transparent"></div>
-    </div>
-    <!-- Right half: Import/Export video -->
-    <div class="absolute inset-y-0 right-0 w-1/2 z-0 overflow-hidden hidden lg:block">
-        <video id="hero-video-export" autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover" poster="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1920&q=80">
+        <!-- Video 2: Import/Export Trade -->
+        <video id="hero-video-trade" autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
             <source src="/static/videos/hero-export.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-slate-900/70"></div>
-        <div class="absolute inset-0 bg-gradient-to-l from-secondary/30 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/85 to-primary/40"></div>
+        <div class="absolute inset-0 mesh-bg opacity-60"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <!-- Video Indicator -->
+    <div class="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+        <button id="video-indicator-tech" class="video-indicator active flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-semibold transition-all hover:bg-white/30">
+            <i class="fas fa-code"></i>
+            <span class="hidden sm:inline">IT Solutions</span>
+        </button>
+        <button id="video-indicator-trade" class="video-indicator flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 text-xs font-semibold transition-all hover:bg-white/20">
+            <i class="fas fa-ship"></i>
+            <span class="hidden sm:inline">Import/Export</span>
+        </button>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="absolute top-20 right-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl float-element-delayed"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-32">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
             <!-- Left Content -->
-            <div class="text-center lg:text-left">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black text-white leading-tight mb-4">
-                    Building Tech Future With <span class="gradient-text-light">Innovation</span>!
+            <div class="text-center lg:text-left" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    <span class="text-white/90 text-sm font-semibold">Trusted by 50+ Businesses Worldwide</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-6">
+                    Enterprise
+                    <span class="block gradient-text-light">Technology</span>
+                    <span class="block">& Global Trade</span>
                 </h1>
-                <p class="text-lg md:text-xl text-white/90 font-semibold mb-2">
-                    #1 IT Solutions & Import–Export Company for India & Zambia
-                </p>
-                <p class="text-white/80 mb-8 max-w-xl mx-auto lg:mx-0">
-                    Apps for your business that integrate with today's AI world — from mobile & web to seamless global trade. We connect Africa and Asia with smart technology and logistics.
+
+                <p class="text-lg md:text-xl text-white/80 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    We deliver cutting-edge IT solutions and seamless import-export services, connecting businesses across <strong class="text-primary">India</strong> and <strong class="text-accent">Africa</strong> with precision and expertise.
                 </p>
 
-                <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-10">
-                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-orange-600 text-white font-bold rounded-2xl shadow-lg shadow-orange-500/30 hover:shadow-xl hover:-translate-y-1 transition-all">
-                        Book Free Demo
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-12">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-3 px-8 py-4 btn-accent text-white font-bold rounded-2xl shadow-lg shadow-accent/30 hover:shadow-xl hover:-translate-y-1 transition-all">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule Consultation
                         <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="/services" class="inline-flex items-center gap-2 px-8 py-4 bg-white/90 text-slate-800 font-bold rounded-2xl border-2 border-white/50 hover:bg-white hover:border-white transition-all">
-                        Explore Services
+                    <a href="/it-solutions" class="group inline-flex items-center gap-3 px-8 py-4 glass text-white font-bold rounded-2xl hover:bg-white/20 transition-all">
+                        <i class="fas fa-play-circle"></i>
+                        Explore Solutions
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
+                    <div class="flex items-center gap-2">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold border-2 border-dark">IN</div>
+                            <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold border-2 border-dark">ZM</div>
+                            <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white text-xs font-bold border-2 border-dark">KE</div>
+                        </div>
+                        <span class="text-white/70 text-sm">Multi-Region Presence</span>
+                    </div>
+                    <div class="h-6 w-px bg-white/20 hidden sm:block"></div>
+                    <div class="flex items-center gap-2 text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <span class="text-white/90 text-sm font-semibold">4.9/5 Client Rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Stats Cards -->
+            <div class="hidden lg:block" data-aos="fade-left" data-aos-delay="200">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-dark rounded-3xl p-6 hover-lift">
+                        <div class="text-4xl font-black text-white mb-2 stat-number">50+</div>
+                        <div class="text-white/60 text-sm font-medium">Projects Delivered</div>
+                        <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full w-4/5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="glass-dark rounded-3xl p-6 hover-lift">
+                        <div class="text-4xl font-black text-white mb-2 stat-number">5+</div>
+                        <div class="text-white/60 text-sm font-medium">Years Experience</div>
+                        <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full w-3/4 bg-gradient-to-r from-accent to-primary rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="glass-dark rounded-3xl p-6 hover-lift">
+                        <div class="text-4xl font-black text-white mb-2 stat-number">12+</div>
+                        <div class="text-white/60 text-sm font-medium">Countries Served</div>
+                        <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full w-2/3 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="glass-dark rounded-3xl p-6 hover-lift">
+                        <div class="text-4xl font-black text-white mb-2 stat-number">24/7</div>
+                        <div class="text-white/60 text-sm font-medium">Support Available</div>
+                        <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full w-full bg-gradient-to-r from-green-500 to-emerald-400 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <div class="flex flex-col items-center gap-2 text-white/50">
+            <span class="text-xs uppercase tracking-widest">Scroll to explore</span>
+            <div class="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
+                <div class="w-1 h-2 bg-white/50 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ANIMATED STATS STRIP -->
+<section class="py-12 bg-gradient-to-r from-dark via-slate-900 to-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center">
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-white mb-1">
+                    <span class="counter" data-target="50">0</span>+
+                </div>
+                <div class="text-sm text-white/60 font-medium">Projects Delivered</div>
+            </div>
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-primary mb-1">
+                    <span class="counter" data-target="40">0</span>+
+                </div>
+                <div class="text-sm text-white/60 font-medium">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-accent mb-1">
+                    <span class="counter" data-target="12">0</span>+
+                </div>
+                <div class="text-sm text-white/60 font-medium">Countries Served</div>
+            </div>
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-secondary mb-1">
+                    <span class="counter" data-target="5">0</span>+
+                </div>
+                <div class="text-sm text-white/60 font-medium">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-green-400 mb-1">
+                    <span class="counter" data-target="98">0</span>%
+                </div>
+                <div class="text-sm text-white/60 font-medium">Client Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-purple-400 mb-1">
+                    24/7
+                </div>
+                <div class="text-sm text-white/60 font-medium">Support Available</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUSTED BY / SERVING BUSINESSES -->
+<section class="py-8 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">Serving businesses across</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
+                    <img src="https://flagcdn.com/w40/in.png" alt="India" class="w-6 h-4 object-cover rounded">
+                    <span class="font-semibold">India</span>
+                </div>
+                <div class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
+                    <i class="fas fa-globe-africa text-lg text-accent"></i>
+                    <span class="font-semibold">Africa</span>
+                </div>
+                <div class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
+                    <i class="fas fa-mosque text-lg text-secondary"></i>
+                    <span class="font-semibold">Middle East</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DUAL EXPERTISE SECTION -->
+<section class="py-24 bg-gradient-to-b from-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Our Expertise</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Two Pillars of Excellence</h2>
+            <p class="text-lg text-slate-600">We combine world-class technology solutions with comprehensive global trade services—delivered from both our India and Zambia offices.</p>
+        </div>
+
+        <!-- Unified Offices Banner -->
+        <div class="bg-gradient-to-r from-primary/10 via-white to-accent/10 rounded-2xl p-6 mb-12 border border-slate-200" data-aos="fade-up">
+            <div class="flex flex-wrap items-center justify-center gap-8">
+                <div class="flex items-center gap-3">
+                    <img src="https://flagcdn.com/w40/in.png" alt="India" class="w-8 h-5 object-cover rounded shadow">
+                    <div>
+                        <div class="font-bold text-slate-900">India Office</div>
+                        <div class="text-xs text-slate-500">IT Solutions & Trade</div>
+                    </div>
+                </div>
+                <div class="hidden sm:flex items-center gap-2 text-slate-400">
+                    <i class="fas fa-arrows-left-right"></i>
+                    <span class="text-sm font-semibold">Unified Operations</span>
+                    <i class="fas fa-arrows-left-right"></i>
+                </div>
+                <div class="flex items-center gap-3">
+                    <img src="https://flagcdn.com/w40/zm.png" alt="Zambia" class="w-8 h-5 object-cover rounded shadow">
+                    <div>
+                        <div class="font-bold text-slate-900">Zambia Office</div>
+                        <div class="text-xs text-slate-500">IT Solutions & Trade</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- IT Solutions Card -->
+            <div class="group relative bg-white rounded-3xl p-8 md:p-10 border-2 border-slate-100 hover:border-primary/50 card-hover overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+                
+                <div class="relative z-10">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-code text-2xl text-white"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">IT Solutions & Development</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">From custom software development to AI-powered applications, we build scalable solutions that drive digital transformation and operational efficiency.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-2 text-sm text-slate-600">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Mobile Applications</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-600">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Web Development</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-600">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>E-Commerce Platforms</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-600">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Business Software</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/it-solutions" class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-3 transition-all">
+                        Explore IT Services
+                        <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Right side overlay -->
-            <div class="relative lg:flex items-end justify-center lg:justify-end lg:min-h-[60vh] pt-8 lg:pt-0">
-                <div class="flex flex-col items-center lg:items-end gap-2 lg:pr-4 lg:pb-4">
-                    <span class="text-white/95 text-sm font-bold uppercase tracking-widest">India · Zambia · Global</span>
-                    <span class="inline-flex items-center gap-2 text-white/90 text-xs font-semibold">
-                        <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                        Live Trade Corridor
-                    </span>
+            <!-- Import/Export Card -->
+            <div class="group relative bg-white rounded-3xl p-8 md:p-10 border-2 border-slate-100 hover:border-accent/50 card-hover overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+                
+                <div class="relative z-10">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-orange-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-ship text-2xl text-white"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">Import & Export Services</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">End-to-end trade solutions connecting India and Africa. We handle logistics, customs clearance, documentation, and supply chain management with precision.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-2 text-sm text-slate-600">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Freight Forwarding</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-600">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Customs Clearance</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-600">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Trade Documentation</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-600">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Supply Chain</span>
+                        </div>
+                    </div>
+                    
+                    <a href="/import-export" class="inline-flex items-center gap-2 text-accent font-bold group-hover:gap-3 transition-all">
+                        Explore Trade Services
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- AI Trade Corridor - compact strip -->
-<section class="relative -mt-2 z-10">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 py-3 px-4 bg-white/90 backdrop-blur-sm rounded-xl border border-slate-100 shadow-lg">
-            <span class="inline-flex items-center gap-1.5 text-xs font-mono text-primary bg-primary/10 px-2.5 py-1 rounded-lg">
-                <i class="fas fa-microchip"></i> AI
-            </span>
-            <span class="text-slate-400 text-xs hidden sm:inline">·</span>
-            <span class="text-xs font-semibold text-slate-600">Smart Trade Corridor</span>
-            <span class="text-slate-300 text-xs">Africa ↔ Asia</span>
-            <span class="inline-flex items-center gap-1 text-[10px] text-slate-500">
-                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Live
-            </span>
-            <span class="text-slate-300 text-xs hidden sm:inline">|</span>
-            <a href="/it-solutions" class="text-xs font-bold text-primary hover:underline">IT</a>
-            <a href="/import-export" class="text-xs font-bold text-secondary hover:underline">Trade</a>
+<!-- WHY CHOOSE US -->
+<section class="py-24 mesh-bg relative overflow-hidden">
+    <div class="absolute inset-0 noise-overlay"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-bold uppercase tracking-widest mb-4">Why GlobalTechAndTrade</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Built for Serious Business</h2>
+            <p class="text-lg text-white/70">We don't just deliver services—we build lasting partnerships that drive measurable results.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-dark rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
+                    <i class="fas fa-shield-alt text-2xl text-primary"></i>
+                </div>
+                <h4 class="text-lg font-bold text-white mb-2">Enterprise Security</h4>
+                <p class="text-white/60 text-sm">Bank-grade security protocols protecting your data and intellectual property at every step.</p>
+            </div>
+
+            <div class="glass-dark rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                    <i class="fas fa-clock text-2xl text-accent"></i>
+                </div>
+                <h4 class="text-lg font-bold text-white mb-2">On-Time Delivery</h4>
+                <p class="text-white/60 text-sm">98% on-time delivery rate with transparent project tracking and milestone updates.</p>
+            </div>
+
+            <div class="glass-dark rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center mb-4">
+                    <i class="fas fa-headset text-2xl text-green-400"></i>
+                </div>
+                <h4 class="text-lg font-bold text-white mb-2">24/7 Support</h4>
+                <p class="text-white/60 text-sm">Round-the-clock technical support with dedicated account managers for priority clients.</p>
+            </div>
+
+            <div class="glass-dark rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
+                    <i class="fas fa-globe-africa text-2xl text-purple-400"></i>
+                </div>
+                <h4 class="text-lg font-bold text-white mb-2">Dual Presence</h4>
+                <p class="text-white/60 text-sm">Strategic offices in India and Zambia ensuring local expertise with global standards.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- TRUSTED BY / CLIENT STRIP -->
-<section class="py-12 bg-slate-50 border-y border-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-8">Trusted by businesses across borders</p>
-        <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16">
-            <span class="text-slate-400 font-bold text-lg">India</span>
-            <span class="text-slate-400 font-bold text-lg">Zambia</span>
-            <span class="text-slate-400 font-bold text-lg">Africa</span>
-            <span class="text-slate-400 font-bold text-lg">Asia</span>
-            <span class="text-slate-400 font-bold text-lg">Middle East</span>
-            <span class="text-slate-400 font-bold text-lg">Global Trade</span>
-        </div>
-    </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="relative bg-gradient-to-r from-primary to-secondary py-4 overflow-hidden">
-    <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-primary to-transparent z-10"></div>
-    <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-secondary to-transparent z-10"></div>
-    <div class="flex whitespace-nowrap animate-marquee">
-        <div class="flex gap-8 mx-4 shrink-0">
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Zambia</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> India</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> South Africa</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Kenya</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Tanzania</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> UAE</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Nigeria</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Ghana</span>
-        </div>
-        <div class="flex gap-8 mx-4 shrink-0">
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Mobile Apps</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Web Apps</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Graphic Design</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Customs Clearance</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Freight Forwarding</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Supply Chain</span>
-        </div>
-        <div class="flex gap-8 mx-4 shrink-0">
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Zambia</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> India</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> South Africa</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Kenya</span>
-            <span class="text-white/90 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><span class="w-1.5 h-1.5 bg-white rounded-full"></span> Tanzania</span>
-        </div>
-    </div>
-</div>
-
-<!-- SERVICES SHOWCASE -->
-<section class="py-20 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Amplifying Business Progress Through Smart Solutions</h2>
-            <p class="text-slate-600 mb-8">Apps for your business that integrate with today's AI world — robust solutions, smart systems, and seamless trade for growth across India & Zambia.</p>
-            <a href="/services" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">Explore Services <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-200 mb-12 max-w-4xl mx-auto">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80" alt="Team collaboration and smart solutions" class="w-full h-64 sm:h-80 object-cover" loading="lazy" />
-        </div>
-    </div>
-</section>
-
-<!-- TECHNOLOGY & TRADE - 6 cards -->
-<section class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-14">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Technology & Trade</h2>
-            <p class="text-slate-600">Development and solutions that integrate with today's AI world — from apps to business process software and global trade.</p>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-            <a href="/mobile-app-development" class="group relative block rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800">
-                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="Mobile App" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent"></div>
-                <div class="absolute top-4 left-4 w-12 h-12 rounded-xl bg-primary/90 flex items-center justify-center"><i class="fas fa-mobile-alt text-white text-xl"></i></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <span class="text-xs font-bold text-primary/90 uppercase tracking-widest">Development</span>
-                    <h3 class="text-xl font-bold mt-1">Mobile App</h3>
-                </div>
-            </a>
-            <a href="/web-application-development" class="group relative block rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80" alt="Website" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent"></div>
-                <div class="absolute top-4 left-4 w-12 h-12 rounded-xl bg-primary/90 flex items-center justify-center"><i class="fas fa-globe text-white text-xl"></i></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <span class="text-xs font-bold text-primary/90 uppercase tracking-widest">Development</span>
-                    <h3 class="text-xl font-bold mt-1">Website</h3>
-                </div>
-            </a>
-            <a href="/services" class="group relative block rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="E-commerce" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent"></div>
-                <div class="absolute top-4 left-4 w-12 h-12 rounded-xl bg-primary/90 flex items-center justify-center"><i class="fas fa-shopping-cart text-white text-xl"></i></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <span class="text-xs font-bold text-primary/90 uppercase tracking-widest">Development</span>
-                    <h3 class="text-xl font-bold mt-1">E-commerce</h3>
-                </div>
-            </a>
-            <a href="/web-application-development" class="group relative block rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Web Application" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent"></div>
-                <div class="absolute top-4 left-4 w-12 h-12 rounded-xl bg-secondary/90 flex items-center justify-center"><i class="fas fa-desktop text-white text-xl"></i></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <span class="text-xs font-bold text-secondary/90 uppercase tracking-widest">Solutions</span>
-                    <h3 class="text-xl font-bold mt-1">Web Application</h3>
-                </div>
-            </a>
-            <a href="/services" class="group relative block rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Business Process Management Software" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent"></div>
-                <div class="absolute top-4 left-4 w-12 h-12 rounded-xl bg-secondary/90 flex items-center justify-center"><i class="fas fa-project-diagram text-white text-xl"></i></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <span class="text-xs font-bold text-secondary/90 uppercase tracking-widest">Solutions</span>
-                    <h3 class="text-xl font-bold mt-1">Business Process Management Software</h3>
-                </div>
-            </a>
-            <a href="/import-export" class="group relative block rounded-2xl overflow-hidden aspect-[4/3] bg-slate-800">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Import and Export" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-transparent"></div>
-                <div class="absolute top-4 left-4 w-12 h-12 rounded-xl bg-accent/90 flex items-center justify-center"><i class="fas fa-ship text-white text-xl"></i></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
-                    <span class="text-xs font-bold text-accent/90 uppercase tracking-widest">Trade</span>
-                    <h3 class="text-xl font-bold mt-1">Import and Export</h3>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- DELIVERING EXCELLENCE + Testimonials -->
+<!-- SERVICES GRID -->
 <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Delivering Excellence to Transform Businesses</h2>
-            <p class="text-slate-600">What sets us apart as your IT and trade partner — our commitment to these values.</p>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all text-center">
-                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary"><i class="fas fa-database text-xl"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Data Backups</h4>
-                <p class="text-sm text-slate-600">Secure backups so your projects and data stay safe.</p>
-            </div>
-            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all text-center">
-                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary"><i class="fas fa-shield-alt text-xl"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Data Protection</h4>
-                <p class="text-sm text-slate-600">Best-in-class security for your data and IP.</p>
-            </div>
-            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-secondary/30 hover:shadow-lg transition-all text-center">
-                <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mx-auto mb-4 text-secondary"><i class="fas fa-award text-xl"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Quality Deliverance</h4>
-                <p class="text-sm text-slate-600">We deliver quality products on time, every time.</p>
-            </div>
-            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-secondary/30 hover:shadow-lg transition-all text-center">
-                <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mx-auto mb-4 text-secondary"><i class="fas fa-sync-alt text-xl"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Enhancement</h4>
-                <p class="text-sm text-slate-600">Continuous feedback and improvements for your satisfaction.</p>
-            </div>
-            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-accent/30 hover:shadow-lg transition-all text-center">
-                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4 text-accent"><i class="fas fa-users text-xl"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Client-Centric</h4>
-                <p class="text-sm text-slate-600">Solutions tailored to your business needs.</p>
-            </div>
-            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-accent/30 hover:shadow-lg transition-all text-center">
-                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4 text-accent"><i class="fas fa-tasks text-xl"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Agile Development</h4>
-                <p class="text-sm text-slate-600">Reliable, scalable delivery with Agile process.</p>
-            </div>
-            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all text-center">
-                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary"><i class="fas fa-map-marked-alt text-xl"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Dual-Office Advantage</h4>
-                <p class="text-sm text-slate-600">India and Zambia offices with local expertise.</p>
-            </div>
-            <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all text-center">
-                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary"><i class="fas fa-headset text-xl"></i></div>
-                <h4 class="font-bold text-slate-900 mb-2">Excellent Support</h4>
-                <p class="text-sm text-slate-600">24/7 assistance to meet your expectations.</p>
-            </div>
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Our Services</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Comprehensive Solutions</h2>
+            <p class="text-lg text-slate-600">From concept to deployment, from sourcing to delivery—we cover every aspect of your technology and trade needs.</p>
         </div>
 
-        <!-- What Our Clients Say - 3 cards per row (Hyperlink-style) -->
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-3">What Our Clients Say</h2>
-            <p class="text-slate-600">Collection of responses we have got so far by delivering exceptional solutions.</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="/it-solutions" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-primary/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+                    <i class="fas fa-mobile-alt text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Mobile App Development</h3>
+                <p class="text-slate-600 text-sm mb-4">Native and cross-platform mobile applications built with cutting-edge technologies for iOS and Android.</p>
+                <span class="text-primary font-semibold text-sm group-hover:underline">Learn more →</span>
+            </a>
+
+            <a href="/it-solutions" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-primary/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+                    <i class="fas fa-globe text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Web Development</h3>
+                <p class="text-slate-600 text-sm mb-4">Responsive, scalable web applications and websites using modern frameworks and best practices.</p>
+                <span class="text-primary font-semibold text-sm group-hover:underline">Learn more →</span>
+            </a>
+
+            <a href="/it-solutions" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-secondary/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all">
+                    <i class="fas fa-shopping-cart text-2xl text-secondary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">E-Commerce Solutions</h3>
+                <p class="text-slate-600 text-sm mb-4">Complete e-commerce platforms with payment integration, inventory management, and analytics.</p>
+                <span class="text-secondary font-semibold text-sm group-hover:underline">Learn more →</span>
+            </a>
+
+            <a href="/import-export" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-accent/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all">
+                    <i class="fas fa-ship text-2xl text-accent group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Freight & Logistics</h3>
+                <p class="text-slate-600 text-sm mb-4">Sea, air, and land freight solutions with real-time tracking and competitive rates across trade corridors.</p>
+                <span class="text-accent font-semibold text-sm group-hover:underline">Learn more →</span>
+            </a>
+
+            <a href="/import-export" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-accent/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all">
+                    <i class="fas fa-file-contract text-2xl text-accent group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Customs & Compliance</h3>
+                <p class="text-slate-600 text-sm mb-4">Expert customs clearance, documentation, and regulatory compliance for seamless cross-border trade.</p>
+                <span class="text-accent font-semibold text-sm group-hover:underline">Learn more →</span>
+            </a>
+
+            <a href="/it-solutions" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-purple-500/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:text-white transition-all">
+                    <i class="fas fa-project-diagram text-2xl text-purple-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Business Process Software</h3>
+                <p class="text-slate-600 text-sm mb-4">Custom ERP, CRM, and workflow automation solutions tailored to your business processes.</p>
+                <span class="text-purple-500 font-semibold text-sm group-hover:underline">Learn more →</span>
+            </a>
         </div>
-        <div class="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8">
-                <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Zambezi Trading Ltd</p>
-                <div class="flex items-center gap-2 text-amber-500 mb-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span class="text-sm text-slate-500 font-semibold">5.0 Ratings</span>
-                </div>
-                <blockquote class="text-slate-700 text-sm leading-relaxed mb-4">
-                    "GlobalTech&Trade transformed our business with their integrated approach. Their IT solutions streamlined our operations, and their trade services opened new markets for us across Africa. The team in Lusaka provided exceptional on-ground support."
-                </blockquote>
-                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs">MB</div>
-                    <div>
-                        <p class="font-bold text-slate-900 text-sm">Michael Banda</p>
-                        <p class="text-xs text-slate-500">CEO & Founder</p>
+    </div>
+</section>
+
+<!-- HOW WE WORK - PROCESS SECTION -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Our Process</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">How We Deliver Excellence</h2>
+            <p class="text-lg text-slate-600">A proven methodology that ensures quality, transparency, and on-time delivery for every project.</p>
+        </div>
+
+        <div class="relative">
+            <!-- Connection Line -->
+            <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary transform -translate-y-1/2 z-0"></div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative z-10">
+                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl font-black">01</span>
                     </div>
-                    <p class="text-xs text-slate-500 ml-auto"><span class="text-slate-400 font-medium">Country</span><br>Lusaka, Zambia</p>
+                    <h4 class="font-bold text-slate-900 mb-2">Discovery</h4>
+                    <p class="text-xs text-slate-500">Understanding your requirements</p>
                 </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8">
-                <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Kobalt Imports</p>
-                <div class="flex items-center gap-2 text-amber-500 mb-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span class="text-sm text-slate-500 font-semibold">5.0 Ratings</span>
-                </div>
-                <blockquote class="text-slate-700 text-sm leading-relaxed mb-4">
-                    "We needed a reliable partner for both software and cross-border trade. GlobalTech&Trade delivered on both — our inventory app is live and we're now sourcing directly from India. Professional and responsive at every step."
-                </blockquote>
-                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs">PK</div>
-                    <div>
-                        <p class="font-bold text-slate-900 text-sm">Priya Kapoor</p>
-                        <p class="text-xs text-slate-500">CEO & Founder</p>
+
+                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-secondary to-secondary/80 flex items-center justify-center text-white shadow-lg shadow-secondary/30 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl font-black">02</span>
                     </div>
-                    <p class="text-xs text-slate-500 ml-auto"><span class="text-slate-400 font-medium">Country</span><br>Mumbai, India</p>
+                    <h4 class="font-bold text-slate-900 mb-2">Planning</h4>
+                    <p class="text-xs text-slate-500">Strategy & roadmap creation</p>
                 </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8">
-                <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">AgriTech Zambia</p>
-                <div class="flex items-center gap-2 text-amber-500 mb-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span class="text-sm text-slate-500 font-semibold">5.0 Ratings</span>
-                </div>
-                <blockquote class="text-slate-700 text-sm leading-relaxed mb-4">
-                    "The mobile app they built for us has become the backbone of our field operations. Clean code, on-time delivery, and their Zambia office made coordination seamless. Highly recommend for Africa–Asia projects."
-                </blockquote>
-                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs">JM</div>
-                    <div>
-                        <p class="font-bold text-slate-900 text-sm">James Mwale</p>
-                        <p class="text-xs text-slate-500">CEO & Founder</p>
+
+                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center text-white shadow-lg shadow-accent/30 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl font-black">03</span>
                     </div>
-                    <p class="text-xs text-slate-500 ml-auto"><span class="text-slate-400 font-medium">Country</span><br>Ndola, Zambia</p>
+                    <h4 class="font-bold text-slate-900 mb-2">Design</h4>
+                    <p class="text-xs text-slate-500">UI/UX & architecture</p>
                 </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8">
-                <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Sharma Exports</p>
-                <div class="flex items-center gap-2 text-amber-500 mb-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span class="text-sm text-slate-500 font-semibold">5.0 Ratings</span>
-                </div>
-                <blockquote class="text-slate-700 text-sm leading-relaxed mb-4">
-                    "From custom web portals to export documentation, they handle it all. Our partnership has grown from a single project to a long-term engagement. Trustworthy and technically strong."
-                </blockquote>
-                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs">RS</div>
-                    <div>
-                        <p class="font-bold text-slate-900 text-sm">Rajesh Sharma</p>
-                        <p class="text-xs text-slate-500">CEO & Founder</p>
+
+                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-500/80 flex items-center justify-center text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl font-black">04</span>
                     </div>
-                    <p class="text-xs text-slate-500 ml-auto"><span class="text-slate-400 font-medium">Country</span><br>New Delhi, India</p>
+                    <h4 class="font-bold text-slate-900 mb-2">Development</h4>
+                    <p class="text-xs text-slate-500">Agile implementation</p>
                 </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8">
-                <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">TechFlow Africa</p>
-                <div class="flex items-center gap-2 text-amber-500 mb-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span class="text-sm text-slate-500 font-semibold">5.0 Ratings</span>
-                </div>
-                <blockquote class="text-slate-700 text-sm leading-relaxed mb-4">
-                    "Their BPM software simplified our workflows across three countries. Implementation was smooth and support is always available. A true partner for growth."
-                </blockquote>
-                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs">LN</div>
-                    <div>
-                        <p class="font-bold text-slate-900 text-sm">Linda Ngoma</p>
-                        <p class="text-xs text-slate-500">CEO & Founder</p>
+
+                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500 to-green-500/80 flex items-center justify-center text-white shadow-lg shadow-green-500/30 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl font-black">05</span>
                     </div>
-                    <p class="text-xs text-slate-500 ml-auto"><span class="text-slate-400 font-medium">Country</span><br>Lusaka, Zambia</p>
+                    <h4 class="font-bold text-slate-900 mb-2">Testing</h4>
+                    <p class="text-xs text-slate-500">Quality assurance</p>
                 </div>
-            </div>
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 md:p-8">
-                <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Global Sourcing Co</p>
-                <div class="flex items-center gap-2 text-amber-500 mb-3">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span class="text-sm text-slate-500 font-semibold">5.0 Ratings</span>
-                </div>
-                <blockquote class="text-slate-700 text-sm leading-relaxed mb-4">
-                    "We use their web app for orders and their trade team for imports. One stop for tech and logistics. Highly recommended for India–Africa business."
-                </blockquote>
-                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs">AK</div>
-                    <div>
-                        <p class="font-bold text-slate-900 text-sm">Amit Kumar</p>
-                        <p class="text-xs text-slate-500">CEO & Founder</p>
+
+                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-500/80 flex items-center justify-center text-white shadow-lg shadow-pink-500/30 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl font-black">06</span>
                     </div>
-                    <p class="text-xs text-slate-500 ml-auto"><span class="text-slate-400 font-medium">Country</span><br>Noida, India</p>
+                    <h4 class="font-bold text-slate-900 mb-2">Launch</h4>
+                    <p class="text-xs text-slate-500">Deployment & support</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PROCESS SECTION - Custom Software Development Lifecycle (Hyperlink-style slider) -->
+<!-- INDUSTRIES WE SERVE -->
 <section class="py-24 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-14">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Offering Exclusive Edge Following Custom Software Development Lifecycle</h2>
-            <p class="text-slate-600">Customizing and delivering cutting-edge solutions employing the custom software development lifecycle to help businesses meet their future demands.</p>
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold uppercase tracking-widest mb-4">Industries</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Solutions for Every Industry</h2>
+            <p class="text-lg text-slate-600">We deliver tailored IT and trade solutions across diverse sectors.</p>
         </div>
 
-        <!-- SDLC Slider -->
-        <div class="relative max-w-5xl mx-auto">
-            <div class="overflow-hidden rounded-3xl shadow-2xl border-2 border-slate-200 bg-white">
-                <!-- Slide 1 - Ideation (image left, content right on all screens) -->
-                <div class="sdlc-slide flex flex-row min-h-[320px] md:min-h-[380px]" data-sdlc="0">
-                    <div class="w-2/5 min-w-[120px] max-w-[280px] shrink-0 relative min-h-[320px] md:min-h-[380px]">
-                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Ideation and brainstorming" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4"><span class="text-3xl md:text-4xl font-black text-white drop-shadow-lg">01</span></div>
-                    </div>
-                    <div class="flex-1 min-w-0 p-6 md:p-10 flex flex-col justify-center">
-                        <h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Ideation</h3>
-                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">Brainstorm creative ideas to ideate them and come up with a plan to turn them into a successful smart solution.</p>
-                    </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-primary/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="50">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+                    <i class="fas fa-shopping-bag text-2xl text-primary group-hover:text-white"></i>
                 </div>
-                <!-- Slide 2 - Plan -->
-                <div class="sdlc-slide hidden flex flex-row min-h-[320px] md:min-h-[380px]" data-sdlc="1">
-                    <div class="w-2/5 min-w-[120px] max-w-[280px] shrink-0 relative min-h-[320px] md:min-h-[380px]">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Planning and roadmap" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4"><span class="text-3xl md:text-4xl font-black text-white drop-shadow-lg">02</span></div>
-                    </div>
-                    <div class="flex-1 min-w-0 p-6 md:p-10 flex flex-col justify-center">
-                        <h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Plan</h3>
-                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">Define the project goals, create a timeline & milestones, and build a team based on your development requirements.</p>
-                    </div>
-                </div>
-                <!-- Slide 3 - Design -->
-                <div class="sdlc-slide hidden flex flex-row min-h-[320px] md:min-h-[380px]" data-sdlc="2">
-                    <div class="w-2/5 min-w-[120px] max-w-[280px] shrink-0 relative min-h-[320px] md:min-h-[380px]">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Design and wireframes" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4"><span class="text-3xl md:text-4xl font-black text-white drop-shadow-lg">03</span></div>
-                    </div>
-                    <div class="flex-1 min-w-0 p-6 md:p-10 flex flex-col justify-center">
-                        <h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Design</h3>
-                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">Build interactive prototypes based on sketches and wireframes to illustrate and visualize the interface of the solution.</p>
-                    </div>
-                </div>
-                <!-- Slide 4 - Implement -->
-                <div class="sdlc-slide hidden flex flex-row min-h-[320px] md:min-h-[380px]" data-sdlc="3">
-                    <div class="w-2/5 min-w-[120px] max-w-[280px] shrink-0 relative min-h-[320px] md:min-h-[380px]">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80" alt="Implementation and development" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4"><span class="text-3xl md:text-4xl font-black text-white drop-shadow-lg">04</span></div>
-                    </div>
-                    <div class="flex-1 min-w-0 p-6 md:p-10 flex flex-col justify-center">
-                        <h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Implement</h3>
-                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">Choose the most suited tools and technologies to build the product based on the defined timeline, project scope, and more.</p>
-                    </div>
-                </div>
-                <!-- Slide 5 - Test -->
-                <div class="sdlc-slide hidden flex flex-row min-h-[320px] md:min-h-[380px]" data-sdlc="4">
-                    <div class="w-2/5 min-w-[120px] max-w-[280px] shrink-0 relative min-h-[320px] md:min-h-[380px]">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Testing and quality assurance" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4"><span class="text-3xl md:text-4xl font-black text-white drop-shadow-lg">05</span></div>
-                    </div>
-                    <div class="flex-1 min-w-0 p-6 md:p-10 flex flex-col justify-center">
-                        <h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Test</h3>
-                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">Perform product testing through the best possible manual and automated testing methods to deploy thoroughly tested and bug-free solutions.</p>
-                    </div>
-                </div>
-                <!-- Slide 6 - Deploy -->
-                <div class="sdlc-slide hidden flex flex-row min-h-[320px] md:min-h-[380px]" data-sdlc="5">
-                    <div class="w-2/5 min-w-[120px] max-w-[280px] shrink-0 relative min-h-[320px] md:min-h-[380px]">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Deploy and launch" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-                        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4"><span class="text-3xl md:text-4xl font-black text-white drop-shadow-lg">06</span></div>
-                    </div>
-                    <div class="flex-1 min-w-0 p-6 md:p-10 flex flex-col justify-center">
-                        <h3 class="text-xl md:text-2xl font-black text-slate-900 mb-3">Deploy</h3>
-                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">Deployment and launching the product that meets all the predefined criteria to make it accessible to the target audience.</p>
-                    </div>
-                </div>
+                <h4 class="font-bold text-slate-900 text-sm">Retail & E-commerce</h4>
             </div>
 
-            <!-- Prev / Next arrows -->
-            <button type="button" id="sdlc-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-14 w-12 h-12 rounded-full bg-white border-2 border-slate-200 text-slate-600 hover:border-primary hover:text-primary hover:shadow-xl transition-all flex items-center justify-center z-10" aria-label="Previous step">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button type="button" id="sdlc-next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-14 w-12 h-12 rounded-full bg-white border-2 border-slate-200 text-slate-600 hover:border-primary hover:text-primary hover:shadow-xl transition-all flex items-center justify-center z-10" aria-label="Next step">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-secondary/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary transition-colors">
+                    <i class="fas fa-heartbeat text-2xl text-secondary group-hover:text-white"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">Healthcare</h4>
+            </div>
 
-            <!-- Step dots / thumbnails -->
-            <div class="flex flex-wrap justify-center gap-2 mt-8" id="sdlc-dots">
-                <button type="button" class="sdlc-dot px-4 py-2 rounded-xl text-sm font-bold border-2 transition-all bg-primary border-primary text-white" data-step="0" aria-pressed="true">01 Ideation</button>
-                <button type="button" class="sdlc-dot px-4 py-2 rounded-xl text-sm font-bold border-2 border-slate-200 text-slate-600 hover:border-primary/50 transition-all" data-step="1" aria-pressed="false">02 Plan</button>
-                <button type="button" class="sdlc-dot px-4 py-2 rounded-xl text-sm font-bold border-2 border-slate-200 text-slate-600 hover:border-primary/50 transition-all" data-step="2" aria-pressed="false">03 Design</button>
-                <button type="button" class="sdlc-dot px-4 py-2 rounded-xl text-sm font-bold border-2 border-slate-200 text-slate-600 hover:border-primary/50 transition-all" data-step="3" aria-pressed="false">04 Implement</button>
-                <button type="button" class="sdlc-dot px-4 py-2 rounded-xl text-sm font-bold border-2 border-slate-200 text-slate-600 hover:border-primary/50 transition-all" data-step="4" aria-pressed="false">05 Test</button>
-                <button type="button" class="sdlc-dot px-4 py-2 rounded-xl text-sm font-bold border-2 border-slate-200 text-slate-600 hover:border-primary/50 transition-all" data-step="5" aria-pressed="false">06 Deploy</button>
+            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-accent/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <i class="fas fa-truck text-2xl text-accent group-hover:text-white"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">Logistics</h4>
+            </div>
+
+            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-green-500/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-green-500/10 flex items-center justify-center group-hover:bg-green-500 transition-colors">
+                    <i class="fas fa-seedling text-2xl text-green-500 group-hover:text-white"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">Agriculture</h4>
+            </div>
+
+            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-purple-500/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500 transition-colors">
+                    <i class="fas fa-graduation-cap text-2xl text-purple-500 group-hover:text-white"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">Education</h4>
+            </div>
+
+            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-pink-500/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-pink-500/10 flex items-center justify-center group-hover:bg-pink-500 transition-colors">
+                    <i class="fas fa-industry text-2xl text-pink-500 group-hover:text-white"></i>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">Manufacturing</h4>
             </div>
         </div>
-        <script>
-        (function() {
-            var slides = document.querySelectorAll('.sdlc-slide');
-            var dots = document.querySelectorAll('.sdlc-dot');
-            var prevBtn = document.getElementById('sdlc-prev');
-            var nextBtn = document.getElementById('sdlc-next');
-            var current = 0;
-            function goTo(i) {
-                current = (i + slides.length) % slides.length;
-                slides.forEach(function(s, j) { s.classList.toggle('hidden', j !== current); });
-                dots.forEach(function(d, j) {
-                    var active = j === current;
-                    d.setAttribute('aria-pressed', active ? 'true' : 'false');
-                    d.classList.toggle('bg-primary', active);
-                    d.classList.toggle('border-primary', active);
-                    d.classList.toggle('text-white', active);
-                    d.classList.toggle('border-slate-200', !active);
-                    d.classList.toggle('text-slate-600', !active);
-                });
-            }
-            dots.forEach(function(d, i) {
-                d.addEventListener('click', function() { goTo(i); });
-            });
-            if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); });
-            if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
-        })();
-        </script>
     </div>
 </section>
 
-<!-- PARTNERSHIP MODELS -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Ways to Leverage Our Expertise</h2>
-            <p class="text-slate-600">Choose the engagement model that fits your needs.</p>
+<!-- TESTIMONIALS -->
+<section class="py-24 bg-gradient-to-br from-dark via-slate-900 to-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-bold uppercase tracking-widest mb-4">Client Success</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">What Our Clients Say</h2>
+            <p class="text-lg text-white/70">Real feedback from businesses we've helped transform.</p>
         </div>
+
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="rounded-2xl p-8 border-2 border-slate-100 hover:border-primary hover:shadow-xl transition-all text-center">
-                <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 text-primary"><i class="fas fa-file-invoice-dollar text-xl"></i></div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Fixed Price Model</h3>
-                <p class="text-sm text-slate-600 mb-4">Predefined scope, cost, and timeline for predictable delivery.</p>
-                <a href="/contact" class="text-primary font-bold text-sm">Explore details <i class="fas fa-arrow-right ml-1"></i></a>
+            <div class="glass-dark rounded-3xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center gap-1 text-amber-400 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <span class="text-white/60 text-sm ml-2">5.0</span>
+                </div>
+                <blockquote class="text-white/90 leading-relaxed mb-6">
+                    "GlobalTechAndTrade transformed our business with their integrated approach. Their IT solutions streamlined our operations, and their trade services opened new markets for us across Africa."
+                </blockquote>
+                <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">MB</div>
+                    <div>
+                        <p class="font-bold text-white">Michael Banda</p>
+                        <p class="text-sm text-white/60">CEO, Zambezi Trading Ltd</p>
+                        <p class="text-xs text-primary mt-1"><i class="fas fa-map-marker-alt mr-1"></i>Zambia</p>
+                    </div>
+                </div>
             </div>
-            <div class="rounded-2xl p-8 border-2 border-slate-100 hover:border-secondary hover:shadow-xl transition-all text-center">
-                <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-4 text-secondary"><i class="fas fa-users text-xl"></i></div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Dedicated Team</h3>
-                <p class="text-sm text-slate-600 mb-4">Hire a dedicated team for your project on an hourly or monthly basis.</p>
-                <a href="/contact" class="text-secondary font-bold text-sm">Explore details <i class="fas fa-arrow-right ml-1"></i></a>
+
+            <div class="glass-dark rounded-3xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center gap-1 text-amber-400 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <span class="text-white/60 text-sm ml-2">5.0</span>
+                </div>
+                <blockquote class="text-white/90 leading-relaxed mb-6">
+                    "We needed a reliable partner for both software and cross-border trade. GlobalTechAndTrade delivered on both—our inventory app is live and we're now sourcing directly from India."
+                </blockquote>
+                <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-orange-600 flex items-center justify-center text-white font-bold">PK</div>
+                    <div>
+                        <p class="font-bold text-white">Priya Kapoor</p>
+                        <p class="text-sm text-white/60">Director, Kobalt Imports</p>
+                        <p class="text-xs text-accent mt-1"><i class="fas fa-map-marker-alt mr-1"></i>India</p>
+                    </div>
+                </div>
             </div>
-            <div class="rounded-2xl p-8 border-2 border-slate-100 hover:border-accent hover:shadow-xl transition-all text-center">
-                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 text-accent"><i class="fas fa-handshake text-xl"></i></div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Consulting & Support</h3>
-                <p class="text-sm text-slate-600 mb-4">Strategy, audits, and ongoing support for IT and trade.</p>
-                <a href="/contact" class="text-accent font-bold text-sm">Explore details <i class="fas fa-arrow-right ml-1"></i></a>
+
+            <div class="glass-dark rounded-3xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex items-center gap-1 text-amber-400 mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <span class="text-white/60 text-sm ml-2">5.0</span>
+                </div>
+                <blockquote class="text-white/90 leading-relaxed mb-6">
+                    "The mobile app they built has become the backbone of our field operations. Clean code, on-time delivery, and their Zambia office made coordination seamless."
+                </blockquote>
+                <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white font-bold">JM</div>
+                    <div>
+                        <p class="font-bold text-white">James Mwale</p>
+                        <p class="text-sm text-white/60">Founder, AgriTech Zambia</p>
+                        <p class="text-xs text-green-400 mt-1"><i class="fas fa-map-marker-alt mr-1"></i>Zambia</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Testimonial Stats -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="text-3xl font-black text-white">4.9/5</div>
+                <div class="text-sm text-white/60">Average Rating</div>
+            </div>
+            <div>
+                <div class="text-3xl font-black text-primary">40+</div>
+                <div class="text-sm text-white/60">Happy Clients</div>
+            </div>
+            <div>
+                <div class="text-3xl font-black text-accent">98%</div>
+                <div class="text-sm text-white/60">Satisfaction Rate</div>
+            </div>
+            <div>
+                <div class="text-3xl font-black text-green-400">100%</div>
+                <div class="text-sm text-white/60">Would Recommend</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PARTNERSHIP MODELS SECTION -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-bold uppercase tracking-widest mb-4">Engagement Models</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Ways to Work With Us</h2>
+            <p class="text-lg text-slate-600">Flexible partnership models tailored to your project needs and business goals.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="group relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 border-2 border-primary/20 hover:border-primary/50 transition-all hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                    <span class="text-primary font-black">01</span>
+                </div>
+                <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6">
+                    <i class="fas fa-file-contract text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-4">Fixed Price</h3>
+                <p class="text-slate-600 mb-6">Ideal for well-defined projects with clear scope. Get a fixed quote upfront with milestone-based delivery.</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Defined scope & timeline</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Predictable budget</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Milestone payments</li>
+                </ul>
+            </div>
+
+            <div class="group relative bg-gradient-to-br from-accent/5 to-accent/10 rounded-3xl p-8 border-2 border-accent/20 hover:border-accent/50 transition-all hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                    <span class="text-accent font-black">02</span>
+                </div>
+                <div class="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center mb-6">
+                    <i class="fas fa-users text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-4">Dedicated Team</h3>
+                <p class="text-slate-600 mb-6">Hire skilled developers who work exclusively on your project. Scale up or down as needed.</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-accent"></i> Full-time dedicated resources</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-accent"></i> Flexible team scaling</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-accent"></i> Direct communication</li>
+                </ul>
+            </div>
+
+            <div class="group relative bg-gradient-to-br from-secondary/5 to-secondary/10 rounded-3xl p-8 border-2 border-secondary/20 hover:border-secondary/50 transition-all hover-lift" data-aos="fade-up" data-aos-delay="300">
+                <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
+                    <span class="text-secondary font-black">03</span>
+                </div>
+                <div class="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6">
+                    <i class="fas fa-clock text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-4">Time & Material</h3>
+                <p class="text-slate-600 mb-6">Pay for actual hours worked. Perfect for evolving projects with changing requirements.</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i> Flexible scope</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i> Transparent billing</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i> Agile development</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-dark via-slate-900 to-dark"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 40px 40px;"></div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 rounded-full bg-primary/20 animate-float"></div>
+    <div class="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-accent/15 animate-float" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/2 right-1/4 w-16 h-16 rounded-full bg-secondary/20 animate-float" style="animation-delay: 2s;"></div>
+    
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="bg-gradient-to-br from-primary to-secondary rounded-3xl p-8 md:p-12 text-center shadow-2xl" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-bold mb-6">
+                <i class="fas fa-rocket"></i>
+                Let's Build Something Great Together
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">Whether you need cutting-edge software or seamless global trade solutions, we're here to help you succeed.</p>
+            
+            <div class="flex flex-wrap gap-4 justify-center mb-10">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-3 px-10 py-5 bg-white text-primary font-bold rounded-2xl shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all">
+                    <i class="fas fa-calendar-check"></i>
+                    Schedule Free Consultation
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="/contact" class="inline-flex items-center gap-3 px-10 py-5 bg-dark/30 text-white font-bold rounded-2xl border-2 border-white/40 hover:bg-dark/50 transition-all">
+                    <i class="fas fa-envelope"></i>
+                    Contact Us
+                </a>
+            </div>
+            
+            <div class="flex flex-wrap items-center justify-center gap-8 text-white">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-green-300"></i>
+                    <span>No commitment required</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-green-300"></i>
+                    <span>Free project assessment</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle text-green-300"></i>
+                    <span>Response within 24 hours</span>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </section>
 
 <style>
-    @keyframes marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+    .video-indicator.active {
+        background: rgba(255,255,255,0.25);
+        border-color: rgba(255,255,255,0.5);
+        color: white;
     }
-    .animate-marquee {
-        animation: marquee 30s linear infinite;
-    }
-    .gradient-text-light {
-        background: linear-gradient(135deg, #7dd3fc, #38bdf8);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    .counter {
+        font-variant-numeric: tabular-nums;
     }
 </style>
 
 <script>
 (function() {
+    // ========== DUAL VIDEO SWITCHING ==========
     var vTech = document.getElementById('hero-video-tech');
-    var vExport = document.getElementById('hero-video-export');
-    [vTech, vExport].forEach(function(v) {
-        if (v) v.play().catch(function() {});
-    });
+    var vTrade = document.getElementById('hero-video-trade');
+    var btnTech = document.getElementById('video-indicator-tech');
+    var btnTrade = document.getElementById('video-indicator-trade');
+    
+    var currentVideo = 'tech';
+    var autoSwitchInterval = 8000;
+    var autoSwitchTimer;
+
+    function playVideos() {
+        if (vTech) vTech.play().catch(function() {});
+        if (vTrade) vTrade.play().catch(function() {});
+    }
+
+    function pauseVideos() {
+        if (vTech) vTech.pause();
+        if (vTrade) vTrade.pause();
+    }
+
+    function switchToTech() {
+        currentVideo = 'tech';
+        if (vTech) vTech.style.opacity = '1';
+        if (vTrade) vTrade.style.opacity = '0';
+        if (btnTech) btnTech.classList.add('active');
+        if (btnTrade) btnTrade.classList.remove('active');
+    }
+
+    function switchToTrade() {
+        currentVideo = 'trade';
+        if (vTech) vTech.style.opacity = '0';
+        if (vTrade) vTrade.style.opacity = '1';
+        if (btnTech) btnTech.classList.remove('active');
+        if (btnTrade) btnTrade.classList.add('active');
+    }
+
+    function autoSwitch() {
+        if (currentVideo === 'tech') {
+            switchToTrade();
+        } else {
+            switchToTech();
+        }
+    }
+
+    function startAutoSwitch() {
+        stopAutoSwitch();
+        autoSwitchTimer = setInterval(autoSwitch, autoSwitchInterval);
+    }
+
+    function stopAutoSwitch() {
+        if (autoSwitchTimer) {
+            clearInterval(autoSwitchTimer);
+        }
+    }
+
+    playVideos();
+    startAutoSwitch();
+
+    if (btnTech) {
+        btnTech.addEventListener('click', function() {
+            switchToTech();
+            startAutoSwitch();
+        });
+    }
+
+    if (btnTrade) {
+        btnTrade.addEventListener('click', function() {
+            switchToTrade();
+            startAutoSwitch();
+        });
+    }
+
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            if (vTech) vTech.pause();
-            if (vExport) vExport.pause();
+            pauseVideos();
+            stopAutoSwitch();
         } else {
-            if (vTech) vTech.play().catch(function() {});
-            if (vExport) vExport.play().catch(function() {});
+            playVideos();
+            startAutoSwitch();
         }
     });
+
+    // ========== ANIMATED COUNTER ==========
+    function animateCounters() {
+        var counters = document.querySelectorAll('.counter');
+        var speed = 200;
+
+        counters.forEach(function(counter) {
+            var target = +counter.getAttribute('data-target');
+            var count = 0;
+            var increment = target / speed;
+
+            function updateCount() {
+                count += increment;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.innerText = target;
+                }
+            }
+            updateCount();
+        });
+    }
+
+    // Intersection Observer for counter animation
+    var statsSection = document.querySelector('.stat-item');
+    if (statsSection) {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(statsSection);
+    }
 })();
 </script>
 
