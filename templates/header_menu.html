@@ -405,11 +405,15 @@
     </nav>
 
     <!-- Book Free Demo Modal - Enhanced Modern Design -->
-    <div id="book-demo-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 bg-dark/80 backdrop-blur-md" aria-hidden="true">
-        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden animate-scale-in" role="dialog" aria-labelledby="book-demo-title">
+    <div id="book-demo-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-2 sm:p-4 bg-dark/80 backdrop-blur-md overflow-y-auto" aria-hidden="true">
+        <!-- Fixed Close Button for Mobile -->
+        <button type="button" class="book-demo-close fixed top-3 right-3 sm:hidden z-[70] w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-slate-600 hover:text-red-500 transition-all" aria-label="Close">
+            <i class="fas fa-times text-lg"></i>
+        </button>
+        <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden animate-scale-in my-4 sm:my-0" role="dialog" aria-labelledby="book-demo-title">
             <!-- Header with Gradient -->
-            <div class="relative bg-gradient-to-r from-primary to-secondary p-6 pb-8">
-                <button type="button" class="book-demo-close absolute top-4 right-4 w-10 h-10 rounded-xl bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-all" aria-label="Close">
+            <div class="relative bg-gradient-to-r from-primary to-secondary p-4 sm:p-6 pb-6 sm:pb-8">
+                <button type="button" class="book-demo-close hidden sm:flex absolute top-4 right-4 w-10 h-10 rounded-xl bg-white/20 hover:bg-white/30 items-center justify-center text-white transition-all" aria-label="Close">
                     <i class="fas fa-times"></i>
                 </button>
                 <div class="flex items-center gap-4">
