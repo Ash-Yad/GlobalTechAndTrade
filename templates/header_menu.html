@@ -1573,7 +1573,9 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
             if (msg.includes('love') || msg.includes('like you')) {
                 return "Aww, thank you! 😊 I'm here to help! Would you like to know about our services or book a free consultation?";
             }
-            return "That's an interesting question! While I specialize in GlobalTechAndTrade info, I'm happy to chat. 😊\n\nCan I help you with:\n• **Services** we offer\n• **Pricing** information\n• **Contact** details\n• **Book** a free demo";
+            
+            // Return null for unknown questions - let Gemini AI handle them
+            return null;
         }
 
         function addMessage(text, type) {
