@@ -1,9 +1,12 @@
 import os
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
 import secrets
 import logging
 from logging.handlers import RotatingFileHandler
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 
 # ==========================================
 # 1. CONFIGURATION & PATH SETUP
@@ -481,6 +484,167 @@ def general_services():
 def health_check():
     """Simple health check for UptimeRobot monitoring - keeps site alive"""
     return {'status': 'healthy', 'timestamp': datetime.now().isoformat()}
+
+
+# --- CHATBOT EMAIL API ---
+
+@app.route('/api/send-demo-confirmation', methods=['POST'])
+def send_demo_confirmation():
+    """Send confirmation email to visitor after demo booking"""
+    try:
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({'success': False, 'error': 'No data provided'}), 400
+        
+        visitor_email = data.get('email', '').strip()
+        visitor_name = data.get('name', '').strip()
+        phone = data.get('phone', '')
+        company = data.get('company', '')
+        service = data.get('service', '')
+        message = data.get('message', 'None')
+        
+        if not visitor_email or '@' not in visitor_email:
+            return jsonify({'success': False, 'error': 'Invalid email'}), 400
+        
+        # Email configuration - using Gmail SMTP (you can change this)
+        # Set these environment variables in Render dashboard
+        SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
+        SMTP_PORT = int(os.environ.get('SMTP_PORT', 587))
+        SMTP_EMAIL = os.environ.get('SMTP_EMAIL', 'info@globaltechandtrade.com')
+        SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD', '')  # App password for Gmail
+        
+        if not SMTP_PASSWORD:
+            app.logger.warning('SMTP_PASSWORD not configured - skipping visitor email')
+            return jsonify({'success': True, 'message': 'Email skipped - SMTP not configured'}), 200
+        
+        # Create beautiful HTML email
+        html_content = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7fa;">
+            <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff;">
+                <!-- Header -->
+                <div style="background: linear-gradient(135deg, #0052CC 0%, #003D99 100%); padding: 30px; text-align: center;">
+                    <h1 style="color: #ffffff; margin: 0; font-size: 24px;">GlobalTech&Trade</h1>
+                    <p style="color: #93c5fd; margin: 10px 0 0 0; font-size: 14px;">IT Solutions & Import/Export Services</p>
+                </div>
+                
+                <!-- Content -->
+                <div style="padding: 30px;">
+                    <h2 style="color: #1e3a5f; margin-top: 0;">🎉 Demo Request Confirmed!</h2>
+                    
+                    <p style="color: #4a5568; font-size: 16px; line-height: 1.6;">
+                        Dear <strong>{visitor_name}</strong>,
+                    </p>
+                    
+                    <p style="color: #4a5568; font-size: 16px; line-height: 1.6;">
+                        Thank you for booking a demo with GlobalTech&Trade! Your request has been received successfully.
+                    </p>
+                    
+                    <!-- Booking Details Box -->
+                    <div style="background-color: #f0f9ff; border-left: 4px solid #0052CC; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+                        <h3 style="color: #0052CC; margin-top: 0; font-size: 16px;">📋 Your Booking Details</h3>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr><td style="padding: 8px 0; color: #64748b;">Name:</td><td style="padding: 8px 0; color: #1e3a5f; font-weight: 600;">{visitor_name}</td></tr>
+                            <tr><td style="padding: 8px 0; color: #64748b;">Email:</td><td style="padding: 8px 0; color: #1e3a5f; font-weight: 600;">{visitor_email}</td></tr>
+                            <tr><td style="padding: 8px 0; color: #64748b;">Phone:</td><td style="padding: 8px 0; color: #1e3a5f; font-weight: 600;">{phone}</td></tr>
+                            <tr><td style="padding: 8px 0; color: #64748b;">Company:</td><td style="padding: 8px 0; color: #1e3a5f; font-weight: 600;">{company}</td></tr>
+                            <tr><td style="padding: 8px 0; color: #64748b;">Service:</td><td style="padding: 8px 0; color: #1e3a5f; font-weight: 600;">{service}</td></tr>
+                            <tr><td style="padding: 8px 0; color: #64748b;">Message:</td><td style="padding: 8px 0; color: #1e3a5f;">{message}</td></tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Next Steps -->
+                    <div style="background-color: #f0fdf4; border-left: 4px solid #22c55e; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+                        <h3 style="color: #166534; margin-top: 0; font-size: 16px;">📞 What Happens Next?</h3>
+                        <p style="color: #4a5568; margin: 0; line-height: 1.6;">
+                            Our team will contact you within <strong>24 hours</strong> to schedule your personalized demo session.
+                        </p>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div style="background-color: #fefce8; border-left: 4px solid #eab308; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0;">
+                        <h3 style="color: #854d0e; margin-top: 0; font-size: 16px;">📱 Contact Us Directly</h3>
+                        <p style="color: #4a5568; margin: 0; line-height: 1.8;">
+                            🇮🇳 India: <strong>+91 9027125341</strong><br>
+                            🇿🇲 Zambia: <strong>+260 977 588 581</strong><br>
+                            📧 Email: <strong>info@globaltechandtrade.com</strong><br>
+                            🌐 Website: <strong>www.globaltechandtrade.com</strong>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Footer -->
+                <div style="background-color: #1e3a5f; padding: 20px; text-align: center;">
+                    <p style="color: #93c5fd; margin: 0; font-size: 14px;">
+                        Thank you for choosing GlobalTech&Trade!
+                    </p>
+                    <p style="color: #64748b; margin: 10px 0 0 0; font-size: 12px;">
+                        © {datetime.now().year} GlobalTech&Trade. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </body>
+        </html>
+        """
+        
+        # Create email message
+        msg = MIMEMultipart('alternative')
+        msg['Subject'] = '✅ Demo Request Confirmed - GlobalTech&Trade'
+        msg['From'] = f'GlobalTech&Trade <{SMTP_EMAIL}>'
+        msg['To'] = visitor_email
+        
+        # Plain text version
+        text_content = f"""
+Demo Request Confirmed - GlobalTech&Trade
+
+Dear {visitor_name},
+
+Thank you for booking a demo with GlobalTech&Trade! Your request has been received successfully.
+
+YOUR BOOKING DETAILS:
+- Name: {visitor_name}
+- Email: {visitor_email}
+- Phone: {phone}
+- Company: {company}
+- Service: {service}
+- Message: {message}
+
+WHAT HAPPENS NEXT?
+Our team will contact you within 24 hours to schedule your personalized demo session.
+
+CONTACT US:
+India: +91 9027125341
+Zambia: +260 977 588 581
+Email: info@globaltechandtrade.com
+Website: www.globaltechandtrade.com
+
+Thank you for choosing GlobalTech&Trade!
+        """
+        
+        msg.attach(MIMEText(text_content, 'plain'))
+        msg.attach(MIMEText(html_content, 'html'))
+        
+        # Send email
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+            server.starttls()
+            server.login(SMTP_EMAIL, SMTP_PASSWORD)
+            server.send_message(msg)
+        
+        app.logger.info(f'Demo confirmation email sent to: {visitor_email}')
+        return jsonify({'success': True, 'message': 'Email sent successfully'}), 200
+        
+    except smtplib.SMTPAuthenticationError as e:
+        app.logger.error(f'SMTP Authentication failed: {e}')
+        return jsonify({'success': False, 'error': 'Email authentication failed'}), 500
+    except Exception as e:
+        app.logger.error(f'Email sending error: {e}')
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 
 # --- MAIN ENTRY POINT (ONLY FOR LOCAL DEVELOPMENT) ---

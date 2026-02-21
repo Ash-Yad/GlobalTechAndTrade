@@ -51,6 +51,55 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+        /* GLOBAL FIX: Force all page content into a single stacking context */
+        body > *:not(#chat-toggle):not(#chat-backdrop):not(#chat-window):not(script):not(style) {
+            position: relative;
+            z-index: 0 !important;
+        }
+        
+        /* Wrap main content in a lower layer */
+        main, section, .hero-section, article, aside {
+            z-index: 0 !important;
+        }
+        
+        /* Reset z-index on elements that shouldn't create stacking contexts above chatbot */
+        [class*="z-10"], [class*="z-20"], [class*="z-30"], [class*="z-40"], [class*="z-50"] {
+            z-index: 0 !important;
+        }
+        
+        /* Force chatbot elements to absolute top layer - using max safe integer */
+        #chat-toggle {
+            z-index: 2147483647 !important;
+            position: fixed !important;
+        }
+        #chat-backdrop {
+            z-index: 2147483646 !important;
+            position: fixed !important;
+        }
+        #chat-window {
+            z-index: 2147483647 !important;
+            position: fixed !important;
+            isolation: isolate !important;
+            contain: layout paint !important;
+        }
+        
+        /* Ensure chatbot has completely opaque backgrounds */
+        #chat-window,
+        #chat-window .chatbot-container {
+            background-color: #ffffff !important;
+            background: #ffffff !important;
+        }
+        
+        /* Send button must stay blue */
+        #chat-form button[type="submit"] {
+            background: linear-gradient(to bottom right, #2563eb, #1d4ed8) !important;
+            background-color: #2563eb !important;
+            color: white !important;
+        }
+        #chat-form button[type="submit"]:hover {
+            background: linear-gradient(to bottom right, #1d4ed8, #1e40af) !important;
+        }
+        
         /* Chat scrollbar styling - always visible */
         #chat-messages {
             overflow-y: scroll !important;
@@ -955,117 +1004,168 @@
          AI CHATBOT - Auto replies based on website content
     ═══════════════════════════════════════════════════════════ -->
     <style>
-        /* Chatbot Styles - Solid Background */
+        /* Chatbot - Force into own rendering layer */
         #chat-window {
-            background: #ffffff !important;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 3px #64748b !important;
-            border-radius: 16px !important;
+            width: calc(100vw - 16px);
+            max-width: 380px;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            -webkit-transform-style: preserve-3d;
         }
-        #chat-window > div {
+        .chatbot-container {
             position: relative;
-            z-index: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+            border: 3px solid #1e3a5f;
+            transform: translateZ(1px);
+            -webkit-transform: translateZ(1px);
         }
-        .chat-section {
-            background: #ffffff !important;
+        #chat-messages {
+            scrollbar-width: thin;
+            scrollbar-color: #3b82f6 #c7ccd4;
         }
-        .chat-messages-area {
-            background: #f1f5f9 !important;
-        }
-        /* Responsive adjustments */
-        @media (max-width: 640px) {
+        #chat-messages::-webkit-scrollbar { width: 6px; }
+        #chat-messages::-webkit-scrollbar-track { background: #c7ccd4; }
+        #chat-messages::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 3px; }
+        
+        /* Mobile-first responsive design */
+        @media (max-width: 480px) {
             #chat-window {
-                width: calc(100vw - 32px) !important;
-                max-width: 320px !important;
-                right: 16px !important;
+                width: calc(100vw - 16px);
+                max-width: none;
+                left: 8px;
+                right: 8px;
                 bottom: 80px !important;
             }
-        }
-        @media (min-width: 641px) and (max-width: 1024px) {
-            #chat-window {
-                width: 350px !important;
-                right: 24px !important;
-                bottom: 96px !important;
+            #chat-toggle {
+                bottom: 16px !important;
+                right: 16px !important;
+            }
+            #chat-messages {
+                height: 180px !important;
+            }
+            #chat-input {
+                font-size: 16px !important; /* Prevents zoom on iOS */
+                padding: 12px 16px !important;
+                min-height: 48px !important;
+            }
+            #chat-form button[type="submit"] {
+                width: 48px !important;
+                height: 48px !important;
+            }
+            .quick-reply-btn {
+                padding: 10px 14px !important;
+                font-size: 13px !important;
             }
         }
-        @media (min-width: 1025px) {
+        
+        /* Tablet */
+        @media (min-width: 481px) and (max-width: 768px) {
             #chat-window {
-                width: 380px !important;
-                right: 24px !important;
+                width: 340px;
+                bottom: 90px !important;
+                right: 16px !important;
+            }
+            #chat-messages {
+                height: 220px !important;
+            }
+        }
+        
+        /* Desktop */
+        @media (min-width: 769px) {
+            #chat-window {
+                width: 380px;
                 bottom: 96px !important;
+                right: 24px !important;
+            }
+            #chat-messages {
+                height: 250px !important;
             }
         }
     </style>
 
     <!-- Chat Backdrop Overlay (dims background when chat is open) -->
-    <div id="chat-backdrop" class="fixed inset-0 z-[9997] hidden" style="background: rgba(0,0,0,0.3); backdrop-filter: blur(2px);"></div>
+    <div id="chat-backdrop" class="fixed inset-0 hidden" style="background: rgba(0,0,0,0.6); z-index: 99998 !important;"></div>
 
-    <!-- Chat Toggle Button -->
-    <button id="chat-toggle" class="fixed z-[9999] w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 bottom-4 right-4 sm:bottom-6 sm:right-6">
+    <!-- Chat Toggle Button - Mobile Optimized -->
+    <button id="chat-toggle" class="fixed w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 bottom-4 right-4 sm:bottom-6 sm:right-6" style="z-index: 2147483647 !important;">
         <i class="fas fa-comments text-white text-xl sm:text-2xl" id="chat-icon-open"></i>
         <i class="fas fa-times text-white text-xl sm:text-2xl hidden" id="chat-icon-close"></i>
         <span class="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-red-500 rounded-full border-2 border-white animate-pulse" id="chat-notification"></span>
     </button>
 
-    <!-- Chat Window -->
-    <div id="chat-window" class="fixed z-[9998] rounded-2xl overflow-hidden origin-bottom-right transition-transform duration-300" style="transform: scale(0); display: none;">
-        <!-- Solid White Background Layer -->
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #ffffff; border-radius: 16px; z-index: 0;"></div>
+    <!-- Chat Window Container - translateZ forces GPU layer -->
+    <div id="chat-window" class="fixed origin-bottom-right transition-transform duration-300" style="transform: scale(0); display: none; z-index: 2147483647 !important; isolation: isolate; contain: layout paint;">
         
-        <!-- Chat Header -->
-        <div class="chat-section p-4" style="background: linear-gradient(135deg, #0052CC 0%, #003D99 100%); position: relative; z-index: 1;">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: rgba(255,255,255,0.2);">
-                    <i class="fas fa-robot text-xl text-white"></i>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white">GTT Assistant</h4>
-                    <p class="text-xs flex items-center gap-1" style="color: rgba(255,255,255,0.8);">
-                        <span class="w-2 h-2 bg-green-400 rounded-full"></span> AI Powered
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Chat Messages -->
-        <div id="chat-messages" class="chat-messages-area h-44 sm:h-52 overflow-y-auto p-3 sm:p-4 space-y-3" style="scrollbar-width: thin; scrollbar-color: #3b82f6 #e2e8f0; background-color: #f1f5f9; position: relative; z-index: 2;">
-            <div class="flex gap-2">
-                <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #dbeafe;">
-                    <i class="fas fa-robot text-primary text-sm"></i>
-                </div>
-                <div class="rounded-2xl rounded-tl-none p-3 shadow-sm max-w-[85%]" style="background: #ffffff;">
-                    <p class="text-sm text-slate-700">Hi! 👋 I'm GTT Assistant. Ask me anything about our IT Solutions or Import/Export services!</p>
+        <!-- SOLID BACKGROUND CONTAINER with shadow and border -->
+        <div class="chatbot-container rounded-2xl overflow-hidden" style="background-color: #ffffff !important; background: #ffffff !important; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 0, 0, 0.1) !important; border: 2px solid #e5e7eb !important;">
+            
+            <!-- Chat Header with Close Button -->
+            <div style="background-color: #0052CC !important; padding: 12px 16px;">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: #3b82f6 !important;">
+                            <i class="fas fa-robot text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm sm:text-base">GTT Assistant</h4>
+                            <p class="text-xs flex items-center gap-1 text-blue-200">
+                                <span class="w-2 h-2 bg-green-400 rounded-full"></span> AI Powered
+                            </p>
+                        </div>
+                    </div>
+                    <button onclick="closeChat()" class="w-8 h-8 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all active:scale-95" title="Close chat">
+                        <i class="fas fa-times text-lg"></i>
+                    </button>
                 </div>
             </div>
-        </div>
 
-        <!-- Quick Replies -->
-        <div id="quick-replies" class="chat-section p-3 border-t border-slate-200" style="background-color: #ffffff; position: relative; z-index: 2;">
+            <!-- Chat Messages - Fixed height with scroll -->
+            <div id="chat-messages" class="overflow-y-auto p-3 space-y-3" style="height: 200px; background-color: #c7ccd4 !important;">
+                <div class="flex gap-2">
+                    <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #93c5fd !important;">
+                        <i class="fas fa-robot text-blue-700 text-sm"></i>
+                    </div>
+                    <div class="rounded-2xl rounded-tl-none p-3 max-w-[85%]" style="background-color: white !important; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+                        <p class="text-sm text-gray-700">Hi! 👋 I'm GTT Assistant. Ask me anything about our IT Solutions or Import/Export services!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Replies - Mobile Optimized -->
+            <div id="quick-replies" class="p-3 border-t border-gray-300" style="background-color: white !important;">
             <p class="text-xs text-slate-500 mb-2">Quick questions:</p>
             <div class="flex flex-wrap gap-2">
-                <button onclick="sendQuickReply('Book a demo')" class="px-3 py-1.5 text-white text-xs font-medium rounded-full transition-colors" style="background: linear-gradient(135deg, #f97316, #ef4444);">📅 Book Demo</button>
-                <button onclick="sendQuickReply('What services do you offer?')" class="px-3 py-1.5 text-slate-600 text-xs font-medium rounded-full transition-colors hover:bg-primary hover:text-white" style="background: #e2e8f0;">Services</button>
-                <button onclick="sendQuickReply('Tell me about mobile app development')" class="px-3 py-1.5 text-slate-600 text-xs font-medium rounded-full transition-colors hover:bg-primary hover:text-white" style="background: #e2e8f0;">Mobile Apps</button>
-                <button onclick="sendQuickReply('How to contact you?')" class="px-3 py-1.5 text-slate-600 text-xs font-medium rounded-full transition-colors hover:bg-primary hover:text-white" style="background: #e2e8f0;">Contact</button>
+                <button onclick="sendQuickReply('Book a demo')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-white text-sm sm:text-xs font-medium rounded-full transition-all active:scale-95 shadow-sm" style="background: linear-gradient(135deg, #f97316, #ef4444);">📅 Book Demo</button>
+                <button onclick="sendQuickReply('What services do you offer?')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-slate-600 text-sm sm:text-xs font-medium rounded-full transition-all hover:bg-primary hover:text-white active:scale-95" style="background: #e2e8f0;">Services</button>
+                <button onclick="sendQuickReply('Tell me about mobile app development')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-slate-600 text-sm sm:text-xs font-medium rounded-full transition-all hover:bg-primary hover:text-white active:scale-95" style="background: #e2e8f0;">Mobile Apps</button>
+                <button onclick="sendQuickReply('How to contact you?')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-slate-600 text-sm sm:text-xs font-medium rounded-full transition-all hover:bg-primary hover:text-white active:scale-95" style="background: #e2e8f0;">Contact</button>
             </div>
         </div>
 
-        <!-- Chat Input -->
-        <div class="chat-section p-3 border-t border-slate-200" style="background-color: #ffffff; position: relative; z-index: 2;">
-            <form id="chat-form" class="flex gap-2">
-                <input type="text" id="chat-input" placeholder="Type your question..." 
-                       class="flex-1 px-4 py-2 rounded-full text-sm outline-none focus:ring-2 focus:ring-primary/30 transition-all border border-slate-200" style="background: #f8fafc;">
-                <button type="submit" class="w-10 h-10 bg-primary hover:bg-blue-600 text-white rounded-full flex items-center justify-center transition-colors flex-shrink-0">
-                    <i class="fas fa-paper-plane text-sm"></i>
-                </button>
-            </form>
-        </div>
+            <!-- Chat Input - Mobile Optimized -->
+            <div class="p-3 sm:p-4 border-t border-gray-300" style="background-color: white !important;">
+                <form id="chat-form" class="flex gap-2 items-center">
+                    <input type="text" id="chat-input" placeholder="Type your message..."
+                           autocomplete="off"
+                           class="flex-1 px-4 py-3 sm:py-2 rounded-full text-base sm:text-sm outline-none focus:ring-2 focus:ring-blue-400 transition-all border-2 border-gray-300 focus:border-blue-500" 
+                           style="background-color: #f3f4f6 !important; min-height: 44px; -webkit-appearance: none; appearance: none;">
+                    <button type="submit" class="w-12 h-12 sm:w-10 sm:h-10 text-white rounded-full flex items-center justify-center transition-all flex-shrink-0 shadow-lg active:scale-95" style="background: linear-gradient(to bottom right, #2563eb, #1d4ed8) !important;">
+                        <i class="fas fa-paper-plane text-base sm:text-sm" style="color: white !important;"></i>
+                    </button>
+                </form>
+                <p class="text-xs text-gray-400 mt-2 text-center sm:hidden">Tap to type your question</p>
+            </div>
 
-        <!-- Book Demo Link -->
-        <div class="chat-section p-2 border-t border-slate-200 text-center" style="background-color: #f1f5f9; position: relative; z-index: 2;">
+            <!-- Book Demo Link -->
+            <div class="p-2 border-t border-gray-300 text-center" style="background-color: #c7ccd4 !important;">
             <a href="#" class="book-free-demo-trigger text-xs text-primary hover:text-blue-700 font-semibold transition-colors">
                 <i class="fas fa-calendar-check mr-1"></i> Book a Free Consultation
             </a>
-        </div>
+            </div>
+            
+        </div><!-- End of solid background container -->
     </div>
 
     <script>
@@ -1194,7 +1294,17 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
 
         function openChat() {
             chatBackdrop.classList.remove('hidden');
+            chatBackdrop.style.zIndex = '2147483646';
             chatWindow.style.display = 'block';
+            chatWindow.style.zIndex = '2147483647';
+            chatToggle.style.zIndex = '2147483647';
+            
+            // Force solid background on all elements
+            var container = chatWindow.querySelector('.chatbot-container');
+            if (container) {
+                container.style.backgroundColor = '#ffffff';
+                container.style.background = '#ffffff';
+            }
             setTimeout(function() { chatWindow.style.transform = 'scale(1)'; }, 10);
             iconOpen.classList.add('hidden');
             iconClose.classList.remove('hidden');
@@ -1351,63 +1461,57 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
             // Show confirmation message
             addMessage("🎉 **Perfect!** Let me submit your demo request...", 'bot');
 
-            // Prepare form data for FormSubmit (to company)
-            var formData = new FormData();
-            formData.append('_subject', '🔔 New Demo Request - ' + savedData.name + ' (' + savedData.service + ')');
-            formData.append('_template', 'table');
-            formData.append('_captcha', 'false');
-            formData.append('_replyto', savedData.email);
-            formData.append('Source', '💬 Website Chatbot');
-            formData.append('Customer_Name', savedData.name);
-            formData.append('Customer_Email', savedData.email);
-            formData.append('Customer_Phone', savedData.phone);
-            formData.append('Company_Name', savedData.company);
-            formData.append('Service_Interested', savedData.service);
-            formData.append('Customer_Message', savedData.message || 'None');
-            formData.append('Submitted_At', new Date().toLocaleString());
-
             // Reset booking data now (before async)
             demoBooking.step = 0;
             demoBooking.data = { name: '', email: '', phone: '', company: '', service: '', message: '' };
 
-            // Submit to FormSubmit (to company)
-            fetch('https://formsubmit.co/ajax/info@globaltechandtrade.com', {
+            // Send to company via Web3Forms
+            fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: '3273e916-5d84-4a2a-bfe8-e2b549e18f90',
+                    subject: 'New Demo Request - ' + savedData.name + ' (' + savedData.service + ')',
+                    from_name: 'GTT Chatbot',
+                    name: savedData.name,
+                    email: savedData.email,
+                    phone: savedData.phone,
+                    company: savedData.company,
+                    service: savedData.service,
+                    message: savedData.message || 'None',
+                    source: 'Website Chatbot',
+                    submitted_at: new Date().toLocaleString()
+                })
             })
-            .then(function(response) { return response.json(); })
+            .then(function(response) { 
+                return response.json(); 
+            })
             .then(function(data) {
                 if (data.success) {
-                    // Send beautiful HTML confirmation to user's email
-                    var userFormData = new FormData();
-                    userFormData.append('_subject', '✅ Demo Request Confirmed - GlobalTechAndTrade');
-                    userFormData.append('_template', 'table');
-                    userFormData.append('_captcha', 'false');
-                    userFormData.append('_honey', '');
-                    userFormData.append('Greeting', '🎉 Thank you for booking a demo with GlobalTechAndTrade!');
-                    userFormData.append('Status', '✅ Your request has been received');
-                    userFormData.append('Name', savedData.name);
-                    userFormData.append('Email', savedData.email);
-                    userFormData.append('Phone', savedData.phone);
-                    userFormData.append('Company', savedData.company);
-                    userFormData.append('Service_Interested', savedData.service);
-                    userFormData.append('Your_Message', savedData.message || 'None');
-                    userFormData.append('Next_Steps', '📞 Our team will contact you within 24 hours');
-                    userFormData.append('India_Office', '+91 9027125341');
-                    userFormData.append('Zambia_Office', '+260 977 588 581');
-                    userFormData.append('Website', 'www.globaltechandtrade.com');
-                    userFormData.append('Thank_You', '💙 GlobalTechAndTrade Team');
-
-                    fetch('https://formsubmit.co/ajax/' + savedData.email, {
+                    // Send confirmation email to visitor via backend API
+                    fetch('/api/send-demo-confirmation', {
                         method: 'POST',
-                        body: userFormData
-                    }).catch(function(e) { console.log('User email error:', e); });
-                    
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: savedData.name,
+                            email: savedData.email,
+                            phone: savedData.phone,
+                            company: savedData.company,
+                            service: savedData.service,
+                            message: savedData.message || 'None'
+                        })
+                    }).then(function(r) { return r.json(); })
+                      .then(function(emailResult) { console.log('Visitor email:', emailResult); })
+                      .catch(function(e) { console.log('Visitor email skipped:', e); });
+
                     setTimeout(function() {
-                        addMessage("✅ **Demo Booked Successfully!**\n\n📋 **Your Details:**\n• Name: " + savedData.name + "\n• Email: " + savedData.email + "\n• Phone: " + savedData.phone + "\n• Company: " + savedData.company + "\n• Service: " + savedData.service + "\n\n📧 A confirmation email has been sent to **" + savedData.email + "**!\n\n🕐 Our team will contact you within **24 hours** to schedule your demo.\n\nThank you for choosing GlobalTechAndTrade! 🙏", 'bot');
+                        addMessage("✅ **Demo Booked Successfully!**\n\n📋 **Your Details:**\n• Name: " + savedData.name + "\n• Email: " + savedData.email + "\n• Phone: " + savedData.phone + "\n• Company: " + savedData.company + "\n• Service: " + savedData.service + "\n\n📧 A confirmation email has been sent to **" + savedData.email + "**!\n\n🕐 Our team will contact you within **24 hours** to schedule your demo.\n\n📞 Or call us directly:\n• India: +91 9027125341\n• Zambia: +260 977 588 581\n\nThank you for choosing GlobalTechAndTrade! 🙏", 'bot');
                     }, 1000);
                 } else {
-                    throw new Error('Submission failed');
+                    throw new Error(data.message || 'Submission failed');
                 }
             })
             .catch(function(error) {
@@ -1556,32 +1660,26 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
             return null;
         }
 
-        // Auto-open after 10 seconds on every page load
-        // But if user manually closed it, don't auto-open again until next session
-        var userClosedChat = sessionStorage.getItem('userClosedChat');
-        
-        if (!userClosedChat) {
-            setTimeout(function() {
-                if (!isOpen) {
-                    openChat();
-                }
-            }, 5000);
-        }
+        // Auto-open after 5 seconds on every page refresh
+        setTimeout(function() {
+            if (!isOpen) {
+                openChat();
+            }
+        }, 5000);
 
-        // Track when user manually closes the chat
-        function closeChat() {
+        // Close chat function - exposed globally for header close button
+        window.closeChat = function() {
             chatWindow.style.transform = 'scale(0)';
             chatBackdrop.classList.add('hidden');
             setTimeout(function() { chatWindow.style.display = 'none'; }, 300);
             iconOpen.classList.remove('hidden');
             iconClose.classList.add('hidden');
             isOpen = false;
-            sessionStorage.setItem('userClosedChat', 'true');
-        }
-        
+        };
+
         // Close chat when clicking on backdrop
         chatBackdrop.addEventListener('click', function() {
-            closeChat();
+            window.closeChat();
         });
     })();
     </script>
