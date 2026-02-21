@@ -1137,7 +1137,7 @@
             <div id="quick-replies" class="p-3 border-t border-gray-300" style="background-color: white !important;">
             <p class="text-xs text-slate-500 mb-2">Quick questions:</p>
             <div class="flex flex-wrap gap-2">
-                <button onclick="sendQuickReply('Book a demo')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-white text-sm sm:text-xs font-medium rounded-full transition-all active:scale-95 shadow-sm" style="background: linear-gradient(135deg, #f97316, #ef4444);">📅 Book Demo</button>
+                <button onclick="startDemoBooking()" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-white text-sm sm:text-xs font-medium rounded-full transition-all active:scale-95 shadow-sm" style="background: linear-gradient(135deg, #f97316, #ef4444);">📅 Book Demo</button>
                 <button onclick="sendQuickReply('What services do you offer?')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-slate-600 text-sm sm:text-xs font-medium rounded-full transition-all hover:bg-primary hover:text-white active:scale-95" style="background: #e2e8f0;">Services</button>
                 <button onclick="sendQuickReply('Tell me about mobile app development')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-slate-600 text-sm sm:text-xs font-medium rounded-full transition-all hover:bg-primary hover:text-white active:scale-95" style="background: #e2e8f0;">Mobile Apps</button>
                 <button onclick="sendQuickReply('How to contact you?')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-slate-600 text-sm sm:text-xs font-medium rounded-full transition-all hover:bg-primary hover:text-white active:scale-95" style="background: #e2e8f0;">Contact</button>
@@ -1403,6 +1403,7 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
             }
             
             // Save the input
+            console.log('Saving field:', currentStep.field, 'value:', userInput);
             demoBooking.data[currentStep.field] = userInput;
             demoBooking.step++;
             
