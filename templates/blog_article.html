@@ -1,0 +1,112 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- Article Header -->
+<section class="relative py-16 bg-gradient-to-br from-dark via-slate-900 to-dark overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center" data-aos="fade-up">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <span class="px-3 py-1 bg-{{ article.color }}/20 text-{{ article.color_light }} text-xs font-bold rounded-full">{{ article.category }}</span>
+                <span class="text-white/50 text-sm"><i class="fas fa-clock mr-1"></i> {{ article.read_time }}</span>
+                <span class="text-white/50 text-sm"><i class="fas fa-calendar mr-1"></i> {{ article.date }}</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">{{ article.title }}</h1>
+            <p class="text-xl text-white/70 max-w-2xl mx-auto">{{ article.subtitle }}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Article Content -->
+<article class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Author Info -->
+        <div class="flex items-center gap-4 mb-12 pb-8 border-b border-slate-200">
+            <div class="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl">
+                {{ article.author_initials }}
+            </div>
+            <div>
+                <p class="font-bold text-slate-900">{{ article.author }}</p>
+                <p class="text-sm text-slate-500">{{ article.author_title }}</p>
+            </div>
+            <div class="ml-auto flex gap-2">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url }}" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 hover:bg-[#0077B5] hover:text-white transition-all" title="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url={{ request.url }}&text={{ article.title }}" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 hover:bg-[#1DA1F2] hover:text-white transition-all" title="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Article Body -->
+        <div class="prose prose-lg max-w-none">
+            {{ article.content | safe }}
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-12 pt-8 border-t border-slate-200">
+            <p class="text-sm font-bold text-slate-500 mb-4">TAGS</p>
+            <div class="flex flex-wrap gap-2">
+                {% for tag in article.tags %}
+                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-sm rounded-full">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Share -->
+        <div class="mt-8 p-6 bg-slate-50 rounded-2xl">
+            <p class="text-sm font-bold text-slate-500 mb-4">SHARE THIS ARTICLE</p>
+            <div class="flex gap-3">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.url }}" target="_blank" class="px-4 py-2 bg-[#0077B5] text-white font-semibold text-sm rounded-lg hover:bg-[#006699] transition-all flex items-center gap-2">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="https://twitter.com/intent/tweet?url={{ request.url }}&text={{ article.title }}" target="_blank" class="px-4 py-2 bg-slate-800 text-white font-semibold text-sm rounded-lg hover:bg-slate-700 transition-all flex items-center gap-2">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="https://wa.me/?text={{ article.title }} {{ request.url }}" target="_blank" class="px-4 py-2 bg-green-500 text-white font-semibold text-sm rounded-lg hover:bg-green-600 transition-all flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Related Articles -->
+<section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-black text-slate-900 mb-8">Related Articles</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            {% for related in related_articles %}
+            <article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                <div class="h-40 bg-gradient-to-br from-{{ related.color }} to-{{ related.color_dark }} flex items-center justify-center">
+                    <i class="fas fa-{{ related.icon }} text-5xl text-white/30"></i>
+                </div>
+                <div class="p-6">
+                    <span class="text-xs text-slate-500"><i class="fas fa-clock mr-1"></i> {{ related.read_time }}</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-2 mb-3 group-hover:text-primary transition-colors">{{ related.title }}</h3>
+                    <a href="{{ related.url }}" class="text-primary font-semibold text-sm hover:underline">Read More →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-16 bg-gradient-to-r from-primary via-secondary to-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-black text-white mb-4">Need Help with Your Project?</h2>
+        <p class="text-xl text-white/80 mb-8">Our experts are ready to help you succeed in technology and international trade.</p>
+        <a href="#" class="book-free-demo-trigger inline-flex items-center gap-3 px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-white/90 transition-all">
+            <i class="fas fa-calendar-check"></i>
+            Schedule Free Consultation
+        </a>
+    </div>
+</section>
+
+{% endblock %}

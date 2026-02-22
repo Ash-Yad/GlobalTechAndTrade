@@ -2,1094 +2,608 @@
 {% block content %}
 
 <!-- ============================================
-     HERO SECTION - Premium Modern Design
+     HERO SECTION - Business Vision
 ============================================ -->
 <section class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Dual Video Background - IT Solutions & Trade -->
+    <!-- Background -->
     <div class="absolute inset-0 z-0">
-        <!-- Video 1: Technology/IT Solutions -->
-        <video id="hero-video-tech" autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-primary/90 to-slate-900">
+            <div class="absolute inset-0 opacity-30" style="background: linear-gradient(135deg, #0052CC 0%, #003D99 25%, #FF6B35 50%, #003D99 75%, #0052CC 100%); background-size: 400% 400%; animation: gradientShift 15s ease infinite;"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl"></div>
+        </div>
+        <video id="hero-video" autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" oncanplay="this.style.opacity='0.4';">
             <source src="/static/videos/hero-bg.mp4" type="video/mp4">
         </video>
-        <!-- Video 2: Import/Export Trade -->
-        <video id="hero-video-trade" autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
-            <source src="/static/videos/hero-export.mp4" type="video/mp4">
-        </video>
         <div class="absolute inset-0 bg-gradient-to-br from-dark/95 via-dark/85 to-primary/40"></div>
-        <div class="absolute inset-0 mesh-bg opacity-60"></div>
     </div>
 
-    <!-- Video Indicator -->
-    <div class="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
-        <button id="video-indicator-tech" class="video-indicator active flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-semibold transition-all hover:bg-white/30">
-            <i class="fas fa-code"></i>
-            <span class="hidden sm:inline">IT Solutions</span>
-        </button>
-        <button id="video-indicator-trade" class="video-indicator flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 text-xs font-semibold transition-all hover:bg-white/20">
-            <i class="fas fa-ship"></i>
-            <span class="hidden sm:inline">Import/Export</span>
-        </button>
-    </div>
-
-    <!-- Floating Elements -->
-    <div class="absolute top-20 right-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl float-element"></div>
-    <div class="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl float-element-delayed"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-32">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-24 lg:py-32">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
             <!-- Left Content -->
-            <div class="text-center lg:text-left" data-aos="fade-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
-                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                    <span class="text-white/90 text-sm font-semibold">Trusted by 50+ Businesses Worldwide</span>
-                </div>
-
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-6">
+            <div data-aos="fade-right">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-[1.1] mb-6">
                     Enterprise
-                    <span class="block gradient-text-light">Technology</span>
+                    <span class="block bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent italic">Technology</span>
                     <span class="block">& Global Trade</span>
                 </h1>
 
-                <p class="text-lg md:text-xl text-white/80 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                <p class="text-lg text-white/80 mb-8 leading-relaxed">
                     We deliver cutting-edge IT solutions and seamless import-export services, connecting businesses across <strong class="text-primary">India</strong> and <strong class="text-accent">Africa</strong> with precision and expertise.
                 </p>
 
-                <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-12">
-                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-3 px-8 py-4 btn-accent text-white font-bold rounded-2xl shadow-lg shadow-accent/30 hover:shadow-xl hover:-translate-y-1 transition-all">
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-accent to-orange-500 text-white font-bold rounded-xl shadow-lg shadow-accent/30 hover:shadow-xl hover:-translate-y-1 transition-all">
                         <i class="fas fa-calendar-check"></i>
                         Schedule Consultation
                         <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </a>
-                    <a href="/it-solutions" class="group inline-flex items-center gap-3 px-8 py-4 glass text-white font-bold rounded-2xl hover:bg-white/20 transition-all">
+                    <a href="/services" class="group inline-flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all">
                         <i class="fas fa-play-circle"></i>
                         Explore Solutions
                     </a>
                 </div>
 
-                <!-- Trust Badges -->
-                <div class="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
+                <!-- Trust Indicators -->
+                <div class="flex flex-wrap items-center gap-4 mb-6">
                     <div class="flex items-center gap-2">
-                        <div class="flex -space-x-2">
-                            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold border-2 border-dark">IN</div>
-                            <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-bold border-2 border-dark">ZM</div>
-                            <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white text-xs font-bold border-2 border-dark">KE</div>
-                        </div>
-                        <span class="text-white/70 text-sm">Multi-Region Presence</span>
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded bg-green-600 text-white text-xs font-bold">IN</span>
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded bg-red-600 text-white text-xs font-bold">ZM</span>
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded bg-black text-white text-xs font-bold">KE</span>
+                        <span class="text-white/70 text-sm ml-1">Multi-Region Presence</span>
                     </div>
-                    <div class="h-6 w-px bg-white/20 hidden sm:block"></div>
-                    <div class="flex items-center gap-2 text-amber-400">
-                        <i class="fas fa-star"></i>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-star text-yellow-400"></i>
                         <span class="text-white/90 text-sm font-semibold">4.9/5 Client Rating</span>
                     </div>
                 </div>
+
+                <!-- Service Buttons -->
+                <div class="flex flex-wrap gap-3">
+                    <a href="/it-solutions" class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold rounded-full border border-white/20 hover:bg-white/20 transition-all">
+                        <i class="fas fa-code text-primary"></i>
+                        IT Solutions
+                    </a>
+                    <a href="/import-export" class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white text-sm font-semibold rounded-full border border-white/20 hover:bg-white/20 transition-all">
+                        <i class="fas fa-ship text-accent"></i>
+                        Import/Export
+                    </a>
+                </div>
             </div>
 
-            <!-- Right Side - Stats Cards -->
-            <div class="hidden lg:block" data-aos="fade-left" data-aos-delay="200">
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="glass-dark rounded-3xl p-6 hover-lift">
-                        <div class="text-4xl font-black text-white mb-2 stat-number">50+</div>
-                        <div class="text-white/60 text-sm font-medium">Projects Delivered</div>
-                        <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
-                            <div class="h-full w-4/5 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-                        </div>
-                    </div>
-                    <div class="glass-dark rounded-3xl p-6 hover-lift">
-                        <div class="text-4xl font-black text-white mb-2 stat-number">5+</div>
-                        <div class="text-white/60 text-sm font-medium">Years Experience</div>
-                        <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
-                            <div class="h-full w-3/4 bg-gradient-to-r from-accent to-primary rounded-full"></div>
-                        </div>
-                    </div>
-                    <div class="glass-dark rounded-3xl p-6 hover-lift">
-                        <div class="text-4xl font-black text-white mb-2 stat-number">12+</div>
-                        <div class="text-white/60 text-sm font-medium">Countries Served</div>
-                        <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
-                            <div class="h-full w-2/3 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-                        </div>
-                    </div>
-                    <div class="glass-dark rounded-3xl p-6 hover-lift">
-                        <div class="text-4xl font-black text-white mb-2 stat-number">24/7</div>
-                        <div class="text-white/60 text-sm font-medium">Support Available</div>
-                        <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
-                            <div class="h-full w-full bg-gradient-to-r from-green-500 to-emerald-400 rounded-full"></div>
-                        </div>
-                    </div>
+            <!-- Right Stats Cards -->
+            <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                <div class="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+                    <div class="text-4xl font-black text-white mb-1">50+</div>
+                    <div class="text-white/60 text-sm">Projects Delivered</div>
+                </div>
+                <div class="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+                    <div class="text-4xl font-black text-white mb-1">5+</div>
+                    <div class="text-white/60 text-sm">Years Experience</div>
+                </div>
+                <div class="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+                    <div class="text-4xl font-black text-white mb-1">12+</div>
+                    <div class="text-white/60 text-sm">Countries Served</div>
+                </div>
+                <div class="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+                    <div class="text-4xl font-black text-white mb-1">24/7</div>
+                    <div class="text-white/60 text-sm">Support Available</div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div class="flex flex-col items-center gap-2 text-white/50">
-            <span class="text-xs uppercase tracking-widest">Scroll to explore</span>
-            <div class="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
-                <div class="w-1 h-2 bg-white/50 rounded-full animate-bounce"></div>
-            </div>
+    <div class="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 text-center">
+        <p class="text-white/50 text-xs uppercase tracking-widest mb-2">Scroll to Explore</p>
+        <div class="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2 mx-auto">
+            <div class="w-1.5 h-3 bg-white/60 rounded-full animate-bounce"></div>
         </div>
     </div>
 </section>
 
-<!-- ANIMATED STATS STRIP -->
-<section class="py-12 bg-gradient-to-r from-dark via-slate-900 to-dark relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center">
-            <div class="stat-item">
-                <div class="text-4xl md:text-5xl font-black text-white mb-1">
-                    <span class="counter" data-target="50">0</span>+
-                </div>
-                <div class="text-sm text-white/60 font-medium">Projects Delivered</div>
-            </div>
-            <div class="stat-item">
-                <div class="text-4xl md:text-5xl font-black text-primary mb-1">
-                    <span class="counter" data-target="40">0</span>+
-                </div>
-                <div class="text-sm text-white/60 font-medium">Happy Clients</div>
-            </div>
-            <div class="stat-item">
-                <div class="text-4xl md:text-5xl font-black text-accent mb-1">
-                    <span class="counter" data-target="12">0</span>+
-                </div>
-                <div class="text-sm text-white/60 font-medium">Countries Served</div>
-            </div>
-            <div class="stat-item">
-                <div class="text-4xl md:text-5xl font-black text-secondary mb-1">
-                    <span class="counter" data-target="5">0</span>+
-                </div>
-                <div class="text-sm text-white/60 font-medium">Years Experience</div>
-            </div>
-            <div class="stat-item">
-                <div class="text-4xl md:text-5xl font-black text-green-400 mb-1">
-                    <span class="counter" data-target="98">0</span>%
-                </div>
-                <div class="text-sm text-white/60 font-medium">Client Satisfaction</div>
-            </div>
-            <div class="stat-item">
-                <div class="text-4xl md:text-5xl font-black text-purple-400 mb-1">
-                    24/7
-                </div>
-                <div class="text-sm text-white/60 font-medium">Support Available</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- RUNNING MARQUEE STRIP -->
-<section class="bg-gradient-to-r from-primary via-secondary to-primary py-3 overflow-hidden">
-    <div class="marquee-container">
-        <div class="marquee-content">
-            <!-- First Set -->
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> INDIA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> UAE</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> ZAMBIA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> TANZANIA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> KENYA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> NIGERIA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> GHANA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> MOBILE APPS</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> WEB APPS</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> GRAPHIC DESIGN</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> CUSTOMS CLEARANCE</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> FREIGHT FORWARDING</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> SUPPLY CHAIN</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> IT CONSULTING</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> E-COMMERCE</span>
-            <!-- Duplicate Set for Seamless Loop -->
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> INDIA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> UAE</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> ZAMBIA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> TANZANIA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> KENYA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> NIGERIA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> GHANA</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> MOBILE APPS</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> WEB APPS</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> GRAPHIC DESIGN</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> CUSTOMS CLEARANCE</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> FREIGHT FORWARDING</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> SUPPLY CHAIN</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> IT CONSULTING</span>
-            <span class="marquee-item"><i class="fas fa-star text-accent"></i> E-COMMERCE</span>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     TRUST BADGES SECTION
-═══════════════════════════════════════════════════════════ -->
-<section class="py-12 bg-white border-b border-slate-100">
+<!-- ============================================
+     HERO STATS BAR
+============================================ -->
+<section class="py-8 bg-slate-900 border-y border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-            <div class="flex items-center gap-3 text-slate-600">
-                <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-                    <i class="fas fa-shield-alt text-green-600 text-xl"></i>
-                </div>
-                <div>
-                    <p class="text-xs text-slate-400 uppercase tracking-wider">Verified</p>
-                    <p class="font-bold text-slate-800">Secure Payments</p>
-                </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+            <div data-aos="fade-up">
+                <div class="text-3xl md:text-4xl font-black text-white mb-1">50+</div>
+                <div class="text-slate-400 text-sm">Projects Delivered</div>
             </div>
-            <div class="flex items-center gap-3 text-slate-600">
-                <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
-                    <i class="fas fa-certificate text-blue-600 text-xl"></i>
-                </div>
-                <div>
-                    <p class="text-xs text-slate-400 uppercase tracking-wider">Certified</p>
-                    <p class="font-bold text-slate-800">ISO 9001:2015</p>
-                </div>
+            <div data-aos="fade-up" data-aos-delay="50">
+                <div class="text-3xl md:text-4xl font-black text-white mb-1">40+</div>
+                <div class="text-slate-400 text-sm">Happy Clients</div>
             </div>
-            <div class="flex items-center gap-3 text-slate-600">
-                <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
-                    <i class="fas fa-handshake text-purple-600 text-xl"></i>
-                </div>
-                <div>
-                    <p class="text-xs text-slate-400 uppercase tracking-wider">Trusted By</p>
-                    <p class="font-bold text-slate-800">50+ Businesses</p>
-                </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="text-3xl md:text-4xl font-black text-accent mb-1">12+</div>
+                <div class="text-slate-400 text-sm">Countries Served</div>
             </div>
-            <div class="flex items-center gap-3 text-slate-600">
-                <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
-                    <i class="fas fa-star text-amber-600 text-xl"></i>
-                </div>
-                <div>
-                    <p class="text-xs text-slate-400 uppercase tracking-wider">Rating</p>
-                    <p class="font-bold text-slate-800">4.9/5 Stars</p>
-                </div>
+            <div data-aos="fade-up" data-aos-delay="150">
+                <div class="text-3xl md:text-4xl font-black text-white mb-1">5+</div>
+                <div class="text-slate-400 text-sm">Years Experience</div>
             </div>
-            <div class="flex items-center gap-3 text-slate-600">
-                <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">
-                    <i class="fas fa-clock text-red-600 text-xl"></i>
-                </div>
-                <div>
-                    <p class="text-xs text-slate-400 uppercase tracking-wider">Support</p>
-                    <p class="font-bold text-slate-800">24/7 Available</p>
-                </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <div class="text-3xl md:text-4xl font-black text-accent mb-1">98%</div>
+                <div class="text-slate-400 text-sm">Client Satisfaction</div>
             </div>
+            <div data-aos="fade-up" data-aos-delay="250">
+                <div class="text-3xl md:text-4xl font-black text-white mb-1">24/7</div>
+                <div class="text-slate-400 text-sm">Support Available</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     SERVICES MARQUEE
+============================================ -->
+<section class="py-4 bg-gradient-to-r from-primary via-secondary to-primary overflow-hidden">
+    <div class="marquee-container">
+        <div class="marquee-content flex items-center gap-8 animate-marquee whitespace-nowrap">
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-mobile-alt text-yellow-300"></i>
+                <span>MOBILE APPS</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-globe text-yellow-300"></i>
+                <span>WEB APPS</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-paint-brush text-yellow-300"></i>
+                <span>GRAPHIC DESIGN</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-file-invoice text-yellow-300"></i>
+                <span>CUSTOMS CLEARANCE</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-ship text-yellow-300"></i>
+                <span>FREIGHT FORWARDING</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-boxes text-yellow-300"></i>
+                <span>SUPPLY CHAIN</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-laptop-code text-yellow-300"></i>
+                <span>IT CONSULTING</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <!-- Duplicate for seamless loop -->
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-mobile-alt text-yellow-300"></i>
+                <span>MOBILE APPS</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-globe text-yellow-300"></i>
+                <span>WEB APPS</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-paint-brush text-yellow-300"></i>
+                <span>GRAPHIC DESIGN</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-file-invoice text-yellow-300"></i>
+                <span>CUSTOMS CLEARANCE</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-ship text-yellow-300"></i>
+                <span>FREIGHT FORWARDING</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-boxes text-yellow-300"></i>
+                <span>SUPPLY CHAIN</span>
+            </div>
+            <span class="text-white/30">★</span>
+            <div class="flex items-center gap-3 text-white font-bold">
+                <i class="fas fa-laptop-code text-yellow-300"></i>
+                <span>IT CONSULTING</span>
+            </div>
+            <span class="text-white/30">★</span>
         </div>
     </div>
 </section>
 
 <style>
-.marquee-container {
-    width: 100%;
-    overflow: hidden;
-}
-.marquee-content {
-    display: flex;
-    animation: marquee 30s linear infinite;
-    width: max-content;
-}
-.marquee-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0 2rem;
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-}
 @keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
-.marquee-container:hover .marquee-content {
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+}
+.marquee-container:hover .animate-marquee {
     animation-play-state: paused;
 }
 </style>
 
-<!-- DUAL EXPERTISE SECTION -->
-<section class="py-24 bg-gradient-to-b from-white to-slate-50">
+<!-- ============================================
+     OUR SERVICES - Quick Overview
+============================================ -->
+<section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Our Expertise</span>
-            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Two Pillars of Excellence</h2>
-            <p class="text-lg text-slate-600">We combine world-class technology solutions with comprehensive global trade services—delivered from both our India and Zambia offices.</p>
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">What We Do</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4">Two Powerful Divisions</h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">Combining technology expertise with global trade experience to help your business grow.</p>
         </div>
 
-        <!-- Unified Offices Banner -->
-        <div class="bg-gradient-to-r from-primary/10 via-white to-accent/10 rounded-2xl p-6 mb-12 border border-slate-200" data-aos="fade-up">
-            <div class="flex flex-wrap items-center justify-center gap-8">
-                <div class="flex items-center gap-3">
-                    <img src="https://flagcdn.com/w40/in.png" alt="India" class="w-8 h-5 object-cover rounded shadow">
-                    <div>
-                        <div class="font-bold text-slate-900">India Office</div>
-                        <div class="text-xs text-slate-500">IT Solutions & Trade</div>
-                    </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- IT Solutions -->
+            <div class="group bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 border-2 border-slate-100 hover:border-primary/30 hover:shadow-2xl transition-all" data-aos="fade-up">
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                    <i class="fas fa-laptop-code text-3xl text-white"></i>
                 </div>
-                <div class="hidden sm:flex items-center gap-2 text-slate-400">
-                    <i class="fas fa-arrows-left-right"></i>
-                    <span class="text-sm font-semibold">Unified Operations</span>
-                    <i class="fas fa-arrows-left-right"></i>
-                </div>
-                <div class="flex items-center gap-3">
-                    <img src="https://flagcdn.com/w40/zm.png" alt="Zambia" class="w-8 h-5 object-cover rounded shadow">
-                    <div>
-                        <div class="font-bold text-slate-900">Zambia Office</div>
-                        <div class="text-xs text-slate-500">IT Solutions & Trade</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-8">
-            <!-- IT Solutions Card -->
-            <div class="group relative bg-white rounded-3xl p-8 md:p-10 border-2 border-slate-100 hover:border-primary/50 card-hover overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
-                
-                <div class="relative z-10">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-code text-2xl text-white"></i>
-                    </div>
-                    
-                    <h3 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">IT Solutions & Development</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">From custom software development to AI-powered applications, we build scalable solutions that drive digital transformation and operational efficiency.</p>
-                    
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-slate-600">
-                            <i class="fas fa-check-circle text-primary"></i>
-                            <span>Mobile Applications</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600">
-                            <i class="fas fa-check-circle text-primary"></i>
-                            <span>Web Development</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600">
-                            <i class="fas fa-check-circle text-primary"></i>
-                            <span>E-Commerce Platforms</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600">
-                            <i class="fas fa-check-circle text-primary"></i>
-                            <span>Business Software</span>
-                        </div>
-                    </div>
-                    
-                    <a href="/it-solutions" class="inline-flex items-center gap-2 text-primary font-bold group-hover:gap-3 transition-all">
-                        Explore IT Services
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-4">IT Solutions</h3>
+                <p class="text-slate-600 mb-6">Custom software, mobile apps, web applications, and digital transformation services built with cutting-edge technology.</p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i class="fas fa-check-circle text-primary"></i>
+                        Mobile App Development (iOS & Android)
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i class="fas fa-check-circle text-primary"></i>
+                        Web Applications & E-Commerce
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i class="fas fa-check-circle text-primary"></i>
+                        Custom Software & ERP Systems
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i class="fas fa-check-circle text-primary"></i>
+                        AI & Cloud Solutions
+                    </li>
+                </ul>
+                <a href="/it-solutions" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all">
+                    Explore IT Services
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
 
-            <!-- Import/Export Card -->
-            <div class="group relative bg-white rounded-3xl p-8 md:p-10 border-2 border-slate-100 hover:border-accent/50 card-hover overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent/10 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
-                
-                <div class="relative z-10">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-orange-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-ship text-2xl text-white"></i>
-                    </div>
-                    
-                    <h3 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">Import & Export Services</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">End-to-end trade solutions connecting India and Africa. We handle logistics, customs clearance, documentation, and supply chain management with precision.</p>
-                    
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-slate-600">
-                            <i class="fas fa-check-circle text-accent"></i>
-                            <span>Freight Forwarding</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600">
-                            <i class="fas fa-check-circle text-accent"></i>
-                            <span>Customs Clearance</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600">
-                            <i class="fas fa-check-circle text-accent"></i>
-                            <span>Trade Documentation</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600">
-                            <i class="fas fa-check-circle text-accent"></i>
-                            <span>Supply Chain</span>
-                        </div>
-                    </div>
-                    
-                    <a href="/import-export" class="inline-flex items-center gap-2 text-accent font-bold group-hover:gap-3 transition-all">
-                        Explore Trade Services
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+            <!-- Import/Export -->
+            <div class="group bg-gradient-to-br from-accent/5 to-orange-500/5 rounded-3xl p-8 border-2 border-slate-100 hover:border-accent/30 hover:shadow-2xl transition-all" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                    <i class="fas fa-ship text-3xl text-white"></i>
                 </div>
+                <h3 class="text-2xl font-black text-slate-900 mb-4">Import/Export Services</h3>
+                <p class="text-slate-600 mb-6">End-to-end trade solutions connecting India with Africa and the Middle East. From sourcing to delivery.</p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i class="fas fa-check-circle text-accent"></i>
+                        Product Sourcing & Procurement
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i class="fas fa-check-circle text-accent"></i>
+                        Customs Clearance & Documentation
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i class="fas fa-check-circle text-accent"></i>
+                        Freight Forwarding (Sea & Air)
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700">
+                        <i class="fas fa-check-circle text-accent"></i>
+                        Warehousing & Logistics
+                    </li>
+                </ul>
+                <a href="/import-export" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-bold rounded-xl hover:bg-accent/90 transition-all">
+                    Explore Trade Services
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- WHY CHOOSE US -->
-<section class="py-24 mesh-bg relative overflow-hidden">
-    <div class="absolute inset-0 noise-overlay"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <span class="inline-block px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-bold uppercase tracking-widest mb-4">Why GlobalTechAndTrade</span>
-            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Built for Serious Business</h2>
-            <p class="text-lg text-white/70">We don't just deliver services—we build lasting partnerships that drive measurable results.</p>
+
+<!-- ============================================
+     GLOBAL PRESENCE
+============================================ -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold uppercase tracking-widest mb-4">Global Reach</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4">Two Offices, One Vision</h2>
+            <p class="text-lg text-slate-600">Strategically located to serve businesses across continents</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="glass-dark rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                    <i class="fas fa-shield-alt text-2xl text-primary"></i>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- India Office -->
+            <div class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100" data-aos="fade-up">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                        <span class="text-3xl">🇮🇳</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900">India Headquarters</h3>
+                        <p class="text-slate-500">Technology & Development Hub</p>
+                    </div>
                 </div>
-                <h4 class="text-lg font-bold text-white mb-2">Enterprise Security</h4>
-                <p class="text-white/60 text-sm">Bank-grade security protocols protecting your data and intellectual property at every step.</p>
+                <div class="space-y-3 text-slate-600">
+                    <p><i class="fas fa-map-marker-alt text-primary mr-2"></i>Sector 63, Noida, UP 201301</p>
+                    <p><i class="fas fa-phone text-primary mr-2"></i>+91 9027125341</p>
+                    <p><i class="fas fa-clock text-primary mr-2"></i>Mon-Sat, 9AM-6PM IST</p>
+                </div>
             </div>
 
-            <div class="glass-dark rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
-                    <i class="fas fa-clock text-2xl text-accent"></i>
+            <!-- Zambia Office -->
+            <div class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                        <span class="text-3xl">🇿🇲</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-slate-900">Zambia Office</h3>
+                        <p class="text-slate-500">Africa Trade Operations</p>
+                    </div>
                 </div>
-                <h4 class="text-lg font-bold text-white mb-2">On-Time Delivery</h4>
-                <p class="text-white/60 text-sm">98% on-time delivery rate with transparent project tracking and milestone updates.</p>
+                <div class="space-y-3 text-slate-600">
+                    <p><i class="fas fa-map-marker-alt text-accent mr-2"></i>Plot #10424/4, Chainama, Lusaka</p>
+                    <p><i class="fas fa-phone text-accent mr-2"></i>+260 977 588 581</p>
+                    <p><i class="fas fa-clock text-accent mr-2"></i>Mon-Fri, 8AM-5PM CAT</p>
+                </div>
             </div>
+        </div>
 
-            <div class="glass-dark rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center mb-4">
-                    <i class="fas fa-headset text-2xl text-green-400"></i>
-                </div>
-                <h4 class="text-lg font-bold text-white mb-2">24/7 Support</h4>
-                <p class="text-white/60 text-sm">Round-the-clock technical support with dedicated account managers for priority clients.</p>
-            </div>
-
-            <div class="glass-dark rounded-2xl p-6 hover-lift" data-aos="fade-up" data-aos-delay="400">
-                <div class="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
-                    <i class="fas fa-globe-africa text-2xl text-purple-400"></i>
-                </div>
-                <h4 class="text-lg font-bold text-white mb-2">Dual Presence</h4>
-                <p class="text-white/60 text-sm">Strategic offices in India and Zambia ensuring local expertise with global standards.</p>
+        <!-- Countries Served -->
+        <div class="mt-12 text-center" data-aos="fade-up">
+            <p class="text-slate-500 mb-4 font-semibold">Countries We Serve</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm">🇮🇳 India</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm">🇿🇲 Zambia</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm">🇰🇪 Kenya</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm">🇹🇿 Tanzania</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm">🇳🇬 Nigeria</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm">🇬🇭 Ghana</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm">🇿🇦 South Africa</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm">🇦🇪 UAE</span>
+                <span class="px-4 py-2 bg-white rounded-full text-sm font-medium text-slate-700 shadow-sm">🇸🇦 Saudi Arabia</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SERVICES GRID -->
-<section class="py-24 bg-white">
+<!-- ============================================
+     WHY CHOOSE US
+============================================ -->
+<section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Our Services</span>
-            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Comprehensive Solutions</h2>
-            <p class="text-lg text-slate-600">From concept to deployment, from sourcing to delivery—we cover every aspect of your technology and trade needs.</p>
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-green-500/10 text-green-600 text-sm font-bold uppercase tracking-widest mb-4">Why GTT</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4">Why Businesses Choose Us</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center p-6" data-aos="fade-up">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <i class="fas fa-handshake text-2xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Dual Expertise</h3>
+                <p class="text-slate-600 mb-4">Unique combination of IT solutions and international trade under one roof.</p>
+                <a href="/services" class="text-primary text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                    Explore Services <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+            <div class="text-center p-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-accent/10 flex items-center justify-center">
+                    <i class="fas fa-globe text-2xl text-accent"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Global Network</h3>
+                <p class="text-slate-600 mb-4">Offices in India and Africa with partners across 12+ countries.</p>
+                <a href="/about" class="text-accent text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                    Our Locations <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+            <div class="text-center p-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-green-500/10 flex items-center justify-center">
+                    <i class="fas fa-award text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Proven Track Record</h3>
+                <p class="text-slate-600 mb-4">200+ successful projects and $5M+ in trade facilitated since 2021.</p>
+                <a href="/case-studies" class="text-green-600 text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                    View Case Studies <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     CLIENT TESTIMONIALS
+============================================ -->
+<section class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-12" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-4">Client Success</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-4">What Our Clients Say</h2>
+            <p class="text-white/60 text-lg">Real feedback from businesses we've helped transform.</p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <!-- Testimonial 1 -->
+            <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700" data-aos="fade-up">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-white/60 text-sm">5.0</span>
+                </div>
+                <p class="text-white/80 mb-6 leading-relaxed">"GlobalTechAndTrade transformed our business with their integrated approach. Their IT solutions streamlined our operations, and their trade services opened new markets for us across Africa."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold">MB</div>
+                    <div>
+                        <div class="text-white font-bold">Michael Banda</div>
+                        <div class="text-white/50 text-sm">CEO, Zambezi Trading Ltd</div>
+                        <div class="flex items-center gap-1 text-green-400 text-xs mt-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Zambia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-white/60 text-sm">5.0</span>
+                </div>
+                <p class="text-white/80 mb-6 leading-relaxed">"We needed a reliable partner for both software and cross-border trade. GlobalTechAndTrade delivered on both—our inventory app is live and we're now sourcing directly from India."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold">PK</div>
+                    <div>
+                        <div class="text-white font-bold">Priya Kapoor</div>
+                        <div class="text-white/50 text-sm">Director, Kobalt Imports</div>
+                        <div class="flex items-center gap-1 text-red-400 text-xs mt-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-white/60 text-sm">5.0</span>
+                </div>
+                <p class="text-white/80 mb-6 leading-relaxed">"The mobile app they built has become the backbone of our field operations. Clean code, on-time delivery, and their Zambia office made coordination seamless."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold">JM</div>
+                    <div>
+                        <div class="text-white font-bold">James Mwale</div>
+                        <div class="text-white/50 text-sm">Founder, AgriTech Zambia</div>
+                        <div class="flex items-center gap-1 text-green-400 text-xs mt-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Zambia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div data-aos="fade-up">
+                <div class="text-4xl font-black text-white mb-1">4.9/5</div>
+                <div class="text-white/50 text-sm">Average Rating</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="50">
+                <div class="text-4xl font-black text-accent mb-1">40+</div>
+                <div class="text-white/50 text-sm">Happy Clients</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-black text-accent mb-1">98%</div>
+                <div class="text-white/50 text-sm">Satisfaction Rate</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="150">
+                <div class="text-4xl font-black text-white italic mb-1">100%</div>
+                <div class="text-white/50 text-sm">Would Recommend</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     QUICK LINKS - Explore More
+============================================ -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-3xl font-black text-slate-900 mb-4">Explore More</h2>
+            <p class="text-slate-600">Discover our resources and learn how we can help your business</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="/it-solutions" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-primary/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
-                    <i class="fas fa-mobile-alt text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">Mobile App Development</h3>
-                <p class="text-slate-600 text-sm mb-4">Native and cross-platform mobile applications built with cutting-edge technologies for iOS and Android.</p>
-                <span class="text-primary font-semibold text-sm group-hover:underline">Learn more →</span>
+            <a href="/case-studies" class="group bg-slate-50 rounded-2xl p-6 hover:bg-primary hover:shadow-xl transition-all" data-aos="fade-up">
+                <i class="fas fa-briefcase text-3xl text-primary group-hover:text-white mb-4"></i>
+                <h3 class="text-lg font-bold text-slate-900 group-hover:text-white mb-2">Case Studies</h3>
+                <p class="text-slate-600 group-hover:text-white/80 text-sm">See our successful projects</p>
             </a>
-
-            <a href="/it-solutions" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-primary/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="150">
-                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
-                    <i class="fas fa-globe text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">Web Development</h3>
-                <p class="text-slate-600 text-sm mb-4">Responsive, scalable web applications and websites using modern frameworks and best practices.</p>
-                <span class="text-primary font-semibold text-sm group-hover:underline">Learn more →</span>
+            <a href="/blog" class="group bg-slate-50 rounded-2xl p-6 hover:bg-accent hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-newspaper text-3xl text-accent group-hover:text-white mb-4"></i>
+                <h3 class="text-lg font-bold text-slate-900 group-hover:text-white mb-2">Blog & Insights</h3>
+                <p class="text-slate-600 group-hover:text-white/80 text-sm">Industry knowledge & tips</p>
             </a>
-
-            <a href="/it-solutions" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-secondary/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all">
-                    <i class="fas fa-shopping-cart text-2xl text-secondary group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">E-Commerce Solutions</h3>
-                <p class="text-slate-600 text-sm mb-4">Complete e-commerce platforms with payment integration, inventory management, and analytics.</p>
-                <span class="text-secondary font-semibold text-sm group-hover:underline">Learn more →</span>
-            </a>
-
-            <a href="/import-export" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-accent/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="250">
-                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all">
-                    <i class="fas fa-ship text-2xl text-accent group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">Freight & Logistics</h3>
-                <p class="text-slate-600 text-sm mb-4">Sea, air, and land freight solutions with real-time tracking and competitive rates across trade corridors.</p>
-                <span class="text-accent font-semibold text-sm group-hover:underline">Learn more →</span>
-            </a>
-
-            <a href="/import-export" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-accent/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all">
-                    <i class="fas fa-file-contract text-2xl text-accent group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">Customs & Compliance</h3>
-                <p class="text-slate-600 text-sm mb-4">Expert customs clearance, documentation, and regulatory compliance for seamless cross-border trade.</p>
-                <span class="text-accent font-semibold text-sm group-hover:underline">Learn more →</span>
-            </a>
-
-            <a href="/it-solutions" class="group relative bg-slate-50 rounded-2xl p-8 border-2 border-transparent hover:border-purple-500/30 hover:bg-white card-hover" data-aos="fade-up" data-aos-delay="350">
-                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:text-white transition-all">
-                    <i class="fas fa-project-diagram text-2xl text-purple-500 group-hover:text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">Business Process Software</h3>
-                <p class="text-slate-600 text-sm mb-4">Custom ERP, CRM, and workflow automation solutions tailored to your business processes.</p>
-                <span class="text-purple-500 font-semibold text-sm group-hover:underline">Learn more →</span>
+            <a href="/faq" class="group bg-slate-50 rounded-2xl p-6 hover:bg-green-600 hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-question-circle text-3xl text-green-600 group-hover:text-white mb-4"></i>
+                <h3 class="text-lg font-bold text-slate-900 group-hover:text-white mb-2">FAQ</h3>
+                <p class="text-slate-600 group-hover:text-white/80 text-sm">Common questions answered</p>
             </a>
         </div>
     </div>
 </section>
 
-<!-- HOW WE WORK - PROCESS SECTION -->
-<section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Our Process</span>
-            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">How We Deliver Excellence</h2>
-            <p class="text-lg text-slate-600">A proven methodology that ensures quality, transparency, and on-time delivery for every project.</p>
-        </div>
-
-        <div class="relative">
-            <!-- Connection Line -->
-            <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary transform -translate-y-1/2 z-0"></div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 relative z-10">
-                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
-                        <span class="text-2xl font-black">01</span>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Discovery</h4>
-                    <p class="text-xs text-slate-500">Understanding your requirements</p>
-                </div>
-
-                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="150">
-                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-secondary to-secondary/80 flex items-center justify-center text-white shadow-lg shadow-secondary/30 group-hover:scale-110 transition-transform">
-                        <span class="text-2xl font-black">02</span>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Planning</h4>
-                    <p class="text-xs text-slate-500">Strategy & roadmap creation</p>
-                </div>
-
-                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center text-white shadow-lg shadow-accent/30 group-hover:scale-110 transition-transform">
-                        <span class="text-2xl font-black">03</span>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Design</h4>
-                    <p class="text-xs text-slate-500">UI/UX & architecture</p>
-                </div>
-
-                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="250">
-                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-500/80 flex items-center justify-center text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
-                        <span class="text-2xl font-black">04</span>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Development</h4>
-                    <p class="text-xs text-slate-500">Agile implementation</p>
-                </div>
-
-                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500 to-green-500/80 flex items-center justify-center text-white shadow-lg shadow-green-500/30 group-hover:scale-110 transition-transform">
-                        <span class="text-2xl font-black">05</span>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Testing</h4>
-                    <p class="text-xs text-slate-500">Quality assurance</p>
-                </div>
-
-                <div class="process-step text-center group" data-aos="fade-up" data-aos-delay="350">
-                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-pink-500 to-pink-500/80 flex items-center justify-center text-white shadow-lg shadow-pink-500/30 group-hover:scale-110 transition-transform">
-                        <span class="text-2xl font-black">06</span>
-                    </div>
-                    <h4 class="font-bold text-slate-900 mb-2">Launch</h4>
-                    <p class="text-xs text-slate-500">Deployment & support</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- INDUSTRIES WE SERVE -->
-<section class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <span class="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold uppercase tracking-widest mb-4">Industries</span>
-            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Solutions for Every Industry</h2>
-            <p class="text-lg text-slate-600">We deliver tailored IT and trade solutions across diverse sectors.</p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-primary/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="50">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
-                    <i class="fas fa-shopping-bag text-2xl text-primary group-hover:text-white"></i>
-                </div>
-                <h4 class="font-bold text-slate-900 text-sm">Retail & E-commerce</h4>
-            </div>
-
-            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-secondary/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary transition-colors">
-                    <i class="fas fa-heartbeat text-2xl text-secondary group-hover:text-white"></i>
-                </div>
-                <h4 class="font-bold text-slate-900 text-sm">Healthcare</h4>
-            </div>
-
-            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-accent/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="150">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent transition-colors">
-                    <i class="fas fa-truck text-2xl text-accent group-hover:text-white"></i>
-                </div>
-                <h4 class="font-bold text-slate-900 text-sm">Logistics</h4>
-            </div>
-
-            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-green-500/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-green-500/10 flex items-center justify-center group-hover:bg-green-500 transition-colors">
-                    <i class="fas fa-seedling text-2xl text-green-500 group-hover:text-white"></i>
-                </div>
-                <h4 class="font-bold text-slate-900 text-sm">Agriculture</h4>
-            </div>
-
-            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-purple-500/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="250">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500 transition-colors">
-                    <i class="fas fa-graduation-cap text-2xl text-purple-500 group-hover:text-white"></i>
-                </div>
-                <h4 class="font-bold text-slate-900 text-sm">Education</h4>
-            </div>
-
-            <div class="industry-card bg-white rounded-2xl p-6 text-center border-2 border-slate-100 hover:border-pink-500/50 hover:shadow-xl transition-all group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-pink-500/10 flex items-center justify-center group-hover:bg-pink-500 transition-colors">
-                    <i class="fas fa-industry text-2xl text-pink-500 group-hover:text-white"></i>
-                </div>
-                <h4 class="font-bold text-slate-900 text-sm">Manufacturing</h4>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="py-24 bg-gradient-to-br from-dark via-slate-900 to-dark relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <span class="inline-block px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-bold uppercase tracking-widest mb-4">Client Success</span>
-            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">What Our Clients Say</h2>
-            <p class="text-lg text-white/70">Real feedback from businesses we've helped transform.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass-dark rounded-3xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex items-center gap-1 text-amber-400 mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span class="text-white/60 text-sm ml-2">5.0</span>
-                </div>
-                <blockquote class="text-white/90 leading-relaxed mb-6">
-                    "GlobalTechAndTrade transformed our business with their integrated approach. Their IT solutions streamlined our operations, and their trade services opened new markets for us across Africa."
-                </blockquote>
-                <div class="flex items-center gap-4 pt-6 border-t border-white/10">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">MB</div>
-                    <div>
-                        <p class="font-bold text-white">Michael Banda</p>
-                        <p class="text-sm text-white/60">CEO, Zambezi Trading Ltd</p>
-                        <p class="text-xs text-primary mt-1"><i class="fas fa-map-marker-alt mr-1"></i>Zambia</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-dark rounded-3xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex items-center gap-1 text-amber-400 mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span class="text-white/60 text-sm ml-2">5.0</span>
-                </div>
-                <blockquote class="text-white/90 leading-relaxed mb-6">
-                    "We needed a reliable partner for both software and cross-border trade. GlobalTechAndTrade delivered on both—our inventory app is live and we're now sourcing directly from India."
-                </blockquote>
-                <div class="flex items-center gap-4 pt-6 border-t border-white/10">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-orange-600 flex items-center justify-center text-white font-bold">PK</div>
-                    <div>
-                        <p class="font-bold text-white">Priya Kapoor</p>
-                        <p class="text-sm text-white/60">Director, Kobalt Imports</p>
-                        <p class="text-xs text-accent mt-1"><i class="fas fa-map-marker-alt mr-1"></i>India</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-dark rounded-3xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="300">
-                <div class="flex items-center gap-1 text-amber-400 mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span class="text-white/60 text-sm ml-2">5.0</span>
-                </div>
-                <blockquote class="text-white/90 leading-relaxed mb-6">
-                    "The mobile app they built has become the backbone of our field operations. Clean code, on-time delivery, and their Zambia office made coordination seamless."
-                </blockquote>
-                <div class="flex items-center gap-4 pt-6 border-t border-white/10">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white font-bold">JM</div>
-                    <div>
-                        <p class="font-bold text-white">James Mwale</p>
-                        <p class="text-sm text-white/60">Founder, AgriTech Zambia</p>
-                        <p class="text-xs text-green-400 mt-1"><i class="fas fa-map-marker-alt mr-1"></i>Zambia</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Testimonial Stats -->
-        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-                <div class="text-3xl font-black text-white">4.9/5</div>
-                <div class="text-sm text-white/60">Average Rating</div>
-            </div>
-            <div>
-                <div class="text-3xl font-black text-primary">40+</div>
-                <div class="text-sm text-white/60">Happy Clients</div>
-            </div>
-            <div>
-                <div class="text-3xl font-black text-accent">98%</div>
-                <div class="text-sm text-white/60">Satisfaction Rate</div>
-            </div>
-            <div>
-                <div class="text-3xl font-black text-green-400">100%</div>
-                <div class="text-sm text-white/60">Would Recommend</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PARTNERSHIP MODELS SECTION -->
-<section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <span class="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-bold uppercase tracking-widest mb-4">Engagement Models</span>
-            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Ways to Work With Us</h2>
-            <p class="text-lg text-slate-600">Flexible partnership models tailored to your project needs and business goals.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="group relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 border-2 border-primary/20 hover:border-primary/50 transition-all hover-lift" data-aos="fade-up" data-aos-delay="100">
-                <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span class="text-primary font-black">01</span>
-                </div>
-                <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mb-6">
-                    <i class="fas fa-file-contract text-2xl text-white"></i>
-                </div>
-                <h3 class="text-2xl font-black text-slate-900 mb-4">Fixed Price</h3>
-                <p class="text-slate-600 mb-6">Ideal for well-defined projects with clear scope. Get a fixed quote upfront with milestone-based delivery.</p>
-                <ul class="space-y-2 text-sm text-slate-600">
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Defined scope & timeline</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Predictable budget</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Milestone payments</li>
-                </ul>
-            </div>
-
-            <div class="group relative bg-gradient-to-br from-accent/5 to-accent/10 rounded-3xl p-8 border-2 border-accent/20 hover:border-accent/50 transition-all hover-lift" data-aos="fade-up" data-aos-delay="200">
-                <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                    <span class="text-accent font-black">02</span>
-                </div>
-                <div class="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center mb-6">
-                    <i class="fas fa-users text-2xl text-white"></i>
-                </div>
-                <h3 class="text-2xl font-black text-slate-900 mb-4">Dedicated Team</h3>
-                <p class="text-slate-600 mb-6">Hire skilled developers who work exclusively on your project. Scale up or down as needed.</p>
-                <ul class="space-y-2 text-sm text-slate-600">
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-accent"></i> Full-time dedicated resources</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-accent"></i> Flexible team scaling</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-accent"></i> Direct communication</li>
-                </ul>
-            </div>
-
-            <div class="group relative bg-gradient-to-br from-secondary/5 to-secondary/10 rounded-3xl p-8 border-2 border-secondary/20 hover:border-secondary/50 transition-all hover-lift" data-aos="fade-up" data-aos-delay="300">
-                <div class="absolute top-6 right-6 w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <span class="text-secondary font-black">03</span>
-                </div>
-                <div class="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6">
-                    <i class="fas fa-clock text-2xl text-white"></i>
-                </div>
-                <h3 class="text-2xl font-black text-slate-900 mb-4">Time & Material</h3>
-                <p class="text-slate-600 mb-6">Pay for actual hours worked. Perfect for evolving projects with changing requirements.</p>
-                <ul class="space-y-2 text-sm text-slate-600">
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i> Flexible scope</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i> Transparent billing</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-secondary"></i> Agile development</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     FAQ SECTION
-═══════════════════════════════════════════════════════════ -->
-<section class="py-20 bg-slate-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12" data-aos="fade-up">
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-4">
-                <i class="fas fa-question-circle"></i>
-                FAQ
-            </span>
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Frequently Asked Questions</h2>
-            <p class="text-lg text-slate-600">Everything you need to know about our services</p>
-        </div>
-        
-        <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
-            <!-- FAQ Item 1 -->
-            <div class="faq-item bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-                <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors">
-                    <span class="font-bold text-slate-900 pr-4">What services does GlobalTechAndTrade offer?</span>
-                    <i class="fas fa-chevron-down text-primary transition-transform faq-icon"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-5">
-                    <p class="text-slate-600">We offer comprehensive IT solutions including mobile app development, web development, custom software, ERP/CRM systems, and e-commerce platforms. We also provide import/export services, logistics, customs clearance, and trade consulting across India, Africa, and the Middle East.</p>
-                </div>
-            </div>
-            
-            <!-- FAQ Item 2 -->
-            <div class="faq-item bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-                <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors">
-                    <span class="font-bold text-slate-900 pr-4">Which countries do you operate in?</span>
-                    <i class="fas fa-chevron-down text-primary transition-transform faq-icon"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-5">
-                    <p class="text-slate-600">We have offices in India (Noida) and Zambia (Lusaka), serving clients across India, Africa (Zambia, Tanzania, Kenya, Nigeria, Ghana), and the Middle East (UAE, Saudi Arabia). Our global team ensures 24/7 support and seamless project delivery.</p>
-                </div>
-            </div>
-            
-            <!-- FAQ Item 3 -->
-            <div class="faq-item bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-                <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors">
-                    <span class="font-bold text-slate-900 pr-4">How long does a typical project take?</span>
-                    <i class="fas fa-chevron-down text-primary transition-transform faq-icon"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-5">
-                    <p class="text-slate-600">Project timelines vary based on complexity. A simple website takes 2-4 weeks, mobile apps take 6-12 weeks, and enterprise solutions can take 3-6 months. For import/export, transit times depend on shipping routes. We provide detailed timelines during our free consultation.</p>
-                </div>
-            </div>
-            
-            <!-- FAQ Item 4 -->
-            <div class="faq-item bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-                <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors">
-                    <span class="font-bold text-slate-900 pr-4">What are your payment terms?</span>
-                    <i class="fas fa-chevron-down text-primary transition-transform faq-icon"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-5">
-                    <p class="text-slate-600">For IT projects, we typically work with a 30-40% upfront payment, with the balance paid in milestones. For trade services, we offer flexible payment terms including LC, TT, and credit terms for established clients. We accept payments in USD, INR, and ZMW.</p>
-                </div>
-            </div>
-            
-            <!-- FAQ Item 5 -->
-            <div class="faq-item bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-                <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors">
-                    <span class="font-bold text-slate-900 pr-4">Do you provide ongoing support after project completion?</span>
-                    <i class="fas fa-chevron-down text-primary transition-transform faq-icon"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-5">
-                    <p class="text-slate-600">Yes! All our IT projects include free support for the first 3 months. We also offer annual maintenance contracts (AMC) for continuous support, updates, and improvements. Our 24/7 support team is always available for critical issues.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA SECTION -->
+<!-- ============================================
+     CTA SECTION
+============================================ -->
 <section class="py-24 relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-dark via-slate-900 to-dark"></div>
     <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 40px 40px;"></div>
     
-    <!-- Floating Elements -->
-    <div class="absolute top-20 left-10 w-20 h-20 rounded-full bg-primary/20 animate-float"></div>
-    <div class="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-accent/15 animate-float" style="animation-delay: 1s;"></div>
-    <div class="absolute top-1/2 right-1/4 w-16 h-16 rounded-full bg-secondary/20 animate-float" style="animation-delay: 2s;"></div>
-    
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="bg-gradient-to-br from-primary to-secondary rounded-3xl p-8 md:p-12 text-center shadow-2xl" data-aos="fade-up">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-white text-sm font-bold mb-6">
                 <i class="fas fa-rocket"></i>
-                Let's Build Something Great Together
+                "Driven by Innovation. Powered by Global Commerce."
             </div>
             
-            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Ready to Transform Your Business?</h2>
-            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">Whether you need cutting-edge software or seamless global trade solutions, we're here to help you succeed.</p>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-6">Ready to Grow Your Business?</h2>
+            <p class="text-lg text-white/90 mb-8 max-w-xl mx-auto">Get a free consultation with our experts. No commitment required.</p>
             
-            <div class="flex flex-wrap gap-4 justify-center mb-10">
-                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-3 px-10 py-5 bg-white text-primary font-bold rounded-2xl shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-3 px-8 py-4 bg-white text-primary font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
                     <i class="fas fa-calendar-check"></i>
-                    Schedule Free Consultation
+                    Get Free Quote
                     <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
-                <a href="/contact" class="inline-flex items-center gap-3 px-10 py-5 bg-dark/30 text-white font-bold rounded-2xl border-2 border-white/40 hover:bg-dark/50 transition-all">
-                    <i class="fas fa-envelope"></i>
-                    Contact Us
+                <a href="https://wa.me/919027125341" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-green-500 text-white font-bold rounded-2xl hover:bg-green-600 transition-all">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Us
                 </a>
             </div>
-            
-            <div class="flex flex-wrap items-center justify-center gap-8 text-white">
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-check-circle text-green-300"></i>
-                    <span>No commitment required</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-check-circle text-green-300"></i>
-                    <span>Free project assessment</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-check-circle text-green-300"></i>
-                    <span>Response within 24 hours</span>
-                </div>
-            </div>
         </div>
-        
     </div>
 </section>
 
 <style>
-    .video-indicator.active {
-        background: rgba(255,255,255,0.25);
-        border-color: rgba(255,255,255,0.5);
-        color: white;
-    }
-    .counter {
-        font-variant-numeric: tabular-nums;
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
 </style>
-
-<script>
-(function() {
-    // ========== DUAL VIDEO SWITCHING ==========
-    var vTech = document.getElementById('hero-video-tech');
-    var vTrade = document.getElementById('hero-video-trade');
-    var btnTech = document.getElementById('video-indicator-tech');
-    var btnTrade = document.getElementById('video-indicator-trade');
-    
-    var currentVideo = 'tech';
-    var autoSwitchInterval = 8000;
-    var autoSwitchTimer;
-
-    function playVideos() {
-        if (vTech) vTech.play().catch(function() {});
-        if (vTrade) vTrade.play().catch(function() {});
-    }
-
-    function pauseVideos() {
-        if (vTech) vTech.pause();
-        if (vTrade) vTrade.pause();
-    }
-
-    function switchToTech() {
-        currentVideo = 'tech';
-        if (vTech) vTech.style.opacity = '1';
-        if (vTrade) vTrade.style.opacity = '0';
-        if (btnTech) btnTech.classList.add('active');
-        if (btnTrade) btnTrade.classList.remove('active');
-    }
-
-    function switchToTrade() {
-        currentVideo = 'trade';
-        if (vTech) vTech.style.opacity = '0';
-        if (vTrade) vTrade.style.opacity = '1';
-        if (btnTech) btnTech.classList.remove('active');
-        if (btnTrade) btnTrade.classList.add('active');
-    }
-
-    function autoSwitch() {
-        if (currentVideo === 'tech') {
-            switchToTrade();
-        } else {
-            switchToTech();
-        }
-    }
-
-    function startAutoSwitch() {
-        stopAutoSwitch();
-        autoSwitchTimer = setInterval(autoSwitch, autoSwitchInterval);
-    }
-
-    function stopAutoSwitch() {
-        if (autoSwitchTimer) {
-            clearInterval(autoSwitchTimer);
-        }
-    }
-
-    playVideos();
-    startAutoSwitch();
-
-    if (btnTech) {
-        btnTech.addEventListener('click', function() {
-            switchToTech();
-            startAutoSwitch();
-        });
-    }
-
-    if (btnTrade) {
-        btnTrade.addEventListener('click', function() {
-            switchToTrade();
-            startAutoSwitch();
-        });
-    }
-
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            pauseVideos();
-            stopAutoSwitch();
-        } else {
-            playVideos();
-            startAutoSwitch();
-        }
-    });
-
-    // ========== ANIMATED COUNTER ==========
-    function animateCounters() {
-        var counters = document.querySelectorAll('.counter');
-        var speed = 200;
-
-        counters.forEach(function(counter) {
-            var target = +counter.getAttribute('data-target');
-            var count = 0;
-            var increment = target / speed;
-
-            function updateCount() {
-                count += increment;
-                if (count < target) {
-                    counter.innerText = Math.ceil(count);
-                    requestAnimationFrame(updateCount);
-                } else {
-                    counter.innerText = target;
-                }
-            }
-            updateCount();
-        });
-    }
-
-    // Intersection Observer for counter animation
-    var statsSection = document.querySelector('.stat-item');
-    if (statsSection) {
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.disconnect();
-                }
-            });
-        }, { threshold: 0.5 });
-        observer.observe(statsSection);
-    }
-
-    // ========== FAQ ACCORDION ==========
-    document.querySelectorAll('.faq-trigger').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var item = this.closest('.faq-item');
-            var content = item.querySelector('.faq-content');
-            var icon = item.querySelector('.faq-icon');
-            var isOpen = !content.classList.contains('hidden');
-            
-            // Close all other FAQs
-            document.querySelectorAll('.faq-item').forEach(function(otherItem) {
-                if (otherItem !== item) {
-                    otherItem.querySelector('.faq-content').classList.add('hidden');
-                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
-                }
-            });
-            
-            // Toggle current FAQ
-            if (isOpen) {
-                content.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                content.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            }
-        });
-    });
-})();
-</script>
 
 {% endblock %}

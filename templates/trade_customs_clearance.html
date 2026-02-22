@@ -1,0 +1,389 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+══════════════════════════════════ -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent via-accent/90 to-orange-600"></div>
+        <div class="absolute inset-0 mesh-bg opacity-30"></div>
+    </div>
+
+    <div class="absolute top-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl float-element-delayed"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <nav class="flex items-center gap-2 text-white/60 text-sm mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <a href="/import-export" class="hover:text-white">Import/Export</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-white">Customs Clearance</span>
+                </nav>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    Customs Clearance
+                    <span class="block text-white/90">&amp; Compliance</span>
+                </h1>
+
+                <p class="text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
+                    Navigate complex customs regulations with ease. We handle HS classification, duty optimization, documentation, and clearance across India and Africa.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Get Customs Quote
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#services" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/30 hover:bg-white/20 transition-all">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block" data-aos="fade-left">
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-file-invoice-dollar text-5xl text-white/80"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between bg-white/10 rounded-lg p-3">
+                                <span class="text-white/70">HS Classification</span>
+                                <span class="text-green-400 font-bold"><i class="fas fa-check-circle"></i></span>
+                            </div>
+                            <div class="flex items-center justify-between bg-white/10 rounded-lg p-3">
+                                <span class="text-white/70">Duty Calculation</span>
+                                <span class="text-green-400 font-bold"><i class="fas fa-check-circle"></i></span>
+                            </div>
+                            <div class="flex items-center justify-between bg-white/10 rounded-lg p-3">
+                                <span class="text-white/70">Documentation</span>
+                                <span class="text-green-400 font-bold"><i class="fas fa-check-circle"></i></span>
+                            </div>
+                            <div class="flex items-center justify-between bg-white/10 rounded-lg p-3">
+                                <span class="text-white/70">Clearance Status</span>
+                                <span class="text-yellow-400 font-bold">Processing...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
+                        <i class="fas fa-clock mr-2"></i>24hr Clearance
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CUSTOMS SERVICES
+══════════════════════════════════ -->
+<section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold uppercase tracking-widest mb-4">Our Services</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Complete Customs Solutions</h2>
+            <p class="text-lg text-slate-600">From classification to clearance, we handle every aspect of customs compliance.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-accent/20" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all">
+                    <i class="fas fa-tags text-2xl text-accent group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">HS Code Classification</h3>
+                <p class="text-slate-600 mb-4">Accurate Harmonized System classification to ensure correct duty rates and compliance.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Product analysis</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Code determination</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Ruling applications</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
+                    <i class="fas fa-calculator text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Duty Optimization</h3>
+                <p class="text-slate-600 mb-4">Minimize customs duties through legal optimization strategies and trade agreements.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> FTA utilization</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Duty drawback</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Exemption schemes</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-secondary/20" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:scale-110 transition-all">
+                    <i class="fas fa-file-alt text-2xl text-secondary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Documentation</h3>
+                <p class="text-slate-600 mb-4">Complete preparation and verification of all customs documentation.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Bill of Entry</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Shipping Bill</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Certificates of Origin</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-green-500/20" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-stamp text-2xl text-green-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Import Clearance</h3>
+                <p class="text-slate-600 mb-4">Fast-track import clearance at all major ports in India and Africa.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Port handling</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Duty payment</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Release coordination</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-purple-500/20" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-box-open text-2xl text-purple-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Export Clearance</h3>
+                <p class="text-slate-600 mb-4">Smooth export procedures with all necessary permits and certifications.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Export licenses</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Quality certificates</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Phytosanitary certs</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-blue-500/20" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-gavel text-2xl text-blue-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Compliance & Audit</h3>
+                <p class="text-slate-600 mb-4">Ensure ongoing compliance and prepare for customs audits.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Compliance review</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Audit preparation</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Dispute resolution</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PORTS WE COVER
+══════════════════════════════════ -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Coverage</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Ports We Cover</h2>
+            <p class="text-lg text-slate-600">Customs clearance services at all major ports across India and Africa.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="https://flagcdn.com/w80/in.png" alt="India" class="w-12 h-8 rounded shadow">
+                    <h3 class="text-2xl font-bold text-slate-900">Indian Ports</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">JNPT Mumbai</div>
+                        <div class="text-sm text-slate-500">Largest container port</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Chennai</div>
+                        <div class="text-sm text-slate-500">South India hub</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Mundra</div>
+                        <div class="text-sm text-slate-500">Private port leader</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Kolkata</div>
+                        <div class="text-sm text-slate-500">East India gateway</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Cochin</div>
+                        <div class="text-sm text-slate-500">Transshipment hub</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Delhi ICD</div>
+                        <div class="text-sm text-slate-500">Inland container</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="fas fa-globe-africa text-3xl text-accent"></i>
+                    <h3 class="text-2xl font-bold text-slate-900">African Ports</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Dar es Salaam</div>
+                        <div class="text-sm text-slate-500">Tanzania</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Mombasa</div>
+                        <div class="text-sm text-slate-500">Kenya</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Durban</div>
+                        <div class="text-sm text-slate-500">South Africa</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Beira</div>
+                        <div class="text-sm text-slate-500">Mozambique</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Walvis Bay</div>
+                        <div class="text-sm text-slate-500">Namibia</div>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-lg">
+                        <div class="font-semibold text-slate-900">Lusaka ICD</div>
+                        <div class="text-sm text-slate-500">Zambia (Inland)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MARKET SCENARIO
+══════════════════════════════════ -->
+<section class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-4">Market Insights</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Customs Landscape in 2026</h2>
+            <p class="text-lg text-white/70">Understanding the evolving customs environment is crucial for successful trade.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-black text-accent mb-2">24hrs</div>
+                <div class="text-white/80">Average Clearance Time</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-black text-primary mb-2">15-20%</div>
+                <div class="text-white/80">Duty Savings Possible</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-black text-secondary mb-2">98%</div>
+                <div class="text-white/80">First-Time Clearance Rate</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-4xl font-black text-green-400 mb-2">0</div>
+                <div class="text-white/80">Compliance Penalties</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Key Customs Trends</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-laptop text-accent"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Digital Customs</h4>
+                            <p class="text-white/60 text-sm">Electronic filing, paperless processing, and real-time tracking becoming standard.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-handshake text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">AfCFTA Implementation</h4>
+                            <p class="text-white/60 text-sm">African Continental Free Trade Area reducing tariffs across 54 countries.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-secondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Stricter Compliance</h4>
+                            <p class="text-white/60 text-sm">Increased scrutiny on valuation, origin, and classification accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">AI-Powered Risk Assessment</h4>
+                            <p class="text-white/60 text-sm">Customs authorities using AI for targeting and risk profiling.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Why GTT for Customs?</h3>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Licensed Customs Brokers</span>
+                                <p class="text-white/60 text-sm">Fully licensed and bonded customs brokers in India and Zambia.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Deep Regulatory Knowledge</span>
+                                <p class="text-white/60 text-sm">Experts in Indian and African customs regulations and trade agreements.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Fast Clearance</span>
+                                <p class="text-white/60 text-sm">Strong relationships with customs authorities for expedited processing.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Duty Optimization</span>
+                                <p class="text-white/60 text-sm">We find legal ways to minimize your customs duties and taxes.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA SECTION
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Need Customs Clearance?</h2>
+            <p class="text-xl text-slate-600 mb-8">Get fast, compliant customs clearance for your shipments.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-orange-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    Get Customs Quote
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="/import-export" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Trade Services
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

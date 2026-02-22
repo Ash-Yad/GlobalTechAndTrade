@@ -1,0 +1,407 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+══════════════════════════════════ -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-900 via-green-800 to-slate-900"></div>
+        <div class="absolute inset-0 mesh-bg opacity-30"></div>
+    </div>
+
+    <div class="absolute top-20 right-20 w-96 h-96 bg-green-400/10 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl float-element-delayed"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <nav class="flex items-center gap-2 text-white/60 text-sm mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <a href="/it-solutions" class="hover:text-white">IT Solutions</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-white">Cybersecurity</span>
+                </nav>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    Cybersecurity
+                    <span class="block text-green-400">Solutions</span>
+                </h1>
+
+                <p class="text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
+                    Protect your business from cyber threats with comprehensive security solutions. From audits to implementation to 24/7 monitoring.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-white text-green-900 font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Get Security Assessment
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#services" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/30 hover:bg-white/20 transition-all">
+                        View Services
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block" data-aos="fade-left">
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="flex items-center justify-center mb-6">
+                            <div class="relative">
+                                <div class="w-24 h-24 rounded-full bg-green-500/20 flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-4xl text-green-400"></i>
+                                </div>
+                                <div class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 text-center text-sm">
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <i class="fas fa-lock text-green-400 mb-1"></i>
+                                <div class="text-white/70 text-xs">Encryption</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <i class="fas fa-user-shield text-green-400 mb-1"></i>
+                                <div class="text-white/70 text-xs">Identity</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <i class="fas fa-network-wired text-green-400 mb-1"></i>
+                                <div class="text-white/70 text-xs">Network</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-3">
+                                <i class="fas fa-eye text-green-400 mb-1"></i>
+                                <div class="text-white/70 text-xs">Monitoring</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
+                        <i class="fas fa-shield-alt mr-2"></i>Protected
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECURITY SERVICES
+══════════════════════════════════ -->
+<section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-green-500/10 text-green-600 text-sm font-bold uppercase tracking-widest mb-4">Our Services</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Comprehensive Security Solutions</h2>
+            <p class="text-lg text-slate-600">Multi-layered security approach to protect your business from evolving cyber threats.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-green-500/20" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-search text-2xl text-green-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Security Audits</h3>
+                <p class="text-slate-600 mb-4">Comprehensive assessment of your security posture to identify vulnerabilities and risks.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Infrastructure audit</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Application security</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Policy review</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Risk assessment</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-red-500/20" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-14 h-14 rounded-xl bg-red-500/10 flex items-center justify-center mb-6 group-hover:bg-red-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-bug text-2xl text-red-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Penetration Testing</h3>
+                <p class="text-slate-600 mb-4">Ethical hacking to find vulnerabilities before malicious actors do.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Network penetration</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Web app testing</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Social engineering</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Red team exercises</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-blue-500/20" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-clipboard-check text-2xl text-blue-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Compliance Management</h3>
+                <p class="text-slate-600 mb-4">Ensure your organization meets regulatory requirements and industry standards.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> GDPR compliance</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> ISO 27001</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> PCI DSS</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> SOC 2</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-purple-500/20" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-eye text-2xl text-purple-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Security Monitoring (SOC)</h3>
+                <p class="text-slate-600 mb-4">24/7 security operations center monitoring your systems for threats.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> SIEM implementation</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Threat detection</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Incident response</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Log analysis</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-orange-500/20" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-user-lock text-2xl text-orange-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Identity & Access Management</h3>
+                <p class="text-slate-600 mb-4">Control who has access to what with robust identity management solutions.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Single sign-on (SSO)</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Multi-factor auth</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Privileged access</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Zero trust</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-cyan-500/20" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:bg-cyan-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-graduation-cap text-2xl text-cyan-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Security Training</h3>
+                <p class="text-slate-600 mb-4">Educate your employees to recognize and prevent security threats.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Phishing awareness</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Security best practices</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Incident reporting</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Simulated attacks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     THREAT LANDSCAPE
+══════════════════════════════════ -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-red-500/10 text-red-600 text-sm font-bold uppercase tracking-widest mb-4">Threat Landscape</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Threats We Protect Against</h2>
+            <p class="text-lg text-slate-600">Cyber threats are evolving rapidly. Here's what businesses face today.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-100 flex items-center justify-center">
+                    <i class="fas fa-virus text-2xl text-red-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Ransomware</h3>
+                <p class="text-sm text-slate-600">Malware that encrypts your data and demands payment for decryption.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-orange-100 flex items-center justify-center">
+                    <i class="fas fa-fish text-2xl text-orange-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Phishing</h3>
+                <p class="text-sm text-slate-600">Deceptive emails and websites designed to steal credentials.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-100 flex items-center justify-center">
+                    <i class="fas fa-user-secret text-2xl text-purple-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Insider Threats</h3>
+                <p class="text-sm text-slate-600">Malicious or negligent employees compromising security.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-server text-2xl text-blue-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">DDoS Attacks</h3>
+                <p class="text-sm text-slate-600">Overwhelming your systems with traffic to cause downtime.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center">
+                    <i class="fas fa-database text-2xl text-green-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Data Breaches</h3>
+                <p class="text-sm text-slate-600">Unauthorized access to sensitive customer or business data.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-yellow-100 flex items-center justify-center">
+                    <i class="fas fa-code text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">SQL Injection</h3>
+                <p class="text-sm text-slate-600">Exploiting vulnerabilities in web applications to access databases.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-pink-100 flex items-center justify-center">
+                    <i class="fas fa-link text-2xl text-pink-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Supply Chain Attacks</h3>
+                <p class="text-sm text-slate-600">Compromising third-party vendors to access your systems.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="450">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-100 flex items-center justify-center">
+                    <i class="fas fa-robot text-2xl text-indigo-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">AI-Powered Attacks</h3>
+                <p class="text-sm text-slate-600">Sophisticated attacks using AI to evade detection.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MARKET SCENARIO
+══════════════════════════════════ -->
+<section class="py-20 bg-gradient-to-br from-slate-900 via-green-900 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-green-400/20 text-green-400 text-sm font-bold uppercase tracking-widest mb-4">Market Insights</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Cybersecurity in 2026</h2>
+            <p class="text-lg text-white/70">Cyber attacks are increasing in frequency and sophistication. Security is no longer optional—it's a business imperative.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-black text-red-400 mb-2">$10.5T</div>
+                <div class="text-white/80">Annual Cybercrime Cost by 2025</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-black text-orange-400 mb-2">2,200</div>
+                <div class="text-white/80">Cyber Attacks Per Day</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-black text-yellow-400 mb-2">$4.45M</div>
+                <div class="text-white/80">Average Data Breach Cost</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-4xl font-black text-green-400 mb-2">60%</div>
+                <div class="text-white/80">SMBs Close After Attack</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Key Security Trends in 2026</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-fingerprint text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Zero Trust Architecture</h4>
+                            <p class="text-white/60 text-sm">"Never trust, always verify"—every access request is authenticated regardless of location.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">AI-Powered Security</h4>
+                            <p class="text-white/60 text-sm">Machine learning for threat detection, behavioral analysis, and automated response.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-cloud text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Cloud Security Posture</h4>
+                            <p class="text-white/60 text-sm">Specialized tools for securing cloud environments and detecting misconfigurations.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-virus text-orange-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Extended Detection & Response (XDR)</h4>
+                            <p class="text-white/60 text-sm">Unified security across endpoints, network, cloud, and email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Why GTT for Cybersecurity?</h3>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Certified Security Experts</span>
+                                <p class="text-white/60 text-sm">CISSP, CEH, and OSCP certified professionals on our team.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Proactive Approach</span>
+                                <p class="text-white/60 text-sm">We find vulnerabilities before attackers do through continuous testing.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">24/7 Monitoring</span>
+                                <p class="text-white/60 text-sm">Round-the-clock security operations center watching your systems.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Compliance Expertise</span>
+                                <p class="text-white/60 text-sm">We help you meet GDPR, PCI DSS, ISO 27001, and local regulations.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Africa-Focused</span>
+                                <p class="text-white/60 text-sm">Understanding of regional threats and compliance requirements.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA SECTION
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Is Your Business Secure?</h2>
+            <p class="text-xl text-slate-600 mb-8">Get a free security assessment to identify vulnerabilities and protect your business from cyber threats.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-green-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    Get Free Security Assessment
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="/case-studies" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all">
+                    <i class="fas fa-folder-open"></i>
+                    View Security Projects
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

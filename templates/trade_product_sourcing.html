@@ -1,0 +1,452 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+══════════════════════════════════ -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent"></div>
+        <div class="absolute inset-0 mesh-bg opacity-30"></div>
+    </div>
+
+    <div class="absolute top-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl float-element-delayed"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <nav class="flex items-center gap-2 text-white/60 text-sm mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <a href="/import-export" class="hover:text-white">Import/Export</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-white">Product Sourcing</span>
+                </nav>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    Product Sourcing
+                    <span class="block text-accent">&amp; Procurement</span>
+                </h1>
+
+                <p class="text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
+                    Connect directly with verified manufacturers and suppliers across India, China, and Asia. We handle supplier verification, negotiation, and quality control.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Request Sourcing
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#process" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/30 hover:bg-white/20 transition-all">
+                        Our Process
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block" data-aos="fade-left">
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-search-dollar text-5xl text-white/80"></i>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-white/10 rounded-xl p-4">
+                                <div class="text-2xl font-black text-white">500+</div>
+                                <div class="text-white/60 text-sm">Verified Suppliers</div>
+                            </div>
+                            <div class="bg-white/10 rounded-xl p-4">
+                                <div class="text-2xl font-black text-white">12+</div>
+                                <div class="text-white/60 text-sm">Countries</div>
+                            </div>
+                            <div class="bg-white/10 rounded-xl p-4">
+                                <div class="text-2xl font-black text-white">98%</div>
+                                <div class="text-white/60 text-sm">Quality Rate</div>
+                            </div>
+                            <div class="bg-white/10 rounded-xl p-4">
+                                <div class="text-2xl font-black text-white">30%</div>
+                                <div class="text-white/60 text-sm">Avg. Savings</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-accent text-white px-4 py-2 rounded-lg font-bold text-sm">
+                        <i class="fas fa-check-circle mr-2"></i>Verified Partners
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     WHAT WE SOURCE
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Product Categories</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">What We Source</h2>
+            <p class="text-lg text-slate-600">From industrial machinery to consumer goods, we source products across all major categories.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-industry text-xl text-blue-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Industrial Machinery</h3>
+                <p class="text-sm text-slate-600 mb-3">Manufacturing equipment, CNC machines, packaging machinery, and industrial tools.</p>
+                <ul class="text-xs text-slate-500 space-y-1">
+                    <li>• CNC & Lathe Machines</li>
+                    <li>• Packaging Equipment</li>
+                    <li>• Agricultural Machinery</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-laptop text-xl text-green-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Electronics & IT</h3>
+                <p class="text-sm text-slate-600 mb-3">Computers, networking equipment, consumer electronics, and components.</p>
+                <ul class="text-xs text-slate-500 space-y-1">
+                    <li>• IT Hardware</li>
+                    <li>• Consumer Electronics</li>
+                    <li>• Electronic Components</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-tshirt text-xl text-purple-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Textiles & Apparel</h3>
+                <p class="text-sm text-slate-600 mb-3">Fabrics, garments, home textiles, and fashion accessories.</p>
+                <ul class="text-xs text-slate-500 space-y-1">
+                    <li>• Cotton & Synthetic Fabrics</li>
+                    <li>• Ready-made Garments</li>
+                    <li>• Home Textiles</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-pills text-xl text-red-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Pharmaceuticals</h3>
+                <p class="text-sm text-slate-600 mb-3">Generic medicines, medical equipment, and healthcare products.</p>
+                <ul class="text-xs text-slate-500 space-y-1">
+                    <li>• Generic Medicines</li>
+                    <li>• Medical Devices</li>
+                    <li>• Healthcare Supplies</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-car text-xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Auto Parts</h3>
+                <p class="text-sm text-slate-600 mb-3">Spare parts, accessories, tires, and automotive components.</p>
+                <ul class="text-xs text-slate-500 space-y-1">
+                    <li>• Spare Parts</li>
+                    <li>• Tires & Batteries</li>
+                    <li>• Accessories</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-hard-hat text-xl text-orange-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Construction Materials</h3>
+                <p class="text-sm text-slate-600 mb-3">Building materials, hardware, tiles, and construction equipment.</p>
+                <ul class="text-xs text-slate-500 space-y-1">
+                    <li>• Steel & Iron</li>
+                    <li>• Tiles & Sanitaryware</li>
+                    <li>• Hardware & Tools</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-utensils text-xl text-cyan-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Food & Beverages</h3>
+                <p class="text-sm text-slate-600 mb-3">Spices, rice, processed foods, and beverage ingredients.</p>
+                <ul class="text-xs text-slate-500 space-y-1">
+                    <li>• Spices & Herbs</li>
+                    <li>• Rice & Grains</li>
+                    <li>• Processed Foods</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-6 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="450">
+                <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-flask text-xl text-pink-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Chemicals</h3>
+                <p class="text-sm text-slate-600 mb-3">Industrial chemicals, dyes, paints, and specialty chemicals.</p>
+                <ul class="text-xs text-slate-500 space-y-1">
+                    <li>• Industrial Chemicals</li>
+                    <li>• Dyes & Pigments</li>
+                    <li>• Paints & Coatings</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SOURCING PROCESS
+══════════════════════════════════ -->
+<section id="process" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold uppercase tracking-widest mb-4">Our Process</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">How We Source Products</h2>
+            <p class="text-lg text-slate-600">A systematic approach to finding the right suppliers and ensuring quality.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mb-4">1</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Requirement Analysis</h3>
+                <p class="text-slate-600">We understand your exact specifications, quality standards, quantity requirements, and budget constraints.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mb-4">2</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Supplier Identification</h3>
+                <p class="text-slate-600">We identify potential suppliers from our verified network and conduct initial screening based on your criteria.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg mb-4">3</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Supplier Verification</h3>
+                <p class="text-slate-600">Factory audits, certification checks, production capacity assessment, and financial stability verification.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg mb-4">4</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Sample & Negotiation</h3>
+                <p class="text-slate-600">We arrange samples for your approval and negotiate the best prices, payment terms, and delivery schedules.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg mb-4">5</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Quality Inspection</h3>
+                <p class="text-slate-600">Pre-shipment inspection, in-process quality checks, and final product verification before dispatch.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg mb-4">6</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Order Management</h3>
+                <p class="text-slate-600">Complete order tracking, production monitoring, and coordination until goods are shipped.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SOURCING REGIONS
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-bold uppercase tracking-widest mb-4">Sourcing Regions</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Where We Source From</h2>
+            <p class="text-lg text-slate-600">Strategic sourcing from the world's leading manufacturing hubs.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 text-white" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="https://flagcdn.com/w80/in.png" alt="India" class="w-12 h-8 rounded shadow">
+                    <h3 class="text-2xl font-bold">India</h3>
+                </div>
+                <p class="text-white/80 mb-6">Our primary sourcing hub with strong relationships across major industrial clusters.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Pharmaceuticals & Generics</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Textiles & Garments</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Auto Parts & Machinery</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> IT Hardware & Software</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Spices & Food Products</li>
+                </ul>
+            </div>
+
+            <div class="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-8 text-white" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="https://flagcdn.com/w80/cn.png" alt="China" class="w-12 h-8 rounded shadow">
+                    <h3 class="text-2xl font-bold">China</h3>
+                </div>
+                <p class="text-white/80 mb-6">The world's manufacturing powerhouse for electronics and consumer goods.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Electronics & Components</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Industrial Machinery</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Consumer Products</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Solar & Renewable</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Construction Materials</li>
+                </ul>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-8 text-white" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="fas fa-globe-asia text-3xl"></i>
+                    <h3 class="text-2xl font-bold">Southeast Asia</h3>
+                </div>
+                <p class="text-white/80 mb-6">Emerging manufacturing destinations with competitive pricing.</p>
+                <ul class="space-y-2 text-sm">
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Vietnam - Textiles & Footwear</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Thailand - Auto Parts</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Malaysia - Electronics</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Indonesia - Palm Oil & Rubber</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check"></i> Bangladesh - Garments</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MARKET SCENARIO
+══════════════════════════════════ -->
+<section class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-4">Market Insights</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Global Sourcing in 2026</h2>
+            <p class="text-lg text-white/70">The global sourcing landscape is evolving. Here's what businesses need to know.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-black text-accent mb-2">$28T</div>
+                <div class="text-white/80">Global Trade Volume</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-black text-primary mb-2">65%</div>
+                <div class="text-white/80">Companies Diversifying Suppliers</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-black text-secondary mb-2">$200B</div>
+                <div class="text-white/80">India-Africa Trade by 2030</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-4xl font-black text-green-400 mb-2">40%</div>
+                <div class="text-white/80">Cost Savings via Direct Sourcing</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Key Sourcing Trends</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-sitemap text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Supply Chain Diversification</h4>
+                            <p class="text-white/60 text-sm">Companies are moving away from single-source dependency to multi-supplier strategies.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-leaf text-accent"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Sustainable Sourcing</h4>
+                            <p class="text-white/60 text-sm">Growing demand for ethically sourced products with verified sustainability credentials.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-secondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Digital Procurement</h4>
+                            <p class="text-white/60 text-sm">AI-powered supplier matching and blockchain for supply chain transparency.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Near-shoring & Friend-shoring</h4>
+                            <p class="text-white/60 text-sm">Preference for sourcing from geopolitically aligned and nearby regions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Why GTT for Product Sourcing?</h3>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">On-Ground Presence</span>
+                                <p class="text-white/60 text-sm">Our team in India can visit factories, verify suppliers, and inspect products firsthand.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Verified Supplier Network</span>
+                                <p class="text-white/60 text-sm">500+ pre-vetted suppliers across India and Asia with proven track records.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Quality Guarantee</span>
+                                <p class="text-white/60 text-sm">Multi-stage quality inspection process with detailed reports and photos.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">End-to-End Service</span>
+                                <p class="text-white/60 text-sm">From sourcing to shipping to customs clearance—we handle everything.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Africa Market Expertise</span>
+                                <p class="text-white/60 text-sm">We understand what products work in African markets and local regulations.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA SECTION
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Need to Source Products?</h2>
+            <p class="text-xl text-slate-600 mb-8">Tell us what you're looking for and we'll find the best suppliers for you.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    Submit Sourcing Request
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="/import-export" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Trade Services
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

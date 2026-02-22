@@ -1,0 +1,407 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+══════════════════════════════════ -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/90 to-primary"></div>
+        <div class="absolute inset-0 mesh-bg opacity-30"></div>
+    </div>
+
+    <div class="absolute top-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl float-element-delayed"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <nav class="flex items-center gap-2 text-white/60 text-sm mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <a href="/it-solutions" class="hover:text-white">IT Solutions</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-white">Custom Software</span>
+                </nav>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    Custom Software
+                    <span class="block text-accent">Development</span>
+                </h1>
+
+                <p class="text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
+                    Tailor-made enterprise software solutions that streamline operations, boost productivity, and give you a competitive edge.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-white text-secondary font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Discuss Your Project
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#solutions" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/30 hover:bg-white/20 transition-all">
+                        View Solutions
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block" data-aos="fade-left">
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-white/10 rounded-xl p-4 text-center">
+                                <i class="fas fa-cogs text-2xl text-white mb-2"></i>
+                                <div class="text-white/70 text-xs">ERP</div>
+                            </div>
+                            <div class="bg-white/10 rounded-xl p-4 text-center">
+                                <i class="fas fa-users text-2xl text-white mb-2"></i>
+                                <div class="text-white/70 text-xs">CRM</div>
+                            </div>
+                            <div class="bg-white/10 rounded-xl p-4 text-center">
+                                <i class="fas fa-boxes text-2xl text-white mb-2"></i>
+                                <div class="text-white/70 text-xs">Inventory</div>
+                            </div>
+                            <div class="bg-white/10 rounded-xl p-4 text-center">
+                                <i class="fas fa-file-invoice text-2xl text-white mb-2"></i>
+                                <div class="text-white/70 text-xs">Billing</div>
+                            </div>
+                            <div class="bg-white/10 rounded-xl p-4 text-center">
+                                <i class="fas fa-chart-pie text-2xl text-white mb-2"></i>
+                                <div class="text-white/70 text-xs">Analytics</div>
+                            </div>
+                            <div class="bg-white/10 rounded-xl p-4 text-center">
+                                <i class="fas fa-truck text-2xl text-white mb-2"></i>
+                                <div class="text-white/70 text-xs">Logistics</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-accent text-white px-4 py-2 rounded-lg font-bold text-sm">
+                        <i class="fas fa-puzzle-piece mr-2"></i>Integrated Solutions
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SOLUTIONS WE BUILD
+══════════════════════════════════ -->
+<section id="solutions" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-bold uppercase tracking-widest mb-4">Our Solutions</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Enterprise Software That Transforms</h2>
+            <p class="text-lg text-slate-600">Off-the-shelf software doesn't fit every business. We build custom solutions designed around your unique processes.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-secondary/20" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:scale-110 transition-all">
+                    <i class="fas fa-sitemap text-2xl text-secondary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">ERP Systems</h3>
+                <p class="text-slate-600 mb-4">Unified enterprise resource planning that connects finance, HR, operations, and supply chain in one system.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Financial management</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> HR & Payroll</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Supply chain</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Manufacturing</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
+                    <i class="fas fa-users-cog text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">CRM Solutions</h3>
+                <p class="text-slate-600 mb-4">Customer relationship management that helps you track leads, close deals, and retain customers.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Lead management</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Sales pipeline</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Customer support</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Marketing automation</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-accent/20" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all">
+                    <i class="fas fa-warehouse text-2xl text-accent group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Inventory Management</h3>
+                <p class="text-slate-600 mb-4">Real-time inventory tracking across warehouses, automated reordering, and demand forecasting.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Multi-warehouse</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Barcode/RFID</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Auto-reordering</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Demand forecasting</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-green-500/20" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-file-invoice-dollar text-2xl text-green-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Billing & Invoicing</h3>
+                <p class="text-slate-600 mb-4">Automated billing systems with subscription management, payment processing, and financial reporting.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Recurring billing</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Multi-currency</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Tax compliance</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Payment gateways</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-purple-500/20" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-project-diagram text-2xl text-purple-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Workflow Automation</h3>
+                <p class="text-slate-600 mb-4">Digitize and automate business processes to eliminate manual work and reduce errors.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Process mapping</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Approval workflows</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Document routing</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Notifications</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-orange-500/20" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-chart-bar text-2xl text-orange-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Business Intelligence</h3>
+                <p class="text-slate-600 mb-4">Data analytics dashboards that turn your business data into actionable insights.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Custom dashboards</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Real-time analytics</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Predictive models</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Report automation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     WHY CUSTOM SOFTWARE
+══════════════════════════════════ -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Why Custom?</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Off-the-Shelf vs Custom Software</h2>
+                <p class="text-lg text-slate-600 mb-8">Generic software forces you to adapt your business to the software. Custom software adapts to your business.</p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 mb-1">Perfect Fit for Your Processes</h4>
+                            <p class="text-slate-600 text-sm">Built around how your business actually works, not how software vendors think it should.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 mb-1">No Per-User Licensing Fees</h4>
+                            <p class="text-slate-600 text-sm">You own the software. Add unlimited users without monthly subscription costs.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 mb-1">Competitive Advantage</h4>
+                            <p class="text-slate-600 text-sm">Your competitors can't buy the same software—it's uniquely yours.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 mb-1">Seamless Integration</h4>
+                            <p class="text-slate-600 text-sm">Connects with your existing systems, databases, and third-party services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 text-center">Cost Comparison Over 5 Years</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-slate-600">Off-the-Shelf SaaS</span>
+                                <span class="font-bold text-red-500">$150,000+</span>
+                            </div>
+                            <div class="h-4 bg-red-100 rounded-full">
+                                <div class="h-4 bg-red-500 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">$2,500/month × 60 months + customization fees</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-slate-600">Custom Software</span>
+                                <span class="font-bold text-green-500">$60,000-80,000</span>
+                            </div>
+                            <div class="h-4 bg-green-100 rounded-full">
+                                <div class="h-4 bg-green-500 rounded-full" style="width: 50%"></div>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">One-time development + minimal maintenance</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 p-4 bg-green-50 rounded-xl text-center">
+                        <div class="text-2xl font-black text-green-600">Save 50-60%</div>
+                        <div class="text-sm text-slate-600">Over 5-year ownership</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MARKET SCENARIO
+══════════════════════════════════ -->
+<section class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-4">Market Insights</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Enterprise Software Market 2026</h2>
+            <p class="text-lg text-white/70">Digital transformation is no longer optional. Companies investing in custom software are outperforming competitors.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-black text-accent mb-2">$650B</div>
+                <div class="text-white/80">Enterprise Software Market</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-black text-primary mb-2">78%</div>
+                <div class="text-white/80">Companies Investing in Custom</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-black text-secondary mb-2">3.2x</div>
+                <div class="text-white/80">ROI from Digital Transformation</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-4xl font-black text-green-400 mb-2">40%</div>
+                <div class="text-white/80">Efficiency Gains Reported</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Industry Trends Driving Custom Software</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">AI & Automation Integration</h4>
+                            <p class="text-white/60 text-sm">Custom software allows seamless AI integration for predictive analytics and process automation.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-cloud text-accent"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Cloud-Native Architecture</h4>
+                            <p class="text-white/60 text-sm">Modern custom software is built for the cloud, enabling scalability and remote access.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-plug text-secondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">API-First Design</h4>
+                            <p class="text-white/60 text-sm">Modern systems are designed to integrate with any third-party service via APIs.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-mobile-alt text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Mobile-First Enterprise</h4>
+                            <p class="text-white/60 text-sm">Enterprise software now includes mobile apps for field workers and executives on the go.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Industries We Serve</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 rounded-xl p-4 text-center">
+                        <i class="fas fa-industry text-2xl text-primary mb-2"></i>
+                        <div class="text-white font-semibold">Manufacturing</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-4 text-center">
+                        <i class="fas fa-truck text-2xl text-accent mb-2"></i>
+                        <div class="text-white font-semibold">Logistics</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-4 text-center">
+                        <i class="fas fa-shopping-bag text-2xl text-secondary mb-2"></i>
+                        <div class="text-white font-semibold">Retail</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-4 text-center">
+                        <i class="fas fa-heartbeat text-2xl text-red-400 mb-2"></i>
+                        <div class="text-white font-semibold">Healthcare</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-4 text-center">
+                        <i class="fas fa-university text-2xl text-yellow-400 mb-2"></i>
+                        <div class="text-white font-semibold">Finance</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-4 text-center">
+                        <i class="fas fa-graduation-cap text-2xl text-purple-400 mb-2"></i>
+                        <div class="text-white font-semibold">Education</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-4 text-center">
+                        <i class="fas fa-seedling text-2xl text-green-400 mb-2"></i>
+                        <div class="text-white font-semibold">Agriculture</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-4 text-center">
+                        <i class="fas fa-hard-hat text-2xl text-orange-400 mb-2"></i>
+                        <div class="text-white font-semibold">Construction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA SECTION
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Ready to Digitize Your Business?</h2>
+            <p class="text-xl text-slate-600 mb-8">Let's discuss how custom software can transform your operations and give you a competitive edge.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-secondary to-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    Book Free Consultation
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="/case-studies" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all">
+                    <i class="fas fa-folder-open"></i>
+                    View Case Studies
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

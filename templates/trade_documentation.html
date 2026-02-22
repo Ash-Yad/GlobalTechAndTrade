@@ -1,0 +1,390 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+══════════════════════════════════ -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-700 via-indigo-600 to-purple-500"></div>
+        <div class="absolute inset-0 mesh-bg opacity-30"></div>
+    </div>
+
+    <div class="absolute top-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl float-element-delayed"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <nav class="flex items-center gap-2 text-white/60 text-sm mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <a href="/import-export" class="hover:text-white">Import/Export</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-white">Trade Documentation</span>
+                </nav>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    Trade Documentation
+                    <span class="block text-accent">&amp; Compliance</span>
+                </h1>
+
+                <p class="text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
+                    Complete documentation services for international trade. From commercial invoices to certificates of origin, we ensure your paperwork is perfect.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Get Documentation Help
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#documents" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/30 hover:bg-white/20 transition-all">
+                        View Documents
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block" data-aos="fade-left">
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-file-alt text-5xl text-white/80"></i>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 bg-white/10 rounded-lg p-3">
+                                <i class="fas fa-file-invoice text-white/70"></i>
+                                <span class="text-white/90">Commercial Invoice</span>
+                                <i class="fas fa-check-circle text-green-400 ml-auto"></i>
+                            </div>
+                            <div class="flex items-center gap-3 bg-white/10 rounded-lg p-3">
+                                <i class="fas fa-list text-white/70"></i>
+                                <span class="text-white/90">Packing List</span>
+                                <i class="fas fa-check-circle text-green-400 ml-auto"></i>
+                            </div>
+                            <div class="flex items-center gap-3 bg-white/10 rounded-lg p-3">
+                                <i class="fas fa-ship text-white/70"></i>
+                                <span class="text-white/90">Bill of Lading</span>
+                                <i class="fas fa-check-circle text-green-400 ml-auto"></i>
+                            </div>
+                            <div class="flex items-center gap-3 bg-white/10 rounded-lg p-3">
+                                <i class="fas fa-certificate text-white/70"></i>
+                                <span class="text-white/90">Certificate of Origin</span>
+                                <i class="fas fa-spinner fa-spin text-yellow-400 ml-auto"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
+                        <i class="fas fa-clipboard-check mr-2"></i>Compliance Ready
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     DOCUMENT TYPES
+══════════════════════════════════ -->
+<section id="documents" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-indigo-500/10 text-indigo-600 text-sm font-bold uppercase tracking-widest mb-4">Documents</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Essential Trade Documents</h2>
+            <p class="text-lg text-slate-600">We prepare and verify all documents required for smooth international trade.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-indigo-500/20" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:bg-indigo-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-file-invoice-dollar text-2xl text-indigo-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Commercial Invoice</h3>
+                <p class="text-slate-600 mb-4">The primary document for customs valuation and duty calculation.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Buyer/seller details</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Product description</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Value & Incoterms</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-blue-500/20" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-boxes text-2xl text-blue-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Packing List</h3>
+                <p class="text-slate-600 mb-4">Detailed breakdown of shipment contents for customs and logistics.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Package details</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Weights & dimensions</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Marking & numbering</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-cyan-500/20" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:bg-cyan-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-ship text-2xl text-cyan-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Bill of Lading</h3>
+                <p class="text-slate-600 mb-4">Contract of carriage and document of title for sea freight.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Original B/L</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Telex release</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Sea waybill</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-green-500/20" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-certificate text-2xl text-green-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Certificate of Origin</h3>
+                <p class="text-slate-600 mb-4">Certifies where goods were manufactured for preferential duties.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Non-preferential CO</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Preferential CO (FTA)</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> GSP certificates</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-orange-500/20" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-leaf text-2xl text-orange-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Phytosanitary Certificate</h3>
+                <p class="text-slate-600 mb-4">Required for plant products to certify pest-free status.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Agricultural exports</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Plant products</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Seeds & grains</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-purple-500/20" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-microscope text-2xl text-purple-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Inspection Certificates</h3>
+                <p class="text-slate-600 mb-4">Third-party verification of quality, quantity, and specifications.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Pre-shipment inspection</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Quality certificates</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Weight certificates</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-red-500/20" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-14 h-14 rounded-xl bg-red-500/10 flex items-center justify-center mb-6 group-hover:bg-red-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-heartbeat text-2xl text-red-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Health Certificates</h3>
+                <p class="text-slate-600 mb-4">Required for food products and animal-origin goods.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Veterinary certificates</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Food safety certs</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Halal certificates</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-pink-500/20" data-aos="fade-up" data-aos-delay="450">
+                <div class="w-14 h-14 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6 group-hover:bg-pink-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-shield-alt text-2xl text-pink-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Insurance Certificate</h3>
+                <p class="text-slate-600 mb-4">Proof of cargo insurance coverage for LC compliance.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Marine insurance</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Air cargo insurance</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> All-risk coverage</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-yellow-500/20" data-aos="fade-up" data-aos-delay="500">
+                <div class="w-14 h-14 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-6 group-hover:bg-yellow-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-file-signature text-2xl text-yellow-600 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Export Licenses</h3>
+                <p class="text-slate-600 mb-4">Government permits for controlled or restricted goods.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> DGFT licenses</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Dual-use permits</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Special permits</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     DOCUMENTATION PROCESS
+══════════════════════════════════ -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">Our Process</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">How We Handle Documentation</h2>
+            <p class="text-lg text-slate-600">A systematic approach to ensure accurate and compliant documentation.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold text-lg mx-auto mb-4">1</div>
+                <h3 class="font-bold text-slate-900 mb-2">Requirement Analysis</h3>
+                <p class="text-sm text-slate-600">We identify all documents required based on product, origin, and destination.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-12 h-12 rounded-full bg-indigo-500 text-white flex items-center justify-center font-bold text-lg mx-auto mb-4">2</div>
+                <h3 class="font-bold text-slate-900 mb-2">Document Preparation</h3>
+                <p class="text-sm text-slate-600">We prepare or assist in preparing all required documents accurately.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg mx-auto mb-4">3</div>
+                <h3 class="font-bold text-slate-900 mb-2">Verification & Review</h3>
+                <p class="text-sm text-slate-600">Thorough checking for accuracy, consistency, and compliance.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg mx-auto mb-4">4</div>
+                <h3 class="font-bold text-slate-900 mb-2">Submission & Tracking</h3>
+                <p class="text-sm text-slate-600">Timely submission to relevant authorities with status tracking.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MARKET SCENARIO
+══════════════════════════════════ -->
+<section class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-4">Market Insights</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Trade Documentation in 2026</h2>
+            <p class="text-lg text-white/70">The documentation landscape is rapidly digitalizing.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-black text-accent mb-2">4B</div>
+                <div class="text-white/80">Trade Documents Annually</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-black text-primary mb-2">$400B</div>
+                <div class="text-white/80">Cost of Paper Documentation</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-black text-secondary mb-2">70%</div>
+                <div class="text-white/80">Discrepancy Rate in LCs</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-4xl font-black text-green-400 mb-2">50%</div>
+                <div class="text-white/80">Time Saved with Digital</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Documentation Trends</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-file-code text-indigo-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Electronic Trade Documents</h4>
+                            <p class="text-white/60 text-sm">MLETR adoption enabling legally recognized electronic bills of lading.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-link text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Blockchain Documentation</h4>
+                            <p class="text-white/60 text-sm">Immutable, verifiable trade documents reducing fraud and disputes.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-accent"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">AI Document Processing</h4>
+                            <p class="text-white/60 text-sm">Automated extraction, verification, and compliance checking.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-globe text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Single Window Systems</h4>
+                            <p class="text-white/60 text-sm">Governments implementing unified portals for all trade documentation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Why GTT for Documentation?</h3>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Expert Knowledge</span>
+                                <p class="text-white/60 text-sm">Deep understanding of documentation requirements for India-Africa trade.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Zero Discrepancy Goal</span>
+                                <p class="text-white/60 text-sm">Meticulous checking to avoid costly LC discrepancies and delays.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Authority Relationships</span>
+                                <p class="text-white/60 text-sm">Strong ties with chambers, customs, and certification bodies.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">End-to-End Service</span>
+                                <p class="text-white/60 text-sm">From preparation to legalization to submission—we handle it all.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA SECTION
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Need Documentation Help?</h2>
+            <p class="text-xl text-slate-600 mb-8">Let us handle your trade documentation for hassle-free international trade.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-500 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    Get Documentation Support
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="/import-export" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Trade Services
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

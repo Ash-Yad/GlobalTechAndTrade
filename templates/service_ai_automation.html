@@ -1,0 +1,421 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+══════════════════════════════════ -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900 via-purple-800 to-primary"></div>
+        <div class="absolute inset-0 mesh-bg opacity-30"></div>
+    </div>
+
+    <div class="absolute top-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-20 w-72 h-72 bg-secondary/20 rounded-full blur-3xl float-element-delayed"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <nav class="flex items-center gap-2 text-white/60 text-sm mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <a href="/it-solutions" class="hover:text-white">IT Solutions</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-white">AI & Automation</span>
+                </nav>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    AI & Intelligent
+                    <span class="block text-accent">Automation</span>
+                </h1>
+
+                <p class="text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
+                    Harness the power of artificial intelligence to automate processes, gain insights, and make smarter business decisions.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-white text-purple-900 font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Explore AI Solutions
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#capabilities" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/30 hover:bg-white/20 transition-all">
+                        View Capabilities
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block" data-aos="fade-left">
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="flex items-center justify-center">
+                            <div class="relative">
+                                <div class="w-32 h-32 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center">
+                                    <i class="fas fa-brain text-5xl text-white"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center animate-pulse">
+                                    <i class="fas fa-bolt text-white text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 grid grid-cols-3 gap-2 text-center">
+                            <div class="bg-white/10 rounded-lg p-2">
+                                <div class="text-white/70 text-xs">ML Models</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-2">
+                                <div class="text-white/70 text-xs">NLP</div>
+                            </div>
+                            <div class="bg-white/10 rounded-lg p-2">
+                                <div class="text-white/70 text-xs">Computer Vision</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-accent text-white px-4 py-2 rounded-lg font-bold text-sm">
+                        <i class="fas fa-robot mr-2"></i>AI-Powered
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     AI CAPABILITIES
+══════════════════════════════════ -->
+<section id="capabilities" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-purple-500/10 text-purple-600 text-sm font-bold uppercase tracking-widest mb-4">AI Capabilities</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Intelligent Solutions for Modern Business</h2>
+            <p class="text-lg text-slate-600">From chatbots to predictive analytics, we implement AI solutions that deliver measurable business value.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-purple-500/20" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-comments text-2xl text-purple-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">AI Chatbots</h3>
+                <p class="text-slate-600 mb-4">Intelligent conversational agents that handle customer queries 24/7, reducing support costs by up to 70%.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Natural language understanding</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Multi-language support</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> CRM integration</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Human handoff</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-blue-500/20" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-chart-line text-2xl text-blue-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Predictive Analytics</h3>
+                <p class="text-slate-600 mb-4">Machine learning models that forecast trends, predict customer behavior, and optimize operations.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Demand forecasting</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Churn prediction</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Sales forecasting</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Risk assessment</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-green-500/20" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-cogs text-2xl text-green-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Process Automation (RPA)</h3>
+                <p class="text-slate-600 mb-4">Robotic process automation that handles repetitive tasks, freeing your team for high-value work.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Data entry automation</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Invoice processing</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Report generation</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Email automation</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-orange-500/20" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-eye text-2xl text-orange-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Computer Vision</h3>
+                <p class="text-slate-600 mb-4">Image and video analysis for quality control, security, document processing, and more.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Object detection</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> OCR & document scanning</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Quality inspection</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Facial recognition</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-pink-500/20" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-pink-500/10 flex items-center justify-center mb-6 group-hover:bg-pink-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-language text-2xl text-pink-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Natural Language Processing</h3>
+                <p class="text-slate-600 mb-4">Text analysis, sentiment detection, and language understanding for customer insights.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Sentiment analysis</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Text classification</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Entity extraction</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Translation</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-indigo-500/20" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-14 h-14 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:bg-indigo-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-user-friends text-2xl text-indigo-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Recommendation Engines</h3>
+                <p class="text-slate-600 mb-4">Personalized product and content recommendations that increase engagement and sales.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Product recommendations</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Content personalization</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Cross-selling</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> User segmentation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     USE CASES
+══════════════════════════════════ -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold uppercase tracking-widest mb-4">Use Cases</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">AI in Action Across Industries</h2>
+            <p class="text-lg text-slate-600">Real-world applications of AI that are transforming businesses today.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">E-Commerce & Retail</h3>
+                </div>
+                <ul class="space-y-3 text-slate-600">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>AI-powered product recommendations increasing sales by 35%</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Chatbots handling 80% of customer queries automatically</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Inventory optimization reducing stockouts by 50%</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="150">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+                        <i class="fas fa-industry text-xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Manufacturing</h3>
+                </div>
+                <ul class="space-y-3 text-slate-600">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Predictive maintenance reducing downtime by 45%</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Computer vision for quality control with 99.5% accuracy</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Production scheduling optimization saving 20% costs</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                        <i class="fas fa-university text-xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Finance & Banking</h3>
+                </div>
+                <ul class="space-y-3 text-slate-600">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Fraud detection catching 95% of fraudulent transactions</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Credit scoring with ML improving approval accuracy</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Document processing reducing loan approval time by 60%</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="250">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-xl text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Healthcare</h3>
+                </div>
+                <ul class="space-y-3 text-slate-600">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>AI diagnostics assisting doctors with 90% accuracy</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Patient triage chatbots reducing wait times by 40%</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Medical image analysis for early disease detection</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MARKET SCENARIO
+══════════════════════════════════ -->
+<section class="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-4">Market Insights</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">AI Market Explosion in 2026</h2>
+            <p class="text-lg text-white/70">Artificial intelligence is no longer futuristic—it's the present. Companies not adopting AI are falling behind.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-black text-accent mb-2">$500B</div>
+                <div class="text-white/80">Global AI Market by 2027</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-black text-primary mb-2">37%</div>
+                <div class="text-white/80">Annual Growth Rate</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-black text-secondary mb-2">85%</div>
+                <div class="text-white/80">Enterprises Using AI</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-4xl font-black text-green-400 mb-2">$15.7T</div>
+                <div class="text-white/80">AI Economic Impact by 2030</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Key AI Trends in 2026</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-microchip text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Generative AI Mainstream</h4>
+                            <p class="text-white/60 text-sm">ChatGPT-like AI is being integrated into every business application for content, code, and customer service.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-mobile-alt text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Edge AI</h4>
+                            <p class="text-white/60 text-sm">AI processing on devices (phones, IoT) for real-time decisions without cloud dependency.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Autonomous Agents</h4>
+                            <p class="text-white/60 text-sm">AI agents that can complete complex multi-step tasks independently.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-balance-scale text-orange-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Responsible AI</h4>
+                            <p class="text-white/60 text-sm">Focus on ethical AI with transparency, fairness, and regulatory compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Why GTT for AI Implementation?</h3>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Practical AI, Not Hype</span>
+                                <p class="text-white/60 text-sm">We focus on AI that delivers real ROI, not experimental projects.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Integration Expertise</span>
+                                <p class="text-white/60 text-sm">We integrate AI into your existing systems seamlessly.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Cost-Effective Solutions</span>
+                                <p class="text-white/60 text-sm">Leverage pre-trained models and APIs to reduce development costs.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Ongoing Optimization</span>
+                                <p class="text-white/60 text-sm">AI models improve over time—we continuously optimize performance.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA SECTION
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Ready to Implement AI in Your Business?</h2>
+            <p class="text-xl text-slate-600 mb-8">Let's explore how AI can automate your processes and unlock new opportunities.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    Book AI Consultation
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="/case-studies" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all">
+                    <i class="fas fa-folder-open"></i>
+                    View AI Projects
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

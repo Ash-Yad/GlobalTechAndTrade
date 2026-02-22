@@ -1,0 +1,498 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- FAQ Hero -->
+<section class="relative py-24 bg-gradient-to-br from-dark via-slate-900 to-dark overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-bold uppercase tracking-widest mb-6">Help Center</span>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6">Frequently Asked Questions</h1>
+            <p class="text-xl text-white/70 max-w-2xl mx-auto">Find answers to common questions about our IT solutions and import/export services.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Search Bar -->
+<section class="py-8 bg-white border-b border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative">
+            <input type="text" id="faq-search" placeholder="Search for answers..." 
+                   class="w-full px-6 py-4 pl-14 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-primary outline-none transition-all text-lg">
+            <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 text-xl"></i>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Categories -->
+<section class="py-8 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-center gap-3">
+            <button class="faq-category-btn px-5 py-2.5 bg-primary text-white font-semibold rounded-full text-sm" data-category="all">All Questions</button>
+            <button class="faq-category-btn px-5 py-2.5 bg-white text-slate-600 font-semibold rounded-full text-sm hover:bg-primary hover:text-white transition-all border border-slate-200" data-category="general">General</button>
+            <button class="faq-category-btn px-5 py-2.5 bg-white text-slate-600 font-semibold rounded-full text-sm hover:bg-primary hover:text-white transition-all border border-slate-200" data-category="it">IT Solutions</button>
+            <button class="faq-category-btn px-5 py-2.5 bg-white text-slate-600 font-semibold rounded-full text-sm hover:bg-primary hover:text-white transition-all border border-slate-200" data-category="trade">Import/Export</button>
+            <button class="faq-category-btn px-5 py-2.5 bg-white text-slate-600 font-semibold rounded-full text-sm hover:bg-primary hover:text-white transition-all border border-slate-200" data-category="support">Support</button>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Content -->
+<section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- General Questions -->
+        <div class="mb-12" data-aos="fade-up">
+            <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <i class="fas fa-info-circle text-primary"></i>
+                </span>
+                General Questions
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="general">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">What is GlobalTechAndTrade?</span>
+                        <i class="fas fa-chevron-down text-primary faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600">GlobalTechAndTrade is a dual-expertise company offering both IT Solutions and Import/Export services. Founded in 2021, we have offices in India (Noida) and Zambia (Lusaka), serving businesses across India, Africa, and the Middle East. We combine technology innovation with global trade expertise to help businesses grow across borders.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="general">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">Where are your offices located?</span>
+                        <i class="fas fa-chevron-down text-primary faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">We have two headquarters:</p>
+                        <ul class="text-slate-600 space-y-2">
+                            <li><strong>India Office:</strong> Sector 63, Noida, Uttar Pradesh 201301 | Phone: +91 9027125341</li>
+                            <li><strong>Zambia Office:</strong> Plot #10424/4, Cassanova Court, Chainama, Lusaka | Phone: +260 977 588 581</li>
+                        </ul>
+                        <p class="text-slate-600 mt-3">Both offices provide full IT and Trade services.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="general">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">What industries do you serve?</span>
+                        <i class="fas fa-chevron-down text-primary faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600">We serve a wide range of industries including:</p>
+                        <ul class="text-slate-600 mt-2 grid grid-cols-2 gap-2">
+                            <li>• Enterprise & Corporate</li>
+                            <li>• Retail & E-commerce</li>
+                            <li>• Healthcare</li>
+                            <li>• Agriculture</li>
+                            <li>• Manufacturing</li>
+                            <li>• Logistics & Transport</li>
+                            <li>• Education</li>
+                            <li>• Finance & Banking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IT Solutions Questions -->
+        <div class="mb-12" data-aos="fade-up">
+            <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
+                    <i class="fas fa-laptop-code text-secondary"></i>
+                </span>
+                IT Solutions
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="it">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">What IT services do you offer?</span>
+                        <i class="fas fa-chevron-down text-secondary faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">Our IT services include:</p>
+                        <ul class="text-slate-600 space-y-1">
+                            <li>• <strong>Mobile App Development:</strong> iOS, Android, React Native, Flutter</li>
+                            <li>• <strong>Web Application Development:</strong> React, Vue.js, Node.js, Python</li>
+                            <li>• <strong>E-Commerce Platforms:</strong> Custom online stores and marketplaces</li>
+                            <li>• <strong>Custom Software:</strong> ERP, CRM, and business automation systems</li>
+                            <li>• <strong>Cloud Solutions:</strong> AWS, Google Cloud, Azure deployment</li>
+                            <li>• <strong>AI & Machine Learning:</strong> Intelligent automation and analytics</li>
+                            <li>• <strong>Graphic Design:</strong> UI/UX design, branding, marketing materials</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="it">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">How long does it take to build a mobile app?</span>
+                        <i class="fas fa-chevron-down text-secondary faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">Development time depends on complexity:</p>
+                        <ul class="text-slate-600 space-y-1">
+                            <li>• <strong>Simple App:</strong> 4-8 weeks (basic features, standard UI)</li>
+                            <li>• <strong>Medium App:</strong> 8-16 weeks (custom UI, API integrations, user auth)</li>
+                            <li>• <strong>Complex App:</strong> 16-24+ weeks (AI features, real-time data, multiple integrations)</li>
+                        </ul>
+                        <p class="text-slate-600 mt-3">We provide detailed timelines after understanding your requirements in a free consultation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="it">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">Do you provide ongoing maintenance and support?</span>
+                        <i class="fas fa-chevron-down text-secondary faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600">Yes! We offer comprehensive post-launch support:</p>
+                        <ul class="text-slate-600 mt-2 space-y-1">
+                            <li>• Bug fixes and security updates</li>
+                            <li>• Performance monitoring and optimization</li>
+                            <li>• Feature enhancements and updates</li>
+                            <li>• Server and database maintenance</li>
+                            <li>• 24/7 emergency support (for premium plans)</li>
+                        </ul>
+                        <p class="text-slate-600 mt-3">Contact us for maintenance package details.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="it">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">What technologies do you use?</span>
+                        <i class="fas fa-chevron-down text-secondary faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">We use modern, industry-standard technologies:</p>
+                        <div class="grid grid-cols-2 gap-4 text-slate-600">
+                            <div>
+                                <p class="font-semibold">Frontend:</p>
+                                <p>React, Vue.js, Angular, Flutter</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Backend:</p>
+                                <p>Node.js, Python, PHP, Java</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Mobile:</p>
+                                <p>React Native, Flutter, Swift, Kotlin</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Cloud:</p>
+                                <p>AWS, Google Cloud, Azure, Docker</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Import/Export Questions -->
+        <div class="mb-12" data-aos="fade-up">
+            <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <i class="fas fa-ship text-accent"></i>
+                </span>
+                Import/Export Services
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="trade">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">What trade services do you offer?</span>
+                        <i class="fas fa-chevron-down text-accent faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">Our comprehensive trade services include:</p>
+                        <ul class="text-slate-600 space-y-1">
+                            <li>• <strong>Product Sourcing:</strong> Connect with verified manufacturers in India</li>
+                            <li>• <strong>Customs Clearance:</strong> Documentation and duty optimization</li>
+                            <li>• <strong>Freight Forwarding:</strong> Sea, air, and multimodal transport</li>
+                            <li>• <strong>Warehousing:</strong> Storage facilities in India and Zambia</li>
+                            <li>• <strong>Last-Mile Delivery:</strong> Door-to-door service</li>
+                            <li>• <strong>Trade Consulting:</strong> Market entry strategy and compliance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="trade">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">Which countries do you ship to?</span>
+                        <i class="fas fa-chevron-down text-accent faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">We facilitate trade across 12+ countries including:</p>
+                        <div class="grid grid-cols-2 gap-2 text-slate-600">
+                            <div>
+                                <p class="font-semibold">Africa:</p>
+                                <p>Zambia, Kenya, Tanzania, Nigeria, South Africa, Ghana</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Asia & Middle East:</p>
+                                <p>India, UAE, Saudi Arabia</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mt-3">Contact us if your destination isn't listed—we're constantly expanding our network.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="trade">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">How long does shipping take from India to Africa?</span>
+                        <i class="fas fa-chevron-down text-accent faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">Transit times vary by destination and shipping method:</p>
+                        <table class="w-full text-slate-600 text-sm">
+                            <tr class="border-b">
+                                <td class="py-2 font-semibold">Route</td>
+                                <td class="py-2">Sea Freight</td>
+                                <td class="py-2">Air Freight</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2">India → Zambia</td>
+                                <td class="py-2">25-35 days</td>
+                                <td class="py-2">5-7 days</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2">India → Kenya</td>
+                                <td class="py-2">18-25 days</td>
+                                <td class="py-2">3-5 days</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2">India → Nigeria</td>
+                                <td class="py-2">30-40 days</td>
+                                <td class="py-2">5-7 days</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2">India → South Africa</td>
+                                <td class="py-2">20-28 days</td>
+                                <td class="py-2">4-6 days</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="trade">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">What products can I import/export?</span>
+                        <i class="fas fa-chevron-down text-accent faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">We handle a wide range of products:</p>
+                        <div class="grid grid-cols-2 gap-4 text-slate-600">
+                            <div>
+                                <p class="font-semibold">India → Africa:</p>
+                                <ul class="space-y-1">
+                                    <li>• Electronics & appliances</li>
+                                    <li>• Machinery & equipment</li>
+                                    <li>• Textiles & garments</li>
+                                    <li>• Pharmaceuticals</li>
+                                    <li>• Food products & spices</li>
+                                    <li>• Auto parts</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Africa → India:</p>
+                                <ul class="space-y-1">
+                                    <li>• Minerals & metals</li>
+                                    <li>• Agricultural products</li>
+                                    <li>• Coffee & cocoa</li>
+                                    <li>• Precious stones</li>
+                                    <li>• Raw materials</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mt-3">Some products require special permits. Contact us for guidance on your specific products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="mb-12" data-aos="fade-up">
+            <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
+                    <i class="fas fa-rocket text-green-500"></i>
+                </span>
+                Getting Started
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="general">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">Do you offer free consultations?</span>
+                        <i class="fas fa-chevron-down text-green-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600">Yes! We offer free 30-minute consultations for both IT and Trade services. During the consultation, we:</p>
+                        <ul class="text-slate-600 mt-2 space-y-1">
+                            <li>• Understand your requirements</li>
+                            <li>• Provide initial recommendations</li>
+                            <li>• Discuss timeline and approach</li>
+                            <li>• Answer all your questions</li>
+                        </ul>
+                        <p class="text-slate-600 mt-3">No commitment required. Book your free consultation using the button below.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="general">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">How do I get a quote for my project?</span>
+                        <i class="fas fa-chevron-down text-green-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600">Getting a quote is easy:</p>
+                        <ul class="text-slate-600 mt-2 space-y-1">
+                            <li>1. Book a free consultation through our website</li>
+                            <li>2. Discuss your requirements with our team</li>
+                            <li>3. Receive a customized proposal within 2-3 business days</li>
+                        </ul>
+                        <p class="text-slate-600 mt-3">You can also reach us directly via WhatsApp or email for faster response.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Questions -->
+        <div data-aos="fade-up">
+            <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                    <i class="fas fa-headset text-purple-500"></i>
+                </span>
+                Support & Communication
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="support">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">How can I contact you?</span>
+                        <i class="fas fa-chevron-down text-purple-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">Multiple ways to reach us:</p>
+                        <ul class="text-slate-600 space-y-2">
+                            <li>• <strong>Email:</strong> info@globaltechandtrade.com</li>
+                            <li>• <strong>WhatsApp:</strong> +91 9027125341 (fastest response)</li>
+                            <li>• <strong>Phone (India):</strong> +91 9027125341</li>
+                            <li>• <strong>Phone (Zambia):</strong> +260 977 588 581</li>
+                            <li>• <strong>Live Chat:</strong> Available on our website</li>
+                        </ul>
+                        <p class="text-slate-600 mt-3">We typically respond within 2-4 hours during business hours.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden" data-category="support">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-bold text-slate-900 pr-4">What are your business hours?</span>
+                        <i class="fas fa-chevron-down text-purple-500 faq-icon transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-slate-600 mb-3">Our offices operate in different time zones for extended coverage:</p>
+                        <ul class="text-slate-600 space-y-2">
+                            <li>• <strong>India Office:</strong> Monday-Saturday, 9:00 AM - 6:00 PM IST</li>
+                            <li>• <strong>Zambia Office:</strong> Monday-Friday, 8:00 AM - 5:00 PM CAT</li>
+                        </ul>
+                        <p class="text-slate-600 mt-3">For urgent matters, WhatsApp messages are monitored outside business hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Still Have Questions -->
+<section class="py-16 bg-gradient-to-r from-primary via-secondary to-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-black text-white mb-4">Still Have Questions?</h2>
+        <p class="text-xl text-white/80 mb-8">Our team is ready to help. Get in touch for personalized assistance.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="#" class="book-free-demo-trigger inline-flex items-center gap-3 px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-white/90 transition-all">
+                <i class="fas fa-calendar-check"></i>
+                Schedule Free Consultation
+            </a>
+            <a href="https://wa.me/919027125341" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-all">
+                <i class="fab fa-whatsapp"></i>
+                Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // FAQ Accordion
+    document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var content = item.querySelector('.faq-content');
+            var icon = item.querySelector('.faq-icon');
+            var isOpen = !content.classList.contains('hidden');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(function(otherItem) {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.faq-content').classList.add('hidden');
+                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current FAQ
+            if (isOpen) {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+    
+    // Category Filter
+    document.querySelectorAll('.faq-category-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var category = this.getAttribute('data-category');
+            
+            // Update button styles
+            document.querySelectorAll('.faq-category-btn').forEach(function(b) {
+                b.classList.remove('bg-primary', 'text-white');
+                b.classList.add('bg-white', 'text-slate-600');
+            });
+            this.classList.remove('bg-white', 'text-slate-600');
+            this.classList.add('bg-primary', 'text-white');
+            
+            // Filter FAQs
+            document.querySelectorAll('.faq-item').forEach(function(item) {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Search
+    document.getElementById('faq-search').addEventListener('input', function() {
+        var query = this.value.toLowerCase();
+        document.querySelectorAll('.faq-item').forEach(function(item) {
+            var text = item.textContent.toLowerCase();
+            if (text.includes(query)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+{% endblock %}

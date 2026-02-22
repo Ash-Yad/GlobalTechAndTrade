@@ -1,0 +1,469 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     GROWTH CHECKLIST HERO
+══════════════════════════════════ -->
+<section class="relative py-24 bg-gradient-to-br from-dark via-slate-900 to-dark overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-green-500/20 text-green-400 text-sm font-bold uppercase tracking-widest mb-6">Business Growth</span>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6">Growth Checklist</h1>
+            <p class="text-xl text-white/70 max-w-2xl mx-auto">A comprehensive guide to setting up external services and growing your online presence.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PROGRESS TRACKER
+══════════════════════════════════ -->
+<section class="py-8 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-center gap-8 text-center">
+            <div>
+                <div class="text-3xl font-black text-green-600">✓ Website</div>
+                <div class="text-sm text-slate-500">Live & Optimized</div>
+            </div>
+            <div class="hidden md:block text-slate-300">→</div>
+            <div>
+                <div class="text-3xl font-black text-primary">SEO & Analytics</div>
+                <div class="text-sm text-slate-500">In Progress</div>
+            </div>
+            <div class="hidden md:block text-slate-300">→</div>
+            <div>
+                <div class="text-3xl font-black text-slate-400">Marketing</div>
+                <div class="text-sm text-slate-500">Next Steps</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CHECKLIST SECTIONS
+══════════════════════════════════ -->
+<section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section 1: Google Services -->
+        <div class="bg-white rounded-3xl p-8 mb-8 shadow-sm" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                    <i class="fab fa-google text-2xl text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-black text-slate-900">Google Services</h2>
+                    <p class="text-slate-500 text-sm">Essential for visibility and analytics</p>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- Google Search Console -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-900 mb-1">Google Search Console</h3>
+                            <p class="text-slate-600 text-sm mb-3">Monitor your site's performance in Google Search, submit sitemaps, and fix indexing issues.</p>
+                            <div class="bg-green-50 rounded-xl p-4 mb-4">
+                                <p class="text-green-700 text-sm font-semibold"><i class="fas fa-check-circle mr-2"></i>Already set up! Sitemap submitted.</p>
+                            </div>
+                            <a href="https://search.google.com/search-console" target="_blank" class="text-primary font-semibold text-sm hover:underline">
+                                Open Search Console →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google Analytics -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-900 mb-1">Google Analytics 4</h3>
+                            <p class="text-slate-600 text-sm mb-3">Track website visitors, user behavior, and conversion events.</p>
+                            <div class="bg-green-50 rounded-xl p-4 mb-4">
+                                <p class="text-green-700 text-sm font-semibold"><i class="fas fa-check-circle mr-2"></i>Installed! Tracking ID: G-CXVT183KZE</p>
+                            </div>
+                            <a href="https://analytics.google.com" target="_blank" class="text-primary font-semibold text-sm hover:underline">
+                                Open Analytics →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google Business Profile -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-clock text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-900 mb-1">Google Business Profile</h3>
+                            <p class="text-slate-600 text-sm mb-3">Appear in Google Maps and local search results. Essential for local visibility.</p>
+                            <div class="bg-amber-50 rounded-xl p-4 mb-4">
+                                <p class="text-amber-700 text-sm font-semibold"><i class="fas fa-exclamation-circle mr-2"></i>Action Required: Set up profiles for India and Zambia offices</p>
+                            </div>
+                            <details class="mb-4">
+                                <summary class="cursor-pointer text-primary font-semibold text-sm">How to set up →</summary>
+                                <div class="mt-3 pl-4 border-l-2 border-primary/20 text-sm text-slate-600 space-y-2">
+                                    <p>1. Go to <a href="https://business.google.com" target="_blank" class="text-primary hover:underline">business.google.com</a></p>
+                                    <p>2. Click "Manage now" and sign in with your Google account</p>
+                                    <p>3. Enter business name: "GlobalTechAndTrade"</p>
+                                    <p>4. Select category: "Software Company" or "Import Export Company"</p>
+                                    <p>5. Add your India office address first, then create a second listing for Zambia</p>
+                                    <p>6. Verify via postcard, phone, or email (Google will guide you)</p>
+                                    <p>7. Add photos, business hours, services, and description</p>
+                                </div>
+                            </details>
+                            <a href="https://business.google.com" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white font-semibold text-sm rounded-lg hover:bg-primary/90 transition-all">
+                                <i class="fab fa-google"></i>
+                                Set Up Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Social Media -->
+        <div class="bg-white rounded-3xl p-8 mb-8 shadow-sm" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                    <i class="fas fa-share-alt text-2xl text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-black text-slate-900">Social Media Presence</h2>
+                    <p class="text-slate-500 text-sm">Build brand awareness and engage with clients</p>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- LinkedIn -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#0077B5] flex items-center justify-center flex-shrink-0">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-900 mb-1">LinkedIn Company Page</h3>
+                            <p class="text-slate-600 text-sm mb-3">Your most important B2B channel. Post 3-4 times per week.</p>
+                            <details class="mb-4">
+                                <summary class="cursor-pointer text-primary font-semibold text-sm">Content ideas →</summary>
+                                <div class="mt-3 pl-4 border-l-2 border-primary/20 text-sm text-slate-600 space-y-2">
+                                    <p>• Behind-the-scenes of India and Zambia offices</p>
+                                    <p>• Case studies of completed projects</p>
+                                    <p>• Trade tips between India and Africa</p>
+                                    <p>• Tech trends relevant to SMEs</p>
+                                    <p>• Team member introductions</p>
+                                    <p>• Industry news and insights</p>
+                                </div>
+                            </details>
+                            <a href="https://www.linkedin.com/company/setup/new/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-[#0077B5] text-white font-semibold text-sm rounded-lg hover:bg-[#006699] transition-all">
+                                <i class="fab fa-linkedin-in"></i>
+                                Create Company Page
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- YouTube -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center flex-shrink-0">
+                            <i class="fab fa-youtube text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-900 mb-1">YouTube Channel</h3>
+                            <p class="text-slate-600 text-sm mb-3">World's second largest search engine. Great for tutorials and thought leadership.</p>
+                            <details class="mb-4">
+                                <summary class="cursor-pointer text-primary font-semibold text-sm">Video ideas →</summary>
+                                <div class="mt-3 pl-4 border-l-2 border-primary/20 text-sm text-slate-600 space-y-2">
+                                    <p>• "How to import electronics from India to Zambia"</p>
+                                    <p>• "We built a mobile app in 8 weeks - here's how"</p>
+                                    <p>• "Top 5 mistakes in customs clearance"</p>
+                                    <p>• Client testimonial videos</p>
+                                    <p>• Office tours and team introductions</p>
+                                </div>
+                            </details>
+                            <a href="https://www.youtube.com/channel_switcher" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white font-semibold text-sm rounded-lg hover:bg-red-700 transition-all">
+                                <i class="fab fa-youtube"></i>
+                                Create Channel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- WhatsApp Business -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">
+                            <i class="fab fa-whatsapp text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-900 mb-1">WhatsApp Business</h3>
+                            <p class="text-slate-600 text-sm mb-3">Essential for India and Africa markets. Set up auto-replies and catalogs.</p>
+                            <details class="mb-4">
+                                <summary class="cursor-pointer text-primary font-semibold text-sm">Setup steps →</summary>
+                                <div class="mt-3 pl-4 border-l-2 border-primary/20 text-sm text-slate-600 space-y-2">
+                                    <p>1. Download WhatsApp Business app</p>
+                                    <p>2. Register with your business phone number</p>
+                                    <p>3. Set up business profile with logo, description, hours</p>
+                                    <p>4. Create quick replies for common questions</p>
+                                    <p>5. Set up away messages for off-hours</p>
+                                    <p>6. Add service catalog with descriptions</p>
+                                </div>
+                            </details>
+                            <a href="https://business.whatsapp.com/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-white font-semibold text-sm rounded-lg hover:bg-green-600 transition-all">
+                                <i class="fab fa-whatsapp"></i>
+                                Get WhatsApp Business
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Business Directories -->
+        <div class="bg-white rounded-3xl p-8 mb-8 shadow-sm" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                    <i class="fas fa-list-alt text-2xl text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-black text-slate-900">Business Directories</h2>
+                    <p class="text-slate-500 text-sm">Get found by potential clients searching for services</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <a href="https://clutch.co/profile" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-primary/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">C</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-primary">Clutch.co</h4>
+                            <p class="text-xs text-slate-500">Top IT company directory</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.goodfirms.co/company/register" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-primary/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">GF</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-primary">GoodFirms</h4>
+                            <p class="text-xs text-slate-500">Software company reviews</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.kompass.com" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-primary/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">K</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-primary">Kompass</h4>
+                            <p class="text-xs text-slate-500">International trade directory</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.indiamart.com" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-primary/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">IM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-primary">IndiaMART</h4>
+                            <p class="text-xs text-slate-500">Indian B2B marketplace</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.crunchbase.com" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-primary/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">CB</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-primary">Crunchbase</h4>
+                            <p class="text-xs text-slate-500">Startup & company profiles</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.sortlist.com" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-primary/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-purple-600 flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">S</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-primary">Sortlist</h4>
+                            <p class="text-xs text-slate-500">Agency matchmaking</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Section 4: CRM & Email -->
+        <div class="bg-white rounded-3xl p-8 mb-8 shadow-sm" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                    <i class="fas fa-users-cog text-2xl text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-black text-slate-900">CRM & Email Marketing</h2>
+                    <p class="text-slate-500 text-sm">Never lose a lead, automate follow-ups</p>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- HubSpot CRM -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-hubspot text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-900 mb-1">HubSpot CRM (Free)</h3>
+                            <p class="text-slate-600 text-sm mb-3">Track leads, manage contacts, and automate follow-ups. Free forever plan available.</p>
+                            <details class="mb-4">
+                                <summary class="cursor-pointer text-primary font-semibold text-sm">Key features →</summary>
+                                <div class="mt-3 pl-4 border-l-2 border-primary/20 text-sm text-slate-600 space-y-2">
+                                    <p>• Contact management with full history</p>
+                                    <p>• Deal pipeline tracking</p>
+                                    <p>• Email tracking and templates</p>
+                                    <p>• Meeting scheduler</p>
+                                    <p>• Form builder for website</p>
+                                    <p>• Live chat integration</p>
+                                </div>
+                            </details>
+                            <a href="https://www.hubspot.com/products/crm" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500 text-white font-semibold text-sm rounded-lg hover:bg-orange-600 transition-all">
+                                Get Free CRM
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Email Automation -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-slate-900 mb-1">Email Automation Sequence</h3>
+                            <p class="text-slate-600 text-sm mb-3">Set up automated email sequences for new leads.</p>
+                            <div class="bg-blue-50 rounded-xl p-4 mb-4">
+                                <p class="text-blue-700 text-sm font-semibold mb-2">Recommended sequence:</p>
+                                <ul class="text-blue-600 text-sm space-y-1">
+                                    <li>Day 1: Welcome email + what to expect</li>
+                                    <li>Day 3: Case study or success story</li>
+                                    <li>Day 7: Educational content about services</li>
+                                    <li>Day 14: Soft pitch with call to action</li>
+                                </ul>
+                            </div>
+                            <div class="flex gap-2">
+                                <a href="https://mailchimp.com" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 font-semibold text-sm rounded-lg hover:bg-slate-300 transition-all">
+                                    Mailchimp
+                                </a>
+                                <a href="https://www.brevo.com" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-200 text-slate-700 font-semibold text-sm rounded-lg hover:bg-slate-300 transition-all">
+                                    Brevo (Free)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Government Tenders -->
+        <div class="bg-white rounded-3xl p-8 shadow-sm" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-600 to-emerald-600 flex items-center justify-center">
+                    <i class="fas fa-landmark text-2xl text-white"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-black text-slate-900">Government & Tender Portals</h2>
+                    <p class="text-slate-500 text-sm">Access government contracts and tenders</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <a href="https://gem.gov.in" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-green-500/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <img src="https://flagcdn.com/w40/in.png" alt="India" class="w-8 h-5 rounded">
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-green-600">GeM Portal (India)</h4>
+                            <p class="text-xs text-slate-500">Government e-Marketplace</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.zppa.org.zm" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-green-500/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <img src="https://flagcdn.com/w40/zm.png" alt="Zambia" class="w-8 h-5 rounded">
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-green-600">ZPPA (Zambia)</h4>
+                            <p class="text-xs text-slate-500">Public Procurement Authority</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.afdb.org/en/projects-and-operations/procurement" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-green-500/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-5 rounded bg-green-600 flex items-center justify-center">
+                            <span class="text-white text-xs font-bold">AfDB</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-green-600">African Development Bank</h4>
+                            <p class="text-xs text-slate-500">Continental procurement</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://www.ungm.org" target="_blank" class="bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-green-500/50 hover:shadow-lg transition-all group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-5 rounded bg-blue-600 flex items-center justify-center">
+                            <span class="text-white text-xs font-bold">UN</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 group-hover:text-green-600">UN Global Marketplace</h4>
+                            <p class="text-xs text-slate-500">UN procurement opportunities</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     NEED HELP CTA
+══════════════════════════════════ -->
+<section class="py-16 bg-gradient-to-r from-primary via-secondary to-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-black text-white mb-4">Need Help Setting These Up?</h2>
+        <p class="text-xl text-white/80 mb-8">Our team can help you set up and optimize all these services for maximum impact.</p>
+        <a href="#" class="book-free-demo-trigger inline-flex items-center gap-3 px-8 py-4 bg-white text-primary font-bold rounded-xl hover:bg-white/90 transition-all">
+            <i class="fas fa-calendar-check"></i>
+            Schedule Free Consultation
+        </a>
+    </div>
+</section>
+
+{% endblock %}

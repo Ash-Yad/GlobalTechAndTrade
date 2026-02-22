@@ -1,0 +1,478 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+══════════════════════════════════ -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary"></div>
+        <div class="absolute inset-0 mesh-bg opacity-30"></div>
+    </div>
+
+    <div class="absolute top-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl float-element-delayed"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <nav class="flex items-center gap-2 text-white/60 text-sm mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <a href="/it-solutions" class="hover:text-white">IT Solutions</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-white">Web Development</span>
+                </nav>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    Web Application
+                    <span class="block text-accent">Development</span>
+                </h1>
+
+                <p class="text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
+                    We build powerful, scalable web applications that drive business growth. From corporate websites to complex SaaS platforms, we deliver solutions that perform.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Start Your Project
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#process" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/30 hover:bg-white/20 transition-all">
+                        Our Process
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block" data-aos="fade-left">
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <div class="space-y-3 font-mono text-sm">
+                            <div class="text-blue-300">&lt;<span class="text-pink-300">div</span> <span class="text-yellow-300">class</span>=<span class="text-green-300">"app"</span>&gt;</div>
+                            <div class="pl-4 text-blue-300">&lt;<span class="text-pink-300">Header</span> /&gt;</div>
+                            <div class="pl-4 text-blue-300">&lt;<span class="text-pink-300">MainContent</span> /&gt;</div>
+                            <div class="pl-4 text-blue-300">&lt;<span class="text-pink-300">Footer</span> /&gt;</div>
+                            <div class="text-blue-300">&lt;/<span class="text-pink-300">div</span>&gt;</div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-accent text-white px-4 py-2 rounded-lg font-bold text-sm">
+                        <i class="fas fa-code mr-2"></i>Clean Code
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     WHAT WE BUILD
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">What We Build</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Web Solutions for Every Business Need</h2>
+            <p class="text-lg text-slate-600">From simple websites to complex enterprise applications, we deliver solutions tailored to your requirements.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
+                    <i class="fas fa-store text-2xl text-primary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">E-Commerce Platforms</h3>
+                <p class="text-slate-600 mb-4">Full-featured online stores with payment integration, inventory management, and order tracking.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Multi-currency support</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Payment gateway integration</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Inventory automation</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all">
+                    <i class="fas fa-cloud text-2xl text-accent group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">SaaS Applications</h3>
+                <p class="text-slate-600 mb-4">Scalable software-as-a-service platforms with subscription management and multi-tenancy.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Multi-tenant architecture</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Subscription billing</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> API-first design</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:scale-110 transition-all">
+                    <i class="fas fa-users-cog text-2xl text-secondary group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Customer Portals</h3>
+                <p class="text-slate-600 mb-4">Self-service portals for customers to manage accounts, orders, and support tickets.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> User authentication</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Dashboard analytics</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Document management</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-building text-2xl text-green-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Corporate Websites</h3>
+                <p class="text-slate-600 mb-4">Professional business websites that establish credibility and generate leads.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> SEO optimized</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Lead capture forms</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> CMS integration</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-chart-line text-2xl text-purple-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Business Dashboards</h3>
+                <p class="text-slate-600 mb-4">Real-time analytics dashboards for data visualization and business intelligence.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Real-time data sync</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Custom reports</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Export functionality</li>
+                </ul>
+            </div>
+
+            <div class="group bg-slate-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-primary/20" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:scale-110 transition-all">
+                    <i class="fas fa-plug text-2xl text-orange-500 group-hover:text-white"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">API Development</h3>
+                <p class="text-slate-600 mb-4">RESTful and GraphQL APIs for seamless integration with third-party services.</p>
+                <ul class="space-y-2 text-sm text-slate-500">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> RESTful & GraphQL</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> OAuth authentication</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Rate limiting</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     OUR PROCESS
+══════════════════════════════════ -->
+<section id="process" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold uppercase tracking-widest mb-4">Our Process</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">How We Build Your Web Application</h2>
+            <p class="text-lg text-slate-600">A proven development methodology that ensures quality, transparency, and on-time delivery.</p>
+        </div>
+
+        <div class="relative">
+            <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary transform -translate-y-1/2"></div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="relative bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mb-4 mx-auto lg:mx-0">1</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 text-center lg:text-left">Discovery</h3>
+                    <p class="text-sm text-slate-600 text-center lg:text-left">We analyze your requirements, business goals, and target audience to create a detailed project roadmap.</p>
+                </div>
+
+                <div class="relative bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg mb-4 mx-auto lg:mx-0">2</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 text-center lg:text-left">Design</h3>
+                    <p class="text-sm text-slate-600 text-center lg:text-left">Our designers create wireframes and UI/UX prototypes for your approval before development begins.</p>
+                </div>
+
+                <div class="relative bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg mb-4 mx-auto lg:mx-0">3</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 text-center lg:text-left">Development</h3>
+                    <p class="text-sm text-slate-600 text-center lg:text-left">Agile sprints with regular demos. You see progress every week and can provide feedback continuously.</p>
+                </div>
+
+                <div class="relative bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-lg mb-4 mx-auto lg:mx-0">4</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 text-center lg:text-left">Testing</h3>
+                    <p class="text-sm text-slate-600 text-center lg:text-left">Rigorous QA testing including unit tests, integration tests, and user acceptance testing.</p>
+                </div>
+
+                <div class="relative bg-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg mb-4 mx-auto lg:mx-0">5</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 text-center lg:text-left">Launch & Support</h3>
+                    <p class="text-sm text-slate-600 text-center lg:text-left">Deployment to production with ongoing maintenance, updates, and 24/7 support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     TECHNOLOGY STACK
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-bold uppercase tracking-widest mb-4">Technology Stack</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Built with Modern Technologies</h2>
+            <p class="text-lg text-slate-600">We use industry-leading frameworks and tools to build fast, secure, and scalable applications.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <i class="fas fa-desktop text-primary"></i> Frontend
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fab fa-react text-2xl text-blue-500"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">React.js</div>
+                            <div class="text-sm text-slate-500">Component-based UI</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fab fa-vuejs text-2xl text-green-500"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">Vue.js</div>
+                            <div class="text-sm text-slate-500">Progressive framework</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fab fa-angular text-2xl text-red-500"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">Angular</div>
+                            <div class="text-sm text-slate-500">Enterprise applications</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fas fa-bolt text-2xl text-purple-500"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">Next.js</div>
+                            <div class="text-sm text-slate-500">Full-stack React</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <i class="fas fa-server text-accent"></i> Backend
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fab fa-node-js text-2xl text-green-600"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">Node.js</div>
+                            <div class="text-sm text-slate-500">JavaScript runtime</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fab fa-python text-2xl text-yellow-500"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">Python/Django</div>
+                            <div class="text-sm text-slate-500">Rapid development</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fab fa-php text-2xl text-indigo-500"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">PHP/Laravel</div>
+                            <div class="text-sm text-slate-500">Elegant syntax</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fas fa-gem text-2xl text-red-600"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">Ruby on Rails</div>
+                            <div class="text-sm text-slate-500">Convention over config</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl p-8" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <i class="fas fa-database text-secondary"></i> Database & Cloud
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fas fa-database text-2xl text-blue-600"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">PostgreSQL</div>
+                            <div class="text-sm text-slate-500">Relational database</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fas fa-leaf text-2xl text-green-600"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">MongoDB</div>
+                            <div class="text-sm text-slate-500">NoSQL database</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fab fa-aws text-2xl text-orange-500"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">AWS</div>
+                            <div class="text-sm text-slate-500">Cloud infrastructure</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white rounded-lg">
+                        <i class="fab fa-docker text-2xl text-blue-500"></i>
+                        <div>
+                            <div class="font-semibold text-slate-900">Docker</div>
+                            <div class="text-sm text-slate-500">Containerization</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MARKET SCENARIO
+══════════════════════════════════ -->
+<section class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-4">Market Insights</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Why Web Applications Matter in 2026</h2>
+            <p class="text-lg text-white/70">The digital transformation wave is accelerating. Here's why investing in web applications is crucial for business success.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-black text-accent mb-2">$1.2T</div>
+                <div class="text-white/80">Global Web App Market by 2028</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-black text-primary mb-2">73%</div>
+                <div class="text-white/80">Businesses Prioritize Digital</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-black text-secondary mb-2">2.5x</div>
+                <div class="text-white/80">ROI from Custom Web Apps</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-4xl font-black text-green-400 mb-2">89%</div>
+                <div class="text-white/80">Users Prefer Web Over Desktop</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Current Market Trends</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-mobile-alt text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Progressive Web Apps (PWA)</h4>
+                            <p class="text-white/60 text-sm">PWAs are bridging the gap between web and mobile, offering app-like experiences without app store downloads.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-robot text-accent"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">AI-Powered Interfaces</h4>
+                            <p class="text-white/60 text-sm">Chatbots, personalization engines, and smart search are becoming standard features in modern web apps.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-secondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Security-First Development</h4>
+                            <p class="text-white/60 text-sm">With increasing cyber threats, security is no longer optional—it's built into every layer of development.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-cloud text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Cloud-Native Architecture</h4>
+                            <p class="text-white/60 text-sm">Microservices, serverless functions, and containerization enable unprecedented scalability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Why Choose GTT for Web Development?</h3>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Cost-Effective Development</span>
+                                <p class="text-white/60 text-sm">India-based team delivers world-class quality at competitive rates—save 40-60% vs. Western agencies.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Agile Methodology</span>
+                                <p class="text-white/60 text-sm">Weekly sprints with demos ensure you're always in control and can pivot quickly.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Full-Stack Expertise</span>
+                                <p class="text-white/60 text-sm">From frontend to backend to DevOps—one team handles everything.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Post-Launch Support</span>
+                                <p class="text-white/60 text-sm">We don't disappear after launch. Ongoing maintenance and 24/7 support included.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Africa Market Expertise</span>
+                                <p class="text-white/60 text-sm">With offices in Zambia, we understand the unique needs of African businesses.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA SECTION
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Ready to Build Your Web Application?</h2>
+            <p class="text-xl text-slate-600 mb-8">Let's discuss your project requirements and create something amazing together.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    Book Free Consultation
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="/case-studies" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all">
+                    <i class="fas fa-folder-open"></i>
+                    View Our Work
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

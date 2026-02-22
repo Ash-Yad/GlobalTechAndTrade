@@ -1,0 +1,332 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     BLOG HERO SECTION
+══════════════════════════════════ -->
+<section class="relative py-24 bg-gradient-to-br from-dark via-slate-900 to-dark overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-bold uppercase tracking-widest mb-6">Knowledge Hub</span>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6">Insights & Resources</h1>
+            <p class="text-xl text-white/70 max-w-2xl mx-auto">Expert knowledge on technology, international trade, and business growth strategies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FEATURED ARTICLE
+══════════════════════════════════ -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl overflow-hidden border border-slate-200" data-aos="fade-up">
+            <div class="grid lg:grid-cols-2">
+                <div class="h-64 lg:h-auto bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                    <i class="fas fa-globe-africa text-[150px] text-white/20"></i>
+                </div>
+                <div class="p-8 lg:p-12">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">FEATURED</span>
+                        <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full">Trade</span>
+                    </div>
+                    <h2 class="text-3xl font-black text-slate-900 mb-4">The Complete Guide to India-Africa Trade in 2026</h2>
+                    <p class="text-slate-600 mb-6">Everything you need to know about importing and exporting between India and African markets. Covers regulations, documentation, shipping routes, and best practices.</p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-clock text-slate-400"></i>
+                            <span class="text-sm text-slate-500">15 min read</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-calendar text-slate-400"></i>
+                            <span class="text-sm text-slate-500">Feb 2026</span>
+                        </div>
+                    </div>
+                    <a href="/blog/india-africa-trade-guide-2026" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all">
+                        Read Full Guide
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     ARTICLE CATEGORIES
+══════════════════════════════════ -->
+<section class="py-8 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap items-center justify-center gap-3" id="blog-filters">
+            <button class="blog-filter-btn px-4 py-2 bg-primary text-white font-semibold rounded-full text-sm transition-all" data-category="all">All Articles</button>
+            <button class="blog-filter-btn px-4 py-2 bg-white text-slate-600 font-semibold rounded-full text-sm hover:bg-primary hover:text-white transition-all border border-slate-200" data-category="trade">Trade & Import/Export</button>
+            <button class="blog-filter-btn px-4 py-2 bg-white text-slate-600 font-semibold rounded-full text-sm hover:bg-primary hover:text-white transition-all border border-slate-200" data-category="technology">Technology</button>
+            <button class="blog-filter-btn px-4 py-2 bg-white text-slate-600 font-semibold rounded-full text-sm hover:bg-primary hover:text-white transition-all border border-slate-200" data-category="business">Business Growth</button>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     ARTICLES GRID
+══════════════════════════════════ -->
+<section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Article 1 -->
+            <article class="blog-article group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-category="trade">
+                <div class="h-48 bg-gradient-to-br from-primary to-secondary flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-file-contract text-6xl text-white/30"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full">Trade</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3 text-sm text-slate-500">
+                        <span><i class="fas fa-clock mr-1"></i> 8 min</span>
+                        <span><i class="fas fa-calendar mr-1"></i> Feb 15, 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">How to Navigate Import Regulations in Zambia</h3>
+                    <p class="text-slate-600 text-sm mb-4">A comprehensive guide to customs requirements, documentation, and compliance for businesses importing goods into Zambia.</p>
+                    <a href="/blog/zambia-import-regulations" class="text-primary font-semibold text-sm hover:underline">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="blog-article group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="100" data-category="technology">
+                <div class="h-48 bg-gradient-to-br from-accent to-orange-600 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-mobile-alt text-6xl text-white/30"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full">Technology</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3 text-sm text-slate-500">
+                        <span><i class="fas fa-clock mr-1"></i> 10 min</span>
+                        <span><i class="fas fa-calendar mr-1"></i> Feb 10, 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-accent transition-colors">Top Mobile App Trends for Business in 2026</h3>
+                    <p class="text-slate-600 text-sm mb-4">Discover the latest mobile technologies and how they can transform your business operations and customer engagement.</p>
+                    <a href="/blog/mobile-app-trends-2026" class="text-accent font-semibold text-sm hover:underline">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="blog-article group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200" data-category="business">
+                <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-chart-line text-6xl text-white/30"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full">Business</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3 text-sm text-slate-500">
+                        <span><i class="fas fa-clock mr-1"></i> 6 min</span>
+                        <span><i class="fas fa-calendar mr-1"></i> Feb 5, 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600 transition-colors">India-Africa Trade: Opportunities in 2026</h3>
+                    <p class="text-slate-600 text-sm mb-4">Explore the growing trade corridor between India and Africa, and how businesses can capitalize on emerging opportunities.</p>
+                    <a href="/blog/india-africa-opportunities-2026" class="text-green-600 font-semibold text-sm hover:underline">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-article group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="300" data-category="technology">
+                <div class="h-48 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-robot text-6xl text-white/30"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full">Technology</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3 text-sm text-slate-500">
+                        <span><i class="fas fa-clock mr-1"></i> 12 min</span>
+                        <span><i class="fas fa-calendar mr-1"></i> Jan 28, 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">How AI is Transforming International Trade</h3>
+                    <p class="text-slate-600 text-sm mb-4">From automated customs clearance to predictive logistics, discover how artificial intelligence is revolutionizing global trade.</p>
+                    <a href="/blog/ai-international-trade" class="text-purple-600 font-semibold text-sm hover:underline">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="blog-article group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="400" data-category="technology">
+                <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-shopping-cart text-6xl text-white/30"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full">Technology</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3 text-sm text-slate-500">
+                        <span><i class="fas fa-clock mr-1"></i> 7 min</span>
+                        <span><i class="fas fa-calendar mr-1"></i> Jan 20, 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-cyan-600 transition-colors">Building an E-Commerce Platform for African Markets</h3>
+                    <p class="text-slate-600 text-sm mb-4">Key considerations for launching an online store targeting African consumers, including payment solutions and logistics.</p>
+                    <a href="/blog/ecommerce-african-markets" class="text-cyan-600 font-semibold text-sm hover:underline">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="blog-article group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="500" data-category="trade">
+                <div class="h-48 bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center relative overflow-hidden">
+                    <i class="fas fa-calculator text-6xl text-white/30"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full">Trade</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-3 mb-3 text-sm text-slate-500">
+                        <span><i class="fas fa-clock mr-1"></i> 5 min</span>
+                        <span><i class="fas fa-calendar mr-1"></i> Jan 15, 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition-colors">Understanding Import Duties: India to Africa Calculator</h3>
+                    <p class="text-slate-600 text-sm mb-4">A practical guide to calculating customs duties, taxes, and fees when importing goods from India to African countries.</p>
+                    <a href="/blog/import-duty-calculator-guide" class="text-amber-600 font-semibold text-sm hover:underline">Read More →</a>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FREE RESOURCES DOWNLOAD
+══════════════════════════════════ -->
+<section class="py-16 bg-gradient-to-r from-primary via-secondary to-primary">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <span class="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full mb-4">FREE DOWNLOAD</span>
+                    <h2 class="text-3xl font-black text-slate-900 mb-4">Get Our Trade Guide Bundle</h2>
+                    <p class="text-slate-600 mb-6">Download our comprehensive resource pack including:</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-slate-700">India-Africa Trade Guide 2026 (PDF)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-slate-700">Import Duty Calculator Spreadsheet</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-slate-700">Shipping Route Comparison Chart</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="text-slate-700">Documentation Checklist Template</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <form action="https://formsubmit.co/info@globaltechandtrade.com" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="Trade Guide Bundle Download">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" id="guide-next" value="">
+                        <input type="text" name="name" placeholder="Your Name" required
+                               class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-primary outline-none transition-all">
+                        <input type="email" name="email" placeholder="Your Email" required
+                               class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-primary outline-none transition-all">
+                        <select name="interest" class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-primary outline-none transition-all">
+                            <option value="">What interests you most?</option>
+                            <option value="import">Importing to Africa</option>
+                            <option value="export">Exporting from Africa</option>
+                            <option value="it">IT Solutions</option>
+                            <option value="both">Both Trade & IT</option>
+                        </select>
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-accent to-orange-500 text-white font-bold rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i>
+                            Download Free Bundle
+                        </button>
+                    </form>
+                    <p class="text-center text-xs text-slate-400 mt-4">
+                        <i class="fas fa-lock mr-1"></i> Your information is secure. We never spam.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     NEWSLETTER SIGNUP
+══════════════════════════════════ -->
+<section class="py-16 bg-slate-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-black text-white mb-4">Stay Updated</h2>
+        <p class="text-white/70 mb-8">Get the latest insights on technology and trade delivered to your inbox weekly.</p>
+        <form action="https://formsubmit.co/info@globaltechandtrade.com" method="POST" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+            <input type="hidden" name="_subject" value="Blog Newsletter Subscription">
+            <input type="email" name="email" placeholder="Enter your email" required
+                   class="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:border-primary outline-none transition-all">
+            <button type="submit" class="px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all">
+                Subscribe
+            </button>
+        </form>
+    </div>
+</section>
+
+<script>
+document.querySelector('form[action*="formsubmit"]')?.addEventListener('submit', function() {
+    var nextHidden = document.getElementById('guide-next');
+    if (nextHidden) nextHidden.value = window.location.origin + '/blog?download=success';
+});
+
+// Blog Category Filter
+(function() {
+    var filterBtns = document.querySelectorAll('.blog-filter-btn');
+    var articles = document.querySelectorAll('.blog-article');
+    
+    filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var category = this.getAttribute('data-category');
+            
+            // Update button styles
+            filterBtns.forEach(function(b) {
+                b.classList.remove('bg-primary', 'text-white');
+                b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            });
+            this.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            this.classList.add('bg-primary', 'text-white');
+            
+            // Filter articles
+            articles.forEach(function(article) {
+                var articleCategory = article.getAttribute('data-category');
+                if (category === 'all' || articleCategory === category) {
+                    article.style.display = '';
+                    article.style.opacity = '0';
+                    article.style.transform = 'translateY(20px)';
+                    setTimeout(function() {
+                        article.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        article.style.opacity = '1';
+                        article.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    article.style.opacity = '0';
+                    article.style.transform = 'translateY(-20px)';
+                    setTimeout(function() {
+                        article.style.display = 'none';
+                    }, 300);
+                }
+            });
+            
+            // Track filter usage
+            if (typeof gtag === 'function') {
+                gtag('event', 'blog_filter', {
+                    'event_category': 'Blog',
+                    'event_label': category
+                });
+            }
+        });
+    });
+})();
+</script>
+
+{% endblock %}

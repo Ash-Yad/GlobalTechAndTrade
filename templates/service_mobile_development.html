@@ -1,0 +1,387 @@
+{% extends "header_menu.html" %}
+{% block content %}
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+══════════════════════════════════ -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent via-accent/90 to-primary"></div>
+        <div class="absolute inset-0 mesh-bg opacity-30"></div>
+    </div>
+
+    <div class="absolute top-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl float-element"></div>
+    <div class="absolute bottom-20 left-20 w-72 h-72 bg-secondary/20 rounded-full blur-3xl float-element-delayed"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <nav class="flex items-center gap-2 text-white/60 text-sm mb-6">
+                    <a href="/" class="hover:text-white">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <a href="/it-solutions" class="hover:text-white">IT Solutions</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-white">Mobile Development</span>
+                </nav>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                    Mobile App
+                    <span class="block text-white/90">Development</span>
+                </h1>
+
+                <p class="text-xl text-white/80 mb-8 leading-relaxed max-w-xl">
+                    Native and cross-platform mobile applications that deliver exceptional user experiences. From iOS to Android, we build apps that users love.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Start Your App
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#platforms" class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-xl border border-white/30 hover:bg-white/20 transition-all">
+                        View Platforms
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden lg:block" data-aos="fade-left">
+                <div class="relative flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-[500px] bg-slate-900 rounded-[3rem] p-3 shadow-2xl">
+                            <div class="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 rounded-[2.5rem] flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-mobile-alt text-6xl text-white/50 mb-4"></i>
+                                    <div class="text-white/70 text-sm">Your App Here</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 w-20 h-6 bg-slate-900 rounded-b-xl"></div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold text-sm">
+                        <i class="fab fa-app-store-ios mr-2"></i>iOS & Android
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PLATFORMS WE BUILD FOR
+══════════════════════════════════ -->
+<section id="platforms" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold uppercase tracking-widest mb-4">Platforms</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Build Once, Deploy Everywhere</h2>
+            <p class="text-lg text-slate-600">We develop for all major platforms using the best technology for your specific needs.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 text-white" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
+                    <i class="fab fa-apple text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">iOS Development</h3>
+                <p class="text-white/70 mb-6">Native iOS apps built with Swift for iPhone and iPad, optimized for the Apple ecosystem.</p>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-400"></i> Swift & SwiftUI</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-400"></i> App Store optimization</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-400"></i> Apple Watch support</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-400"></i> iPad optimization</li>
+                </ul>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-600 to-green-700 rounded-2xl p-8 text-white" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
+                    <i class="fab fa-android text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Android Development</h3>
+                <p class="text-white/70 mb-6">Native Android apps built with Kotlin, supporting the full range of Android devices.</p>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Kotlin & Jetpack Compose</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Play Store optimization</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Wear OS support</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Tablet optimization</li>
+                </ul>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
+                    <i class="fas fa-layer-group text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Cross-Platform</h3>
+                <p class="text-white/70 mb-6">Single codebase for both iOS and Android using Flutter or React Native.</p>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Flutter & React Native</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> 50% faster development</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Unified codebase</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-white"></i> Cost-effective</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     TYPES OF APPS WE BUILD
+══════════════════════════════════ -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-widest mb-4">App Categories</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Apps for Every Industry</h2>
+            <p class="text-lg text-slate-600">From on-demand services to enterprise solutions, we build apps that solve real business problems.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-shopping-cart text-xl text-blue-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">E-Commerce Apps</h3>
+                <p class="text-slate-600 text-sm">Mobile shopping experiences with payment integration, push notifications, and personalized recommendations.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="150">
+                <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-utensils text-xl text-green-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Food Delivery Apps</h3>
+                <p class="text-slate-600 text-sm">Restaurant ordering, real-time tracking, driver apps, and restaurant management dashboards.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-car text-xl text-purple-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Ride-Sharing Apps</h3>
+                <p class="text-slate-600 text-sm">Uber-like apps with GPS tracking, fare calculation, driver matching, and payment processing.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="250">
+                <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-heartbeat text-xl text-red-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Healthcare Apps</h3>
+                <p class="text-slate-600 text-sm">Telemedicine, appointment booking, health tracking, and patient management systems.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-graduation-cap text-xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">EdTech Apps</h3>
+                <p class="text-slate-600 text-sm">Learning management, video courses, quizzes, progress tracking, and certification systems.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all" data-aos="fade-up" data-aos-delay="350">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-4">
+                    <i class="fas fa-building text-xl text-indigo-500"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Enterprise Apps</h3>
+                <p class="text-slate-600 text-sm">Internal tools, field service apps, inventory management, and employee engagement platforms.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     DEVELOPMENT PROCESS
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-bold uppercase tracking-widest mb-4">Our Process</span>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">From Idea to App Store</h2>
+            <p class="text-lg text-slate-600">A structured approach that ensures your app is built right, on time, and within budget.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-6" data-aos="fade-right">
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Strategy & Planning</h3>
+                        <p class="text-slate-600">We analyze your target audience, competitors, and business goals to create a winning app strategy.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">UI/UX Design</h3>
+                        <p class="text-slate-600">Our designers create intuitive, beautiful interfaces that follow platform guidelines and delight users.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Development</h3>
+                        <p class="text-slate-600">Agile development with 2-week sprints. You get working builds to test throughout the process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6" data-aos="fade-left">
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Quality Assurance</h3>
+                        <p class="text-slate-600">Comprehensive testing on real devices, performance optimization, and security audits.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">App Store Launch</h3>
+                        <p class="text-slate-600">We handle the entire submission process, including ASO (App Store Optimization) for visibility.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Maintenance & Updates</h3>
+                        <p class="text-slate-600">Ongoing support, bug fixes, OS updates, and feature enhancements to keep your app competitive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MARKET SCENARIO
+══════════════════════════════════ -->
+<section class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-bold uppercase tracking-widest mb-4">Market Insights</span>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Mobile App Market in 2026</h2>
+            <p class="text-lg text-white/70">The mobile app industry continues to explode. Here's why now is the perfect time to build your app.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-black text-accent mb-2">7.5B</div>
+                <div class="text-white/80">Mobile Users Worldwide</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-black text-primary mb-2">$935B</div>
+                <div class="text-white/80">App Revenue by 2028</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-black text-secondary mb-2">4.8hrs</div>
+                <div class="text-white/80">Daily Mobile Usage</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-4xl font-black text-green-400 mb-2">90%</div>
+                <div class="text-white/80">Time Spent in Apps</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-bold text-white mb-6">Key Mobile Trends in 2026</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-brain text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">AI-Powered Features</h4>
+                            <p class="text-white/60 text-sm">On-device AI for personalization, voice assistants, and smart recommendations without cloud dependency.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-vr-cardboard text-accent"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">AR/VR Integration</h4>
+                            <p class="text-white/60 text-sm">Augmented reality for shopping, gaming, and enterprise training applications.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-bolt text-secondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Super Apps</h4>
+                            <p class="text-white/60 text-sm">All-in-one apps combining multiple services—payments, shopping, messaging, and more.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white/5 rounded-xl p-4">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-green-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-1">Privacy-First Design</h4>
+                            <p class="text-white/60 text-sm">Apps built with privacy at the core, complying with GDPR, CCPA, and emerging regulations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-white mb-6">Africa Mobile Opportunity</h3>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <p class="text-white/80 mb-6">Africa is the fastest-growing mobile market in the world. With our presence in Zambia, we understand the unique opportunities and challenges:</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Mobile-First Continent</span>
+                                <p class="text-white/60 text-sm">Most Africans access the internet primarily through mobile devices.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Mobile Money Dominance</span>
+                                <p class="text-white/60 text-sm">We integrate with M-Pesa, Airtel Money, and local payment systems.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Offline-First Capability</span>
+                                <p class="text-white/60 text-sm">Apps that work with limited connectivity and sync when online.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                            <div>
+                                <span class="text-white font-semibold">Local Language Support</span>
+                                <p class="text-white/60 text-sm">Multi-language apps supporting local African languages.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA SECTION
+══════════════════════════════════ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Ready to Build Your Mobile App?</h2>
+            <p class="text-xl text-slate-600 mb-8">Let's turn your app idea into reality. Book a free consultation to discuss your project.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="book-free-demo-trigger group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent to-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                    Book Free Consultation
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="/case-studies" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-all">
+                    <i class="fas fa-folder-open"></i>
+                    View Our Apps
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

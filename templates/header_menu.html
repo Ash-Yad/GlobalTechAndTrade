@@ -29,6 +29,144 @@
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/favicon.png') }}">
 
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GlobalTechAndTrade",
+        "alternateName": "GTT",
+        "url": "https://www.globaltechandtrade.com",
+        "logo": "https://www.globaltechandtrade.com/static/images/logo.png",
+        "description": "Professional IT solutions and global trade services. Mobile apps, web development, and import/export across India, Africa & Middle East.",
+        "foundingDate": "2021",
+        "numberOfEmployees": {
+            "@type": "QuantitativeValue",
+            "minValue": 25,
+            "maxValue": 50
+        },
+        "areaServed": ["India", "Zambia", "Africa", "Middle East"],
+        "sameAs": [
+            "https://www.linkedin.com/company/globaltechandtrade",
+            "https://twitter.com/globaltechandtrade"
+        ],
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+91-9027125341",
+                "contactType": "sales",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi"]
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+260-977588581",
+                "contactType": "sales",
+                "areaServed": "ZM",
+                "availableLanguage": "English"
+            }
+        ],
+        "address": [
+            {
+                "@type": "PostalAddress",
+                "streetAddress": "Sector 63",
+                "addressLocality": "Noida",
+                "addressRegion": "Uttar Pradesh",
+                "postalCode": "201301",
+                "addressCountry": "IN"
+            },
+            {
+                "@type": "PostalAddress",
+                "streetAddress": "Plot #10424/4, Cassanova Court, Chainama",
+                "addressLocality": "Lusaka",
+                "addressCountry": "ZM"
+            }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Mobile App Development",
+                        "description": "iOS and Android app development using React Native, Flutter"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Web Application Development",
+                        "description": "Custom web applications using React, Node.js, Python"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Import Export Services",
+                        "description": "International trade and logistics between India and Africa"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Local Business Schema for India Office -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "GlobalTechAndTrade - India",
+        "image": "https://www.globaltechandtrade.com/static/images/logo.png",
+        "telephone": "+91-9027125341",
+        "email": "info@globaltechandtrade.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Sector 63",
+            "addressLocality": "Noida",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "201301",
+            "addressCountry": "IN"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
+        "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Local Business Schema for Zambia Office -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "GlobalTechAndTrade - Zambia",
+        "image": "https://www.globaltechandtrade.com/static/images/logo.png",
+        "telephone": "+260-977588581",
+        "email": "info@globaltechandtrade.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot #10424/4, Cassanova Court, Chainama",
+            "addressLocality": "Lusaka",
+            "addressCountry": "ZM"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00"
+        },
+        "priceRange": "$$"
+    }
+    </script>
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXVT183KZE"></script>
     <script>
@@ -36,6 +174,69 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-CXVT183KZE');
+        
+        // Track key events for analytics
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track Book Demo button clicks
+            document.querySelectorAll('.book-free-demo-trigger').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    gtag('event', 'book_demo_click', {
+                        'event_category': 'engagement',
+                        'event_label': 'Book Demo Button'
+                    });
+                });
+            });
+            
+            // Track contact link clicks
+            document.querySelectorAll('a[href="/contact"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    gtag('event', 'contact_click', {
+                        'event_category': 'engagement',
+                        'event_label': 'Contact Page Link'
+                    });
+                });
+            });
+            
+            // Track phone number clicks
+            document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    gtag('event', 'phone_click', {
+                        'event_category': 'contact',
+                        'event_label': link.getAttribute('href')
+                    });
+                });
+            });
+            
+            // Track email clicks
+            document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    gtag('event', 'email_click', {
+                        'event_category': 'contact',
+                        'event_label': 'Email Link'
+                    });
+                });
+            });
+            
+            // Track WhatsApp clicks
+            document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    gtag('event', 'whatsapp_click', {
+                        'event_category': 'contact',
+                        'event_label': 'WhatsApp Link'
+                    });
+                });
+            });
+            
+            // Track service page visits
+            document.querySelectorAll('a[href="/it-solutions"], a[href="/import-export"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    gtag('event', 'service_interest', {
+                        'event_category': 'engagement',
+                        'event_label': link.getAttribute('href')
+                    });
+                });
+            });
+        });
     </script>
 
     <!-- Tailwind CSS - Production Build -->
@@ -52,7 +253,7 @@
 
     <style>
         /* GLOBAL FIX: Force all page content into a single stacking context */
-        body > *:not(#chat-toggle):not(#chat-backdrop):not(#chat-window):not(script):not(style) {
+        body > *:not(#chat-toggle):not(#chat-backdrop):not(#chat-window):not(script):not(style):not(nav) {
             position: relative;
             z-index: 0 !important;
         }
@@ -63,8 +264,21 @@
         }
         
         /* Reset z-index on elements that shouldn't create stacking contexts above chatbot */
-        [class*="z-10"], [class*="z-20"], [class*="z-30"], [class*="z-40"], [class*="z-50"] {
+        /* Exclude nav dropdowns from this reset */
+        main [class*="z-10"], main [class*="z-20"], main [class*="z-30"], main [class*="z-40"], main [class*="z-50"],
+        section [class*="z-10"], section [class*="z-20"], section [class*="z-30"], section [class*="z-40"], section [class*="z-50"] {
             z-index: 0 !important;
+        }
+        
+        /* Ensure nav dropdowns work properly */
+        nav, nav * {
+            z-index: auto;
+        }
+        #navbar {
+            z-index: 50 !important;
+        }
+        #resources-menu, #lang-menu {
+            z-index: 9999 !important;
         }
         
         /* Force chatbot elements to absolute top layer - using max safe integer */
@@ -397,34 +611,75 @@
                     </span>
                 </a>
 
-                <!-- Desktop Menu - Clean navigation with no duplicate buttons -->
+                <!-- Desktop Menu - Clean navigation -->
                 <div class="hidden md:flex items-center gap-1">
                     <a href="/" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-primary transition-all {{ 'active-nav' if active == 'home' }}">
-                        <i class="fas fa-home mr-1"></i>Home
+                        Home
                     </a>
 
                     <a href="/about" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-primary transition-all {{ 'active-nav' if active == 'about' }}">
-                        <i class="fas fa-info-circle mr-1"></i>About Us
+                        About Us
                     </a>
 
-                    <!-- IT Solutions - Direct Link -->
                     <a href="/it-solutions" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-primary transition-all {{ 'active-nav' if active == 'it-solutions' }}">
-                        <i class="fas fa-microchip mr-1"></i>IT Solutions
+                        IT Solutions
                     </a>
 
-                    <!-- Import/Export - Direct Link (only once) -->
                     <a href="/import-export" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-primary transition-all {{ 'active-nav' if active == 'import-export' }}">
-                        <i class="fas fa-ship mr-1"></i>Import/Export
+                        Import/Export
                     </a>
 
-                    <!-- Contact us - same page as Request freight quote (contact details) -->
+                    <!-- Resources Dropdown -->
+                    <div class="relative" id="resources-dropdown" style="z-index: 100;">
+                        <button class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-primary transition-all flex items-center gap-1 {{ 'active-nav' if active in ['blog', 'case-studies', 'faq', 'resources'] }}" id="resources-btn" type="button">
+                            Resources
+                            <i class="fas fa-chevron-down text-[10px] ml-1"></i>
+                        </button>
+                        <div class="absolute left-0 top-full mt-2 w-48 bg-white rounded-xl shadow-lg border border-slate-200 py-2 hidden" id="resources-menu" style="z-index: 9999;">
+                            <a href="/blog" class="block px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">
+                                Blog & Insights
+                            </a>
+                            <a href="/case-studies" class="block px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">
+                                Case Studies
+                            </a>
+                            <a href="/faq" class="block px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-primary transition-colors">
+                                FAQ
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact -->
                     <a href="/contact" class="px-4 py-2 rounded-xl text-sm font-bold text-slate-600 hover:text-primary transition-all {{ 'active-nav' if active == 'contact' }}">
-                        <i class="fas fa-envelope mr-1"></i>Contact us
+                        Contact
                     </a>
                 </div>
 
-                <!-- Right Section - Book Free Demo (opens popup) - HOT BUTTON -->
-                <div class="flex items-center gap-4">
+                <!-- Right Section - Language & Book Demo -->
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <!-- Language Selector -->
+                    <div class="relative hidden sm:block" id="lang-dropdown">
+                        <button class="flex items-center gap-1.5 px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded-lg text-sm font-semibold text-slate-700 transition-all" id="lang-btn">
+                            <i class="fas fa-globe text-primary"></i>
+                            <span id="current-lang">EN</span>
+                            <i class="fas fa-chevron-down text-xs text-slate-400"></i>
+                        </button>
+                        <div class="absolute right-0 top-full mt-2 w-40 bg-white rounded-xl shadow-xl border border-slate-100 py-2 hidden" id="lang-menu" style="z-index: 9999;">
+                            <button class="lang-option w-full px-4 py-2 text-left text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary flex items-center gap-3" data-lang="en">
+                                <span class="text-lg">🇬🇧</span> English
+                            </button>
+                            <button class="lang-option w-full px-4 py-2 text-left text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary flex items-center gap-3" data-lang="fr">
+                                <span class="text-lg">🇫🇷</span> Français
+                            </button>
+                            <button class="lang-option w-full px-4 py-2 text-left text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary flex items-center gap-3" data-lang="sw">
+                                <span class="text-lg">🇰🇪</span> Kiswahili
+                            </button>
+                            <button class="lang-option w-full px-4 py-2 text-left text-sm font-medium text-slate-700 hover:bg-primary/5 hover:text-primary flex items-center gap-3" data-lang="hi">
+                                <span class="text-lg">🇮🇳</span> हिन्दी
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Book Demo Button -->
                     <a href="#" class="book-free-demo-trigger relative hidden md:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 hover:from-pink-500 hover:via-red-500 hover:to-orange-500 text-white text-sm font-black rounded-full shadow-lg shadow-orange-500/40 hover:shadow-xl hover:shadow-red-500/50 hover:scale-105 transition-all duration-300 group animate-pulse hover:animate-none">
                         <span class="absolute -top-1 -right-1 flex h-3 w-3">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
@@ -464,7 +719,23 @@
                     <i class="fas fa-ship mr-2 text-secondary"></i>Import/Export
                 </a>
 
-                <!-- Contact us - same page as Request freight quote (/contact) -->
+                <!-- Resources Section -->
+                <div class="pt-2">
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Resources</p>
+                    <div class="space-y-2 pl-2">
+                        <a href="/blog" class="block text-lg font-medium text-slate-700 hover:text-primary transition-colors">
+                            <i class="fas fa-newspaper mr-2 text-primary"></i>Blog & Insights
+                        </a>
+                        <a href="/case-studies" class="block text-lg font-medium text-slate-700 hover:text-primary transition-colors">
+                            <i class="fas fa-briefcase mr-2 text-accent"></i>Case Studies
+                        </a>
+                        <a href="/faq" class="block text-lg font-medium text-slate-700 hover:text-primary transition-colors">
+                            <i class="fas fa-question-circle mr-2 text-green-600"></i>FAQ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact us -->
                 <a href="/contact" class="block text-xl font-bold text-slate-900 hover:text-primary transition-colors">
                     <i class="fas fa-envelope mr-2 text-primary"></i>Contact us
                 </a>
@@ -572,23 +843,6 @@
                     </div>
                 </div>
                 
-                <div>
-                    <label for="demo-budget" class="block text-sm font-bold text-slate-700 mb-2">
-                        <i class="fas fa-wallet text-primary mr-1.5"></i>Estimated Budget <span class="text-slate-400 font-normal">(Optional)</span>
-                    </label>
-                    <select id="demo-budget" name="budget" 
-                            class="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 outline-none transition-all text-slate-800 appearance-none cursor-pointer"
-                            style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 4 5\"><path fill=\"%23667085\" d=\"M2 0L0 2h4zm0 5L0 3h4z\"/></svg>'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 0.65rem;">
-                        <option value="">Select budget range...</option>
-                        <option value="Under $1,000">Under $1,000</option>
-                        <option value="$1,000 - $5,000">$1,000 - $5,000</option>
-                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                        <option value="$25,000 - $50,000">$25,000 - $50,000</option>
-                        <option value="$50,000+">$50,000+</option>
-                        <option value="Not Sure">Not Sure Yet</option>
-                    </select>
-                </div>
                 
                 <!-- Success/Error Messages -->
                 <div id="book-demo-success" class="hidden p-4 bg-green-50 border-2 border-green-200 rounded-xl text-green-800 text-sm font-medium">
@@ -681,16 +935,16 @@
                         Bridging continents through technology and trade. Your trusted partner for IT innovation and global commerce since 2021.
                     </p>
                     <div class="flex gap-3">
-                        <a href="#" class="w-11 h-11 rounded-xl bg-slate-800 flex items-center justify-center text-white hover:bg-primary hover:-translate-y-1 transition-all">
+                        <a href="https://www.linkedin.com/company/globaltechandtrade" target="_blank" rel="noopener" class="w-11 h-11 rounded-xl bg-slate-800 flex items-center justify-center text-white hover:bg-[#0077B5] hover:-translate-y-1 transition-all" title="Follow us on LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-11 h-11 rounded-xl bg-slate-800 flex items-center justify-center text-white hover:bg-primary hover:-translate-y-1 transition-all">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://www.facebook.com/globaltechandtrade" target="_blank" rel="noopener" class="w-11 h-11 rounded-xl bg-slate-800 flex items-center justify-center text-white hover:bg-[#1877F2] hover:-translate-y-1 transition-all" title="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-11 h-11 rounded-xl bg-slate-800 flex items-center justify-center text-white hover:bg-primary hover:-translate-y-1 transition-all">
+                        <a href="https://www.instagram.com/globaltechandtrade" target="_blank" rel="noopener" class="w-11 h-11 rounded-xl bg-slate-800 flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] hover:-translate-y-1 transition-all" title="Follow us on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/919027125341" class="w-11 h-11 rounded-xl bg-primary/20 text-primary flex items-center justify-center hover:bg-primary hover:text-white hover:-translate-y-1 transition-all">
+                        <a href="https://wa.me/919027125341?text=Hello%20GlobalTechAndTrade!%20I%27m%20interested%20in%20your%20services." target="_blank" rel="noopener" class="w-11 h-11 rounded-xl bg-green-500/20 text-green-400 flex items-center justify-center hover:bg-green-500 hover:text-white hover:-translate-y-1 transition-all" title="Chat on WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -733,8 +987,8 @@
                         <div class="flex gap-4 group">
                             <i class="fas fa-map-marker-alt text-secondary mt-1 group-hover:scale-110 transition-transform"></i>
                             <p class="text-sm text-slate-300">
-                                Plot #10424/4, Cassanova Court,<br>
-                                Chainama, Lusaka, Zambia
+                                Plot 10424/4, off Kasama Road,<br>
+                                Libala South, Lusaka, Zambia
                             </p>
                         </div>
                         <div class="flex gap-4 group">
@@ -782,6 +1036,32 @@
                         </a></li>
                     </ul>
                 </div>
+                
+                <!-- Resources Column -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-book text-green-400"></i>
+                        Resources
+                    </h4>
+                    <ul class="space-y-3 text-slate-400">
+                        <li><a href="/blog" class="hover:text-white transition-colors flex items-center gap-2 group">
+                            <i class="fas fa-chevron-right text-green-400 text-xs group-hover:translate-x-1 transition-transform"></i>
+                            Blog & Insights
+                        </a></li>
+                        <li><a href="/case-studies" class="hover:text-white transition-colors flex items-center gap-2 group">
+                            <i class="fas fa-chevron-right text-green-400 text-xs group-hover:translate-x-1 transition-transform"></i>
+                            Case Studies
+                        </a></li>
+                        <li><a href="/faq" class="hover:text-white transition-colors flex items-center gap-2 group">
+                            <i class="fas fa-chevron-right text-green-400 text-xs group-hover:translate-x-1 transition-transform"></i>
+                            FAQ
+                        </a></li>
+                        <li><a href="/growth-checklist" class="hover:text-white transition-colors flex items-center gap-2 group">
+                            <i class="fas fa-chevron-right text-green-400 text-xs group-hover:translate-x-1 transition-transform"></i>
+                            Growth Checklist
+                        </a></li>
+                    </ul>
+                </div>
             </div>
 
             <!-- Newsletter Signup -->
@@ -813,10 +1093,10 @@
                     &copy; {{ current_year|default('2026') }} GlobalTechAndTrade Solutions Ltd. All rights reserved.
                 </p>
                 <div class="flex gap-8 text-[10px] font-black text-slate-500 uppercase tracking-widest">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Trade</a>
-                    <a href="#" class="hover:text-white transition-colors">Compliance</a>
-                    <a href="#" class="hover:text-white transition-colors">Sitemap</a>
+                    <a href="/privacy-policy" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="/faq" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="/contact" class="hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
         </div>
@@ -826,6 +1106,102 @@
     <button id="back-to-top" class="fixed bottom-4 right-20 sm:bottom-6 sm:right-24 w-10 h-10 sm:w-12 sm:h-12 gradient-bg text-white rounded-xl shadow-xl opacity-0 invisible transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl z-40">
         <i class="fas fa-arrow-up text-sm"></i>
     </button>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         EXIT-INTENT POPUP - Lead Capture
+    ═══════════════════════════════════════════════════════════ -->
+    <div id="exit-popup" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-dark/80 backdrop-blur-md">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden animate-scale-in relative">
+            <!-- Close Button -->
+            <button id="exit-popup-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-100 hover:bg-red-100 flex items-center justify-center text-slate-500 hover:text-red-500 transition-all z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-primary to-secondary p-6 text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center">
+                    <i class="fas fa-gift text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-black text-white mb-2">Wait! Don't Leave Empty-Handed</h3>
+                <p class="text-white/80 text-sm">Get our FREE guide before you go</p>
+            </div>
+            
+            <!-- Content -->
+            <div class="p-6">
+                <div class="bg-slate-50 rounded-2xl p-4 mb-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-16 h-20 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-file-pdf text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">Free Download</h4>
+                            <p class="text-sm text-slate-600 mb-2">"The Complete Guide to India-Africa Trade 2026"</p>
+                            <ul class="text-xs text-slate-500 space-y-1">
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Import/Export regulations</li>
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Customs duty calculator</li>
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Shipping route guide</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form -->
+                <form id="exit-popup-form" action="https://formsubmit.co/info@globaltechandtrade.com" method="POST">
+                    <input type="hidden" name="_subject" value="Free Guide Download Request">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" id="exit-popup-next" value="">
+                    <input type="hidden" name="_autoresponse" value="Thank you for downloading our India-Africa Trade Guide! Our team will send you the guide shortly. In the meantime, feel free to explore our services at globaltechandtrade.com — GlobalTechAndTrade">
+                    
+                    <div class="space-y-3">
+                        <input type="text" name="name" placeholder="Your Name" required
+                               class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-primary focus:bg-white outline-none transition-all text-slate-800 placeholder-slate-400">
+                        <input type="email" name="email" placeholder="Your Email" required
+                               class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-100 rounded-xl focus:border-primary focus:bg-white outline-none transition-all text-slate-800 placeholder-slate-400">
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-accent to-orange-500 text-white font-bold rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i>
+                            Get Free Guide Now
+                        </button>
+                    </div>
+                </form>
+                
+                <p class="text-center text-xs text-slate-400 mt-4">
+                    <i class="fas fa-lock mr-1"></i> We respect your privacy. Unsubscribe anytime.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         STICKY WHATSAPP BUTTON (Enhanced)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="fixed bottom-24 right-4 sm:bottom-28 sm:right-6 z-40 flex flex-col items-end gap-3">
+        <!-- WhatsApp Button with Pulse -->
+        <a href="https://wa.me/919027125341?text=Hello%20GlobalTechAndTrade!%20I%27m%20interested%20in%20your%20services." 
+           target="_blank" rel="noopener"
+           class="group relative w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-600 hover:scale-110 transition-all"
+           title="Chat on WhatsApp">
+            <!-- Pulse Ring -->
+            <span class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30"></span>
+            <i class="fab fa-whatsapp text-white text-2xl relative z-10"></i>
+            <!-- Tooltip -->
+            <span class="absolute right-full mr-3 px-3 py-2 bg-slate-900 text-white text-xs font-semibold rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+                <span class="block">Chat with us!</span>
+                <span class="block text-green-400 text-[10px]">Usually replies in minutes</span>
+                <span class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-2 h-2 bg-slate-900 rotate-45"></span>
+            </span>
+        </a>
+        
+        <!-- Quick Call Button -->
+        <a href="tel:+919027125341" 
+           class="group w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 hover:scale-110 transition-all"
+           title="Call Us">
+            <i class="fas fa-phone-alt text-white text-lg"></i>
+            <span class="absolute right-full mr-3 px-3 py-1.5 bg-slate-900 text-white text-xs font-semibold rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                Call Now
+                <span class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-2 h-2 bg-slate-900 rotate-45"></span>
+            </span>
+        </a>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -953,6 +1329,13 @@
             var nextHidden = document.getElementById('demo-next');
             if (replyto && replytoHidden) replytoHidden.value = replyto.value;
             if (nextHidden) nextHidden.value = window.location.origin + window.location.pathname + '?demo=submitted';
+            
+            // Track form submission in Google Analytics
+            gtag('event', 'form_submit', {
+                'event_category': 'conversion',
+                'event_label': 'Book Demo Form',
+                'value': 1
+            });
         });
 
         // Show thank-you message when returning after successful submission
@@ -977,7 +1360,103 @@
             newsletterForm.addEventListener('submit', function() {
                 var nextHidden = document.getElementById('newsletter-next');
                 if (nextHidden) nextHidden.value = window.location.origin + '/?subscribed=true';
+                
+                // Track newsletter signup in Google Analytics
+                gtag('event', 'newsletter_signup', {
+                    'event_category': 'conversion',
+                    'event_label': 'Newsletter Form',
+                    'value': 1
+                });
             });
+        }
+
+        // ========== EXIT-INTENT POPUP ==========
+        (function() {
+            var exitPopup = document.getElementById('exit-popup');
+            var exitPopupClose = document.getElementById('exit-popup-close');
+            var exitPopupForm = document.getElementById('exit-popup-form');
+            var exitPopupShown = sessionStorage.getItem('exitPopupShown');
+            
+            // Only show once per session and not on mobile
+            function showExitPopup() {
+                if (exitPopupShown || window.innerWidth < 768) return;
+                
+                exitPopup.classList.remove('hidden');
+                exitPopup.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                sessionStorage.setItem('exitPopupShown', 'true');
+            }
+            
+            function closeExitPopup() {
+                exitPopup.classList.add('hidden');
+                exitPopup.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+            
+            // Exit intent detection (mouse leaves viewport at top)
+            document.addEventListener('mouseout', function(e) {
+                if (e.clientY < 10 && e.relatedTarget === null) {
+                    setTimeout(showExitPopup, 500);
+                }
+            });
+            
+            // Also show after 60 seconds on page (backup)
+            setTimeout(function() {
+                if (!sessionStorage.getItem('exitPopupShown')) {
+                    showExitPopup();
+                }
+            }, 60000);
+            
+            // Close handlers
+            if (exitPopupClose) {
+                exitPopupClose.addEventListener('click', closeExitPopup);
+            }
+            exitPopup.addEventListener('click', function(e) {
+                if (e.target === exitPopup) closeExitPopup();
+            });
+            
+            // Manual triggers (for download buttons)
+            document.querySelectorAll('.exit-popup-trigger').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    exitPopup.classList.remove('hidden');
+                    exitPopup.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Form submission
+            if (exitPopupForm) {
+                exitPopupForm.addEventListener('submit', function() {
+                    var nextHidden = document.getElementById('exit-popup-next');
+                    if (nextHidden) nextHidden.value = window.location.origin + '/?guide=requested';
+                    
+                    // Track in GA
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'lead_magnet_download', {
+                            'event_category': 'conversion',
+                            'event_label': 'India-Africa Trade Guide',
+                            'value': 1
+                        });
+                    }
+                });
+            }
+        })();
+        
+        // Show thank-you for guide download
+        if (window.location.search.indexOf('guide=requested') !== -1) {
+            (function() {
+                var wrap = document.createElement('div');
+                wrap.className = 'fixed top-24 right-4 z-[70] max-w-sm';
+                wrap.innerHTML = '<div class="bg-white border-l-4 border-green-500 rounded-lg shadow-2xl p-4 flex items-start gap-3">' +
+                    '<i class="fas fa-check-circle text-green-500 text-xl mt-0.5"></i>' +
+                    '<div><p class="font-bold text-slate-800">Guide Request Received!</p><p class="text-sm text-slate-600 mt-1">Check your email for the download link.</p></div>' +
+                    '<button type="button" class="ml-auto text-slate-400 hover:text-slate-600" aria-label="Close">×</button></div>';
+                wrap.querySelector('button').onclick = function() { wrap.remove(); history.replaceState({}, '', window.location.pathname); };
+                document.body.appendChild(wrap);
+                history.replaceState({}, '', window.location.pathname);
+                setTimeout(function() { if (wrap.parentNode) wrap.remove(); }, 8000);
+            })();
         }
 
         // Show thank-you message for newsletter subscription
@@ -1135,12 +1614,13 @@
 
             <!-- Quick Replies - Mobile Optimized -->
             <div id="quick-replies" class="p-3 border-t border-gray-300" style="background-color: white !important;">
-            <p class="text-xs text-slate-500 mb-2">Quick questions:</p>
+            <p class="text-xs text-slate-500 mb-2">How can we help?</p>
             <div class="flex flex-wrap gap-2">
                 <button onclick="startDemoBooking()" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-white text-sm sm:text-xs font-medium rounded-full transition-all active:scale-95 shadow-sm" style="background: linear-gradient(135deg, #f97316, #ef4444);">📅 Book Demo</button>
-                <button onclick="sendQuickReply('What services do you offer?')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-slate-600 text-sm sm:text-xs font-medium rounded-full transition-all hover:bg-primary hover:text-white active:scale-95" style="background: #e2e8f0;">Services</button>
-                <button onclick="sendQuickReply('Tell me about mobile app development')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-slate-600 text-sm sm:text-xs font-medium rounded-full transition-all hover:bg-primary hover:text-white active:scale-95" style="background: #e2e8f0;">Mobile Apps</button>
-                <button onclick="sendQuickReply('How to contact you?')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-slate-600 text-sm sm:text-xs font-medium rounded-full transition-all hover:bg-primary hover:text-white active:scale-95" style="background: #e2e8f0;">Contact</button>
+                <button onclick="startLeadQualification('it')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-white text-sm sm:text-xs font-medium rounded-full transition-all active:scale-95 shadow-sm" style="background: linear-gradient(135deg, #0052CC, #003D99);">💻 IT Project</button>
+                <button onclick="startLeadQualification('trade')" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-white text-sm sm:text-xs font-medium rounded-full transition-all active:scale-95 shadow-sm" style="background: linear-gradient(135deg, #FF6B35, #FF8C00);">🚢 Trade Quote</button>
+                <button onclick="requestHumanAgent()" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-white text-sm sm:text-xs font-medium rounded-full transition-all active:scale-95 shadow-sm" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9);">👤 Talk to Human</button>
+                <button onclick="connectToWhatsApp()" class="quick-reply-btn px-3 py-2 sm:py-1.5 text-white text-sm sm:text-xs font-medium rounded-full transition-all active:scale-95 shadow-sm" style="background: #25D366;">💬 WhatsApp</button>
             </div>
         </div>
 
@@ -1253,8 +1733,8 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
             // Import Export
             'import': '🚢 **Import/Export Services**\n\nWe handle global trade:\n• Product Sourcing\n• Customs Clearance\n• Freight Forwarding\n• Documentation\n• Door-to-Door Delivery\n\n**Regions:** India, Africa, Middle East\n**Products:** Electronics, Machinery, Textiles, Food Products\n\nWhat do you want to trade?',
             
-            // Pricing
-            'price': '💰 **Pricing Information**\n\nOur pricing is project-based and customized to your specific requirements.\n\nFor an accurate quote, please book a FREE consultation where we can discuss your project in detail!\n\n📅 Click "Book Demo" below to schedule a call with our team.',
+            // Quote
+            'price': '📋 **Get a Custom Quote**\n\nEvery project is unique, so we provide customized quotes based on your specific requirements.\n\nFor an accurate quote, please book a FREE consultation where we can discuss your project in detail!\n\n📅 Click "Book Demo" below to schedule a call with our team.',
             
             // Contact
             'contact': '📞 **Contact Us**\n\n**Email:** info@globaltechandtrade.com\n\n**India Office:**\n📍 Sector 63, Noida, UP\n📞 +91 9027125341\n\n**Zambia Office:**\n📍 Chainama, Lusaka\n📞 +260 977 588 581\n\nOr book a free demo using the link below!',
@@ -1275,8 +1755,8 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
             'support': '🛠️ **Support & Maintenance**\n\n• **Free Support:** 3 months after delivery\n• **AMC Plans:** Annual maintenance contracts\n• **24/7 Support:** For critical issues\n• **Updates:** Regular security & feature updates\n\nWe never abandon our clients!',
             
             // Greetings
-            'hello': 'Hello! 👋 Welcome to GlobalTechAndTrade! I\'m your AI assistant. How can I help you today?\n\nYou can ask about:\n• IT Services\n• Import/Export\n• Pricing\n• Contact Info',
-            'hi': 'Hi there! 👋 Great to see you! I\'m GTT Assistant.\n\nAsk me anything about our services, pricing, or how we can help your business grow!',
+            'hello': 'Hello! 👋 Welcome to GlobalTechAndTrade! I\'m your AI assistant. How can I help you today?\n\nYou can ask about:\n• IT Services\n• Import/Export\n• Get a Quote\n• Contact Info',
+            'hi': 'Hi there! 👋 Great to see you! I\'m GTT Assistant.\n\nAsk me anything about our services or how we can help your business grow!',
             'hey': 'Hey! 👋 Welcome! What would you like to know about GlobalTechAndTrade?',
             
             // Thanks
@@ -1289,7 +1769,7 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
             'demo': '📅 **Book Free Consultation**\n\nGet a FREE 30-minute consultation:\n• Discuss your requirements\n• Get expert advice\n• Receive a custom quote\n• No commitment required\n\nClick "Book a Free Consultation" below or call us at +91 9027125341!',
             
             // Default
-            'default': 'I\'m not sure I fully understand, but I\'m here to help! 🤔\n\nYou can ask me about:\n• **Services** - IT solutions & trade\n• **Pricing** - Project costs\n• **Contact** - How to reach us\n• **Timeline** - Project duration\n\nOr book a free consultation to speak with our team!'
+            'default': 'I\'m not sure I fully understand, but I\'m here to help! 🤔\n\nYou can ask me about:\n• **Services** - IT solutions & trade\n• **Quote** - Get a custom quote\n• **Contact** - How to reach us\n• **Timeline** - Project duration\n\nOr book a free consultation to speak with our team!'
         };
 
         function openChat() {
@@ -1349,6 +1829,16 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
                 return;
             }
             
+            // Check if lead qualification is active
+            if (leadQualification.active) {
+                setTimeout(function() {
+                    var typing = document.getElementById('typing-indicator');
+                    if (typing) typing.remove();
+                    handleLeadQualificationStep(message);
+                }, 600);
+                return;
+            }
+
             // Check if user wants to book demo
             var msgLower = message.toLowerCase();
             if (msgLower.includes('book') || msgLower.includes('demo') || msgLower.includes('consultation') || 
@@ -1357,6 +1847,16 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
                     var typing = document.getElementById('typing-indicator');
                     if (typing) typing.remove();
                     startDemoBooking();
+                }, 600);
+                return;
+            }
+
+            // Check if user wants to talk to human
+            if (msgLower.includes('human') || msgLower.includes('agent') || msgLower.includes('person') || msgLower.includes('real person') || msgLower.includes('talk to someone')) {
+                setTimeout(function() {
+                    var typing = document.getElementById('typing-indicator');
+                    if (typing) typing.remove();
+                    requestHumanAgent();
                 }, 600);
                 return;
             }
@@ -1385,23 +1885,201 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
         }
         window.startDemoBooking = startDemoBooking;
         
-        function handleDemoBookingStep(userInput) {
-            // Check if user wants to cancel
-            if (userInput.toLowerCase() === 'cancel' || userInput.toLowerCase() === 'stop') {
-                demoBooking.active = false;
-                demoBooking.step = 0;
-                addMessage("No problem! Demo booking cancelled. 👍\n\nHow else can I help you?", 'bot');
-                return;
+        // Lead Qualification Flow
+        var leadQualification = {
+            active: false,
+            type: '', // 'it' or 'trade'
+            step: 0,
+            data: {}
+        };
+        
+        var itQualificationSteps = [
+            { question: "Great! Let me help you find the right IT solution. 💻\n\nWhat type of project are you looking for?\n\n1️⃣ Mobile App\n2️⃣ Website/Web App\n3️⃣ E-Commerce Store\n4️⃣ Custom Software/ERP\n5️⃣ Not sure yet", field: 'projectType' },
+            { question: "What's your project scope?\n\n1️⃣ Small (basic features)\n2️⃣ Medium (standard features)\n3️⃣ Large (complex features)\n4️⃣ Enterprise (full solution)\n5️⃣ Not sure yet", field: 'scope' },
+            { question: "When do you need this completed?\n\n1️⃣ ASAP (within 1 month)\n2️⃣ 1-3 months\n3️⃣ 3-6 months\n4️⃣ Just exploring", field: 'timeline' }
+        ];
+        
+        var tradeQualificationSteps = [
+            { question: "Let me help you with your trade needs! 🚢\n\nWhat are you looking to do?\n\n1️⃣ Import goods to Africa\n2️⃣ Export from Africa\n3️⃣ Import to India\n4️⃣ General trade consulting", field: 'tradeType' },
+            { question: "What type of products?\n\n1️⃣ Electronics\n2️⃣ Machinery/Equipment\n3️⃣ Textiles/Garments\n4️⃣ Food Products\n5️⃣ Other", field: 'productType' },
+            { question: "What's your shipment size?\n\n1️⃣ Small (samples/parcels)\n2️⃣ Medium (LCL)\n3️⃣ Large (FCL container)\n4️⃣ Bulk/Regular shipments", field: 'shipmentSize' }
+        ];
+        
+        function startLeadQualification(type) {
+            leadQualification.active = true;
+            leadQualification.type = type;
+            leadQualification.step = 0;
+            leadQualification.data = { type: type };
+            
+            var steps = type === 'it' ? itQualificationSteps : tradeQualificationSteps;
+            addMessage(steps[0].question, 'bot');
+            
+            // Track in GA
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'lead_qualification_start', {
+                    'event_category': 'engagement',
+                    'event_label': type
+                });
+            }
+        }
+        window.startLeadQualification = startLeadQualification;
+        
+        function handleLeadQualificationStep(userInput) {
+            var steps = leadQualification.type === 'it' ? itQualificationSteps : tradeQualificationSteps;
+            var currentStep = steps[leadQualification.step];
+            
+            // Save the answer
+            leadQualification.data[currentStep.field] = userInput;
+            leadQualification.step++;
+            
+            if (leadQualification.step < steps.length) {
+                // Ask next question
+                addMessage(steps[leadQualification.step].question, 'bot');
+            } else {
+                // Qualification complete - provide recommendation
+                leadQualification.active = false;
+                var recommendation = getLeadRecommendation();
+                addMessage(recommendation, 'bot');
+                
+                // Track completion
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'lead_qualification_complete', {
+                        'event_category': 'conversion',
+                        'event_label': leadQualification.type,
+                        'value': 1
+                    });
+                }
+            }
+        }
+        
+        function getLeadRecommendation() {
+            var data = leadQualification.data;
+            var msg = "Thanks for the info! Based on your needs:\n\n";
+            
+            if (data.type === 'it') {
+                msg += "✅ **We can help with:** ";
+                if (data.projectType && data.projectType.includes('Mobile')) {
+                    msg += "**Mobile App Development** for iOS and Android\n\n";
+                } else if (data.projectType && data.projectType.includes('E-Commerce')) {
+                    msg += "**E-Commerce Solutions** to help you sell online\n\n";
+                } else if (data.projectType && data.projectType.includes('Website')) {
+                    msg += "**Professional Website Development**\n\n";
+                } else {
+                    msg += "A **Custom Solution** tailored to your needs\n\n";
+                }
+            } else {
+                msg += "✅ **We can help with:**\n";
+                msg += "• Freight forwarding & logistics\n";
+                msg += "• Customs clearance documentation\n";
+                msg += "• Product sourcing assistance\n\n";
             }
             
+            msg += "📅 **Next Step:** Book a FREE 30-minute consultation with our experts!\n\n";
+            msg += "Click **Book Demo** below or message us on WhatsApp for instant response.";
+            
+            return msg;
+        }
+        
+        function connectToWhatsApp() {
+            window.open('https://wa.me/919027125341?text=Hello%20GlobalTechAndTrade!%20I%27m%20interested%20in%20your%20services.', '_blank');
+            addMessage("Opening WhatsApp... 💬\n\nOur team typically responds within minutes during business hours!", 'bot');
+        }
+        window.connectToWhatsApp = connectToWhatsApp;
+
+        // Human Agent Handoff
+        function requestHumanAgent() {
+            var currentHour = new Date().getHours();
+            var isBusinessHours = (currentHour >= 9 && currentHour < 18);
+            
+            var msg = "👤 **Connect with Our Team**\n\n";
+            
+            if (isBusinessHours) {
+                msg += "Great! Our team is **currently available**. Choose how you'd like to connect:\n\n";
+            } else {
+                msg += "Our team is currently offline, but you can still reach us:\n\n";
+            }
+            
+            msg += "📱 **WhatsApp (Fastest)**\n";
+            msg += "[Chat on WhatsApp](https://wa.me/919027125341?text=Hi,%20I%20need%20to%20speak%20with%20someone%20from%20your%20team)\n\n";
+            
+            msg += "📞 **Call Us**\n";
+            msg += "• India: +91 9027125341\n";
+            msg += "• Zambia: +260 977 588 581\n\n";
+            
+            msg += "📧 **Email**\n";
+            msg += "info@globaltechandtrade.com\n\n";
+            
+            if (isBusinessHours) {
+                msg += "💡 **Tip:** WhatsApp usually gets the fastest response!";
+            } else {
+                msg += "⏰ **Business Hours:**\n";
+                msg += "• India: Mon-Sat, 9AM-6PM IST\n";
+                msg += "• Zambia: Mon-Fri, 8AM-5PM CAT\n\n";
+                msg += "Leave a message and we'll respond first thing!";
+            }
+            
+            addMessage(msg, 'bot');
+            
+            // Show contact options as buttons
+            setTimeout(function() {
+                var contactDiv = document.createElement('div');
+                contactDiv.className = 'flex flex-wrap gap-2 justify-start ml-10 mb-4';
+                contactDiv.innerHTML = 
+                    '<a href="https://wa.me/919027125341?text=Hi,%20I%20need%20to%20speak%20with%20someone" target="_blank" class="px-4 py-2 bg-green-500 text-white text-xs font-bold rounded-full hover:bg-green-600 transition-all"><i class="fab fa-whatsapp mr-1"></i> WhatsApp</a>' +
+                    '<a href="tel:+919027125341" class="px-4 py-2 bg-primary text-white text-xs font-bold rounded-full hover:bg-blue-600 transition-all"><i class="fas fa-phone mr-1"></i> Call India</a>' +
+                    '<a href="tel:+260977588581" class="px-4 py-2 bg-secondary text-white text-xs font-bold rounded-full hover:bg-blue-700 transition-all"><i class="fas fa-phone mr-1"></i> Call Zambia</a>' +
+                    '<a href="mailto:info@globaltechandtrade.com" class="px-4 py-2 bg-slate-600 text-white text-xs font-bold rounded-full hover:bg-slate-700 transition-all"><i class="fas fa-envelope mr-1"></i> Email</a>';
+                chatMessages.appendChild(contactDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+            
+            // Track GA event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'human_handoff_request', {
+                    'event_category': 'chatbot',
+                    'event_label': isBusinessHours ? 'business_hours' : 'after_hours'
+                });
+            }
+        }
+        window.requestHumanAgent = requestHumanAgent;
+        
+function handleDemoBookingStep(userInput) {
+            var inputLower = userInput.toLowerCase().trim();
+            
+            // Check if user wants to cancel or exit (expanded list)
+            var exitKeywords = ['cancel', 'stop', 'exit', 'quit', 'no', 'nevermind', 'never mind', 'back', 'menu', 'help', 'hi', 'hello', 'hey'];
+            var isExitRequest = exitKeywords.some(function(keyword) {
+                return inputLower === keyword || inputLower.startsWith(keyword + ' ');
+            });
+            
+            // Also exit if user asks a question (contains ?)
+            if (isExitRequest || inputLower.includes('?') || inputLower.includes('what') || inputLower.includes('how') || inputLower.includes('why') || inputLower.includes('who')) {
+                demoBooking.active = false;
+                demoBooking.step = 0;
+                addMessage("No problem! Demo booking cancelled. 👍\n\nHow can I help you? You can:\n• Ask about our **IT Solutions** or **Trade Services**\n• Click **Book Demo** when you're ready\n• Type **human** to talk to our team", 'bot');
+                return;
+            }
+
             // Validate and save current step
             var currentStep = demoSteps[demoBooking.step];
             var isValid = validateInput(currentStep.field, userInput);
-            
+
             if (!isValid.valid) {
-                addMessage(isValid.message, 'bot');
+                // After 2 failed attempts, offer to exit
+                if (!demoBooking.failCount) demoBooking.failCount = 0;
+                demoBooking.failCount++;
+                
+                if (demoBooking.failCount >= 2) {
+                    addMessage(isValid.message + "\n\n💡 **Tip:** Type **cancel** to exit booking, or **human** to talk to our team.", 'bot');
+                    demoBooking.failCount = 0;
+                } else {
+                    addMessage(isValid.message, 'bot');
+                }
                 return;
             }
+            
+            // Reset fail count on success
+            demoBooking.failCount = 0;
             
             // Save the input
             console.log('Saving field:', currentStep.field, 'value:', userInput);
@@ -1562,7 +2240,7 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
                 return "I'm doing great, thank you for asking! 😊 I'm here to help you learn about GlobalTechAndTrade's services. What would you like to know?";
             }
             if (msg.includes('your name') || msg.includes('who are you')) {
-                return "I'm GTT Assistant, the AI helper for GlobalTechAndTrade! 🤖 I can tell you about our IT solutions, import/export services, pricing, and more!";
+                return "I'm GTT Assistant, the AI helper for GlobalTechAndTrade! 🤖 I can tell you about our IT solutions, import/export services, and help you get started!";
             }
             if (msg.includes('joke') || msg.includes('funny')) {
                 return "Why did the developer go broke? Because he used up all his cache! 😄 Now, how can I help you with our services?";
@@ -1678,7 +2356,7 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
                 <i class="fas fa-cookie-bite text-2xl text-amber-400"></i>
                 <p class="text-sm">
                     We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
-                    <a href="#" class="text-primary hover:underline ml-1">Learn more</a>
+                    <a href="/privacy-policy" class="text-primary hover:underline ml-1">Learn more</a>
                 </p>
             </div>
             <div class="flex gap-3">
@@ -1712,6 +2390,162 @@ Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked
                 setTimeout(() => banner.style.transform = 'translateY(0)', 100);
             }, 2000);
         }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         LANGUAGE SELECTOR
+    ═══════════════════════════════════════════════════════════ -->
+    <script>
+    (function() {
+        var langBtn = document.getElementById('lang-btn');
+        var langMenu = document.getElementById('lang-menu');
+        var currentLang = document.getElementById('current-lang');
+        var langOptions = document.querySelectorAll('.lang-option');
+        
+        if (!langBtn || !langMenu) return;
+        
+        var langLabels = { en: 'EN', fr: 'FR', sw: 'SW', hi: 'HI' };
+        
+        // Load saved language
+        var savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        currentLang.textContent = langLabels[savedLang] || 'EN';
+        
+        // Toggle dropdown
+        langBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            // Close resources menu if open
+            var resourcesMenu = document.getElementById('resources-menu');
+            if (resourcesMenu) resourcesMenu.classList.add('hidden');
+            // Toggle lang menu
+            langMenu.classList.toggle('hidden');
+        });
+        
+        // Prevent closing when clicking inside lang menu
+        langMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Close on outside click
+        document.addEventListener('click', function(e) {
+            if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+                langMenu.classList.add('hidden');
+            }
+        });
+        
+        // Resources dropdown
+        var resourcesBtn = document.getElementById('resources-btn');
+        var resourcesMenu = document.getElementById('resources-menu');
+        if (resourcesBtn && resourcesMenu) {
+            resourcesBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                resourcesMenu.classList.toggle('hidden');
+                langMenu.classList.add('hidden');
+            });
+            
+            // Don't close when clicking inside the menu (let links work)
+            resourcesMenu.addEventListener('click', function(e) {
+                // Allow link clicks to navigate
+                if (e.target.tagName === 'A') {
+                    return; // Let the link work
+                }
+                e.stopPropagation();
+            });
+        }
+        
+        // Handle language selection
+        langOptions.forEach(function(option) {
+            option.addEventListener('click', function() {
+                var lang = this.getAttribute('data-lang');
+                localStorage.setItem('preferredLanguage', lang);
+                currentLang.textContent = langLabels[lang];
+                langMenu.classList.add('hidden');
+                
+                // Show notification
+                showLangNotification(lang);
+                
+                // Track with GA
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'language_change', {
+                        'event_category': 'engagement',
+                        'event_label': lang
+                    });
+                }
+            });
+        });
+        
+        function showLangNotification(lang) {
+            var messages = {
+                en: 'Language preference saved: English',
+                fr: 'Préférence de langue enregistrée: Français',
+                sw: 'Upendeleo wa lugha umehifadhiwa: Kiswahili',
+                hi: 'भाषा वरीयता सहेजी गई: हिन्दी'
+            };
+            
+            var note = document.createElement('div');
+            note.className = 'fixed top-24 right-4 z-50 px-4 py-3 bg-green-500 text-white text-sm font-semibold rounded-lg shadow-lg';
+            note.style.transition = 'opacity 0.3s, transform 0.3s';
+            note.innerHTML = '<i class="fas fa-check-circle mr-2"></i>' + messages[lang];
+            document.body.appendChild(note);
+            
+            setTimeout(function() {
+                note.style.opacity = '0';
+                note.style.transform = 'translateY(-20px)';
+                setTimeout(function() { note.remove(); }, 300);
+            }, 2500);
+        }
+    })();
+    </script>
+    
+    <!-- Fix any extra white space at bottom -->
+    <style>
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    body {
+        min-height: 100vh;
+        top: 0 !important;
+        position: relative !important;
+    }
+    /* Hide any Google Translate remnants */
+    .goog-te-banner-frame,
+    .skiptranslate,
+    #goog-gt-tt,
+    .goog-te-balloon-frame,
+    iframe[id^="goog-"],
+    iframe.goog-te-menu-frame,
+    .goog-te-gadget,
+    #google_translate_element {
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        visibility: hidden !important;
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+    }
+    /* Ensure footer is at bottom */
+    footer {
+        position: relative;
+    }
+    </style>
+    
+    <!-- Clear Google Translate cookies -->
+    <script>
+    (function() {
+        // Clear any Google Translate cookies that might be causing issues
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + window.location.hostname;
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname;
+        
+        // Remove any dynamically added Google Translate elements
+        var gtElements = document.querySelectorAll('.skiptranslate, .goog-te-banner-frame, iframe[src*="translate.google"]');
+        gtElements.forEach(function(el) {
+            el.parentNode && el.parentNode.removeChild(el);
+        });
+    })();
     </script>
 </body>
 </html>
