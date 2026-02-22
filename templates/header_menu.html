@@ -1688,88 +1688,235 @@
         var GEMINI_API_KEY = 'AIzaSyA_6Tln-e_ULzDub_xRw12KraDFKnwCx50';
         var GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
         
-        // Company context for Gemini AI
-        var companyContext = `You are GTT Assistant, a helpful AI chatbot for GlobalTechAndTrade company website. 
-        
-About GlobalTechAndTrade:
-- A dual-expertise company offering IT Solutions and Import/Export services
-- Founded in 2021, completed 50+ projects, serving 12+ countries
-- 98% client satisfaction rate
+        // Company context for Gemini AI - Comprehensive knowledge base
+        var companyContext = `You are GTT Assistant, the official AI chatbot for GlobalTech&Trade (GTT). You are knowledgeable, professional, friendly, and helpful.
 
-IT Services offered:
-- Mobile App Development (iOS, Android, React Native, Flutter)
-- Web Application Development (React, Vue.js, Node.js, Python)
-- Custom Software & ERP/CRM solutions
-- E-Commerce Platforms
-- IT Consulting
+=== COMPANY OVERVIEW ===
+GlobalTech&Trade is a dual-expertise company bridging technology and international trade.
+- Founded: 2021
+- Projects Completed: 50+
+- Countries Served: 12+
+- Client Satisfaction: 98%
+- Unique Value: We combine IT Solutions with Import/Export services under one roof
 
-Trade Services offered:
-- Import/Export services
-- Customs Clearance
-- Freight Forwarding
-- Supply Chain Management
-- Regions: India, Africa, Middle East
-- Products: Electronics, Machinery, Textiles, Food Products
+=== IT SOLUTIONS (Detailed) ===
 
-Office Locations:
-1. India HQ (Asia): Sector 63, Noida, UP 201301 | Phone: +91 9027125341 | Mon-Sat: 9AM-6PM IST
-2. Zambia HQ (Africa): Plot #10424/4, Cassanova Court, Chainama, Lusaka | Phone: +260 977 588 581 | Mon-Fri: 8AM-5PM CAT
+1. MOBILE APP DEVELOPMENT
+   - Platforms: iOS (Swift), Android (Kotlin), Cross-platform (React Native, Flutter)
+   - App Types: E-commerce, Food Delivery, Ride-sharing, Healthcare, EdTech, Enterprise
+   - Process: Strategy → UI/UX Design → Development → QA Testing → Launch → Maintenance
+   - Timeline: 6-12 weeks depending on complexity
+   - We handle: App Store/Play Store submission, push notifications, analytics integration
 
-Contact: info@globaltechandtrade.com
+2. WEB APPLICATION DEVELOPMENT
+   - Frontend: React, Vue.js, Angular, Next.js
+   - Backend: Node.js, Python/Django, PHP/Laravel, Ruby on Rails
+   - Databases: PostgreSQL, MongoDB, MySQL
+   - Cloud: AWS, Google Cloud, Azure, Docker
+   - Types: E-commerce platforms, SaaS applications, Customer portals, Corporate websites, Business dashboards, API development
+   - Timeline: 2-8 weeks depending on scope
 
-Keep responses concise, friendly, and helpful. Use emojis occasionally. If asked about something unrelated to the company, politely redirect to company services or answer briefly then mention GlobalTechAndTrade services.`;
+3. CUSTOM SOFTWARE DEVELOPMENT
+   - ERP Systems (Enterprise Resource Planning)
+   - CRM Solutions (Customer Relationship Management)
+   - Inventory Management Systems
+   - Billing & Invoicing Software
+   - Workflow Automation Tools
+   - Business Intelligence Dashboards
+   - Benefits: Tailored to your exact needs, scalable, integrates with existing systems
 
-        // Fallback responses based on GlobalTechAndTrade website content
+4. AI & AUTOMATION
+   - AI Chatbots for customer support
+   - Predictive Analytics for business insights
+   - Robotic Process Automation (RPA)
+   - Computer Vision solutions
+   - Natural Language Processing (NLP)
+   - Recommendation Engines
+   - Use cases: E-commerce personalization, Manufacturing optimization, Healthcare diagnostics
+
+5. CLOUD & INFRASTRUCTURE
+   - Cloud Migration services
+   - Infrastructure Management
+   - DevOps & CI/CD pipelines
+   - Backup & Disaster Recovery
+   - Performance Optimization
+   - Cloud Security
+   - Platforms: AWS, Microsoft Azure, Google Cloud Platform
+
+6. CYBERSECURITY
+   - Security Audits & Assessments
+   - Penetration Testing
+   - Compliance Management (GDPR, ISO 27001, PCI-DSS)
+   - Security Monitoring (SOC)
+   - Identity & Access Management
+   - Security Awareness Training
+
+=== IMPORT/EXPORT SERVICES (Detailed) ===
+
+1. PRODUCT SOURCING & PROCUREMENT
+   - Source from: India, China, Southeast Asia (Vietnam, Thailand, Malaysia, Indonesia, Bangladesh)
+   - Products: Industrial Machinery, Electronics & IT, Textiles & Apparel, Pharmaceuticals, Auto Parts, Construction Materials, Food & Beverages, Chemicals
+   - Process: Requirement Analysis → Supplier Identification → Verification → Sample & Negotiation → Quality Inspection → Order Management
+   - We have 500+ verified suppliers in our network
+   - Average cost savings: 30% through direct sourcing
+
+2. CUSTOMS CLEARANCE & COMPLIANCE
+   - HS Code Classification
+   - Duty Optimization (FTA utilization, duty drawback, exemption schemes)
+   - Documentation (Bill of Entry, Shipping Bill, Certificates of Origin)
+   - Import & Export Clearance
+   - Compliance & Audit support
+   - Coverage: All major ports in India (JNPT Mumbai, Chennai, Mundra, Kolkata, Cochin) and Africa (Dar es Salaam, Mombasa, Durban, Beira)
+   - Average clearance time: 24 hours
+
+3. FREIGHT FORWARDING & LOGISTICS
+   - Sea Freight: FCL (Full Container), LCL (Less than Container), Breakbulk, Reefer containers
+   - Air Freight: Express cargo, Consolidated shipments, Charter services
+   - Road & Rail: Cross-border trucking, Last-mile delivery
+   - Transit time: Sea 18-25 days, Air 2-5 days
+   - Value-added: Warehousing, Consolidation, Cold Chain, GPS Tracking, Hazmat handling
+
+4. TRADE FINANCE & PAYMENT SOLUTIONS
+   - Letters of Credit (LC): Sight, Usance, Confirmed, Standby, Revolving
+   - Documentary Collection: D/P (Documents against Payment), D/A (Documents against Acceptance)
+   - Invoice Factoring: Up to 90% advance on export invoices
+   - Supply Chain Finance: Reverse factoring, Dynamic discounting
+   - Bank Guarantees: Bid bonds, Performance guarantees
+   - Forex Services: Spot transactions, Forward contracts, Currency hedging
+
+5. CARGO INSURANCE & RISK PROTECTION
+   - Coverage Types: ICC (C) Basic, ICC (B) Standard, ICC (A) Comprehensive/All-Risk
+   - Covers: Fire, Water damage, Theft, Collision, Natural disasters, Breakage, Non-delivery
+   - Premium rates: 0.5-2% of cargo value
+   - Claims assistance included
+
+6. TRADE DOCUMENTATION
+   - Commercial Invoice, Packing List, Bill of Lading
+   - Certificate of Origin (Preferential & Non-preferential)
+   - Phytosanitary Certificate, Health Certificates
+   - Inspection Certificates, Insurance Certificate
+   - Export Licenses & Permits
+   - We ensure zero discrepancy for LC compliance
+
+=== TRADE CORRIDORS ===
+- India → Africa: Pharmaceuticals, Industrial Machinery, Textiles, IT Equipment, Agri-tech (Transit: 18-22 days)
+- Africa → India: Raw Minerals, Precious Metals, Agricultural Products, Gemstones (Transit: 20-24 days)
+
+=== OFFICE LOCATIONS ===
+
+INDIA HQ (Asia Operations):
+- Address: Sector 63, Noida, Uttar Pradesh 201301, India
+- Phone: +91 9027125341
+- Hours: Monday-Saturday, 9:00 AM - 6:00 PM IST
+
+ZAMBIA HQ (Africa Operations):
+- Address: Plot #10424/4, Cassanova Court, Chainama, Lusaka, Zambia
+- Phone: +260 977 588 581
+- Hours: Monday-Friday, 8:00 AM - 5:00 PM CAT
+
+Email: info@globaltechandtrade.com
+Website: www.globaltechandtrade.com
+
+=== PRICING POLICY ===
+We provide customized quotes based on project requirements. We do NOT share fixed prices in chat. Always encourage users to book a FREE consultation for accurate pricing.
+
+=== RESPONSE GUIDELINES ===
+1. Be helpful, professional, and friendly
+2. Use emojis sparingly (1-2 per response max)
+3. Keep responses concise (under 100 words unless detailed explanation needed)
+4. Always offer to help further or suggest booking a consultation
+5. If asked about competitors, focus on GTT's strengths instead
+6. For technical questions, provide accurate information from the context above
+7. If unsure, suggest booking a consultation with our experts
+8. Never make up information not in this context`;
+
+        // Comprehensive responses based on GlobalTechAndTrade services
         var responses = {
-            // Services
-            'services': '🚀 GlobalTechAndTrade offers:\n\n**IT Solutions:**\n• Mobile App Development (iOS & Android)\n• Web Application Development\n• Custom Software & ERP/CRM\n• E-Commerce Platforms\n• IT Consulting\n\n**Trade Services:**\n• Import/Export\n• Customs Clearance\n• Freight Forwarding\n• Supply Chain Management\n\nWhich service interests you?',
+            // Services Overview
+            'services': '🚀 **GlobalTech&Trade Services**\n\n**IT Solutions:**\n• Mobile App Development\n• Web Application Development\n• Custom Software & ERP/CRM\n• AI & Automation\n• Cloud & Infrastructure\n• Cybersecurity\n\n**Trade Services:**\n• Product Sourcing\n• Customs Clearance\n• Freight Forwarding\n• Trade Finance\n• Cargo Insurance\n• Documentation\n\nWhich service interests you?',
             
             // Mobile Apps
-            'mobile': '📱 **Mobile App Development**\n\nWe build native & cross-platform apps:\n• iOS & Android Apps\n• React Native & Flutter\n• E-commerce Apps\n• Business Apps\n• Custom Solutions\n\nWant to discuss your app idea? Book a FREE consultation!',
+            'mobile': '📱 **Mobile App Development**\n\nWe build apps for:\n• iOS (Swift) & Android (Kotlin)\n• Cross-platform (React Native, Flutter)\n\n**App Types:** E-commerce, Food Delivery, Healthcare, EdTech, Enterprise\n\n**Timeline:** 6-12 weeks\n**Process:** Strategy → Design → Development → Testing → Launch\n\nWant to discuss your app idea? Book a FREE consultation!',
             
             // Web Development
-            'web': '🌐 **Web Development**\n\nWe create modern websites:\n• Business Websites\n• E-Commerce Stores\n• Web Applications\n• Landing Pages\n• Custom Portals\n\n**Technologies:** React, Node.js, Python\n\nTell me about your project!',
+            'web': '🌐 **Web Application Development**\n\nWe build:\n• E-commerce Platforms\n• SaaS Applications\n• Customer Portals\n• Corporate Websites\n• Business Dashboards\n• API Development\n\n**Tech Stack:** React, Vue.js, Node.js, Python, PostgreSQL, AWS\n\n**Timeline:** 2-8 weeks\n\nTell me about your project!',
+            
+            // Custom Software
+            'software': '💼 **Custom Software Development**\n\nWe build:\n• ERP Systems\n• CRM Solutions\n• Inventory Management\n• Billing & Invoicing\n• Workflow Automation\n• Business Intelligence\n\n**Benefits:** Tailored to your needs, scalable, integrates with existing systems\n\nBook a consultation to discuss your requirements!',
+            
+            // AI & Automation
+            'ai': '🤖 **AI & Automation**\n\nOur AI solutions:\n• AI Chatbots (24/7 support)\n• Predictive Analytics\n• Process Automation (RPA)\n• Computer Vision\n• Natural Language Processing\n• Recommendation Engines\n\n**Industries:** E-commerce, Manufacturing, Finance, Healthcare\n\nLet\'s discuss how AI can transform your business!',
+            
+            // Cloud
+            'cloud': '☁️ **Cloud & Infrastructure**\n\nOur services:\n• Cloud Migration\n• Infrastructure Management\n• DevOps & CI/CD\n• Backup & Disaster Recovery\n• Performance Optimization\n• Cloud Security\n\n**Platforms:** AWS, Azure, Google Cloud\n\nNeed cloud solutions? Let\'s talk!',
+            
+            // Cybersecurity
+            'security': '🔒 **Cybersecurity Services**\n\nWe provide:\n• Security Audits\n• Penetration Testing\n• Compliance (GDPR, ISO 27001)\n• Security Monitoring\n• Identity & Access Management\n• Security Training\n\nProtect your business - book a security assessment!',
             
             // Import Export
-            'import': '🚢 **Import/Export Services**\n\nWe handle global trade:\n• Product Sourcing\n• Customs Clearance\n• Freight Forwarding\n• Documentation\n• Door-to-Door Delivery\n\n**Regions:** India, Africa, Middle East\n**Products:** Electronics, Machinery, Textiles, Food Products\n\nWhat do you want to trade?',
+            'import': '🚢 **Import/Export Services**\n\nComplete trade solutions:\n• Product Sourcing (India, China, SE Asia)\n• Customs Clearance (24hr avg)\n• Freight Forwarding (Sea, Air, Road)\n• Trade Finance (LC, Invoice Factoring)\n• Cargo Insurance\n• Documentation\n\n**Corridors:** India ↔ Africa\n**Products:** Electronics, Machinery, Textiles, Pharma, Food\n\nWhat do you want to trade?',
             
-            // Quote
-            'price': '📋 **Get a Custom Quote**\n\nEvery project is unique, so we provide customized quotes based on your specific requirements.\n\nFor an accurate quote, please book a FREE consultation where we can discuss your project in detail!\n\n📅 Click "Book Demo" below to schedule a call with our team.',
+            // Product Sourcing
+            'sourcing': '🔍 **Product Sourcing**\n\nWe source from:\n• India, China, Vietnam, Thailand, Malaysia\n\n**Products:**\n• Industrial Machinery\n• Electronics & IT\n• Textiles & Apparel\n• Pharmaceuticals\n• Auto Parts\n• Construction Materials\n\n**Network:** 500+ verified suppliers\n**Savings:** Up to 30% through direct sourcing\n\nTell us what you need!',
+            
+            // Customs
+            'customs': '📋 **Customs Clearance**\n\nOur services:\n• HS Code Classification\n• Duty Optimization\n• Import/Export Documentation\n• Compliance Support\n\n**Coverage:** All major ports in India & Africa\n**Avg Clearance:** 24 hours\n\nNeed customs help? Contact us!',
+            
+            // Freight
+            'freight': '🚛 **Freight Forwarding**\n\n**Modes:**\n• Sea Freight (FCL/LCL) - 18-25 days\n• Air Freight - 2-5 days\n• Road & Rail\n\n**Value-Added:**\n• Warehousing\n• Cold Chain\n• GPS Tracking\n• Cargo Insurance\n\nGet a freight quote today!',
+            
+            // Trade Finance
+            'finance': '💰 **Trade Finance**\n\nOur solutions:\n• Letters of Credit (LC)\n• Documentary Collection\n• Invoice Factoring (up to 90% advance)\n• Supply Chain Finance\n• Bank Guarantees\n• Forex Services\n\nSecure your international transactions!',
+            
+            // Insurance
+            'insurance': '🛡️ **Cargo Insurance**\n\n**Coverage Types:**\n• ICC (C) - Basic\n• ICC (B) - Standard\n• ICC (A) - All-Risk\n\n**Covers:** Fire, Theft, Water damage, Natural disasters, Breakage\n\n**Premium:** 0.5-2% of cargo value\n\nProtect your shipments - get a quote!',
+            
+            // Documentation
+            'documentation': '📄 **Trade Documentation**\n\nWe handle:\n• Commercial Invoice & Packing List\n• Bill of Lading\n• Certificate of Origin\n• Phytosanitary Certificates\n• Health Certificates\n• Export Licenses\n\nZero discrepancy guarantee for LC compliance!',
+            
+            // Quote/Pricing
+            'price': '📋 **Get a Custom Quote**\n\nWe provide customized quotes based on your specific requirements.\n\n**IT Projects:** Depends on scope & complexity\n**Trade Services:** Based on volume, route & product\n\nFor accurate pricing, book a FREE consultation!\n\n📅 Click "Book Demo" below to schedule a call.',
             
             // Contact
-            'contact': '📞 **Contact Us**\n\n**Email:** info@globaltechandtrade.com\n\n**India Office:**\n📍 Sector 63, Noida, UP\n📞 +91 9027125341\n\n**Zambia Office:**\n📍 Chainama, Lusaka\n📞 +260 977 588 581\n\nOr book a free demo using the link below!',
+            'contact': '📞 **Contact Us**\n\n**Email:** info@globaltechandtrade.com\n\n**India Office:**\n📍 Sector 63, Noida, UP 201301\n📞 +91 9027125341\n🕐 Mon-Sat: 9AM-6PM IST\n\n**Zambia Office:**\n📍 Chainama, Lusaka\n📞 +260 977 588 581\n🕐 Mon-Fri: 8AM-5PM CAT',
             
             // Location
-            'location': '🌍 **Our Offices**\n\n**India HQ (Asia):**\n📍 Sector 63, Noida, Uttar Pradesh 201301\n🕐 Mon-Sat: 9AM - 6PM IST\n\n**Zambia HQ (Africa):**\n📍 Plot #10424/4, Cassanova Court, Chainama, Lusaka\n🕐 Mon-Fri: 8AM - 5PM CAT\n\nWe serve India, Africa & Middle East!',
+            'location': '🌍 **Our Offices**\n\n**India HQ (Asia):**\n📍 Sector 63, Noida, UP 201301\n📞 +91 9027125341\n🕐 Mon-Sat: 9AM-6PM IST\n\n**Zambia HQ (Africa):**\n📍 Plot #10424/4, Cassanova Court, Chainama, Lusaka\n📞 +260 977 588 581\n🕐 Mon-Fri: 8AM-5PM CAT\n\nWe serve India, Africa & Middle East!',
             
             // About
-            'about': '🏢 **About GlobalTechAndTrade**\n\nWe are a dual-expertise company offering:\n• IT Solutions & Software Development\n• International Trade & Logistics\n\n**Founded:** 2021\n**Projects:** 50+\n**Countries:** 12+\n**Satisfaction:** 98%\n\nWe bridge technology and trade across continents!',
+            'about': '🏢 **About GlobalTech&Trade**\n\nWe are a dual-expertise company:\n\n**IT Solutions:** Mobile Apps, Web Development, Custom Software, AI, Cloud, Cybersecurity\n\n**Trade Services:** Import/Export, Sourcing, Customs, Freight, Finance\n\n**Stats:**\n• Founded: 2021\n• Projects: 50+\n• Countries: 12+\n• Satisfaction: 98%\n\nBridging technology and trade!',
             
             // Timeline
-            'timeline': '⏱️ **Project Timelines**\n\n• **Landing Page:** 1-2 weeks\n• **Business Website:** 2-4 weeks\n• **E-Commerce:** 4-8 weeks\n• **Mobile App:** 6-12 weeks\n• **Custom Software:** 3-6 months\n• **Import/Export:** Varies by shipment\n\nTimelines depend on project complexity.',
+            'timeline': '⏱️ **Project Timelines**\n\n**IT Projects:**\n• Landing Page: 1-2 weeks\n• Business Website: 2-4 weeks\n• E-Commerce: 4-8 weeks\n• Mobile App: 6-12 weeks\n• Custom Software: 3-6 months\n\n**Trade:**\n• Sea Freight: 18-25 days\n• Air Freight: 2-5 days\n• Customs: 24 hours avg\n\nTimelines vary by complexity.',
             
             // Technologies
-            'tech': '💻 **Technologies We Use**\n\n**Frontend:** React, Vue.js, Angular\n**Backend:** Node.js, Python, PHP\n**Mobile:** React Native, Flutter, Swift, Kotlin\n**Database:** MongoDB, PostgreSQL, MySQL\n**Cloud:** AWS, Google Cloud, Azure\n\nWe choose the best tech for your needs!',
+            'tech': '💻 **Our Tech Stack**\n\n**Frontend:** React, Vue.js, Angular, Next.js\n**Backend:** Node.js, Python, PHP, Ruby\n**Mobile:** React Native, Flutter, Swift, Kotlin\n**Database:** PostgreSQL, MongoDB, MySQL\n**Cloud:** AWS, Azure, Google Cloud\n**AI/ML:** TensorFlow, PyTorch\n\nWe choose the best tech for your needs!',
             
             // Support
-            'support': '🛠️ **Support & Maintenance**\n\n• **Free Support:** 3 months after delivery\n• **AMC Plans:** Annual maintenance contracts\n• **24/7 Support:** For critical issues\n• **Updates:** Regular security & feature updates\n\nWe never abandon our clients!',
+            'support': '🛠️ **Support & Maintenance**\n\n• **Free Support:** 3 months after delivery\n• **AMC Plans:** Annual maintenance contracts\n• **24/7 Support:** For critical issues\n• **Updates:** Regular security & feature updates\n• **Training:** User training included\n\nWe never abandon our clients!',
             
             // Greetings
-            'hello': 'Hello! 👋 Welcome to GlobalTechAndTrade! I\'m your AI assistant. How can I help you today?\n\nYou can ask about:\n• IT Services\n• Import/Export\n• Get a Quote\n• Contact Info',
-            'hi': 'Hi there! 👋 Great to see you! I\'m GTT Assistant.\n\nAsk me anything about our services or how we can help your business grow!',
-            'hey': 'Hey! 👋 Welcome! What would you like to know about GlobalTechAndTrade?',
+            'hello': 'Hello! 👋 Welcome to GlobalTech&Trade!\n\nI\'m GTT Assistant, here to help you with:\n• IT Solutions (Apps, Web, Software, AI)\n• Trade Services (Import/Export, Logistics)\n\nWhat can I help you with today?',
+            'hi': 'Hi there! 👋 Great to see you!\n\nI\'m GTT Assistant. Ask me about:\n• Mobile & Web Development\n• Custom Software & AI\n• Import/Export Services\n• Product Sourcing\n\nHow can I help?',
+            'hey': 'Hey! 👋 Welcome to GlobalTech&Trade!\n\nWhat would you like to know about our IT solutions or trade services?',
             
             // Thanks
-            'thank': 'You\'re welcome! 😊 Is there anything else I can help you with?\n\nFeel free to book a FREE consultation for detailed discussion!',
+            'thank': 'You\'re welcome! 😊\n\nIs there anything else I can help you with?\n\nFeel free to book a FREE consultation for detailed discussion!',
             
             // Bye
-            'bye': 'Goodbye! 👋 Thank you for visiting GlobalTechAndTrade.\n\nRemember, you can reach us at:\n📧 info@globaltechandtrade.com\n📞 +91 9027125341\n\nHave a great day!',
+            'bye': 'Goodbye! 👋 Thank you for visiting GlobalTech&Trade.\n\n**Contact us anytime:**\n📧 info@globaltechandtrade.com\n📞 +91 9027125341\n\nHave a great day!',
             
             // Demo/Consultation
-            'demo': '📅 **Book Free Consultation**\n\nGet a FREE 30-minute consultation:\n• Discuss your requirements\n• Get expert advice\n• Receive a custom quote\n• No commitment required\n\nClick "Book a Free Consultation" below or call us at +91 9027125341!',
+            'demo': '📅 **Book Free Consultation**\n\nGet a FREE 30-minute consultation:\n• Discuss your requirements\n• Get expert advice\n• Receive a custom quote\n• No commitment required\n\nClick "Book a Free Consultation" below or call:\n📞 India: +91 9027125341\n📞 Zambia: +260 977 588 581',
+            
+            // ERP/CRM
+            'erp': '📊 **ERP & CRM Solutions**\n\nWe build custom:\n• ERP Systems (Finance, HR, Inventory, Production)\n• CRM Solutions (Sales, Marketing, Support)\n• Integrated Business Platforms\n\n**Benefits:**\n• Tailored to your workflow\n• Scalable architecture\n• Integration with existing tools\n\nLet\'s discuss your requirements!',
+            
+            // Ecommerce
+            'ecommerce': '🛒 **E-Commerce Development**\n\nWe build:\n• Custom E-commerce Platforms\n• Shopify/WooCommerce Solutions\n• B2B & B2C Marketplaces\n• Mobile Commerce Apps\n\n**Features:** Payment integration, Inventory management, Analytics\n\nReady to sell online? Let\'s talk!',
             
             // Default
-            'default': 'I\'m not sure I fully understand, but I\'m here to help! 🤔\n\nYou can ask me about:\n• **Services** - IT solutions & trade\n• **Quote** - Get a custom quote\n• **Contact** - How to reach us\n• **Timeline** - Project duration\n\nOr book a free consultation to speak with our team!'
+            'default': 'I\'m here to help! 🤔\n\nYou can ask me about:\n• **IT Services** - Apps, Web, Software, AI\n• **Trade Services** - Import/Export, Logistics\n• **Quote** - Get custom pricing\n• **Contact** - Reach our team\n\nOr book a free consultation to speak with our experts!'
         };
 
         function openChat() {
@@ -2186,20 +2333,39 @@ function handleDemoBookingStep(userInput) {
         async function callGeminiAI(message) {
             var typing = document.getElementById('typing-indicator');
             
+            // Build a focused prompt for better responses
+            var prompt = `${companyContext}
+
+=== CURRENT USER QUESTION ===
+"${message}"
+
+=== YOUR TASK ===
+Answer the user's question based ONLY on the company information provided above.
+
+Rules:
+1. Be helpful, accurate, and professional
+2. Keep response under 80 words unless detailed explanation is needed
+3. Use bullet points for lists
+4. Add 1-2 relevant emojis
+5. If the question is about pricing, say we provide custom quotes and suggest booking a consultation
+6. If you don't have specific information, suggest booking a free consultation
+7. Always end with a helpful follow-up question or call-to-action
+8. Format important terms with **bold**
+
+Response:`;
+
             try {
                 var response = await fetch(GEMINI_API_URL + '?key=' + GEMINI_API_KEY, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         contents: [{
-                            parts: [{
-                                text: companyContext + '\n\nUser question: ' + message + '\n\nProvide a helpful, concise response (max 100 words):'
-                            }]
+                            parts: [{ text: prompt }]
                         }],
                         generationConfig: {
-                            temperature: 0.7,
-                            maxOutputTokens: 150,
-                            topP: 0.8,
+                            temperature: 0.6,
+                            maxOutputTokens: 250,
+                            topP: 0.85,
                             topK: 40
                         },
                         safetySettings: [
@@ -2220,40 +2386,68 @@ function handleDemoBookingStep(userInput) {
 
                 if (data.candidates && data.candidates[0] && data.candidates[0].content) {
                     var aiResponse = data.candidates[0].content.parts[0].text;
+                    // Clean up the response
+                    aiResponse = aiResponse.trim();
+                    if (aiResponse.startsWith('Response:')) {
+                        aiResponse = aiResponse.substring(9).trim();
+                    }
                     addMessage(aiResponse, 'bot');
                 } else if (data.error) {
                     console.error('Gemini API error:', data.error);
-                    addMessage(getSmartFallback(message), 'bot');
+                    var fallback = getSmartFallback(message);
+                    addMessage(fallback || responses.default, 'bot');
                 } else {
-                    addMessage(getSmartFallback(message), 'bot');
+                    var fallback = getSmartFallback(message);
+                    addMessage(fallback || responses.default, 'bot');
                 }
             } catch (error) {
                 console.error('Gemini API error:', error);
                 if (typing) typing.remove();
-                addMessage(getSmartFallback(message), 'bot');
+                var fallback = getSmartFallback(message);
+                addMessage(fallback || responses.default, 'bot');
             }
         }
         
         function getSmartFallback(message) {
             var msg = message.toLowerCase();
-            if (msg.includes('how are') || msg.includes('how r u') || msg.includes("how's it")) {
-                return "I'm doing great, thank you for asking! 😊 I'm here to help you learn about GlobalTechAndTrade's services. What would you like to know?";
+            
+            // Conversational responses
+            if (msg.includes('how are') || msg.includes('how r u') || msg.includes("how's it") || msg.includes('how do you do')) {
+                return "I'm doing great, thank you for asking! 😊 I'm here to help you learn about GlobalTech&Trade's services. What would you like to know - IT solutions or trade services?";
             }
-            if (msg.includes('your name') || msg.includes('who are you')) {
-                return "I'm GTT Assistant, the AI helper for GlobalTechAndTrade! 🤖 I can tell you about our IT solutions, import/export services, and help you get started!";
+            if (msg.includes('your name') || msg.includes('who are you') || msg.includes('what are you')) {
+                return "I'm GTT Assistant, the AI helper for GlobalTech&Trade! 🤖 I can tell you about our IT solutions (apps, web, software, AI) and import/export services. How can I help?";
             }
             if (msg.includes('joke') || msg.includes('funny')) {
                 return "Why did the developer go broke? Because he used up all his cache! 😄 Now, how can I help you with our services?";
             }
             if (msg.includes('weather')) {
-                return "I don't have weather data, but I can tell you it's always a great day to start a new project! ☀️ Want to know about our IT solutions?";
+                return "I don't have weather data, but it's always a great day to start a new project! ☀️ Want to know about our IT solutions or trade services?";
             }
-            if (msg.includes('love') || msg.includes('like you')) {
-                return "Aww, thank you! 😊 I'm here to help! Would you like to know about our services or book a free consultation?";
+            if (msg.includes('love') || msg.includes('like you') || msg.includes('you are great') || msg.includes('you are good')) {
+                return "Aww, thank you! 😊 I'm happy to help! Would you like to know about our services or book a free consultation?";
+            }
+            if (msg.includes('can you help') || msg.includes('need help') || msg.includes('assist')) {
+                return "Absolutely! I'm here to help! 🙌\n\nI can assist you with:\n• IT Solutions (Apps, Web, Software)\n• Trade Services (Import/Export)\n• Getting a Quote\n• Booking a Consultation\n\nWhat do you need?";
+            }
+            if (msg.includes('human') || msg.includes('real person') || msg.includes('agent') || msg.includes('talk to someone')) {
+                return "I understand you'd like to speak with our team! 👤\n\n**Contact us directly:**\n📞 India: +91 9027125341\n📞 Zambia: +260 977 588 581\n📧 info@globaltechandtrade.com\n\nOr click 'Book Demo' to schedule a call!";
+            }
+            if (msg.includes('not helpful') || msg.includes('wrong') || msg.includes('incorrect') || msg.includes("don't understand")) {
+                return "I apologize if I wasn't helpful! 😔 Let me try again, or you can:\n\n• Rephrase your question\n• Book a FREE consultation with our experts\n• Contact us at +91 9027125341\n\nHow else can I assist you?";
+            }
+            if (msg.includes('ok') || msg.includes('okay') || msg.includes('alright') || msg.includes('i see') || msg.includes('got it')) {
+                return "Great! 👍 Is there anything else you'd like to know about our IT solutions or trade services?";
+            }
+            if (msg.includes('yes') || msg.includes('sure') || msg.includes('yeah')) {
+                return "Perfect! What would you like to know more about? 😊\n\n• IT Services\n• Trade Services\n• Get a Quote\n• Book Consultation";
+            }
+            if (msg.includes('no') && msg.length < 10) {
+                return "No problem! If you have any questions later, I'm here to help. 😊\n\nFeel free to reach us at info@globaltechandtrade.com anytime!";
             }
             
-            // Return null for unknown questions - let Gemini AI handle them
-            return null;
+            // Return default response for truly unknown questions
+            return "I'd be happy to help! 🤔\n\nCould you please tell me more about what you're looking for?\n\n• IT Solutions (Apps, Web, Software, AI)\n• Trade Services (Import/Export, Logistics)\n• Pricing & Quotes\n• Contact Information\n\nOr book a FREE consultation with our experts!";
         }
 
         function addMessage(text, type) {
@@ -2272,52 +2466,104 @@ function handleDemoBookingStep(userInput) {
         function getResponse(message) {
             var msg = message.toLowerCase();
             
-            // Services
-            if (msg.includes('service') || msg.includes('offer') || msg.includes('what do you do') || msg.includes('help me')) return responses.services;
+            // Greetings (check first for quick response)
+            if (msg === 'hi' || msg === 'hello' || msg === 'hey' || msg === 'hii' || msg === 'hiii') {
+                if (msg.includes('hello')) return responses.hello;
+                if (msg.includes('hey')) return responses.hey;
+                return responses.hi;
+            }
+            if (msg.includes('good morning') || msg.includes('good afternoon') || msg.includes('good evening')) return responses.hello;
             
-            // Mobile
-            if (msg.includes('mobile') || msg.includes('app') || msg.includes('ios') || msg.includes('android') || msg.includes('flutter') || msg.includes('react native')) return responses.mobile;
+            // Services Overview
+            if (msg.includes('service') || msg.includes('offer') || msg.includes('what do you do') || msg.includes('what can you do') || msg.includes('help me') || msg.includes('what you provide')) return responses.services;
             
-            // Web
-            if (msg.includes('web') || msg.includes('website') || msg.includes('site') || msg.includes('portal') || msg.includes('ecommerce') || msg.includes('e-commerce')) return responses.web;
+            // Mobile Apps
+            if (msg.includes('mobile') || msg.includes('ios') || msg.includes('android') || msg.includes('flutter') || msg.includes('react native') || msg.includes('native app')) return responses.mobile;
+            if (msg === 'app' || msg.includes('app development') || msg.includes('build app') || msg.includes('create app') || msg.includes('make app')) return responses.mobile;
             
-            // Import/Export
-            if (msg.includes('import') || msg.includes('export') || msg.includes('trade') || msg.includes('shipping') || msg.includes('freight') || msg.includes('customs') || msg.includes('logistics')) return responses.import;
+            // Web Development
+            if (msg.includes('website') || msg.includes('web app') || msg.includes('web development') || msg.includes('web application') || msg.includes('portal') || msg.includes('landing page')) return responses.web;
+            if (msg.includes('react') || msg.includes('vue') || msg.includes('angular') || msg.includes('node') || msg.includes('next.js') || msg.includes('frontend') || msg.includes('backend')) return responses.web;
+            
+            // E-commerce
+            if (msg.includes('ecommerce') || msg.includes('e-commerce') || msg.includes('online store') || msg.includes('online shop') || msg.includes('shopify') || msg.includes('woocommerce') || msg.includes('marketplace')) return responses.ecommerce;
+            
+            // Custom Software / ERP / CRM
+            if (msg.includes('erp') || msg.includes('crm') || msg.includes('enterprise') || msg.includes('inventory') || msg.includes('billing') || msg.includes('invoicing')) return responses.erp;
+            if (msg.includes('custom software') || msg.includes('software development') || msg.includes('bespoke') || msg.includes('tailor')) return responses.software;
+            
+            // AI & Automation
+            if (msg.includes('ai') || msg.includes('artificial intelligence') || msg.includes('machine learning') || msg.includes('ml') || msg.includes('automation') || msg.includes('rpa') || msg.includes('chatbot') || msg.includes('bot')) return responses.ai;
+            if (msg.includes('predictive') || msg.includes('analytics') || msg.includes('nlp') || msg.includes('computer vision')) return responses.ai;
+            
+            // Cloud
+            if (msg.includes('cloud') || msg.includes('aws') || msg.includes('azure') || msg.includes('google cloud') || msg.includes('gcp') || msg.includes('devops') || msg.includes('infrastructure') || msg.includes('hosting')) return responses.cloud;
+            if (msg.includes('migration') || msg.includes('docker') || msg.includes('kubernetes') || msg.includes('ci/cd')) return responses.cloud;
+            
+            // Cybersecurity
+            if (msg.includes('security') || msg.includes('cyber') || msg.includes('hack') || msg.includes('penetration') || msg.includes('audit') || msg.includes('compliance') || msg.includes('gdpr') || msg.includes('iso')) return responses.security;
+            
+            // Import/Export General
+            if (msg.includes('import') || msg.includes('export') || msg.includes('trade') || msg.includes('international')) return responses.import;
+            
+            // Product Sourcing
+            if (msg.includes('sourcing') || msg.includes('supplier') || msg.includes('manufacturer') || msg.includes('procurement') || msg.includes('source product') || msg.includes('find product')) return responses.sourcing;
+            if (msg.includes('china') || msg.includes('vietnam') || msg.includes('thailand') || msg.includes('malaysia')) return responses.sourcing;
+            
+            // Customs
+            if (msg.includes('customs') || msg.includes('clearance') || msg.includes('duty') || msg.includes('tariff') || msg.includes('hs code') || msg.includes('import duty')) return responses.customs;
+            
+            // Freight
+            if (msg.includes('freight') || msg.includes('shipping') || msg.includes('logistics') || msg.includes('cargo') || msg.includes('container') || msg.includes('fcl') || msg.includes('lcl')) return responses.freight;
+            if (msg.includes('sea freight') || msg.includes('air freight') || msg.includes('ocean') || msg.includes('ship')) return responses.freight;
+            
+            // Trade Finance
+            if (msg.includes('letter of credit') || msg.includes('lc') || msg.includes('trade finance') || msg.includes('factoring') || msg.includes('bank guarantee') || msg.includes('payment term')) return responses.finance;
+            
+            // Insurance
+            if (msg.includes('insurance') || msg.includes('cargo insurance') || msg.includes('coverage') || msg.includes('protect shipment') || msg.includes('icc')) return responses.insurance;
+            
+            // Documentation
+            if (msg.includes('documentation') || msg.includes('document') || msg.includes('bill of lading') || msg.includes('certificate of origin') || msg.includes('commercial invoice') || msg.includes('packing list')) return responses.documentation;
             
             // Pricing
-            if (msg.includes('price') || msg.includes('cost') || msg.includes('charge') || msg.includes('fee') || msg.includes('budget') || msg.includes('quote') || msg.includes('how much')) return responses.price;
+            if (msg.includes('price') || msg.includes('cost') || msg.includes('charge') || msg.includes('fee') || msg.includes('budget') || msg.includes('quote') || msg.includes('how much') || msg.includes('rate') || msg.includes('pricing')) return responses.price;
             
             // Contact
-            if (msg.includes('contact') || msg.includes('email') || msg.includes('phone') || msg.includes('call') || msg.includes('reach') || msg.includes('whatsapp')) return responses.contact;
+            if (msg.includes('contact') || msg.includes('email') || msg.includes('phone') || msg.includes('call') || msg.includes('reach') || msg.includes('whatsapp') || msg.includes('number')) return responses.contact;
             
             // Location
-            if (msg.includes('location') || msg.includes('where') || msg.includes('office') || msg.includes('address') || msg.includes('india') || msg.includes('zambia') || msg.includes('africa')) return responses.location;
+            if (msg.includes('location') || msg.includes('office') || msg.includes('address') || msg.includes('where are you') || msg.includes('based')) return responses.location;
+            if (msg.includes('india') || msg.includes('zambia') || msg.includes('noida') || msg.includes('lusaka') || msg.includes('africa')) return responses.location;
             
             // About
-            if (msg.includes('about') || msg.includes('company') || msg.includes('who are') || msg.includes('tell me about')) return responses.about;
+            if (msg.includes('about') || msg.includes('company') || msg.includes('who are you') || msg.includes('tell me about') || msg.includes('what is gtt') || msg.includes('globaltech')) return responses.about;
             
             // Timeline
-            if (msg.includes('time') || msg.includes('long') || msg.includes('duration') || msg.includes('deadline') || msg.includes('when') || msg.includes('deliver')) return responses.timeline;
+            if (msg.includes('timeline') || msg.includes('how long') || msg.includes('duration') || msg.includes('deadline') || msg.includes('delivery time') || msg.includes('turnaround')) return responses.timeline;
+            if (msg.includes('when can') || msg.includes('how many days') || msg.includes('how many weeks')) return responses.timeline;
             
             // Technologies
-            if (msg.includes('technology') || msg.includes('tech') || msg.includes('stack') || msg.includes('programming') || msg.includes('language')) return responses.tech;
+            if (msg.includes('technology') || msg.includes('tech stack') || msg.includes('programming') || msg.includes('language') || msg.includes('framework') || msg.includes('tool')) return responses.tech;
+            if (msg.includes('python') || msg.includes('javascript') || msg.includes('java') || msg.includes('php') || msg.includes('ruby')) return responses.tech;
             
             // Support
-            if (msg.includes('support') || msg.includes('maintenance') || msg.includes('help') || msg.includes('after')) return responses.support;
+            if (msg.includes('support') || msg.includes('maintenance') || msg.includes('after delivery') || msg.includes('warranty') || msg.includes('amc')) return responses.support;
             
-            // Demo
-            if (msg.includes('demo') || msg.includes('consult') || msg.includes('meeting') || msg.includes('book') || msg.includes('schedule') || msg.includes('talk')) return responses.demo;
+            // Demo/Consultation
+            if (msg.includes('demo') || msg.includes('consultation') || msg.includes('meeting') || msg.includes('book') || msg.includes('schedule') || msg.includes('appointment')) return responses.demo;
             
-            // Greetings
-            if (msg.includes('hello')) return responses.hello;
-            if (msg.includes('hey')) return responses.hey;
-            if (msg === 'hi' || msg.includes('hi ') || msg.startsWith('hi')) return responses.hi;
-
             // Thanks
-            if (msg.includes('thank') || msg.includes('thanks') || msg.includes('great') || msg.includes('awesome')) return responses.thank;
+            if (msg.includes('thank') || msg.includes('thanks') || msg.includes('thx') || msg.includes('appreciate')) return responses.thank;
+            if (msg.includes('great') || msg.includes('awesome') || msg.includes('perfect') || msg.includes('excellent') || msg.includes('good job') || msg.includes('well done')) return responses.thank;
 
             // Bye
-            if (msg.includes('bye') || msg.includes('goodbye') || msg.includes('see you')) return responses.bye;
+            if (msg.includes('bye') || msg.includes('goodbye') || msg.includes('see you') || msg.includes('take care') || msg.includes('later')) return responses.bye;
+            
+            // Common questions
+            if (msg.includes('work with') || msg.includes('partner') || msg.includes('collaborate')) return responses.about;
+            if (msg.includes('portfolio') || msg.includes('case study') || msg.includes('previous work') || msg.includes('example')) return 'We have completed 50+ projects across IT and Trade! 📂\n\nVisit our Case Studies page to see our work, or book a consultation to discuss specific examples relevant to your industry.\n\nWant me to help you book a call?';
+            if (msg.includes('payment') || msg.includes('pay') || msg.includes('accept')) return 'We accept various payment methods including bank transfer, LC, and milestone-based payments. 💳\n\nPayment terms are discussed during project scoping. Book a consultation to discuss your preferred arrangement!';
 
             // For everything else, return null to trigger Gemini AI
             return null;
