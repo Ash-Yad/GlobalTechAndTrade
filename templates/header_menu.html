@@ -2010,8 +2010,55 @@ We provide customized quotes based on project requirements. We do NOT share fixe
                 return;
             }
 
-            // Always use Gemini AI for ALL questions - handles both company and general queries
+            // Quick responses for simple greetings (faster UX)
+            var quickResponse = getQuickResponse(msgLower);
+            if (quickResponse) {
+                setTimeout(function() {
+                    var typing = document.getElementById('typing-indicator');
+                    if (typing) typing.remove();
+                    addMessage(quickResponse, 'bot');
+                }, 500);
+                return;
+            }
+
+            // Use Gemini AI for all other questions
             callGeminiAI(message);
+        }
+        
+        // Quick responses for simple messages (no API call needed)
+        function getQuickResponse(msg) {
+            // Simple greetings
+            if (msg === 'hi' || msg === 'hello' || msg === 'hey' || msg === 'hii' || msg === 'hiii' || msg === 'helo') {
+                return "Hello! 👋 Great to see you!\n\nI'm GTT Assistant - I can help with:\n• **IT Solutions** (Apps, Web, Software, AI)\n• **Trade Services** (Import/Export, Logistics)\n• Or just chat about anything!\n\nWhat's on your mind?";
+            }
+            if (msg === 'good morning' || msg === 'morning') {
+                return "Good morning! ☀️ Hope you're having a great day!\n\nHow can I help you today? Ask me about our services or anything else!";
+            }
+            if (msg === 'good afternoon' || msg === 'afternoon') {
+                return "Good afternoon! 🌤️\n\nHow can I assist you today? Feel free to ask about our IT solutions, trade services, or anything else!";
+            }
+            if (msg === 'good evening' || msg === 'evening') {
+                return "Good evening! 🌙\n\nHow can I help you? Ask me anything about our services or any other questions!";
+            }
+            if (msg === 'good night') {
+                return "Good night! 🌙 Before you go, feel free to book a consultation or reach us at info@globaltechandtrade.com. Sweet dreams!";
+            }
+            if (msg === 'thanks' || msg === 'thank you' || msg === 'thx' || msg === 'ty') {
+                return "You're welcome! 😊 Happy to help!\n\nIs there anything else you'd like to know?";
+            }
+            if (msg === 'bye' || msg === 'goodbye' || msg === 'see you') {
+                return "Goodbye! 👋 Thanks for chatting!\n\nRemember, you can reach us anytime:\n📧 info@globaltechandtrade.com\n📞 +91 9027125341\n\nHave a great day!";
+            }
+            if (msg === 'ok' || msg === 'okay' || msg === 'k' || msg === 'alright') {
+                return "Great! 👍 Anything else you'd like to know? I'm here to help!";
+            }
+            if (msg === 'yes' || msg === 'yeah' || msg === 'yep' || msg === 'sure') {
+                return "Perfect! What would you like to know? 😊\n\nI can help with IT services, trade services, or answer any other questions!";
+            }
+            if (msg === 'no' || msg === 'nope' || msg === 'nah') {
+                return "No problem! 😊 If you have any questions later, I'm here. Have a great day!";
+            }
+            return null; // No quick response, use Gemini AI
         }
         
         function startDemoBooking() {
@@ -2352,6 +2399,8 @@ Response Style:
 Now respond to: "${message}"`;
 
             try {
+                console.log('Calling Gemini API for:', message);
+                
                 var response = await fetch(GEMINI_API_URL + '?key=' + GEMINI_API_KEY, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -2374,40 +2423,94 @@ Now respond to: "${message}"`;
                     })
                 });
 
+                console.log('Gemini API response status:', response.status);
+
                 if (!response.ok) {
+                    var errorText = await response.text();
+                    console.error('API error response:', errorText);
                     throw new Error('API response not ok: ' + response.status);
                 }
 
                 var data = await response.json();
+                console.log('Gemini API data:', data);
+                
                 if (typing) typing.remove();
 
                 if (data.candidates && data.candidates[0] && data.candidates[0].content) {
                     var aiResponse = data.candidates[0].content.parts[0].text;
-                    // Clean up the response
                     aiResponse = aiResponse.trim();
                     if (aiResponse.startsWith('Response:')) {
                         aiResponse = aiResponse.substring(9).trim();
                     }
                     addMessage(aiResponse, 'bot');
                 } else if (data.error) {
-                    console.error('Gemini API error:', data.error);
-                    var fallback = getSmartFallback(message);
-                    addMessage(fallback || responses.default, 'bot');
+                    console.error('Gemini API error in response:', data.error);
+                    addMessage(getSmartFallback(message), 'bot');
+                } else if (data.promptFeedback && data.promptFeedback.blockReason) {
+                    console.error('Content blocked:', data.promptFeedback.blockReason);
+                    addMessage("I'd be happy to help with that! Could you rephrase your question? 😊", 'bot');
                 } else {
-                    var fallback = getSmartFallback(message);
-                    addMessage(fallback || responses.default, 'bot');
+                    console.error('Unexpected API response format:', data);
+                    addMessage(getSmartFallback(message), 'bot');
                 }
             } catch (error) {
-                console.error('Gemini API error:', error);
+                console.error('Gemini API catch error:', error);
                 if (typing) typing.remove();
-                var fallback = getSmartFallback(message);
-                addMessage(fallback || responses.default, 'bot');
+                addMessage(getSmartFallback(message), 'bot');
             }
         }
         
         function getSmartFallback(message) {
-            // Simple fallback when Gemini API fails
-            return "I'm having a moment! 😅 Let me help you another way:\n\n**Quick Options:**\n• Ask me anything - I can help with any topic!\n• Learn about our **IT Solutions** or **Trade Services**\n• **Book a consultation** with our experts\n\n**Contact Us:**\n📞 +91 9027125341\n📧 info@globaltechandtrade.com\n\nWhat would you like to know?";
+            // Try to give a relevant response based on keywords when API fails
+            var msg = message.toLowerCase();
+            
+            // IT Services
+            if (msg.includes('web') || msg.includes('website')) {
+                return "🌐 **Web Development Services**\n\nWe build modern, responsive websites using:\n• React, Angular, Vue.js\n• Node.js, Python, PHP backends\n• E-commerce & custom portals\n\n**Starting from ₹50,000**\n\nWant to discuss your project? Book a free consultation!";
+            }
+            if (msg.includes('mobile') || msg.includes('app')) {
+                return "📱 **Mobile App Development**\n\nWe create native & cross-platform apps:\n• iOS & Android\n• React Native, Flutter\n• Enterprise solutions\n\n**Starting from ₹1,00,000**\n\nLet's discuss your app idea - book a consultation!";
+            }
+            if (msg.includes('software') || msg.includes('custom')) {
+                return "💻 **Custom Software Development**\n\nTailored solutions for your business:\n• ERP & CRM systems\n• Workflow automation\n• Legacy modernization\n\n**Custom pricing based on requirements**\n\nBook a consultation to discuss your needs!";
+            }
+            if (msg.includes('ai') || msg.includes('automation') || msg.includes('machine learning')) {
+                return "🤖 **AI & Automation Solutions**\n\nTransform your business with:\n• AI-powered chatbots\n• Process automation\n• Machine learning models\n• Predictive analytics\n\nLet's explore how AI can help your business!";
+            }
+            if (msg.includes('cloud') || msg.includes('aws') || msg.includes('azure')) {
+                return "☁️ **Cloud Infrastructure**\n\nWe provide:\n• AWS, Azure, Google Cloud\n• Migration services\n• DevOps & CI/CD\n• 24/7 monitoring\n\nReady to move to the cloud? Let's talk!";
+            }
+            if (msg.includes('security') || msg.includes('cyber')) {
+                return "🔒 **Cybersecurity Services**\n\nProtect your business with:\n• Security audits\n• Penetration testing\n• Compliance (GDPR, ISO)\n• 24/7 monitoring\n\nSecure your digital assets - book a consultation!";
+            }
+            
+            // Trade Services
+            if (msg.includes('import') || msg.includes('export') || msg.includes('trade')) {
+                return "🌍 **Import/Export Services**\n\nComplete trade solutions:\n• Product sourcing\n• Customs clearance\n• Freight forwarding\n• Trade documentation\n• Cargo insurance\n\nLet's discuss your trade requirements!";
+            }
+            if (msg.includes('sourcing') || msg.includes('supplier')) {
+                return "🔍 **Product Sourcing**\n\nWe help you find:\n• Verified suppliers globally\n• Quality products at best prices\n• Electronics, textiles, machinery & more\n\nNeed help sourcing products? Contact us!";
+            }
+            if (msg.includes('customs') || msg.includes('clearance')) {
+                return "📋 **Customs Clearance**\n\nHassle-free customs:\n• Documentation handling\n• Duty optimization\n• Compliance management\n• Fast clearance\n\nLet us handle your customs needs!";
+            }
+            if (msg.includes('freight') || msg.includes('shipping') || msg.includes('logistics')) {
+                return "🚢 **Freight & Logistics**\n\nGlobal shipping solutions:\n• Air, sea, road freight\n• Door-to-door delivery\n• Real-time tracking\n• Competitive rates\n\nGet a shipping quote today!";
+            }
+            
+            // Contact & General
+            if (msg.includes('contact') || msg.includes('phone') || msg.includes('email') || msg.includes('call')) {
+                return "📞 **Contact Us**\n\n• Phone: +91 9027125341\n• Email: info@globaltechandtrade.com\n• WhatsApp: +91 9027125341\n\n**Office Hours:** Mon-Sat, 9 AM - 6 PM IST\n\nWe'd love to hear from you!";
+            }
+            if (msg.includes('price') || msg.includes('cost') || msg.includes('quote')) {
+                return "💰 **Pricing Information**\n\nOur services are customized to your needs:\n• Web Development: From ₹50,000\n• Mobile Apps: From ₹1,00,000\n• Custom Software: Based on scope\n• Trade Services: Competitive rates\n\nBook a **free consultation** for a detailed quote!";
+            }
+            if (msg.includes('service')) {
+                return "🚀 **Our Services**\n\n**IT Solutions:**\n• Web & Mobile Development\n• Custom Software\n• AI & Automation\n• Cloud & Cybersecurity\n\n**Trade Services:**\n• Import/Export\n• Customs & Logistics\n• Product Sourcing\n\nWhat interests you?";
+            }
+            
+            // Default fallback
+            return "I'm here to help! 😊\n\n**Quick Options:**\n• **IT Solutions** - Apps, Web, Software, AI\n• **Trade Services** - Import/Export, Logistics\n• **Contact Us** - Get in touch\n\n📞 +91 9027125341\n📧 info@globaltechandtrade.com\n\nWhat would you like to know?";
         }
 
         function addMessage(text, type) {
