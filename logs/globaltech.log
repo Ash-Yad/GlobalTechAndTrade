@@ -74,3 +74,4 @@
 2026-02-19 19:27:33,017 INFO: GlobalTech&Trade startup [in D:\py_project\Website\app.py:31]
 2026-02-19 19:27:44,326 INFO: GlobalTech&Trade startup [in D:\py_project\Website\app.py:31]
 2026-02-19 19:27:44,748 INFO: GlobalTech&Trade startup [in D:\py_project\Website\app.py:31]
+2026-02-22 17:28:22,653 WARNING: RESEND_API_KEY not configured - skipping email [in D:\py_project\Website\app.py:1707]

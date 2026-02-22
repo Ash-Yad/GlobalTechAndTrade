@@ -1692,12 +1692,13 @@
         var companyContext = `You are GTT Assistant, a smart and friendly AI chatbot on the GlobalTech&Trade (GTT) website. You can answer ANY question - both about the company AND general knowledge questions.
 
 === COMPANY OVERVIEW ===
-GlobalTech&Trade is a dual-expertise company bridging technology and international trade.
-- Founded: 2021
-- Projects Completed: 50+
-- Countries Served: 12+
-- Client Satisfaction: 98%
+GlobalTech&Trade is a startup company bridging technology and international trade.
+- Founded: 2023
+- We are a growing startup with offices in India and Zambia
+- Projects Completed: 10+
+- Countries: India and Zambia (2 countries)
 - Unique Value: We combine IT Solutions with Import/Export services under one roof
+- We are a small, dedicated team focused on quality and personalized service
 
 === IT SOLUTIONS (Detailed) ===
 
@@ -1757,7 +1758,7 @@ GlobalTech&Trade is a dual-expertise company bridging technology and internation
    - Source from: India, China, Southeast Asia (Vietnam, Thailand, Malaysia, Indonesia, Bangladesh)
    - Products: Industrial Machinery, Electronics & IT, Textiles & Apparel, Pharmaceuticals, Auto Parts, Construction Materials, Food & Beverages, Chemicals
    - Process: Requirement Analysis → Supplier Identification → Verification → Sample & Negotiation → Quality Inspection → Order Management
-   - We have 500+ verified suppliers in our network
+   - We work with verified suppliers in our growing network
    - Significant savings through direct sourcing
 
 2. CUSTOMS CLEARANCE & COMPLIANCE
@@ -1859,7 +1860,7 @@ IMPORTANT: We do NOT share any pricing, costs, rates, or quotes in chat. NEVER m
             'import': '🚢 **Import/Export Services**\n\nComplete trade solutions:\n• Product Sourcing (India, China, SE Asia)\n• Customs Clearance (24hr avg)\n• Freight Forwarding (Sea, Air, Road)\n• Trade Finance (LC, Invoice Factoring)\n• Cargo Insurance\n• Documentation\n\n**Corridors:** India ↔ Africa\n**Products:** Electronics, Machinery, Textiles, Pharma, Food\n\nWhat do you want to trade?',
             
             // Product Sourcing
-            'sourcing': '🔍 **Product Sourcing**\n\nWe source from:\n• India, China, Vietnam, Thailand, Malaysia\n\n**Products:**\n• Industrial Machinery\n• Electronics & IT\n• Textiles & Apparel\n• Pharmaceuticals\n• Auto Parts\n• Construction Materials\n\n**Network:** 500+ verified suppliers\n**Savings:** Up to 30% through direct sourcing\n\nTell us what you need!',
+            'sourcing': '🔍 **Product Sourcing**\n\nWe source from:\n• India, China, Vietnam, Thailand, Malaysia\n\n**Products:**\n• Industrial Machinery\n• Electronics & IT\n• Textiles & Apparel\n• Pharmaceuticals\n• Auto Parts\n• Construction Materials\n\nWe work with verified suppliers to get you quality products.\n\nTell us what you need!',
             
             // Customs
             'customs': '📋 **Customs Clearance**\n\nOur services:\n• HS Code Classification\n• Duty Optimization\n• Import/Export Documentation\n• Compliance Support\n\n**Coverage:** All major ports in India & Africa\n**Avg Clearance:** 24 hours\n\nNeed customs help? Contact us!',
@@ -1886,7 +1887,7 @@ IMPORTANT: We do NOT share any pricing, costs, rates, or quotes in chat. NEVER m
             'location': '🌍 **Our Offices**\n\n**India HQ (Asia):**\n📍 Sector 63, Noida, UP 201301\n📞 +91 9027125341\n🕐 Mon-Sat: 9AM-6PM IST\n\n**Zambia HQ (Africa):**\n📍 Plot #10424/4, Cassanova Court, Chainama, Lusaka\n📞 +260 977 588 581\n🕐 Mon-Fri: 8AM-5PM CAT\n\nWe serve India, Africa & Middle East!',
             
             // About
-            'about': '🏢 **About GlobalTech&Trade**\n\nWe are a dual-expertise company:\n\n**IT Solutions:** Mobile Apps, Web Development, Custom Software, AI, Cloud, Cybersecurity\n\n**Trade Services:** Import/Export, Sourcing, Customs, Freight, Finance\n\n**Stats:**\n• Founded: 2021\n• Projects: 50+\n• Countries: 12+\n• Satisfaction: 98%\n\nBridging technology and trade!',
+            'about': '🏢 **About GlobalTech&Trade**\n\nWe are a growing startup with dual expertise:\n\n**IT Solutions:** Mobile Apps, Web Development, Custom Software, AI, Cloud, Cybersecurity\n\n**Trade Services:** Import/Export, Sourcing, Customs, Freight\n\n**About Us:**\n• Founded: 2023\n• Offices: India & Zambia\n• Small, dedicated team\n• Personalized service\n\nBridging technology and trade!',
             
             // Timeline
             'timeline': '⏱️ **Project Timelines**\n\n**IT Projects:**\n• Landing Page: 1-2 weeks\n• Business Website: 2-4 weeks\n• E-Commerce: 4-8 weeks\n• Mobile App: 6-12 weeks\n• Custom Software: 3-6 months\n\n**Trade:**\n• Sea Freight: 18-25 days\n• Air Freight: 2-5 days\n• Customs: 24 hours avg\n\nTimelines vary by complexity.',
@@ -2687,7 +2688,7 @@ Now respond to: "${message}"`;
             
             // Common questions
             if (msg.includes('work with') || msg.includes('partner') || msg.includes('collaborate')) return responses.about;
-            if (msg.includes('portfolio') || msg.includes('case study') || msg.includes('previous work') || msg.includes('example')) return 'We have completed 50+ projects across IT and Trade! 📂\n\nVisit our Case Studies page to see our work, or book a consultation to discuss specific examples relevant to your industry.\n\nWant me to help you book a call?';
+            if (msg.includes('portfolio') || msg.includes('case study') || msg.includes('previous work') || msg.includes('example')) return 'We have completed various projects across IT and Trade! 📂\n\nVisit our Case Studies page to see our work, or book a consultation to discuss specific examples relevant to your industry.\n\nWant me to help you book a call?';
             if (msg.includes('payment') || msg.includes('pay') || msg.includes('accept')) return 'We accept various payment methods including bank transfer, LC, and milestone-based payments. 💳\n\nPayment terms are discussed during project scoping. Book a consultation to discuss your preferred arrangement!';
 
             // For everything else, return null to trigger Gemini AI
