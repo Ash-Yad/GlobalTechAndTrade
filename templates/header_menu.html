@@ -2474,8 +2474,39 @@ Response:`;
             }
             if (msg.includes('good morning') || msg.includes('good afternoon') || msg.includes('good evening')) return responses.hello;
             
-            // Services Overview
-            if (msg.includes('service') || msg.includes('offer') || msg.includes('what do you do') || msg.includes('what can you do') || msg.includes('help me') || msg.includes('what you provide')) return responses.services;
+            // TRADE SERVICES - Check these FIRST before general "services" keyword
+            // Trade services specific
+            if (msg.includes('trade service') || msg.includes('trade solution') || msg.includes('trading service')) return responses.import;
+            
+            // Import/Export General
+            if (msg.includes('import') || msg.includes('export') || msg.includes('international trade')) return responses.import;
+            
+            // Product Sourcing (moved up)
+            if (msg.includes('sourcing') || msg.includes('supplier') || msg.includes('manufacturer') || msg.includes('procurement') || msg.includes('source product') || msg.includes('find product')) return responses.sourcing;
+            if (msg.includes('china') || msg.includes('vietnam') || msg.includes('thailand') || msg.includes('malaysia')) return responses.sourcing;
+            
+            // Customs (moved up)
+            if (msg.includes('customs') || msg.includes('clearance') || msg.includes('duty') || msg.includes('tariff') || msg.includes('hs code') || msg.includes('import duty')) return responses.customs;
+            
+            // Freight (moved up)
+            if (msg.includes('freight') || msg.includes('shipping') || msg.includes('logistics') || msg.includes('cargo') || msg.includes('container') || msg.includes('fcl') || msg.includes('lcl')) return responses.freight;
+            if (msg.includes('sea freight') || msg.includes('air freight') || msg.includes('ocean') || msg.includes('ship')) return responses.freight;
+            
+            // Trade Finance (moved up)
+            if (msg.includes('letter of credit') || msg.includes(' lc ') || msg.includes('trade finance') || msg.includes('factoring') || msg.includes('bank guarantee') || msg.includes('payment term')) return responses.finance;
+            
+            // Insurance (moved up)
+            if (msg.includes('insurance') || msg.includes('cargo insurance') || msg.includes('coverage') || msg.includes('protect shipment') || msg.includes('icc')) return responses.insurance;
+            
+            // Documentation (moved up)
+            if (msg.includes('documentation') || msg.includes('bill of lading') || msg.includes('certificate of origin') || msg.includes('commercial invoice') || msg.includes('packing list')) return responses.documentation;
+            
+            // Check for "trade" keyword alone (after specific trade services)
+            if (msg.includes('trade') && !msg.includes('tech')) return responses.import;
+            
+            // IT SERVICES - Check these after trade
+            // IT services specific
+            if (msg.includes('it service') || msg.includes('it solution') || msg.includes('software service') || msg.includes('tech service')) return responses.services;
             
             // Mobile Apps
             if (msg.includes('mobile') || msg.includes('ios') || msg.includes('android') || msg.includes('flutter') || msg.includes('react native') || msg.includes('native app')) return responses.mobile;
@@ -2503,28 +2534,8 @@ Response:`;
             // Cybersecurity
             if (msg.includes('security') || msg.includes('cyber') || msg.includes('hack') || msg.includes('penetration') || msg.includes('audit') || msg.includes('compliance') || msg.includes('gdpr') || msg.includes('iso')) return responses.security;
             
-            // Import/Export General
-            if (msg.includes('import') || msg.includes('export') || msg.includes('trade') || msg.includes('international')) return responses.import;
-            
-            // Product Sourcing
-            if (msg.includes('sourcing') || msg.includes('supplier') || msg.includes('manufacturer') || msg.includes('procurement') || msg.includes('source product') || msg.includes('find product')) return responses.sourcing;
-            if (msg.includes('china') || msg.includes('vietnam') || msg.includes('thailand') || msg.includes('malaysia')) return responses.sourcing;
-            
-            // Customs
-            if (msg.includes('customs') || msg.includes('clearance') || msg.includes('duty') || msg.includes('tariff') || msg.includes('hs code') || msg.includes('import duty')) return responses.customs;
-            
-            // Freight
-            if (msg.includes('freight') || msg.includes('shipping') || msg.includes('logistics') || msg.includes('cargo') || msg.includes('container') || msg.includes('fcl') || msg.includes('lcl')) return responses.freight;
-            if (msg.includes('sea freight') || msg.includes('air freight') || msg.includes('ocean') || msg.includes('ship')) return responses.freight;
-            
-            // Trade Finance
-            if (msg.includes('letter of credit') || msg.includes('lc') || msg.includes('trade finance') || msg.includes('factoring') || msg.includes('bank guarantee') || msg.includes('payment term')) return responses.finance;
-            
-            // Insurance
-            if (msg.includes('insurance') || msg.includes('cargo insurance') || msg.includes('coverage') || msg.includes('protect shipment') || msg.includes('icc')) return responses.insurance;
-            
-            // Documentation
-            if (msg.includes('documentation') || msg.includes('document') || msg.includes('bill of lading') || msg.includes('certificate of origin') || msg.includes('commercial invoice') || msg.includes('packing list')) return responses.documentation;
+            // General Services Overview (check LAST after specific services)
+            if (msg.includes('service') || msg.includes('offer') || msg.includes('what do you do') || msg.includes('what can you do') || msg.includes('help me') || msg.includes('what you provide')) return responses.services;
             
             // Pricing
             if (msg.includes('price') || msg.includes('cost') || msg.includes('charge') || msg.includes('fee') || msg.includes('budget') || msg.includes('quote') || msg.includes('how much') || msg.includes('rate') || msg.includes('pricing')) return responses.price;
