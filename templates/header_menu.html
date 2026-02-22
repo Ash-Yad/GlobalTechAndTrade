@@ -2029,7 +2029,7 @@ We provide customized quotes based on project requirements. We do NOT share fixe
         function getQuickResponse(msg) {
             // Simple greetings
             if (msg === 'hi' || msg === 'hello' || msg === 'hey' || msg === 'hii' || msg === 'hiii' || msg === 'helo') {
-                return "Hello! 👋 Great to see you!\n\nI'm GTT Assistant - I can help with:\n• **IT Solutions** (Apps, Web, Software, AI)\n• **Trade Services** (Import/Export, Logistics)\n• Or just chat about anything!\n\nWhat's on your mind?";
+                return "Hello! 👋 Great to see you!\n\nI'm **GTT Assistant** - I can help with:\n• **IT Solutions** (Apps, Web, Software, AI)\n• **Trade Services** (Import/Export, Logistics)\n• Or just chat about anything!\n\nWhat's on your mind?";
             }
             if (msg === 'good morning' || msg === 'morning') {
                 return "Good morning! ☀️ Hope you're having a great day!\n\nHow can I help you today? Ask me about our services or anything else!";
@@ -2058,6 +2058,43 @@ We provide customized quotes based on project requirements. We do NOT share fixe
             if (msg === 'no' || msg === 'nope' || msg === 'nah') {
                 return "No problem! 😊 If you have any questions later, I'm here. Have a great day!";
             }
+            
+            // About the chatbot
+            if (msg.includes('your name') || msg.includes('who are you') || msg.includes('what are you')) {
+                return "I'm **GTT Assistant** 🤖 - the AI chatbot for **GlobalTech&Trade**!\n\nI'm here to help you with:\n• Information about our **IT Solutions**\n• Details on **Import/Export Services**\n• Booking consultations\n• Answering your questions\n\nHow can I assist you today?";
+            }
+            if (msg.includes('how are you') || msg.includes('how r u') || msg.includes('hows it going') || msg.includes("how's it going")) {
+                return "I'm doing great, thanks for asking! 😊\n\nI'm here and ready to help you. What would you like to know about our services?";
+            }
+            if (msg.includes('what can you do') || msg.includes('what do you do') || msg.includes('help me')) {
+                return "I can help you with lots of things! 🚀\n\n**Here's what I can do:**\n• Answer questions about **IT Solutions** (web, mobile, software, AI)\n• Explain our **Trade Services** (import/export, logistics)\n• Help you **book a consultation**\n• Provide **contact information**\n• Chat about general topics!\n\nWhat interests you?";
+            }
+            
+            // About the company
+            if (msg.includes('about company') || msg.includes('about gtt') || msg.includes('about globaltech') || msg.includes('tell me about') && msg.includes('company')) {
+                return "**GlobalTech&Trade (GTT)** 🌍\n\nWe're a dual-service company offering:\n\n**🖥️ IT Solutions:**\nWeb & Mobile Apps, Custom Software, AI & Automation, Cloud, Cybersecurity\n\n**🚢 Trade Services:**\nImport/Export, Customs Clearance, Freight Forwarding, Product Sourcing\n\n**📍 Offices:**\n• India (Dehradun)\n• Zambia (Lusaka)\n\nWant to learn more about any specific service?";
+            }
+            
+            // Location/Office
+            if (msg.includes('where are you') || msg.includes('location') || msg.includes('office') || msg.includes('address')) {
+                return "📍 **Our Offices:**\n\n**🇮🇳 India (Headquarters)**\nDehradun, Uttarakhand\n📞 +91 9027125341\n\n**🇿🇲 Zambia (Africa Office)**\nLusaka\n📞 +260 977 588 581\n\n📧 info@globaltechandtrade.com\n\nWould you like to schedule a visit or call?";
+            }
+            
+            // Contact
+            if (msg.includes('contact') || msg.includes('phone') || msg.includes('email') || msg.includes('call') || msg.includes('reach')) {
+                return "📞 **Contact Us:**\n\n**Phone:**\n• India: +91 9027125341\n• Zambia: +260 977 588 581\n\n**Email:** info@globaltechandtrade.com\n\n**WhatsApp:** +91 9027125341\n\n**Hours:** Mon-Sat, 9 AM - 6 PM IST\n\nHow would you like to connect?";
+            }
+            
+            // Services overview
+            if (msg === 'services' || msg === 'what services' || msg === 'your services') {
+                return "🚀 **Our Services:**\n\n**IT Solutions:**\n• Web Development\n• Mobile App Development\n• Custom Software\n• AI & Automation\n• Cloud Infrastructure\n• Cybersecurity\n\n**Trade Services:**\n• Product Sourcing\n• Customs Clearance\n• Freight Forwarding\n• Trade Finance\n• Cargo Insurance\n• Documentation\n\nWhich area interests you?";
+            }
+            
+            // Pricing
+            if (msg.includes('price') || msg.includes('cost') || msg.includes('how much') || msg.includes('rate') || msg.includes('quote') || msg.includes('budget')) {
+                return "💰 **Pricing Overview:**\n\n**IT Solutions:**\n• Web Development: From ₹50,000\n• Mobile Apps: From ₹1,00,000\n• Custom Software: Based on scope\n• AI Solutions: Custom pricing\n\n**Trade Services:**\n• Competitive rates based on shipment\n• Free initial consultation\n\n📞 Book a **free consultation** for a detailed quote tailored to your needs!";
+            }
+            
             return null; // No quick response, use Gemini AI
         }
         
@@ -2463,6 +2500,20 @@ Now respond to: "${message}"`;
         function getSmartFallback(message) {
             // Try to give a relevant response based on keywords when API fails
             var msg = message.toLowerCase();
+            
+            // About the chatbot - handle these first
+            if (msg.includes('your name') || msg.includes('who are you') || msg.includes('what are you') || msg.includes('what is your name')) {
+                return "I'm **GTT Assistant** 🤖 - the AI chatbot for **GlobalTech&Trade**!\n\nI'm here to help you with:\n• Information about our **IT Solutions**\n• Details on **Import/Export Services**\n• Booking consultations\n• Answering your questions\n\nHow can I assist you today?";
+            }
+            if (msg.includes('how are you') || msg.includes('how r u')) {
+                return "I'm doing great, thanks for asking! 😊\n\nI'm here and ready to help you. What would you like to know?";
+            }
+            if (msg.includes('what can you do') || msg.includes('help me') || msg.includes('what do you do')) {
+                return "I can help you with lots of things! 🚀\n\n**Here's what I can do:**\n• Answer questions about **IT Solutions**\n• Explain our **Trade Services**\n• Help you **book a consultation**\n• Provide **contact information**\n• Chat about general topics!\n\nWhat interests you?";
+            }
+            if (msg.includes('just chat') || msg.includes('chat with') || msg.includes('talk to') || msg.includes('random') || msg.includes('anything')) {
+                return "Sure, I'd love to chat! 😊\n\nI'm GTT Assistant - I can talk about:\n• Our IT & Trade services\n• Technology trends\n• Business topics\n• Or just have a friendly conversation!\n\nWhat's on your mind?";
+            }
             
             // IT Services
             if (msg.includes('web') || msg.includes('website')) {
