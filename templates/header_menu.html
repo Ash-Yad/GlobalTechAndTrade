@@ -1689,7 +1689,7 @@
         var GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
         
         // Company context for Gemini AI - Comprehensive knowledge base
-        var companyContext = `You are GTT Assistant, the official AI chatbot for GlobalTech&Trade (GTT). You are knowledgeable, professional, friendly, and helpful.
+        var companyContext = `You are GTT Assistant, a smart and friendly AI chatbot on the GlobalTech&Trade (GTT) website. You can answer ANY question - both about the company AND general knowledge questions.
 
 === COMPANY OVERVIEW ===
 GlobalTech&Trade is a dual-expertise company bridging technology and international trade.
@@ -1821,14 +1821,16 @@ Website: www.globaltechandtrade.com
 We provide customized quotes based on project requirements. We do NOT share fixed prices in chat. Always encourage users to book a FREE consultation for accurate pricing.
 
 === RESPONSE GUIDELINES ===
-1. Be helpful, professional, and friendly
+1. Be helpful, professional, and friendly - you can answer ANY question
 2. Use emojis sparingly (1-2 per response max)
-3. Keep responses concise (under 100 words unless detailed explanation needed)
-4. Always offer to help further or suggest booking a consultation
-5. If asked about competitors, focus on GTT's strengths instead
-6. For technical questions, provide accurate information from the context above
-7. If unsure, suggest booking a consultation with our experts
-8. Never make up information not in this context`;
+3. Keep responses concise (under 150 words)
+4. For company-related questions: Use the information above and suggest booking a consultation
+5. For general questions (weather, news, facts, jokes, etc.): Answer helpfully, then optionally mention GTT services if relevant
+6. For technical questions: Provide accurate, helpful information
+7. If asked about competitors: Be neutral, focus on what GTT offers
+8. Be conversational and natural - like chatting with a helpful friend
+9. You can discuss any topic - technology, business, general knowledge, etc.
+10. Always be positive and helpful, never refuse to answer a reasonable question`;
 
         // Comprehensive responses based on GlobalTechAndTrade services
         var responses = {
@@ -2008,20 +2010,8 @@ We provide customized quotes based on project requirements. We do NOT share fixe
                 return;
             }
 
-            // Try local response first for common questions
-            var localResponse = getResponse(message);
-
-            // If we have a local response, use it (faster)
-            if (localResponse) {
-                setTimeout(function() {
-                    var typing = document.getElementById('typing-indicator');
-                    if (typing) typing.remove();
-                    addMessage(localResponse, 'bot');
-                }, 800);
-            } else {
-                // Use Gemini AI for other questions
-                callGeminiAI(message);
-            }
+            // Always use Gemini AI for ALL questions - handles both company and general queries
+            callGeminiAI(message);
         }
         
         function startDemoBooking() {
@@ -2333,26 +2323,33 @@ function handleDemoBookingStep(userInput) {
         async function callGeminiAI(message) {
             var typing = document.getElementById('typing-indicator');
             
-            // Build a focused prompt for better responses
+            // Build a smart prompt that handles both company and general questions
             var prompt = `${companyContext}
 
-=== CURRENT USER QUESTION ===
+=== USER MESSAGE ===
 "${message}"
 
-=== YOUR TASK ===
-Answer the user's question based ONLY on the company information provided above.
+=== INSTRUCTIONS ===
+You are a helpful AI assistant. Answer the user's question naturally and helpfully.
 
-Rules:
-1. Be helpful, accurate, and professional
-2. Keep response under 80 words unless detailed explanation is needed
-3. Use bullet points for lists
-4. Add 1-2 relevant emojis
-5. If the question is about pricing, say we provide custom quotes and suggest booking a consultation
-6. If you don't have specific information, suggest booking a free consultation
-7. Always end with a helpful follow-up question or call-to-action
-8. Format important terms with **bold**
+If the question is about GlobalTech&Trade (IT services, trade services, company info, pricing, contact):
+- Use the company information provided above
+- Be specific and accurate
+- Suggest booking a free consultation for detailed discussions
 
-Response:`;
+If the question is general (greetings, jokes, weather, news, facts, technology, advice, etc.):
+- Answer helpfully and naturally like a friendly assistant
+- You can discuss any topic
+- Optionally mention GTT services if relevant, but don't force it
+
+Response Style:
+- Be conversational and friendly
+- Use 1-2 emojis where appropriate
+- Keep response under 150 words
+- Use **bold** for important terms
+- Use bullet points for lists
+
+Now respond to: "${message}"`;
 
             try {
                 var response = await fetch(GEMINI_API_URL + '?key=' + GEMINI_API_KEY, {
@@ -2363,10 +2360,10 @@ Response:`;
                             parts: [{ text: prompt }]
                         }],
                         generationConfig: {
-                            temperature: 0.6,
-                            maxOutputTokens: 250,
-                            topP: 0.85,
-                            topK: 40
+                            temperature: 0.8,
+                            maxOutputTokens: 400,
+                            topP: 0.9,
+                            topK: 50
                         },
                         safetySettings: [
                             { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
@@ -2409,45 +2406,8 @@ Response:`;
         }
         
         function getSmartFallback(message) {
-            var msg = message.toLowerCase();
-            
-            // Conversational responses
-            if (msg.includes('how are') || msg.includes('how r u') || msg.includes("how's it") || msg.includes('how do you do')) {
-                return "I'm doing great, thank you for asking! 😊 I'm here to help you learn about GlobalTech&Trade's services. What would you like to know - IT solutions or trade services?";
-            }
-            if (msg.includes('your name') || msg.includes('who are you') || msg.includes('what are you')) {
-                return "I'm GTT Assistant, the AI helper for GlobalTech&Trade! 🤖 I can tell you about our IT solutions (apps, web, software, AI) and import/export services. How can I help?";
-            }
-            if (msg.includes('joke') || msg.includes('funny')) {
-                return "Why did the developer go broke? Because he used up all his cache! 😄 Now, how can I help you with our services?";
-            }
-            if (msg.includes('weather')) {
-                return "I don't have weather data, but it's always a great day to start a new project! ☀️ Want to know about our IT solutions or trade services?";
-            }
-            if (msg.includes('love') || msg.includes('like you') || msg.includes('you are great') || msg.includes('you are good')) {
-                return "Aww, thank you! 😊 I'm happy to help! Would you like to know about our services or book a free consultation?";
-            }
-            if (msg.includes('can you help') || msg.includes('need help') || msg.includes('assist')) {
-                return "Absolutely! I'm here to help! 🙌\n\nI can assist you with:\n• IT Solutions (Apps, Web, Software)\n• Trade Services (Import/Export)\n• Getting a Quote\n• Booking a Consultation\n\nWhat do you need?";
-            }
-            if (msg.includes('human') || msg.includes('real person') || msg.includes('agent') || msg.includes('talk to someone')) {
-                return "I understand you'd like to speak with our team! 👤\n\n**Contact us directly:**\n📞 India: +91 9027125341\n📞 Zambia: +260 977 588 581\n📧 info@globaltechandtrade.com\n\nOr click 'Book Demo' to schedule a call!";
-            }
-            if (msg.includes('not helpful') || msg.includes('wrong') || msg.includes('incorrect') || msg.includes("don't understand")) {
-                return "I apologize if I wasn't helpful! 😔 Let me try again, or you can:\n\n• Rephrase your question\n• Book a FREE consultation with our experts\n• Contact us at +91 9027125341\n\nHow else can I assist you?";
-            }
-            if (msg.includes('ok') || msg.includes('okay') || msg.includes('alright') || msg.includes('i see') || msg.includes('got it')) {
-                return "Great! 👍 Is there anything else you'd like to know about our IT solutions or trade services?";
-            }
-            if (msg.includes('yes') || msg.includes('sure') || msg.includes('yeah')) {
-                return "Perfect! What would you like to know more about? 😊\n\n• IT Services\n• Trade Services\n• Get a Quote\n• Book Consultation";
-            }
-            if (msg.includes('no') && msg.length < 10) {
-                return "No problem! If you have any questions later, I'm here to help. 😊\n\nFeel free to reach us at info@globaltechandtrade.com anytime!";
-            }
-            
-            // Return default response for truly unknown questions
-            return "I'd be happy to help! 🤔\n\nCould you please tell me more about what you're looking for?\n\n• IT Solutions (Apps, Web, Software, AI)\n• Trade Services (Import/Export, Logistics)\n• Pricing & Quotes\n• Contact Information\n\nOr book a FREE consultation with our experts!";
+            // Simple fallback when Gemini API fails
+            return "I'm having a moment! 😅 Let me help you another way:\n\n**Quick Options:**\n• Ask me anything - I can help with any topic!\n• Learn about our **IT Solutions** or **Trade Services**\n• **Book a consultation** with our experts\n\n**Contact Us:**\n📞 +91 9027125341\n📧 info@globaltechandtrade.com\n\nWhat would you like to know?";
         }
 
         function addMessage(text, type) {
