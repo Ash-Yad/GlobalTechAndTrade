@@ -131,14 +131,14 @@ def about():
             'year': '2021',
             'title': 'Foundation',
             'badge': 'Foundation',
-            'desc': 'Established in India And Zambia, focusing on Enterprise Software and IT Infrastructure.',
+            'desc': 'Established in India And Africa, focusing on Enterprise Software and IT Infrastructure.',
             'detail': 'IT Division Launched'
         },
         {
             'year': '2021',
             'title': 'Expansion',
             'badge': 'Expansion',
-            'desc': 'Opened our Lusaka, Zambia HQ to facilitate Import/Export corridors and local tech support.',
+            'desc': 'Opened our Africa HQ to facilitate Import/Export corridors and local tech support.',
             'detail': 'Trade Division Launched'
         },
         {
@@ -164,15 +164,15 @@ def about():
             'badge_color': 'primary'
         },
         {
-            'region': 'Zambia',
-            'country': 'Zambia',
-            'city': 'Lusaka',
-            'full_address': 'Plot #10424/4, Cassanova Court, Chainama, Lusaka',
+            'region': 'Africa',
+            'country': 'Africa',
+            'city': 'Africa',
+            'full_address': 'Africa',
             'phone': '+260 97 7588581',
             'email': 'africa@globaltechtrade.com',
             'division': 'Trade & Logistics Hub',
             'tags': ['Customs', 'Freight', 'Logistics'],
-            'flag': '🇿🇲',
+            'flag': '🌍',
             'badge_color': 'secondary'
         }
     ]
@@ -565,7 +565,7 @@ BLOG_ARTICLES = {
 <li><strong>Mumbai/JNPT to Dar es Salaam:</strong> 12-15 days</li>
 <li><strong>Chennai to Mombasa:</strong> 10-14 days</li>
 <li><strong>Mumbai to Durban:</strong> 18-22 days</li>
-<li><strong>Mundra to Lusaka (via Dar es Salaam):</strong> 25-35 days</li>
+<li><strong>Mundra to Africa (via Dar es Salaam):</strong> 25-35 days</li>
 </ul>
 
 <h3>Air Freight Routes</h3>
@@ -607,7 +607,7 @@ BLOG_ARTICLES = {
 <th style="padding: 12px; border: 1px solid #e2e8f0; text-align: left;">VAT/GST</th>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #e2e8f0;">Zambia</td>
+<td style="padding: 12px; border: 1px solid #e2e8f0;">Africa</td>
 <td style="padding: 12px; border: 1px solid #e2e8f0;">15-25%</td>
 <td style="padding: 12px; border: 1px solid #e2e8f0;">16%</td>
 </tr>
@@ -675,7 +675,7 @@ BLOG_ARTICLES = {
 <p><strong>Solution:</strong> Work with experienced customs brokers, use digital documentation systems, double-check all details.</p>
 
 <h2>How GlobalTechAndTrade Can Help</h2>
-<p>With offices in both India (Noida) and Zambia (Lusaka), GlobalTechAndTrade offers end-to-end trade solutions:</p>
+<p>With offices in both India (Noida) and Africa, GlobalTechAndTrade offers end-to-end trade solutions:</p>
 
 <ul>
 <li>✅ Product sourcing from verified Indian manufacturers</li>
@@ -689,32 +689,32 @@ BLOG_ARTICLES = {
 <p><strong>Ready to start trading?</strong> Contact our trade specialists for a free consultation and personalized quote.</p>
 '''
     },
-    'zambia-import-regulations': {
-        'title': 'How to Navigate Import Regulations in Zambia',
-        'subtitle': 'A comprehensive guide to customs requirements, documentation, and compliance for businesses importing goods into Zambia.',
+    'africa-import-regulations': {
+        'title': 'How to Navigate Import Regulations in Africa',
+        'subtitle': 'A comprehensive guide to customs requirements, documentation, and compliance for businesses importing goods into Africa.',
         'category': 'Trade',
         'color': 'primary',
         'color_light': 'primary',
         'read_time': '8 min read',
         'date': 'February 15, 2026',
-        'author': 'Zambia Operations Team',
-        'author_initials': 'ZO',
-        'author_title': 'GlobalTechAndTrade Lusaka Office',
-        'tags': ['Zambia', 'Import Regulations', 'Customs', 'Compliance', 'Documentation'],
+        'author': 'Africa Operations Team',
+        'author_initials': 'AO',
+        'author_title': 'GlobalTechAndTrade Africa Office',
+        'tags': ['Africa', 'Import Regulations', 'Customs', 'Compliance', 'Documentation'],
         'content': '''
-<h2>Overview of Zambia's Import Framework</h2>
-<p>Zambia, as a landlocked country in Southern Africa, has developed robust import regulations to facilitate trade while protecting local industries. The Zambia Revenue Authority (ZRA) oversees all customs operations.</p>
+<h2>Overview of Africa's Import Framework</h2>
+<p>Africa has developed robust import regulations to facilitate trade while protecting local industries. Various customs authorities oversee all customs operations across the continent.</p>
 
 <h2>Key Regulatory Bodies</h2>
 <ul>
-<li><strong>Zambia Revenue Authority (ZRA):</strong> Primary customs authority</li>
-<li><strong>Zambia Bureau of Standards (ZABS):</strong> Product standards and certification</li>
+<li><strong>National Revenue Authorities:</strong> Primary customs authorities</li>
+<li><strong>Bureau of Standards:</strong> Product standards and certification</li>
 <li><strong>Ministry of Commerce, Trade and Industry:</strong> Trade policy</li>
-<li><strong>Bank of Zambia:</strong> Foreign exchange regulations</li>
+<li><strong>Central Banks:</strong> Foreign exchange regulations</li>
 </ul>
 
 <h2>Import Documentation Checklist</h2>
-<p>Every import into Zambia requires the following documents:</p>
+<p>Every import into Africa requires the following documents:</p>
 
 <h3>Mandatory Documents</h3>
 <ol>
@@ -730,12 +730,12 @@ BLOG_ARTICLES = {
 <ul>
 <li><strong>Food Products:</strong> Health certificate, phytosanitary certificate</li>
 <li><strong>Electronics:</strong> ZABS certification for certain items</li>
-<li><strong>Pharmaceuticals:</strong> Zambia Medicines Regulatory Authority (ZAMRA) permit</li>
+<li><strong>Pharmaceuticals:</strong> National Medicines Regulatory Authority permit</li>
 <li><strong>Vehicles:</strong> Roadworthiness certificate, age restrictions apply</li>
 </ul>
 
 <h2>Customs Duty Structure</h2>
-<p>Zambia uses the Harmonized System (HS) for tariff classification:</p>
+<p>African countries use the Harmonized System (HS) for tariff classification:</p>
 
 <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
 <tr style="background: #f1f5f9;">
@@ -768,7 +768,7 @@ BLOG_ARTICLES = {
 </ul>
 
 <h2>COMESA and SADC Preferential Tariffs</h2>
-<p>Zambia is a member of both COMESA and SADC trade blocs, offering preferential tariffs:</p>
+<p>Many African countries are members of COMESA and SADC trade blocs, offering preferential tariffs:</p>
 <ul>
 <li><strong>COMESA:</strong> 0% duty on goods from member states with valid Certificate of Origin</li>
 <li><strong>SADC:</strong> Reduced duties on qualifying goods from member states</li>
@@ -794,7 +794,7 @@ BLOG_ARTICLES = {
 
 <h2>Step-by-Step Import Process</h2>
 <ol>
-<li><strong>Register with ZRA:</strong> Obtain a Taxpayer Identification Number (TPIN)</li>
+<li><strong>Register with Revenue Authority:</strong> Obtain a Taxpayer Identification Number</li>
 <li><strong>Obtain Import Permits:</strong> If required for your product category</li>
 <li><strong>Arrange Shipping:</strong> Work with a freight forwarder</li>
 <li><strong>Submit Declaration:</strong> File Form CE 20 via ASYCUDA World</li>
@@ -813,13 +813,13 @@ BLOG_ARTICLES = {
 </ul>
 
 <h2>How GlobalTechAndTrade Helps</h2>
-<p>Our Lusaka office provides complete import support:</p>
+<p>Our Africa office provides complete import support:</p>
 <ul>
 <li>✅ Customs clearance and documentation</li>
 <li>✅ Duty calculation and optimization</li>
-<li>✅ ZABS certification assistance</li>
-<li>✅ Warehousing in Lusaka</li>
-<li>✅ Last-mile delivery across Zambia</li>
+<li>✅ Certification assistance</li>
+<li>✅ Warehousing in Africa</li>
+<li>✅ Last-mile delivery across Africa</li>
 </ul>
 '''
     },
@@ -1075,7 +1075,7 @@ BLOG_ARTICLES = {
 <td style="padding: 12px; border: 1px solid #e2e8f0;">$3 billion</td>
 </tr>
 <tr>
-<td style="padding: 12px; border: 1px solid #e2e8f0;">Zambia</td>
+<td style="padding: 12px; border: 1px solid #e2e8f0;">Africa</td>
 <td style="padding: 12px; border: 1px solid #e2e8f0;">Mining, Agriculture, Retail</td>
 <td style="padding: 12px; border: 1px solid #e2e8f0;">$800 million</td>
 </tr>
@@ -1318,7 +1318,7 @@ BLOG_ARTICLES = {
 <li>Nigerian Naira (NGN)</li>
 <li>Kenyan Shilling (KES)</li>
 <li>South African Rand (ZAR)</li>
-<li>Zambian Kwacha (ZMW)</li>
+<li>African Currencies</li>
 </ul>
 
 <h3>4. Robust Logistics Integration</h3>
@@ -1374,7 +1374,7 @@ BLOG_ARTICLES = {
 <li><strong>Nigeria:</strong> GIG Logistics, Kwik Delivery</li>
 <li><strong>Kenya:</strong> Sendy, Glovo</li>
 <li><strong>South Africa:</strong> The Courier Guy, Pargo</li>
-<li><strong>Zambia:</strong> Speed Mail, Zampost</li>
+<li><strong>Africa:</strong> Various local providers</li>
 </ul>
 
 <h2>Marketing Strategies That Work</h2>
@@ -1459,7 +1459,7 @@ BLOG_ARTICLES = {
 <h3>3. Value Added Tax (VAT)</h3>
 <p>Applied to CIF + Duty:</p>
 <ul>
-<li>Zambia: 16%</li>
+<li>Africa: Varies by country (typically 15-18%)</li>
 <li>Kenya: 16%</li>
 <li>Tanzania: 18%</li>
 <li>Nigeria: 7.5%</li>
@@ -1476,7 +1476,7 @@ BLOG_ARTICLES = {
 
 <h2>Step-by-Step Calculation Example</h2>
 
-<h3>Scenario: Importing Textiles to Zambia</h3>
+<h3>Scenario: Importing Textiles to Africa</h3>
 <p>Let's calculate the total cost for importing $10,000 worth of textiles:</p>
 
 <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
@@ -1526,7 +1526,7 @@ BLOG_ARTICLES = {
 
 <h2>Duty Rates by Country and Product</h2>
 
-<h3>Zambia</h3>
+<h3>Africa (General)</h3>
 <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
 <tr style="background: #f1f5f9;">
 <th style="padding: 12px; border: 1px solid #e2e8f0;">Product Category</th>
@@ -1785,7 +1785,7 @@ def send_demo_confirmation():
                         <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
                         <p style="color: #4a5568; margin: 0;">Our team will contact you within <strong>24 hours</strong> to schedule your demo.</p>
                     </div>
-                    <p style="color: #4a5568;"><strong>Contact Us:</strong><br>India: +91 8273542939<br>Zambia: +260 977 588 581<br>Email: info@globaltechandtrade.com</p>
+                    <p style="color: #4a5568;"><strong>Contact Us:</strong><br>India: +91 8273542939<br>Africa: +260 977 588 581<br>Email: info@globaltechandtrade.com</p>
                 </div>
                 <div style="background-color: #1e3a5f; padding: 20px; text-align: center;">
                     <p style="color: #93c5fd; margin: 0;">Thank you for choosing GlobalTechAndTrade!</p>
