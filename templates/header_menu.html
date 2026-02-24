@@ -2072,12 +2072,12 @@ IMPORTANT: We do NOT share any pricing, costs, rates, or quotes in chat. NEVER m
             
             // About the company
             if (msg.includes('about company') || msg.includes('about gtt') || msg.includes('about globaltech') || msg.includes('tell me about') && msg.includes('company')) {
-                return "**GlobalTech&Trade (GTT)** 🌍\n\nWe're a dual-service company offering:\n\n**🖥️ IT Solutions:**\nWeb & Mobile Apps, Custom Software, AI & Automation, Cloud, Cybersecurity\n\n**🚢 Trade Services:**\nImport/Export, Customs Clearance, Freight Forwarding, Product Sourcing\n\n**📍 Offices:**\n• India (Dehradun)\n• Africa\n\nWant to learn more about any specific service?";
+                return "**GlobalTech&Trade (GTT)** 🌍\n\nWe're a dual-service company offering:\n\n**🖥️ IT Solutions:**\nWeb & Mobile Apps, Custom Software, AI & Automation, Cloud, Cybersecurity\n\n**🚢 Trade Services:**\nImport/Export, Customs Clearance, Freight Forwarding, Product Sourcing\n\n**📍 Offices:**\n• India (Noida)\n• Africa\n\nWant to learn more about any specific service?";
             }
             
             // Location/Office
             if (msg.includes('where are you') || msg.includes('location') || msg.includes('office') || msg.includes('address')) {
-                return "📍 **Our Offices:**\n\n**🇮🇳 India (Headquarters)**\nDehradun, Uttarakhand\n📞 +91 8273542939\n\n**🌍 Africa (Africa Office)**\nAfrica\n📞 +260 977 588 581\n\n📧 info@globaltechandtrade.com\n\nWould you like to schedule a visit or call?";
+                return "📍 **Our Offices:**\n\n**🇮🇳 India (Headquarters)**\nSector 63, Noida, UP 201301\n📞 +91 8273542939\n\n**🌍 Africa (Africa Office)**\nAfrica\n📞 +260 977 588 581\n\n📧 info@globaltechandtrade.com\n\nWould you like to schedule a visit or call?";
             }
             
             // Contact
@@ -2152,7 +2152,7 @@ IMPORTANT: We do NOT share any pricing, costs, rates, or quotes in chat. NEVER m
             
             // Allow users to ask location/contact questions during flow
             if (inputLower.includes('location') || inputLower.includes('office') || inputLower.includes('address') || inputLower.includes('where')) {
-                addMessage("📍 **Our Offices:**\n\n**🇮🇳 India (Headquarters)**\nDehradun, Uttarakhand\n📞 +91 8273542939\n\n**🌍 Africa (Africa Office)**\nAfrica\n📞 +260 977 588 581\n\n📧 info@globaltechandtrade.com\n\n---\n\n" + steps[leadQualification.step].question, 'bot');
+                addMessage("📍 **Our Offices:**\n\n**🇮🇳 India (Headquarters)**\nSector 63, Noida, UP 201301\n📞 +91 8273542939\n\n**🌍 Africa (Africa Office)**\nAfrica\n📞 +260 977 588 581\n\n📧 info@globaltechandtrade.com\n\n---\n\n" + steps[leadQualification.step].question, 'bot');
                 return;
             }
             if (inputLower.includes('contact') || inputLower.includes('phone') || inputLower.includes('email') || inputLower.includes('call')) {
@@ -2287,7 +2287,7 @@ function handleDemoBookingStep(userInput) {
             // Allow users to ask location/contact questions during booking
             if (inputLower.includes('location') || inputLower.includes('office') || inputLower.includes('address') || inputLower.includes('where are you')) {
                 var currentStep = demoSteps[demoBooking.step];
-                addMessage("📍 **Our Offices:**\n\n**🇮🇳 India (Headquarters)**\nDehradun, Uttarakhand\n📞 +91 8273542939\n\n**🌍 Africa (Africa Office)**\nAfrica\n📞 +260 977 588 581\n\n📧 info@globaltechandtrade.com\n\n---\n\n" + currentStep.question, 'bot');
+                addMessage("📍 **Our Offices:**\n\n**🇮🇳 India (Headquarters)**\nSector 63, Noida, UP 201301\n📞 +91 8273542939\n\n**🌍 Africa (Africa Office)**\nAfrica\n📞 +260 977 588 581\n\n📧 info@globaltechandtrade.com\n\n---\n\n" + currentStep.question, 'bot');
                 return;
             }
             if (inputLower.includes('contact') || inputLower.includes('phone') || inputLower.includes('email') || inputLower.includes('call us')) {
