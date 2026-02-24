@@ -2148,6 +2148,23 @@ IMPORTANT: We do NOT share any pricing, costs, rates, or quotes in chat. NEVER m
         function handleLeadQualificationStep(userInput) {
             var steps = leadQualification.type === 'it' ? itQualificationSteps : tradeQualificationSteps;
             var currentStep = steps[leadQualification.step];
+            var inputLower = userInput.toLowerCase();
+            
+            // Allow users to ask location/contact questions during flow
+            if (inputLower.includes('location') || inputLower.includes('office') || inputLower.includes('address') || inputLower.includes('where')) {
+                addMessage("📍 **Our Offices:**\n\n**🇮🇳 India (Headquarters)**\nDehradun, Uttarakhand\n📞 +91 8273542939\n\n**🌍 Africa (Africa Office)**\nAfrica\n📞 +260 977 588 581\n\n📧 info@globaltechandtrade.com\n\n---\n\n" + steps[leadQualification.step].question, 'bot');
+                return;
+            }
+            if (inputLower.includes('contact') || inputLower.includes('phone') || inputLower.includes('email') || inputLower.includes('call')) {
+                addMessage("📞 **Contact Us:**\n\n**Phone:**\n• India: +91 8273542939\n• Africa: +260 977 588 581\n\n**Email:** info@globaltechandtrade.com\n\n**WhatsApp:** +91 8273542939\n\n---\n\n" + steps[leadQualification.step].question, 'bot');
+                return;
+            }
+            // Allow exit from flow
+            if (inputLower.includes('cancel') || inputLower.includes('exit') || inputLower.includes('stop') || inputLower.includes('quit') || inputLower.includes('back')) {
+                leadQualification.active = false;
+                addMessage("No problem! 👍 I've cancelled the questionnaire.\n\nHow else can I help you? You can ask about:\n• Our services\n• Contact information\n• Book a consultation\n• Or anything else!", 'bot');
+                return;
+            }
             
             // Save the answer
             leadQualification.data[currentStep.field] = userInput;
@@ -2266,6 +2283,18 @@ IMPORTANT: We do NOT share any pricing, costs, rates, or quotes in chat. NEVER m
         
 function handleDemoBookingStep(userInput) {
             var inputLower = userInput.toLowerCase().trim();
+            
+            // Allow users to ask location/contact questions during booking
+            if (inputLower.includes('location') || inputLower.includes('office') || inputLower.includes('address') || inputLower.includes('where are you')) {
+                var currentStep = demoSteps[demoBooking.step];
+                addMessage("📍 **Our Offices:**\n\n**🇮🇳 India (Headquarters)**\nDehradun, Uttarakhand\n📞 +91 8273542939\n\n**🌍 Africa (Africa Office)**\nAfrica\n📞 +260 977 588 581\n\n📧 info@globaltechandtrade.com\n\n---\n\n" + currentStep.question, 'bot');
+                return;
+            }
+            if (inputLower.includes('contact') || inputLower.includes('phone') || inputLower.includes('email') || inputLower.includes('call us')) {
+                var currentStep = demoSteps[demoBooking.step];
+                addMessage("📞 **Contact Us:**\n\n**Phone:**\n• India: +91 8273542939\n• Africa: +260 977 588 581\n\n**Email:** info@globaltechandtrade.com\n\n**WhatsApp:** +91 8273542939\n\n---\n\n" + currentStep.question, 'bot');
+                return;
+            }
             
             // Check if user wants to cancel or exit (expanded list)
             var exitKeywords = ['cancel', 'stop', 'exit', 'quit', 'no', 'nevermind', 'never mind', 'back', 'menu', 'help', 'hi', 'hello', 'hey'];
