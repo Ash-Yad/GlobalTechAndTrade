@@ -168,7 +168,7 @@ def about():
             'country': 'Africa',
             'city': 'Africa',
             'full_address': 'Africa',
-            'phone': '+260 97 7588581',
+            'phone': '097 7588581',
             'email': 'africa@globaltechtrade.com',
             'division': 'Trade & Logistics Hub',
             'tags': ['Customs', 'Freight', 'Logistics'],
@@ -1785,7 +1785,7 @@ def send_demo_confirmation():
                         <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
                         <p style="color: #4a5568; margin: 0;">Our team will contact you within <strong>24 hours</strong> to schedule your demo.</p>
                     </div>
-                    <p style="color: #4a5568;"><strong>Contact Us:</strong><br>India: +91 8273542939<br>Africa: +260 977 588 581<br>Email: info@globaltechandtrade.com</p>
+                    <p style="color: #4a5568;"><strong>Contact Us:</strong><br>India: +91 8273542939<br>Africa: 097 7588581<br>Email: info@globaltechandtrade.com</p>
                 </div>
                 <div style="background-color: #1e3a5f; padding: 20px; text-align: center;">
                     <p style="color: #93c5fd; margin: 0;">Thank you for choosing GlobalTechAndTrade!</p>
